@@ -18,6 +18,7 @@
     background-color:#9758cb;
     display: inline-block;
     transition: all 105ms;
+    z-index: 0;
 }
 
 .test-button:hover{
