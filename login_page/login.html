@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="style-login_page.css" />
+  </head>
+  <body>
+    <div id="formbody">
+      <h1 id="myheading">LOGIN</h1>
+      <form
+        name="myform"
+        action="/acton_page.php"
+        onsubmit="return validform()"
+        method="post"
+        id="form"
+      >
+        <label for="username" class="labels">Username</label>
+        <div class="same" id="name">
+          <input type="text" name="username" placeholder="Username" class="inputs" id="myName" required/>
+        </div>
+        <label for="password" class="labels">Password</label>
+        <div class="same" id="pass">
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            class="inputs"
+            id="mypassword"
+            required     
+            minlength="3"  
+          />
+        </div>
+        <div>
+            <a href="#" id="forgotpass">forgot password?</a>
+          </div> 
+        <div>
+          <button type="submit" id="loginButton">Login</button>
+        </div>
+        <div>
+            <label id="register">Don't have an account? <a href='index.html'>Register</a></label>
+        </div>
+      </form>
+    </div>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <!-- <script src="login_script.js"></script> -->
+  </body>
+</html>

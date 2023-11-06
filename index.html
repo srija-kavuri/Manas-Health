@@ -4,10 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- General page styles -->
+    <link rel="stylesheet" href="style-mainpage.css">
+    <!-- title font family -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,600&family=Playpen+Sans:wght@100&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- for image slideshow -->
     <link rel="stylesheet" href="style-slideshow.css">
+    <!-- down arrow -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- for test-grid -->
+    <link rel="stylesheet" href="style-testgrid.css">
+
 </head>
 <body>
 
@@ -20,9 +29,9 @@
         </div>
         <div class="nav-options">
             <a class="nav-option" href=>Learn about mental health</a>
-            <a class="nav-option" href="help.html">Articles</a>
+            <a class="nav-option" href="">Articles</a>
             <a class="nav-option" href="">Sign up</a>
-            <a class="nav-option" href="">Login</a>
+            <a class="nav-option" href="login_page/login.html">Login</a>
         </div>
     </nav>
 
@@ -30,15 +39,15 @@
         <section class="slideshow">
             
                 <div class="image fade">
-                    <img src="Images/pic1.jpg" alt="Picture 1" title="First picture">
+                    <img src="Images/pic1.jpeg" alt="Picture 1" title="First picture">
                 </div>
     
                 <div class="image fade">
-                    <img src="Images/pic2.jpg" alt="Picture 2" title="Second picture">
+                    <img src="Images/pic2.jpeg" alt="Picture 2" title="Second picture">
                 </div>
     
                 <div class="image fade">
-                    <img src="Images/pic3.jpg" alt="Picture 3" title="Third picture">
+                    <img src="Images/pic3.jpeg" alt="Picture 3" title="Third picture">
                 </div>
     
                 <div class="image fade">
@@ -63,13 +72,71 @@
                     <span class="dot"></span>
                     <span class="dot"></span>
                 </div>
+                <section style="display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                text-wrap: wrap;
+                color: orangered;
+                "><div>
+                <a style="text-decoration: none;
+                color: orangered;" href="#test-grid">Scroll down to take your mental health test</a>
+           </div> 
+            <a class="material-symbols-outlined" href="#test-grid">
+                keyboard_double_arrow_down
+            </a>
         </section>
-        <section style="display: inline-block;
-        text-align: center;">
-            Scroll down to take a test
+       
+           
+
         </section>
 
+        <section  id="test-grid" style="padding-top: 50px;
+        display: grid;
+        grid-template-rows: 70px 200px;
+        row-gap: 20px;">
+            <div>
+                <h2>Take a test</h2>
+            </div>
+            <section class="test-grid">
+                <div style="grid-column: 1/span 3;
+                display: inline-block;
+                text-align: center;">
+                    <a class="test-button">Generaltest</a>
+                </div>
+                <div class="depression-test" style="text-align: center;
+                position: relative;">
+                    <a class= test-button href="">Depression test</a>
+                    <span class="test-info">This is Depression test</span>
+                </div>
+                <div class="depression-test" style="text-align: center;
+                position: relative;">
+                    <a class= test-button href="">Depression test</a>
+                    <span class="test-info">This is Depression test</span>
+                </div>
+                <div class="depression-test" style="text-align: center;
+                position: relative;">
+                    <a class= test-button href="">Depression test</a>
+                    <span class="test-info">This is Depression test</span>
+                </div>
+                <div class="depression-test" style="text-align: center;
+                position: relative;">
+                    <a class= test-button href="">Depression test</a>
+                    <span class="test-info">This is Depression test</span>
+                </div>
+            </section>
+        </section>
+        <section class="sucide">
+            <h2>Are you having any sucidal thougths? contact 101</h2>
+        </section>
+        <footer class="about-us">
+            <p>This is about us</p>
+        </footer>
+
         <script src="main.js"></script>
-    </main>    
+
+    </main>  
+
 </body>
 </html>

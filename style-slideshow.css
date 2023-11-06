@@ -6,31 +6,36 @@
     display: grid;
     justify-content: center;
     align-items: center;
-    grid-template-rows: 525px 20px 20px;
+    grid-template-rows: 640px 20px;
+    background-color: rgb(242, 219, 219);
 }
 
 .image
 {
     display: none;
-    height: 500px;
+    width: 90vw;
+    
 }
 
 .image > img
 {
-    height: 500px;
+    height: 600px;
+    width: 90vw;
 }
 
 #dots
 {
+    opacity: 0;
+    pointer-events: none;
     position: absolute;
     display: flex;
-    left: 550px;
+    left: 700px;
     top: 650px;
     right: 550px;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    width: 30%;
+    width: 10%;
 }
 
 .dot
@@ -66,3 +71,14 @@
     }
 }
 
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+    text-decoration:  none;
+    color:orangered;
+  }
+  

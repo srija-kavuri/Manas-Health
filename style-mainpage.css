@@ -51,15 +51,26 @@
 
 body{
     background-color: #fbe4de;
-    padding-top: 80px;
+    padding-top: 50px;
 }
 
 main{
-    padding-top: 30px;
+    
     display: grid;
-    grid-template-rows: 1fr 600px;
+    grid-template-rows: 1fr 500px 300px;
+    /* row-gap: 50px; */
 }
 
 p{
     color: black;
+}
+
+.sucide{
+    padding-top: 50px;
+    background-color: aqua;
+}
+
+footer{
+    height: 300px;
+    background-color: #9758cb;
 }

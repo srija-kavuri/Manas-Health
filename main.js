@@ -29,5 +29,5 @@ function DisplaySlides()
 
     dots[slideIndex-1].className += " active";
 
-    setTimeout(DisplaySlides, 3000); //changes the image every 3 seconds
+    setTimeout(DisplaySlides, 10000); //changes the image every 3 seconds
 }
