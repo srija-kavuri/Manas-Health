@@ -11,6 +11,7 @@
     justify-content: space-between;
     height: 72.8px;
     z-index: 100;
+    margin-right: 0;
 
 }
 .nav-option{
@@ -58,17 +59,27 @@ body{
 main{
     
     display: grid;
-    grid-template-rows: 1fr 500px 300px;
+    grid-template-rows: 1fr 500px 1fr;
+    align-items: center;
+    justify-items: center;
     /* row-gap: 50px; */
+    width: 100vw;
 }
 
 p{
     color: black;
 }
 
-.sucide{
-    padding-top: 50px;
-    background-color: aqua;
+.suicide{
+    font-size: 25px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 500px;
+    background-color:#9758cb ;
+    width: 100vw;
+    /* justify-content: center; */
 }
 
 footer{

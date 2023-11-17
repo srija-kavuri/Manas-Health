@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="C:\Users\valli\Desktop\project school\Manashealth\style-mainpage.css">
+    <link rel="stylesheet" href="style-signup.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    <p id="demo"></p>
+    <header>
+    <nav class="navbar">
+        <div class="title">
+            <a href="index.html">Manas health</a>
+        </div>
+        <div class="middle-section">
+
+        </div>
+        <div class="nav-options">
+            <a class="nav-option" href=>Learn about mental health</a>
+            <a class="nav-option" href="help.html">Articles</a>
+            <a class="nav-option" href="signup.html" style="background-color: #46097e;">Sign up</a>
+            <a class="nav-option" href="login.html">Login</a>
+        </div>
+    </nav>
+</header>
+
+    <form name="myform" action="/action.php" method="post" onsubmit="return validform()" id="register-form">
+        <h1>Sign up</h1>
+        <div >
+        <label for="name" class="labels">Your name</label>
+        <input type="text" placeholder="Enter your name" required value="vsghds">
+        <label for="category" class="labels">Select an option</label>
+            <label for="Student" class="radio" required>
+                <input type="radio" value="Student" name="category" id="Student" class = "radio" required>Student
+            </label>
+            <label for="Teacher" class="radio">
+                <input type="radio" value="Teacher" name="category" id="Teacher" class="radio">Teacher
+            </label>
+        <label for="school-name" class="labels">School/Institute name</label>
+            <input type="text" placeholder="Enter your school/institute name" required value="bhdcba">
+        <label for="email" class="labels">Email</label>
+            <input type="email" placeholder="Enter your email" required value="ih@vh.com">
+        <label for="password" class="labels">Create Password</label>
+        <input name="password" type="password" placeholder="Atleast 6 characters" required minlength="6">
+        <p id="pass"></p>
+        <label for="password" class="labels">Confirm password</label>
+        <input name="re-enter" type="password" placeholder="Confirm password" required minlength="6" >
+        <button type="submit" id="registerbutton" >Signup</button>
+        <label id="login" class="login">Already have an account? <a href='login.html'>Log in</a></label></form></div>
+    </form> 
+    
+<script src="signup.js"></script>
+</body>
