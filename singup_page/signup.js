@@ -9,6 +9,9 @@ function validform(){
     if ( (iscapital && isnumber && isspecial ) == false){
         x.innerHTML = '*There password must contain atleast 6 characters,an uppercase letter,a number and a special character.';
         x.style.color = 'red';
+        document.getElementById("word").addEventListener("click",function(){
+            x.style.display = 'none'
+        });
         return false;
     }
     // else if (iscapital == false){
@@ -28,4 +31,5 @@ function validform(){
         y.style.color = 'red';
         return false;
     }  
-}
+};
+document.getElementById("word").addEventListener("click",validform());
