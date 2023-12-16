@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="signup.css" />
+    <!-- heading fontsyle -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,600&family=Playpen+Sans:wght@100&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  </head>
+
+  <body>    
+  <h1 class="landing-page"><a href="" class="web-title" onclick="navigateToLandingPage()">Manashealth</a></h1>
+
+    <div class="container">
+      <div class="image-container">
+        <div>
+          <img class="image" src="../images/signin_img.png" alt="image loading">
+        </div>
+        
+        <div class="toggle-buttons">
+          <button class="login-toggle-button" onclick="navigateToLoginPage()">Login</button>
+          <button class="signup-toggle-button">Signup</button>
+        </div>
+      </div>
+      <div class="form-container">
+        <div id="formbody">
+
+        <form name="myform" action="/signup" method="post" class="myform">
+            <h1 class="signup-title">Sign up</h1>
+            <label for="name" class="labels">Your name</label>
+            <div class="input-container">
+            <input type="text" placeholder="Enter your name" name="username" required>
+            </div>
+                <div class="radio-container">
+                    <label for="category" class="radio-label">Select an option:</label>
+                    <label for="Student" class="radio" required>
+                        <input type="radio" value="Student" name="category" id="Student" class = "radio" required>Student
+                    </label>
+
+                    <label for="Teacher" class="radio">
+                        <input type="radio" value="Teacher" name="category" id="Teacher" class="radio">Teacher
+                    </label>
+                    </div>
+            <label for="school-name" class="labels">School/Institute name</label>
+             <div class="input-container">
+                <input type="text" placeholder="Enter your school/institute name" name="schoolName">
+             </div>
+            <label for="email" class="labels">Email</label>
+             <div class="input-container">
+                <input type="email" placeholder="Enter your email" name="email">
+             </div>
+            <label for="password" class="labels">Create Password</label>
+            <div class="input-container">
+                <input ID="word" name="password" type="password" placeholder="Atleast 6 characters" required minlength="6">
+            </div>
+            <p id="pass"></p>
+            <label for="password" class="labels">Confirm password</label>
+            <div class="input-container">
+            <input name="re-enter" type="password" placeholder="Confirm password" minlength="6" required >
+            </div>
+            <p id="confirmPasswordError"></p>
+            <div class="register-button-container">
+            <button type="submit" id="registerbutton">Signup</button>
+            </div>
+            <div class="login-container">
+            <label id="login" class="login">Already have an account? <a href='../login/login.html'>Log in</a></label>
+            </div>
+        </form>
+        </div>
+
+    </div>
+
+<script src="signup.js"></script>
+</body>
