@@ -1,5 +1,8 @@
 function navigateToSignupPage(){
-  window.location.href = "../signup/signup.html";
+  window.location.replace('/signupPage');
+  // history.replaceState({}, '', '../signup/signup.html');
+  
+  // window.location.href = "../signup/signup.html";
 }
 
 function navigateToLandingPage(){
@@ -20,6 +23,10 @@ function navigateToLandingPage(){
   // If the user canceled, do nothing
 }
 
+document.querySelector("#register").addEventListener("click", ()=>{
+  navigateToSignupPage();
+})
+
 document.querySelector('#loginButton').addEventListener('click', (event)=>{
   event.preventDefault();
   const formData = new FormData(document.querySelector('#form'));
@@ -33,10 +40,10 @@ document.querySelector('#loginButton').addEventListener('click', (event)=>{
   })
   .then(response=>response.text())
   .then(data=>{
-    if(data==="success"){
-      history.replaceState({}, '', '../index.html');
+    if (data === "success") {
+    localStorage.setItem('isLoggedIn','true');
+    window.location.replace("/home");
 
-      window.location.href="../home.html";
     }else if(data==='user not found'){
       alert('no account with the entered crendentials!');
     }

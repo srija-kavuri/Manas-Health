@@ -1,13 +1,10 @@
-console.log("hi");
+// console.log("hi");
 function navigateToLoginPage(){
-    window.location.href = "../login/login.html";
+  window.location.replace('/loginPage');
+  // history.replaceState({}, '', '../login/login.html');
+  //     // Navigate to the new page
+  //   window.location.href = "../login/login.html";
 }
-
-window.addEventListener("popstate", (event)=>{
-   console.log(event);
-    history.replaceState({}, '', '../index.html');
-    window.location.href = '../index.html';
-})
 
 function navigateToLandingPage(){
     // Show a confirmation dialog
@@ -16,13 +13,17 @@ function navigateToLandingPage(){
     // If the user confirmed, navigate to the new page
     if (userConfirmed) {
       // Replace the current state, preventing the user from going back
-      history.replaceState({}, '', '../index.html');
+      history.replaceState({}, '', '/');
     
       // Navigate to the new page
-      window.location.href = '../index.html';
+      window.location.href = '/';
     }
     // If the user canceled, do nothing
   }
+
+  document.querySelector(".login").addEventListener("click", ()=>{
+    navigateToLoginPage();
+  })
 
   document.querySelector('#registerbutton').addEventListener('click', (event) => {
     event.preventDefault();
@@ -50,8 +51,8 @@ function navigateToLandingPage(){
         })
         .then(data => {
           if(data==="Success"){
-            history.replaceState({}, '', '../index.html');
-            window.location.href="../home.html";
+            // localStorage.setItem('isLoggedIn','true');
+            window.location.replace('/verification');
           }
         })
         .catch(error => {

@@ -1,23 +1,31 @@
 const express=require('express')
 const mongoose = require('mongoose');
-const User = require('./userModel.js')
+const bcrypt=require('bcrypt');
+const User = require('./userModel.js');
 
 const router=express.Router();
 
 router.post('/', async (req,res)=>{
   const reqEmail = req.body.email;
   const reqPassword = req.body.password;
-
+  const remember = req.body.remember;
   try{
     await mongoose.connect("mongodb://localhost:27017/manashealth");
-    
-    const findUser = await User.findOne({email: reqEmail})
+    const findUser = await User.findOne({email: reqEmail});
 
     if(findUser){
-      if(reqPassword===findUser.password){
-        res.send('success');
-      }else{
-        res.send('Wrong password');
+      try{
+        const isValid = await bcrypt.compare(reqPassword, findUser.hashedPassword);
+        if(isValid){
+          req.session.isAuth = true;
+          if(remember){
+            req.session.cookie.maxAge=1000*60*60*24;
+          }
+          res.send('success');
+        } 
+        else res.send('Wrong password');
+      }catch(compareError){
+        console.log("Error comparing the password.",compareError);
       }
     }else{
       res.send('user not found');

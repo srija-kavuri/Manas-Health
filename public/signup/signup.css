@@ -189,6 +189,9 @@ input:hover{
 
 #login{
     font-size: 18px;
+    color: #0070E0;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .register-button-container{

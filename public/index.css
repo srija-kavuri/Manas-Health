@@ -43,6 +43,7 @@ pre{
     color:#fbf8f3 ;
 }
 .get{
+    cursor: pointer;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
     line-height: 150px;
     font-weight: 400;

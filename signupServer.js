@@ -1,27 +1,33 @@
 const express=require('express')
 const mongoose = require('mongoose');
-const User = require('./userModel.js')
+const bcrypt = require('bcrypt');
+const User = require('./userModel.js');
+const sendMail=require('./OTP/sendOtp.js');
 
 const router=express.Router();
 
 router.post('/', async (req, res) => {
-  console.log(req.body); // Access form data
   const username = req.body.username;
   const category = req.body.category;
   const instituteName = req.body.schoolName;
   const email = req.body.email;
   const password = req.body.password;
 
-  const userData = { username, category, instituteName, email, password };
-  // console.log(userData);
-
   try {
+    const hashedPassword = await bcrypt.hash(password, 12);
+    const userData = { username, category, instituteName, email,hashedPassword};
     await mongoose.connect("mongodb://localhost:27017/manashealth");
-    // Use await with insertMany to handle the promise
-    await User.insertMany([userData]);
-
-    console.log('User inserted successfully!');
-    res.send('Success');
+    console.log("mongoose connected");
+    const findUser = await User.findOne({email});
+    if(findUser){
+      res.status(400).send(`Account with the email already exists.`);
+    }else{
+      req.session.userData=userData;
+      otp = sendMail.generateOTP(4);
+      sendMail.sendOTP(email, username);
+      req.session.otp=otp;
+      res.send("Success");
+    }
   } catch (error) {
     if (error.code === 11000) {
       console.error('Duplicate key error:', error.errmsg);

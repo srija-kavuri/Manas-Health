@@ -1,12 +1,12 @@
-
-document.addEventListener("DOMContentLoaded", function() {
-    // Your JavaScript code here
-    history.replaceState({}, '', '../index.html');
-    console.log('working')
-})
-
-
-
+document.querySelector('.get').addEventListener('click', () => {
+  // const isLoggedIn = localStorage.getItem("isLoggedIn");
+  // console.log(isLoggedIn);
+  // if (isLoggedIn === "true") {
+    window.location.href = "/home";
+  // } else {
+    // window.location.href = "login/login.html"};
+  }
+);
 
 
 // document.addEventListener("scroll", function () {

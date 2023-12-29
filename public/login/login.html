@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="style-login_page.css" />
+    <link rel="stylesheet" href="login/login.css" />
     <!-- title fontfamily -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,24 +43,27 @@
                 name="password"
                 placeholder="Password"
                 class="inputs"
-                id="mypassword"
+                id="myPassword"
                 required     
                 minlength="3"  
               />
             </div>
             <div class="forgotpass-container">
-                <a href="#" id="forgotpass">Forgot password?</a>
+                <label for="remember" class="remember-me">Remember me
+                  <input type="checkbox" name="remember" value="remember" id="remember">
+                </label>
+                <a href="forgotPassword.html" id="forgotpass">Forgot password?</a>
               </div> 
             <div class="loginButton-container">
               <button type="submit" id="loginButton">Login</button>
             </div>
             <div class="register-container">
-                <label id="register">Don't have an account? <a href='../signup/signup.html'>Register</a></label>
+                <label id="register">Don't have an account? <a>Register</a></label>
             </div>
           </form>
         </div>
       </div>
     </div>
-    <script src="login.js"></script>
+    <script src="login/login.js"></script>
   </body>
 </html>

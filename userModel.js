@@ -17,9 +17,8 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     unique: true,
-    // Add a regex pattern for email validation if needed
   },
-  password: {
+  hashedPassword: {
     type: String,
     required: true,
     minlength: 6
