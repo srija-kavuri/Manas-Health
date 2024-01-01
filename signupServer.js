@@ -12,12 +12,12 @@ router.post('/', async (req, res) => {
   const instituteName = req.body.schoolName;
   const email = req.body.email;
   const password = req.body.password;
+  console.log(req.body);
 
   try {
     const hashedPassword = await bcrypt.hash(password, 12);
     const userData = { username, category, instituteName, email,hashedPassword};
     await mongoose.connect("mongodb://localhost:27017/manashealth");
-    console.log("mongoose connected");
     const findUser = await User.findOne({email});
     if(findUser){
       res.status(400).send(`Account with the email already exists.`);

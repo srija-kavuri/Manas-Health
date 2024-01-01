@@ -1,12 +1,15 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const sendEmail = require('OTP/sendOtp.js');
-const sendMail = express.Router();
-const verifyOTP = express.Router();
+const User = require('./userModel.js');
+const bcrypt = require('bcrypt');
+
+const sendEmail = require('./OTP/sendOtp.js');
+const sendForgotPasswordMail = express.Router();
+const verifyForgotPasswordOTP = express.Router();
 const changePassword = express.Router();
 
-sendMail.post('/sendMail', async (res, req)=>{
-  email = req.body.email;
+sendForgotPasswordMail.post('/', async (req, res)=>{
+  const email = req.body.email;
   try{
     await mongoose.connect("mongodb://localhost:27017/manashealth");
     const findUser = await User.findOne({email});
@@ -28,15 +31,38 @@ sendMail.post('/sendMail', async (res, req)=>{
   }
 })
 
-verifyOTP.post('/verifyOTP', (res,req)=>{
-  userEnteredOtp = req.body.otp;
-  if(req.session.otp===userEnteredOtp){
+verifyForgotPasswordOTP.post('/', (req,res)=>{
+  const userEnteredOtp = req.body.otp;
+  if(req.session.otp===String(userEnteredOtp)){
     res.send("verified");
   }else{
     res.send("wrong Otp");
   }
 })
 
-changePassword.post('/change', (req, res)=>{
-  
+changePassword.post('/',async (req, res)=>{
+  const newPassword = req.body.newPassword;
+  const oldPassword = req.session.userData.hashedPassword;
+  try{
+    await mongoose.connect("mongodb://localhost:27017/manashealth");
+    const isValid = await bcrypt.compare(newPassword, oldPassword);
+    if(isValid){
+      res.send("new password and old password can't be same");
+    }else{
+      const hashedPassword = await bcrypt.hash(newPassword, 12);
+        await User.findOneAndUpdate(
+          {email:req.session.userData.email},{hashedPassword: hashedPassword});
+          res.send("successfully updated");
+    }
+    }catch(error){
+    console.log("Error comparing the passwords", error);
+    }finally{
+      mongoose.disconnect();
+    }
 })
+
+module.exports = {
+  sendForgotPasswordMail,
+  verifyForgotPasswordOTP,
+  changePassword
+};

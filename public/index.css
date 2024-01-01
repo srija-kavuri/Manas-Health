@@ -1,80 +1,33 @@
-*{
-    padding: 0;
-    margin: 0;
+body {
+    /* background-image: url("https://images.wallpaperscraft.com/image/single/tree_horizon_sunset_128367_1920x1080.jpg"); */
+    background-image: url("https://images.wallpaperscraft.com/image/single/tree_horizon_sunset_128367_3840x2400.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
 }
 
-html{
-    height: 100%;
-}
-
-:root{
-    --primary: hwb(0 0% 100% / 0.5);
-    --secondary: hwb(0 0% 100% / 0.5);
-}
-
-body{
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    font-family: 'Playball';
-    font-size: 4.5rem;
-    color: #fff;
-    place-items: center;
-    place-content: center;
-    background: linear-gradient(135deg, var(--primary), var(--secondary)),url('images/background.jpg') no-repeat center / cover ;
-    overflow: hidden;
-}
-.container{
-    line-height: 100px;
+.container {
     text-align: center;
-    /* padding-top: 50px ; */
+    margin-top: 15%;
 }
-h1{
-    font-family: 'Oswald', sans-serif;
-    letter-spacing: 7px;
-    color: #fbf8f3;
-    padding-top: 150px;
-    padding-bottom: 60px;
-}
-pre{
-    line-height: normal;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 30px;
-    color:#fbf8f3 ;
-}
-.get{
-    cursor: pointer;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
-    line-height: 150px;
-    font-weight: 400;
-    color: #fbf8f3;
-    border: 3px solid #29142c;
-    padding: 12px 60px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-size: 40px;
-    background-color: rgba(255, 255, 255, 0.18); /* Adjust the alpha value for transparency */
-} 
-.get:hover{
-    box-shadow: 0px 0px 3px 3px rgba(90, 60, 7, 0.606);
-}
-.icons{
-    display: flex;
-    gap: 40px;
-    justify-content: center;
-}
-.icon{
-    width: 30px;
-    margin: 0 10px;
-    transition: transform 0.3s ease-out;
-  } 
-/* .icon::after{
-    transform: scale(1);
-    padding: 15px;
-    border: 2px solid #fbf8f3;
-    border-radius: 25px;
-    opacity: 0;
+
+/* .social-icons {
+    margin-top: 20px;
 } */
-.icon:hover{
-    transform: translateY(-10px);
+
+.custom-bi{
+    margin: 10px;
+    color: white;
+}
+
+.custom-displayHeading{
+    font-weight: 500;
+    /* color: rgb(103, 29, 16); */
+    color: rgb(50, 7, 13);
+    margin-bottom: 30px;
+}
+
+.custom-lead{
+    font-weight: 400;
+    color: black;
 }

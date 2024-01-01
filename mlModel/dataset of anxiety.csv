@@ -1,0 +1,101 @@
+﻿id,Age,RelationShip Status,Gender,Education,Current Role,Family Income,q1(a),q2(a),q3(a),q4(a),q5(a),q6(a),q7(a),Anxiety,Multiyply by 2,Saverity Level
+1,18-22,Single,Male,Undergraduate,Full Time Student,50000-100000,0,0,1,2,1,0,0,4,8,Mild
+2,18-22,Single,Male,Undergraduate,Full Time Student,50000-100000,1,0,0,3,2,1,0,7,14,Moderate
+3,18-22,Single,Female,Undergraduate,Part Time,0-20000,2,1,3,0,0,3,2,11,22,Extremely Severe
+4,18-22,Single,Male,Undergraduate,Full Time Student,20000-50000,2,1,0,1,0,1,1,6,12,Moderate
+5,18-22,Married,Male,Undergraduate,Own a Business,50000-100000,0,1,2,0,0,0,1,4,8,Mild
+6,18-22,Single,Male,Undergraduate,Full Time Student,20000-50000,2,1,0,1,0,1,0,5,10,Moderate
+7,18-22,Single,Male,Undergraduate,Part Time,0-20000,1,1,2,0,1,2,0,7,14,Moderate
+8,18-22,Single,Female,Undergraduate,Own a Business,50000-100000,2,1,0,1,1,0,0,5,10,Moderate
+9,18-22,Single,Female,Undergraduate,Part Time,0-20000,1,2,3,2,2,2,1,13,26,Extremely Severe
+10,18-22,Single,Male,Undergraduate,Own a Business,50000-100000,1,0,3,3,2,1,2,12,24,Extremely Severe
+11,18-22,Single,Male,Undergraduate,Part Time,0-20000,1,0,0,1,2,0,0,4,8,Mild
+12,18-22,Single,Female,Undergraduate,Own a Business,50000-100000,2,3,2,2,3,2,0,14,28,Extremely Severe
+13,18-22,Single,Female,Undergraduate,Own a Business,50000-100000,0,0,0,0,0,0,2,2,4,Normal
+14,18-22,Single,Male,Undergraduate,Own a Business,50000-100000,3,3,3,3,1,3,1,17,34,Extremely Severe
+15,18-22,Single,Female,Undergraduate,Own a Business,50000-100000,2,1,0,0,0,0,2,5,10,Moderate
+16,18-22,Single,Male,Undergraduate,Own a Business,50000-100000,2,2,1,1,1,0,0,7,14,Moderate
+17,18-22,Single,Male,Undergraduate,Part Time,0-20000,2,0,3,3,3,3,1,15,30,Extremely Severe
+18,18-22,Single,Female,Undergraduate,Part Time,0-20000,2,0,0,0,2,0,0,4,8,Mild
+19,18-22,Single,Male,Undergraduate,Full Time Student,20000-50000,2,3,2,2,1,3,2,15,30,Extremely Severe
+20,18-22,Single,Male,Undergraduate,Part Time,0-20000,0,0,0,0,1,1,1,3,6,Normal
+21,18-22,Single,Female,Undergraduate,Part Time,0-20000,2,1,1,3,3,2,3,15,30,Extremely Severe
+22,18-22,Single,Male,Undergraduate,Own a Business,50000-100000,2,1,0,0,0,1,1,5,10,Moderate
+23,18-22,Single,Female,Undergraduate,Full Time Student,20000-50000,0,0,0,0,0,0,0,0,0,Normal
+24,18-22,Single,Female,Undergraduate,Full Time Student,20000-50000,1,0,2,3,2,1,2,11,22,Extremely Severe
+25,18-22,Single,Female,Undergraduate,Part Time,0-20000,3,0,1,1,0,0,0,5,10,Moderate
+26,18-22,Single,Male,Undergraduate,Full Time Student,20000-50000,3,0,2,1,0,0,0,6,12,Moderate
+27,18-22,Single,Male,Undergraduate,Part Time,0-20000,2,0,0,1,0,0,0,3,6,Normal
+28,18-22,Single,Male,Undergraduate,Part Time,0-20000,2,0,1,2,0,3,0,8,16,Severe
+29,18-22,Single,Male,Undergraduate,Part Time,0-20000,1,0,1,1,1,2,1,7,14,Moderate
+30,18-22,Single,Female,Undergraduate,Part Time,0-20000,1,0,2,3,1,2,1,10,20,Extremely Severe
+31,18-22,Single,Male,Undergraduate,Own a Business,50000-100000,1,0,2,2,1,2,1,9,18,Severe
+32,18-22,Single,Male,Undergraduate,Full Time Student,20000-50000,3,1,2,1,2,1,0,10,20,Extremely Severe
+33,18-22,Single,Female,Undergraduate,Full Time Student,20000-50000,0,2,0,0,0,0,2,4,8,Mild
+34,18-22,Single,Female,Undergraduate,Full Time Student,20000-50000,1,2,3,3,2,0,1,12,24,Extremely Severe
+35,18-22,Married,Female,Undergraduate,Full Time Student,20000-50000,1,0,0,1,1,1,0,4,8,Mild
+36,18-22,Single,Male,Undergraduate,Full Time Student,50000-100000,3,2,0,2,2,2,2,13,26,Extremely Severe
+37,18-22,Single,Female,Undergraduate,Own a Business,50000-100000,0,0,0,0,0,1,0,1,2,Normal
+38,18-22,Single,Female,Undergraduate,Full Time Student,20000-50000,0,2,0,2,2,0,0,6,12,Moderate
+39,18-22,Single,Male,Undergraduate,Part Time,0-20000,2,2,2,2,2,1,0,11,22,Extremely Severe
+40,18-22,Single,Female,Undergraduate,Own a Business,50000-100000,1,1,2,3,2,0,0,9,18,Severe
+41,18-22,Single,Male,Undergraduate,Own a Business,50000-100000,0,0,1,3,1,0,0,5,10,Moderate
+42,18-22,Single,Female,Undergraduate,Full Time Student,20000-50000,1,1,1,2,2,3,2,12,24,Extremely Severe
+43,18-22,Single,Male,Undergraduate,Own a Business,50000-100000,0,0,0,0,1,3,0,4,8,Mild
+44,18-22,Single,Male,Undergraduate,Own a Business,50000-100000,3,3,3,3,1,0,0,13,26,Extremely Severe
+45,18-22,Single,Male,Undergraduate,Own a Business,50000-100000,3,3,3,2,0,1,0,12,24,Extremely Severe
+46,18-22,Single,Male,Undergraduate,Part Time,0-20000,0,0,0,0,0,0,1,1,2,Normal
+47,18-22,Single,Female,Undergraduate,Own a Business,50000-100000,3,2,2,2,2,0,1,12,24,Extremely Severe
+48,18-22,Single,Female,Undergraduate,Own a Business,50000-100000,2,1,1,1,3,1,0,9,18,Severe
+49,18-22,Single,Female,Undergraduate,Part Time,0-20000,3,2,2,3,1,2,3,16,32,Extremely Severe
+50,18-22,Single,Male,Undergraduate,Own a Business,50000-100000,1,2,2,3,1,2,2,13,26,Extremely Severe
+51,18-22,Single,Male,Undergraduate,Full Time Student,20000-50000,1,1,0,1,0,0,0,3,6,Normal
+52,18-22,Single,Male,Undergraduate,Own a Business,50000-100000,0,0,0,1,0,0,0,1,2,Normal
+53,18-22,Single,Female,Undergraduate,Part Time,0-20000,1,1,2,1,1,3,2,11,22,Extremely Severe
+54,18-22,Single,Male,Undergraduate,Own a Business,50000-100000,0,0,0,3,1,0,0,4,8,Mild
+55,18-22,Single,Female,Undergraduate,Full Time Student,20000-50000,3,3,1,0,1,1,1,10,20,Extremely Severe
+56,18-22,Single,Male,Undergraduate,Own a Business,50000-100000,2,3,3,3,3,3,0,17,34,Extremely Severe
+57,18-22,Single,Female,Undergraduate,Part Time,0-20000,2,0,1,1,2,2,3,11,22,Extremely Severe
+58,18-22,Single,Male,Undergraduate,Own a Business,50000-100000,2,1,1,2,0,0,1,7,14,Moderate
+59,18-22,Single,Female,Undergraduate,Full Time Student,50000-100000,2,1,1,2,0,0,1,7,14,Moderate
+60,18-22,Single,Female,Undergraduate,Own a Business,50000-100000,1,3,1,1,2,3,1,12,24,Extremely Severe
+61,18-22,Single,Male,Undergraduate,Full Time Student,20000-50000,2,0,2,3,3,1,3,14,28,Extremely Severe
+62,18-22,Single,Male,Undergraduate,Own a Business,50000-100000,2,3,3,3,3,3,3,20,40,Extremely Severe
+63,18-22,Single,Male,Undergraduate,Own a Business,50000-100000,2,0,1,2,1,2,0,8,16,Severe
+64,18-22,Married,Male,Undergraduate,Own a Business,50000-100000,3,3,2,1,2,3,1,15,30,Extremely Severe
+65,18-22,Single,Female,Undergraduate,Part Time,0-20000,1,0,0,2,0,0,0,3,6,Normal
+66,18-22,Single,Male,Undergraduate,Full Time Student,50000-100000,2,2,1,2,0,0,1,8,16,Severe
+67,18-22,Single,Female,Undergraduate,Full Time Student,20000-50000,3,0,2,1,3,2,1,12,24,Extremely Severe
+68,18-22,Single,Female,Undergraduate,Full Time Student,20000-50000,0,2,1,3,1,3,0,10,20,Extremely Severe
+69,18-22,Single,Female,Undergraduate,Part Time,0-20000,2,2,3,2,2,3,2,16,32,Extremely Severe
+70,18-22,Single,Female,Undergraduate,Part Time,0-20000,3,3,0,1,2,3,3,15,30,Extremely Severe
+71,18-22,Single,Male,Undergraduate,Full Time Student,20000-50000,1,2,3,1,3,3,0,13,26,Extremely Severe
+72,18-22,Single,Male,Undergraduate,Own a Business,50000-100000,2,0,0,0,0,3,0,5,10,Moderate
+73,18-22,Single,Female,Undergraduate,Own a Business,50000-100000,2,0,2,0,2,2,0,8,16,Severe
+74,18-22,Single,Female,Undergraduate,Full Time Student,20000-50000,0,0,3,3,2,3,0,11,22,Extremely Severe
+75,18-22,Single,Female,Undergraduate,Part Time,0-20000,2,0,0,3,3,0,3,11,22,Extremely Severe
+76,18-22,Single,Male,Undergraduate,Full Time Student,50000-100000,1,2,2,1,1,2,0,9,18,Severe
+77,18-22,Single,Female,Undergraduate,Part Time,0-20000,2,0,1,0,2,0,1,6,12,Moderate
+78,18-22,Single,Female,Undergraduate,Own a Business,50000-100000,3,0,0,3,3,3,0,12,24,Extremely Severe
+79,18-22,Single,Female,Undergraduate,Part Time,0-20000,2,2,2,3,3,3,3,18,36,Extremely Severe
+80,18-22,Single,Male,Undergraduate,Own a Business,50000-100000,1,0,0,2,1,0,1,5,10,Moderate
+81,18-22,Single,Male,Undergraduate,Part Time,0-20000,2,0,0,3,2,3,1,11,22,Extremely Severe
+82,18-22,Single,Male,Undergraduate,Full Time Student,50000-100000,1,0,0,0,0,0,0,1,2,Normal
+83,18-22,Married,Male,Undergraduate,Own a Business,50000-100000,0,2,3,3,2,2,3,15,30,Extremely Severe
+84,18-22,Single,Male,Undergraduate,Part Time,0-20000,3,1,0,3,0,3,2,12,24,Extremely Severe
+85,18-22,Single,Female,Undergraduate,Own a Business,50000-100000,3,0,1,3,3,0,0,10,20,Extremely Severe
+86,18-22,Single,Female,Undergraduate,Full Time Student,20000-50000,2,1,0,0,0,0,1,4,8,Mild
+87,18-22,Single,Male,Undergraduate,Part Time,0-20000,1,1,1,2,3,1,3,12,24,Extremely Severe
+88,18-22,Single,Female,Undergraduate,Own a Business,50000-100000,0,0,1,3,1,1,2,8,16,Severe
+89,18-22,Single,Male,Undergraduate,Own a Business,50000-100000,2,1,3,2,2,2,2,14,28,Extremely Severe
+90,18-22,Single,Male,Undergraduate,Part Time,0-20000,0,2,0,3,2,3,0,10,20,Extremely Severe
+91,18-22,Single,Female,Undergraduate,Full Time Student,20000-50000,2,3,1,3,2,3,3,17,34,Extremely Severe
+92,18-22,Single,Female,Undergraduate,Full Time Student,20000-50000,0,0,0,0,0,2,2,4,8,Mild
+93,18-22,Single,Female,Undergraduate,Full Time Student,50000-100000,3,2,0,2,3,1,1,12,24,Extremely Severe
+94,18-22,Single,Male,Undergraduate,Part Time,0-20000,2,2,2,1,1,0,2,10,20,Extremely Severe
+95,18-22,Single,Female,Undergraduate,Own a Business,50000-100000,1,2,1,0,0,1,1,6,12,Moderate
+96,18-22,Single,Male,Undergraduate,Own a Business,50000-100000,1,3,3,2,1,2,2,14,28,Extremely Severe
+97,18-22,Single,Male,Undergraduate,Full Time Student,50000-100000,3,0,1,1,2,0,3,10,20,Extremely Severe
+98,18-22,Single,Female,Undergraduate,Part Time,0-20000,2,1,2,0,0,1,1,7,14,Moderate
+99,18-22,Single,Female,Undergraduate,Full Time Student,50000-100000,0,2,1,3,1,2,2,11,22,Extremely Severe
+100,18-22,Single,Female,Undergraduate,Full Time Student,50000-100000,0,3,2,1,3,3,0,12,24,Extremely Severe

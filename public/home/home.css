@@ -1,0 +1,76 @@
+body{
+  /* background-color: #deeffa; */
+  background-color: white;
+}
+.custom-button {
+    height: auto;
+    font-weight: 200px;
+    background-color:rgb(135, 79, 19);
+    color: white;
+    /* Add any custom styling for buttons */}
+    .btn-group {
+     margin-bottom: 20px;
+     height: 50px;
+     margin-top: 10px;
+     
+    }
+    .navbar-nav a {
+      font-weight: 100;
+      font-family: 'Lora', serif;
+  /* font-family: 'Roboto', sans-serif;
+  font-family: 'Satisfy';  */
+      font-size: 20px; /* Adjust the font size as needed */
+      /* Add other styles as needed (e.g., color, text-decoration, etc.) */
+  }
+
+  /* Example: Change the font style and size for the disabled link */
+  .navbar-nav a.disabled {
+      font-style: italic;
+      font-size: 20px;
+      color: gray; /* Adjust the color as needed */
+  }
+
+  /* Example: Change the font style and size for the button */
+  .navbar-nav .btn {
+      font-family: "Your Desired Font", sans-serif;
+      font-size: 18px;
+      /* Add other styles as needed for the button */
+  }
+    .container{
+      margin-top:20px;
+      padding: 20px;
+      border-radius: 100px;
+    }
+    .c2{
+      /* background-color: rgb(182,227,212); */
+      background-color: #6f3b11a6;
+    }
+    .gap{
+        height: 40px;
+    }
+    .gap-heading{
+        height: 20px;
+    }
+    .navbar-brand{
+      font-weight: 100;
+      font-family: 'Lora', serif;
+  /* font-family: 'Roboto', sans-serif;
+  font-family: 'Satisfy', cursive; */
+  font-size: larger;
+  margin-bottom: 1px;
+  padding-left: 20px;
+  padding-top: 7px;
+  font-size: 40px;
+height: 60px; }
+    
+.profile-icon{
+  padding-left: 23%;
+}
+.custom-table{
+  margin-top: 10%;
+}
+.edit-profile{
+  border-radius: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+}

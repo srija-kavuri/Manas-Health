@@ -1,4 +1,3 @@
-// console.log("hi");
 function navigateToLoginPage(){
   window.location.replace('/loginPage');
   // history.replaceState({}, '', '../login/login.html');
@@ -21,7 +20,7 @@ function navigateToLandingPage(){
     // If the user canceled, do nothing
   }
 
-  document.querySelector(".login").addEventListener("click", ()=>{
+  document.querySelector("#login").addEventListener("click", ()=>{
     navigateToLoginPage();
   })
 
@@ -29,7 +28,7 @@ function navigateToLandingPage(){
     event.preventDefault();
     if (validform()) {
       // Assuming "myform" is the ID of your form
-      const formData = new FormData(document.querySelector('.myform'));
+      const formData = new FormData(document.querySelector('#myform'));
       console.log('Before fetch');
       fetch('/signup', {
         method: 'POST',
@@ -62,34 +61,38 @@ function navigateToLandingPage(){
         });
     }
   });
-  
-function validform(){
 
-    let fpass = document.forms['myform']['password'].value;
-    // set conditions
-    const iscapital = /[A-Z]/.test(fpass);
-    const isnumber = /[0-9]/.test(fpass);
-    const isspecial = /[!@#$&]/.test(fpass);
-    let passwordError = document.getElementById('pass');
-    if ( (iscapital && isnumber && isspecial ) == false){
-        passwordError.innerHTML = '*The password must contain atleast 6 characters,an uppercase letter,a number and a special character.';
-        passwordError.style.color = 'red';
-        return false;
-    }
-    
-    let confirm = document.forms['myform']['re-enter'].value;
-    let confirmPasswordErrorHTML=document.getElementById("confirmPasswordError");
-    if (fpass != confirm){
-      confirmPasswordErrorHTML.innerHTML='*Password and Confirm password must be same';
-      confirmPasswordErrorHTML.style.color='red';
-        return false;
-    }  
-    return true;
-    // let email=document.forms["myform"]["mail"].value;
-    // let y=getElementById("email");
-    // if (email.length <8 || email.length >25){
-    //     y.innerHTML="email should contain atleast characters and atmost 20.";
-    //     return false;
-    // }
+
+
+function validform() {
+  
+  
+  var fpass = document.getElementById("password").value;
+  var confirmPassword = document.getElementById("reEnter").value;
+
+  //RESET
+  document.getElementById("confirmPasswordError").innerHTML = "";
+  document.getElementById("passwordError").innerHTML = "";
+
+  // validation rules 
+  const iscapital = /[A-Z]/.test(fpass);
+  const isnumber = /[0-9]/.test(fpass);
+  const isspecial = /[!@#$&]/.test(fpass);
+
+  if ( (iscapital && isnumber && isspecial ) == false){
+                document.getElementById("passwordError").innerHTML = "*Password must have a capital letter, a number, a special character, and be at least 6 characters long.";
+                return false;
+            }
+  
+  
+ 
+  if (fpass != confirmPassword){
+      document.getElementById("confirmPasswordError").innerHTML = "*Password and Confirm password must be same";
+  
+      return false;
+  }  
+
+
+  return true; // Return false if validation fails
 }
 
