@@ -1,11 +1,11 @@
 body{
-  /* background-color: #deeffa; */
-  background-color: white;
+  /* background-color: #d0ecfe9b; */
+  background-color: rgba(255, 255, 255, 0.8);
 }
 .custom-button {
     height: auto;
     font-weight: 200px;
-    background-color:rgb(135, 79, 19);
+    /* background-color:rgb(21, 13, 129); */
     color: white;
     /* Add any custom styling for buttons */}
     .btn-group {
@@ -39,11 +39,12 @@ body{
     .container{
       margin-top:20px;
       padding: 20px;
-      border-radius: 100px;
+      border-radius: 20px;
     }
     .c2{
       /* background-color: rgb(182,227,212); */
-      background-color: #6f3b11a6;
+      /* background-color: #2ac4f3d7; */
+      background-color: lightskyblue;
     }
     .gap{
         height: 40px;

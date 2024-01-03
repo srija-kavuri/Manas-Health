@@ -35,7 +35,6 @@ router.post('/', async (req,res)=>{
     console.error('Error finding user:', error);
     res.status(500).json({ message: 'Internal Server Error' });
   }finally{
-    await mongoose.disconnect();
     console.log('mongoose disconnected');
   }
 })

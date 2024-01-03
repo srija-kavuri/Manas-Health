@@ -5,7 +5,7 @@ fetch('/userDetails',{
   },
 }).then(response=>response.json())
 .then(data=> {const userData = data;
-  // console.log(userData);
+  console.log(userData);
   document.getElementById("username").innerHTML = userData.username;
   document.getElementById("email").innerHTML = userData.email;
   document.getElementById("institute").innerHTML = userData.institute;

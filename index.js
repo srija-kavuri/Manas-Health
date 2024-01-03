@@ -59,7 +59,6 @@ app.get('/signupPage', (req,res)=>{
 
 app.get('/verification', (req,res)=>{
   res.sendFile(path.join(__dirname, 'public', 'signup/verification.html'));
-  
 })
 
 app.get('/forgotPassword', (req, res)=>{

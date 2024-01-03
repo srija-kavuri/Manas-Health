@@ -9,7 +9,7 @@ const router=express.Router();
 router.post('/', async (req, res) => {
   const username = req.body.username;
   const category = req.body.category;
-  const instituteName = req.body.schoolName;
+  const instituteName = req.body.school;
   const email = req.body.email;
   const password = req.body.password;
   console.log(req.body);
