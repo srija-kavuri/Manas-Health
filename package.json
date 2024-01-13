@@ -2,7 +2,7 @@
   "name": "manashealth",
   "version": "1.0.0",
   "description": "A mental health website guiding students, connecting them with teachers.",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
