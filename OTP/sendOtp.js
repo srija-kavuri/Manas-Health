@@ -34,7 +34,7 @@ async function sendOTP(email, name) {
           html: `
           <h1>Hello, ${name}</h1>
           <p>Your One Time Verification Password is ${otp}.</p>
-          <s>Please do not share it with anyone. Have a good day:)</s>
+          <span>Please do not share it with anyone. Have a good day:)</span>
           `,
         })
         return info;

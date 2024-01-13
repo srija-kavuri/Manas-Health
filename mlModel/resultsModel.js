@@ -1,14 +1,18 @@
 const mongoose = require('mongoose');
 
-const resultsModel = new mongoose.SchemaType({
+const resultsModel = new mongoose.Schema({
   email:{
     type: String,
     required: true
   },
 
   results: {
-    type: Object,
-    required: true
+    type: [{
+      userInputs: Array,
+      result: String
+    }],
+    default: [],
+    required: true,
   }
 })
 

@@ -37,6 +37,11 @@ body {
    align-items: end;
  }
 
+#forgotpass{
+  cursor: pointer;
+
+}
+
  #signUp{
    cursor: pointer;
  }

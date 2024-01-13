@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-import manashealth.mlModel.model as model  # Import your machine learning model here
+import model  # Import your machine learning model here
 
 app = Flask(__name__)
 
@@ -9,8 +9,10 @@ def predict():
     try:
         # Get input data from the request
         userInputs = request.get_json()
+        print(type(userInputs))
     
         predictions = model.predict_severity(userInputs)
+        print("this is the predictions", predictions)
         
         return jsonify({'predictions': predictions})
 
@@ -18,4 +20,4 @@ def predict():
         return jsonify({'error': str(e)})
 
 if __name__ == '__main__':
-    app.run(port=5000)  # Run the Flask app on a specific port
+    app.run(port=5000, debug=True)  # Run the Flask app on a specific port

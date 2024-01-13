@@ -12,7 +12,7 @@ router.post('/', async (req,res)=>{
       await mongoose.connect("mongodb://localhost:27017/manashealth");
       await User.create(req.session.userData);
       req.session.isAuth = true;
-      req.session.cookie.maxAge = 86400000;
+      // req.session.cookie.maxAge = 86400000;
       console.log('User inserted successfully!');
       res.send('verified');
     }finally{

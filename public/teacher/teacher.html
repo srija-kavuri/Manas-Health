@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Interface</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <style>
+      .custom-nav-text{
+        font-size: 30px;
+      }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary " data-bs-theme="dark">
+        <div class="container-fluid">
+          <span class="navbar-brand h1 custom-nav-text">Manas Health</span>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto">
+                <!-- logout -->
+              <a class="nav-link fs-5" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Logout</a>
+              <!-- profile icon -->
+              <div>
+                <a href="#" class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-person-circle" viewBox="0 0 20 20">
+                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </nav>
+    
+   <!-- LogOut -->
+   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Logout</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Are you want to sure logout</p>
+        </div>
+        <div class="modal-footer">
+          <a><button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="logout()" >YES</button></a>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">NO</button>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+  
+    <!-- User details canvas -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasRightLabel">user details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="profile-icon"> 
+          <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="#b3b3b3" class="bi bi-person-square" viewBox="0 0 16 16">
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/>
+          </svg>
+        </div> 
+        <table class="table custom-table">
+          <thead>
+            <tr>
+      
+              <th scope="col"><p>Teacher details</p></th>
+             
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">username</th>
+              <td>
+                <p id="username"></p>
+              </td>
+              <!-- <td>Otto</td> -->
+              <!-- <td>@mdo</td> -->
+            </tr>
+            <tr>
+              <th scope="row">email</th>
+              <td>
+                <p id="email"></p>
+              </td>
+              <!-- <td>Thornton</td> -->
+              <!-- <td>@fat</td> -->
+            </tr>
+            <tr>
+              <th scope="row">institute name</th>
+              <td colspan="2">
+                <p id="institute"></p>
+              </td>
+              <!-- <td>@twitter</td> -->
+            </tr>
+          </tbody>
+        </table>
+        <div class="edit">
+          <button type="button" class="btn btn-outline-secondary edit-profile">edit your profile</button>
+        </div>
+        </div>
+      </div>
+
+    <h1 class="mt-4 ms-4">Dashboard</h1>
+
+    <!-- filters class and section -->
+    <div class="container text-center mt-5">
+        <div class="row g-3 d-flex align-items-center">
+          <div class="col-auto me-5">
+            <label for="ClassName" class="col-form-label fs-5 me-4 me-md-3">Class</label>
+            <input type="text">
+          </div>
+
+          <div class="col-auto me-5">
+            <label for="SectionName" class="col-form-label fs-5 me-2 me-md-3">Section</label>
+            <input type="text">
+          </div>
+          <!-- get button -->
+          <div class="col-auto">
+            <button class="btn btn-success" type="submit">GET</button>
+          </div>
+        </div>
+        
+    </div>   
+
+    <!-- Search Tab -->
+    <div class="container mt-5">
+        <div class="row g-2 d-flex justify-content-center">
+          <div class="col-6">
+            <input type="text" class="form-control form-control-md" placeholder="Search" aria-label="Search" aria-describedby="searchButton">
+        </div>
+          <div class="col-auto">
+            <button class="btn btn-outline-secondary" type="button" id="searchButton">Search</button>
+          </div>
+        </div>
+      </div>
+    <!-- Student List -->
+    <div class="container">
+    <table class="table border border-2 table-striped table-bordered mt-3">
+        <thead>
+          <tr>
+            <th scope="col">S.No</th>
+            <th scope="col">Student Name</th>
+            <th scope="col">Progress</th>
+            <th scope="col">Current Status</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+          </tr>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+          </tr>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script src="teacher.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

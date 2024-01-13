@@ -10,6 +10,7 @@ const changePassword = express.Router();
 
 sendForgotPasswordMail.post('/', async (req, res)=>{
   const email = req.body.email;
+  console.log(req.body);
   try{
     await mongoose.connect("mongodb://localhost:27017/manashealth");
     const findUser = await User.findOne({email});
@@ -34,6 +35,7 @@ sendForgotPasswordMail.post('/', async (req, res)=>{
 verifyForgotPasswordOTP.post('/', (req,res)=>{
   const userEnteredOtp = req.body.otp;
   if(req.session.otp===String(userEnteredOtp)){
+    req.session.verified = true;
     res.send("verified");
   }else{
     res.send("wrong Otp");
@@ -41,6 +43,9 @@ verifyForgotPasswordOTP.post('/', (req,res)=>{
 })
 
 changePassword.post('/',async (req, res)=>{
+  if(!req.session.verified){
+    return res.status(401);
+  }
   const newPassword = req.body.newPassword;
   const oldPassword = req.session.userData.hashedPassword;
   try{

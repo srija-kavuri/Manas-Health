@@ -13,16 +13,19 @@ document.querySelector('#loginButton').addEventListener('click', (event)=>{
     },
     body: JSON.stringify(Object.fromEntries(formData)),
   })
-  .then(response=>response.text())
+  .then(response=>{
+    if(response.status === 302){
+      window.location.replace(response.url);
+    }else{
+      return response.text();
+    }
+  })
+  // .then(response=>response.text())
   .then(data=>{
-    if (data === "success") {
-    localStorage.setItem('isLoggedIn','true');
-    window.location.replace("/home");
-
-    }else if(data==='user not found'){
+    if(data==='user not found'){
       alert('no account with the entered crendentials!');
     }
-    else{
+    else if(data==='Wrong password'){
       alert('login credentials did not match!');
     }
   })
@@ -31,4 +34,35 @@ document.querySelector('#loginButton').addEventListener('click', (event)=>{
     console.error('Error:', error);
     alert('An error occurred. Please try again.');
   });
+})
+function sendEmail()
+{
+  email = document.querySelector('#inputEmail').value;
+  console.log(JSON.stringify({email}));
+  fetch('/sendForgotPasswordMail', {
+    method: 'POST',
+    headers:{
+      'Content-Type':'application/json',
+    },
+    body: JSON.stringify({email}),
+  }).then(response=>response.text())
+  .then(response=>{if(response=='sent'){
+    console.log("sent");
+  }})
+}
+document.querySelector('#sendOTP').addEventListener('click', sendEmail)
+document.querySelector('#resendOTP').addEventListener('click', sendEmail)
+
+document.querySelector('#verifyOTP').addEventListener('click', ()=>{
+  otp = document.querySelector('#inputOTP').value
+  fetch('/verifyForgotPasswordOTP', {
+    method: 'POST',
+    headers:{
+      'Content-Type':'application/json',
+    },
+    body: JSON.stringify({otp}),
+  }).then(response=>response.text())
+  .then(response=>{if(response=='verified'){
+    console.log("verified");
+  }})
 })

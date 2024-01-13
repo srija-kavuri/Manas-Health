@@ -7,7 +7,7 @@ const login=require('./loginServer.js')
 const signup=require('./signupServer.js')
 const verify=require('./OTP/veifyOtp.js');
 const User = require('./userModel.js');
-const {sendForgotPasswordMail, verifyForgotPasswordOTP, changePassword} = require('./forgotPasswordServer.js');
+const {sendForgotPasswordMail, verifyForgotPasswordOTP, changePassword} = require('./forgotPasswordServer.cjs');
 const modelPredictions = require('./mlModel/modelPredictions.js');
 
 const app=express();
@@ -67,7 +67,19 @@ app.get('/forgotPassword', (req, res)=>{
 
 app.get('/home', (req,res)=>{
   if(req.session.isAuth){
-    res.sendFile(path.join(__dirname,'public', 'home/home.html'));
+    res.status(302).sendFile(path.join(__dirname,'public', 'home/home.html'));
+  }else{
+    res.redirect('/loginPage');
+  }
+})
+
+app.get('/teacher', (req,res)=>{
+  if(req.session.isAuth && req.session.category == 'Teacher'){
+    res.status(302).sendFile(path.join(__dirname,'public', 'teacher/teacher.html'), (err)=>{
+      if(err){
+        console.log(err);
+      }
+    });
   }else{
     res.redirect('/loginPage');
   }

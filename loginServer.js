@@ -22,7 +22,13 @@ router.post('/', async (req,res)=>{
           if(remember){
             req.session.cookie.maxAge=1000*60*60*24;
           }
-          res.send('success');
+          if(findUser.category == 'Teacher'){
+            req.session.category = 'Teacher';
+            return res.redirect('/teacher');
+          }else{
+            req.session.category = 'Student';
+            return res.redirect('/home');
+          }
         } 
         else res.send('Wrong password');
       }catch(compareError){
@@ -35,7 +41,7 @@ router.post('/', async (req,res)=>{
     console.error('Error finding user:', error);
     res.status(500).json({ message: 'Internal Server Error' });
   }finally{
-    console.log('mongoose disconnected');
+    mongoose.disconnect();
   }
 })
 module.exports = router;
