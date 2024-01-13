@@ -5,20 +5,26 @@ const mongoose = require('mongoose');
 const resultsModel = require('./resultsModel');
 const router = express.Router();
 
+
 router.post('/',cors(), async (req,res)=>{
+
     if(!req.session.isAuth){
+        console.log("unauthorized");
         return res.send("please login to access");
     }
   const {userInputs} = req.body;
     try {
         const response = await axios.post('http://127.0.0.1:5000/predict', userInputs);
+        prediction = response.data.predictions;
         await mongoose.connect("mongodb://localhost:27017/manashealth");
-        email=req.session.useData.email;
+        // email=req.session.useData.email;
+        email = req.session.userData.email;
         const findUser = await resultsModel.findOne({email});
         if(findUser){
+            findUser.currentStatus = prediction;
             findUser.results.push({
                 userInputs: userInputs,
-                result: response.data.predictions,
+                result: prediction,
             })
             findUser.save()
             // .then(updatedResults=>{
@@ -32,14 +38,15 @@ router.post('/',cors(), async (req,res)=>{
                 email: email,
                 results:[{
                     userInputs: userInputs,
-                    result: response.data.predictions,
-                }]
+                    result: prediction,
+                }],
+                currentStatus: prediction
             })
             newResults.save()
             // .then(savedUser=>{console.log("user saved successfully", savedUser)})
             .catch(error=>{console.error( "error saving the user results", error)})
         }
-        return res.send(response.data.predictions);
+        return res.send(prediction);
     } catch (error) {
         console.error('Error making prediction request:', error.message);
         throw error;

@@ -13,6 +13,12 @@ const resultsModel = new mongoose.Schema({
     }],
     default: [],
     required: true,
+  },
+
+  currentStatus:{
+    type: String,
+    required: true,
+    default: "-"
   }
 })
 
