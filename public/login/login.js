@@ -1,12 +1,12 @@
 document.querySelector("#signUp").addEventListener("click", ()=>{
-  window.location.replace('/signupPage');
+  window.location.replace('/signup');
 })
 
 document.querySelector('#loginButton').addEventListener('click', (event)=>{
   event.preventDefault();
   const formData = new FormData(document.querySelector('#form'));
   console.log(formData);
-  fetch('/login', {
+  fetch('/api/login', {
     method: 'POST',
     headers:{
       'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ function sendEmail()
 {
   email = document.querySelector('#inputEmail').value;
   console.log(JSON.stringify({email}));
-  fetch('/sendForgotPasswordMail', {
+  fetch('/api/sendForgotPasswordMail', {
     method: 'POST',
     headers:{
       'Content-Type':'application/json',
@@ -55,7 +55,7 @@ document.querySelector('#resendOTP').addEventListener('click', sendEmail)
 
 document.querySelector('#verifyOTP').addEventListener('click', ()=>{
   otp = document.querySelector('#inputOTP').value
-  fetch('/verifyForgotPasswordOTP', {
+  fetch('/api/verifyForgotPasswordOTP', {
     method: 'POST',
     headers:{
       'Content-Type':'application/json',

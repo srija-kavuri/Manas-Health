@@ -1,4 +1,4 @@
-fetch('/userDetails',{
+fetch('/api/userDetails',{
   method: 'GET',
   headers:{
     'Content-Type': 'application/json',
@@ -16,7 +16,7 @@ fetch('/userDetails',{
 // console.log(userData);
 
 function logout() {
-  fetch('/logout', {
+  fetch('/api/logout', {
     method:'GET',
     headers:{
       'Content-Type': 'application/json',
@@ -24,7 +24,7 @@ function logout() {
   })
   .then(response=>{
     if(response.ok){
-    window.location.replace('/loginPage');
+    window.location.replace('/login');
     }else{
      alert("Response is not ok");
     }

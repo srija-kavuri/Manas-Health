@@ -24,11 +24,11 @@ router.post('/', async (req,res)=>{
           }
           if(findUser.category == 'Teacher'){
             req.session.category = 'Teacher';
-            return res.redirect('/teacher');
           }else{
             req.session.category = 'Student';
-            return res.redirect('/home');
           }
+          return res.redirect('/home');
+
         } 
         else res.send('Wrong password');
       }catch(compareError){

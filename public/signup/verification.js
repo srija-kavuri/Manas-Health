@@ -1,7 +1,7 @@
 document.querySelector('#verifyButton').addEventListener('click', ()=>{
   const otpValue = document.getElementById('otp').value;
   console.log(otpValue);
-  fetch('/verify', {
+  fetch('/api/verify', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

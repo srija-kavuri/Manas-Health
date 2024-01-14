@@ -37,23 +37,23 @@ app.get('/', (req,res)=>{
   res.sendFile(path.join(__dirname,'public', 'index.html'));
 });
 
-app.use('/getPredictions', modelPredictions);
+app.use('/api/getPredictions', modelPredictions);
 
-app.use('/login', login);
+app.use('/api/login', login);
 
-app.use('/signup', signup);
+app.use('/api/signup', signup);
 
-app.use('/verify', verify);
+app.use('/api/verify', verify);
 
-app.use('/sendForgotPasswordMail', sendForgotPasswordMail);
-app.use('/verifyForgotPasswordOTP', verifyForgotPasswordOTP);
-app.use('/changePassword', changePassword);
+app.use('/api/sendForgotPasswordMail', sendForgotPasswordMail);
+app.use('/api/verifyForgotPasswordOTP', verifyForgotPasswordOTP);
+app.use('/api/changePassword', changePassword);
 
-app.get('/loginPage',(req,res)=>{
+app.get('/login',(req,res)=>{
   res.sendFile(path.join(__dirname,'public', 'login/login.html'));
 })
 
-app.get('/signupPage', (req,res)=>{
+app.get('/signup', (req,res)=>{
   res.sendFile(path.join(__dirname, 'public', 'signup/signup.html'));
 })
 
@@ -67,25 +67,23 @@ app.get('/forgotPassword', (req, res)=>{
 
 app.get('/home', (req,res)=>{
   if(req.session.isAuth){
-    res.status(302).sendFile(path.join(__dirname,'public', 'home/home.html'));
+    if(req.session.category === 'Teacher'){
+      res.status(302).sendFile(path.join(__dirname,'public', 'teacher/teacher.html'), (err)=>{
+        if(err){
+          console.log(err);
+        }
+    })
+    }else if(req.session.category === 'Student'){
+      res.status(302).sendFile(path.join(__dirname,'public', 'home/home.html'));
+
+    }
   }else{
-    res.redirect('/loginPage');
+    res.redirect('/login');
   }
 })
 
-app.get('/teacher', (req,res)=>{
-  if(req.session.isAuth && req.session.category == 'Teacher'){
-    res.status(302).sendFile(path.join(__dirname,'public', 'teacher/teacher.html'), (err)=>{
-      if(err){
-        console.log(err);
-      }
-    });
-  }else{
-    res.redirect('/loginPage');
-  }
-})
 
-app.get('/userDetails', async (req, res)=>{
+app.get('/api/userDetails', async (req, res)=>{
   if(req.session.isAuth){
     try{
       await mongoose.connect(mongoUri);
@@ -101,7 +99,7 @@ app.get('/userDetails', async (req, res)=>{
   }
 })
 
-app.get('/logout', (req,res)=>{
+app.get('/api/logout', (req,res)=>{
   if(req.session.isAuth){
     req.session.destroy((error)=>{
       if(error){

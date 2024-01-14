@@ -60,7 +60,7 @@ else if(!regexEmail.test(Email.value)){
       const formData = new FormData(document.querySelector('#myform'));
   console.log('Before fetch');
   console.log(formData);
-  fetch('/signup', {
+  fetch('/api/signup', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -80,7 +80,6 @@ else if(!regexEmail.test(Email.value)){
     })
     .then(data => {
       if (data === "Success") {
-        // localStorage.setItem('isLoggedIn','true');
         window.location.replace('/verification');
       }
     })
@@ -89,9 +88,9 @@ else if(!regexEmail.test(Email.value)){
       console.error('Error:', error);
       alert('An error occurred. Please try again.');
     });
-}
+}  
+})
 
-
-
-  
+document.querySelector("#login").addEventListener("click", ()=>{
+  window.location.replace('/login');
 })
