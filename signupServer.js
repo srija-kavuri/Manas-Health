@@ -12,11 +12,28 @@ router.post('/', async (req, res) => {
   const instituteName = req.body.school;
   const email = req.body.email;
   const password = req.body.password;
+  let className;
+  let sectionName;
+  if(!username||!category||!email||!instituteName||!password){
+    console.log("Field(s) are empty")
+    return res.status(400).send("Field(s) are empty");
+  }
+  if(category === "Student"){
+    className = req.body.className;
+    sectionName = req.body.sectionName;
+  }
+  
   console.log(req.body);
 
   try {
+    let userData;
     const hashedPassword = await bcrypt.hash(password, 12);
-    const userData = { username, category, instituteName, email,hashedPassword};
+    if(category === "Student"){
+      userData = { username, category, instituteName, email,hashedPassword, className, sectionName}
+
+    }else{
+      userData = { username, category, instituteName, email,hashedPassword}
+    }
     await mongoose.connect("mongodb://localhost:27017/manashealth");
     const findUser = await User.findOne({email});
     if(findUser){

@@ -7,7 +7,8 @@ const login=require('./loginServer.js')
 const signup=require('./signupServer.js')
 const verify=require('./OTP/veifyOtp.js');
 const User = require('./userModel.js');
-const {sendForgotPasswordMail, verifyForgotPasswordOTP, changePassword} = require('./forgotPasswordServer.cjs');
+const getStudents = require('./teacherServer.js');
+const {sendForgotPasswordMail, verifyForgotPasswordOTP, changePassword} = require('./forgotPasswordServer.js');
 const modelPredictions = require('./mlModel/modelPredictions.js');
 
 const app=express();
@@ -49,6 +50,8 @@ app.use('/api/sendForgotPasswordMail', sendForgotPasswordMail);
 app.use('/api/verifyForgotPasswordOTP', verifyForgotPasswordOTP);
 app.use('/api/changePassword', changePassword);
 
+app.use('/api/getStudents', getStudents);
+
 app.get('/login',(req,res)=>{
   res.sendFile(path.join(__dirname,'public', 'login/login.html'));
 })
@@ -66,8 +69,13 @@ app.get('/forgotPassword', (req, res)=>{
 })
 
 app.get('/home', (req,res)=>{
+  console.log("request succesfully sent()");
+
   if(req.session.isAuth){
+    console.log("request succesfully sent(auth)");
     if(req.session.category === 'Teacher'){
+    console.log("request succesfully sent(auth teacher)");
+
       res.status(302).sendFile(path.join(__dirname,'public', 'teacher/teacher.html'), (err)=>{
         if(err){
           console.log(err);
@@ -75,7 +83,6 @@ app.get('/home', (req,res)=>{
     })
     }else if(req.session.category === 'Student'){
       res.status(302).sendFile(path.join(__dirname,'public', 'home/home.html'));
-
     }
   }else{
     res.redirect('/login');

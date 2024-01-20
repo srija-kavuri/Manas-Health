@@ -18,3 +18,17 @@ function logout() {
   })
 }
 
+document.getElementById('getStudents').addEventListener('click', ()=>{
+  className = document.getElementById('floatingSelect').value;
+  sectionName = document.getElementById('sectionForTeacher').value;
+  console.log({sectionName, className});
+  fetch('/api/getStudents', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({className, sectionName})
+  }).catch(err=>{
+    console.log(`error getting the student details ${err}`);
+})
+})
