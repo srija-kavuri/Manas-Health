@@ -5,7 +5,7 @@ const session = require("express-session");
 const mongodbSession=require("connect-mongodb-session")(session);
 const login=require('./loginServer.js')
 const signup=require('./signupServer.js')
-const verify=require('./OTP/veifyOtp.js');
+const {verify, changeEmail, resendOTP}=require('./OTP/veifyOtp.js');
 const User = require('./userModel.js');
 const getStudents = require('./teacherServer.js');
 const {sendForgotPasswordMail, verifyForgotPasswordOTP, changePassword} = require('./forgotPasswordServer.js');
@@ -45,6 +45,8 @@ app.use('/api/login', login);
 app.use('/api/signup', signup);
 
 app.use('/api/verify', verify);
+app.use('/api/changeemail', changeEmail);
+app.use('/api/resendotp', resendOTP);
 
 app.use('/api/sendForgotPasswordMail', sendForgotPasswordMail);
 app.use('/api/verifyForgotPasswordOTP', verifyForgotPasswordOTP);
@@ -61,7 +63,7 @@ app.get('/signup', (req,res)=>{
 })
 
 app.get('/verification', (req,res)=>{
-  res.sendFile(path.join(__dirname, 'public', 'signup/verification.html'));
+  res.sendFile(path.join(__dirname, 'public', 'signup/emailverification.html'));
 })
 
 app.get('/forgotPassword', (req, res)=>{
@@ -69,12 +71,9 @@ app.get('/forgotPassword', (req, res)=>{
 })
 
 app.get('/home', (req,res)=>{
-  console.log("request succesfully sent()");
 
   if(req.session.isAuth){
-    console.log("request succesfully sent(auth)");
     if(req.session.category === 'Teacher'){
-    console.log("request succesfully sent(auth teacher)");
 
       res.status(302).sendFile(path.join(__dirname,'public', 'teacher/teacher.html'), (err)=>{
         if(err){

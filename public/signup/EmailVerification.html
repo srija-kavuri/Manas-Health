@@ -18,34 +18,36 @@
             <form>
                 <!-- Email Input -->
                 <div class="row">
+                    <p class="fs-5">An OTP has been sent to you mail. Please enter the OTP to verify your email.</p>
+
                     <div class="col-md-8 mb-3">
-                        <p class="lead">We will send an OTP to your email id.</p>
-                        <input disabled type="email" class="form-control form-control-lg border-0 border-bottom" id="emailInput"value="email@gmail.com" required>
+                        <!-- <p class="lead">We will send an OTP to your email id.</p> -->
+
+                        <input disabled type="email" class="form-control form-control-lg border-0 border-bottom" id="emailInput" required>
                     </div>
                   <!-- Change email link -->
                     <div class="col-md-4 d-flex align-items-end mb-3">
-                        <a onclick="toggleInput()" href="#" class="link-primary text-decoration-none">Change email</a>
+                        <a onclick="toggleInput()" class="link-primary text-decoration-none" id="changeEmail">Change email</a>
                     </div>
                 </div>
                 <!-- confirm email button -->
                 <div class="d-flex justify-content-center mb-3">
-                    <button  type="button" class="btn btn-outline-success custom-btn-saveEmail" id="confirmEmailBtn" style="display: none;">Confirm Email</button>
+                    <button  type="button" class="btn btn-outline-success custom-btn-saveEmail" id="confirmEmailBtn" style="display: none;" onclick="sendMail()">SAVE</button>
                 </div>
                 <!-- OTP Input -->
                 <div class="row">
                     <div class="col-md-8 mb-3">
-                        <p class="lead">Please enter the code sent to your mail.</p>
                         <input type="text" class="form-control form-control-lg border-0 border-bottom" id="inputOTP" required>
                     </div>
                     <!-- Resend code link -->
                     <div class="col-md-4 d-flex align-items-end mb-3">
-                        <a href="#" class="link-primary text-decoration-none">Resend code</a>
+                        <a onclick="resendOTP()" class="link-primary text-decoration-none" id="resendotp">Resend code</a>
                     </div>
                 </div>
 
                 <!-- Submit Button -->
                 <div class="d-flex justify-content-center mt-3">
-                    <button type="submit" class="btn btn-outline-success">Verify Email</button>
+                    <button type="submit" class="btn btn-outline-success" id="verifyButton">Verify Email</button>
                   </div>
                 
             </form>
@@ -56,7 +58,8 @@
     <!-- Bootstrap JS and Popper.js (optional) -->
     <script src="../SignUp/emailVerification.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-eNpAXr1qge/5Zh3X4zp0W3ILO9bmrMT4z5u5I+hKQk5tr9cZsfjvyT9D2RzCDp8H" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
 
 </body>
 </html>

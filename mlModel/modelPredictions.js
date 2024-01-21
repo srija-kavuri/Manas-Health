@@ -15,14 +15,15 @@ router.post('/',cors(), async (req,res)=>{
   const {category, userInputs} = req.body;
     try {
         const response = await axios.post('http://127.0.0.1:5000/predict', {category, userInputs});
-        prediction = response.data.predictions;
+        const prediction = response.data.predictions;
         await mongoose.connect("mongodb://localhost:27017/manashealth");
         // email=req.session.useData.email;
         email = req.session.userData.email;
         const findUser = await resultsModel.findOne({email});
         if(findUser){
-            findUser.currentStatus = prediction;
+            findUser.currentStatus = `${category} - ${prediction}`;
             findUser.results.push({
+                category: category,
                 userInputs: userInputs,
                 result: prediction,
             })
@@ -37,10 +38,11 @@ router.post('/',cors(), async (req,res)=>{
             newResults = new resultsModel({
                 email: email,
                 results:[{
+                    category: category,
                     userInputs: userInputs,
                     result: prediction,
                 }],
-                currentStatus: prediction
+                currentStatus: `${category} - ${prediction}`
             })
             newResults.save()
             // .then(savedUser=>{console.log("user saved successfully", savedUser)})

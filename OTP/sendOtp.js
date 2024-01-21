@@ -1,5 +1,5 @@
-const express=require('express')
-const nodemailer = require("nodemailer");
+const express = require('express');
+const nodemailer = require('nodemailer');
 
 function generateOTP(length) {
   const digits = '0123456789';
@@ -9,47 +9,46 @@ function generateOTP(length) {
     const index = Math.floor(Math.random() * digits.length);
     OTP += digits[index];
   }
-
+  console.log("OTP generated:", OTP);
   return OTP;
 }
 
 async function sendOTP(email, name) {
-    let transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com", // SMTP server address (usually mail.your-domain.com)
-      port: 465, // Port for SMTP (usually 465)
-      secure: true, // Usually true if connecting to port 465
+  console.log("Sending OTP to:", email);
+
+  try {
+    const otp = generateOTP(4);
+
+    const transporter = nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true,
       auth: {
-        user: "vallivirat999@gmail.com", // Your email address
-        pass: "qtzn bnnf wnmc motp", // Password (for gmail, your app password)
-        // ⚠️ For better security, use environment variables set on the server for these values when deploying
+        user: process.env.EMAIL_USER || "vallivirat999@gmail.com",
+        pass: process.env.EMAIL_PASSWORD || "qtzn bnnf wnmc motp",
       },
     });
 
-    async function sendEmail(){
-      try{
-        let info = await transporter.sendMail({
-          from: 'valli <vallivirat999@gmail.com>',
-          to: email,
-          subject: "Verification for Manashealth",
-          html: `
-          <h1>Hello, ${name}</h1>
-          <p>Your One Time Verification Password is ${otp}.</p>
-          <span>Please do not share it with anyone. Have a good day:)</span>
-          `,
-        })
-        return info;
-      }catch(err){
-        console.log('Error sending mail');
-    }
-        
-    };
-    // Define and send message inside transporter.sendEmail() and await info about send from promise:
-   
-    info= await sendEmail();
-    console.log(`message sent ${otp}`); // Random ID generated after successful send (optional)
-    }
+    const info = await transporter.sendMail({
+      from: 'valli <vallivirat999@gmail.com>',
+      to: email,
+      subject: "Verification for Manashealth",
+      html: `
+        <h1>Hello, ${name}</h1>
+        <p>Your One Time Verification Password is ${otp}.</p>
+        <span>Please do not share it with anyone. Have a good day:)</span>
+      `,
+    });
 
-module.exports={
+    console.log("OTP sent successfully");
+    return otp;
+  } catch (err) {
+    console.error('Error sending OTP email:', err);
+    throw new Error('Failed to send OTP via email');
+  }
+}
+
+module.exports = {
   sendOTP,
   generateOTP,
-}
+};

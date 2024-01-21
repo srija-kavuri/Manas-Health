@@ -22,7 +22,7 @@ router.post('/', async (req, res) => {
       for (const student of users) {
         let email = student.email;
         const userResult = await resultsModel.findOne({ email });
-        students.push({ Name: student.username, progress: student.email, currentStatus: userResult.results.currentStatus });
+        students.push({ Name: student.username, progress: student.email, currentStatus: userResult.currentStatus });
       }
       res.status(200).json({ success: true, students: students });
     } else {

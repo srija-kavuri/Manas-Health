@@ -40,8 +40,10 @@
                 <input onclick="toggleInput()" class="form-check-input " type="radio" name="category" id="Student" value="Student" required>
                 <label class="form-check-label" for="Student">Student</label>
             </div>  
-        </div>
-       
+      
+        
+      </div>
+      <span id="catError" class="error"></span>
         <div class="input-group" id="class&section" style="display: none;">
      <!-- Class -->
           <div class="mb-2">
@@ -53,6 +55,7 @@
                 <option value="3">Three</option>
               </select>
               <label for="floatingSelect">Select Class</label>
+              <span id="classerror"></span>
             </div>
           
         </div>
@@ -74,10 +77,12 @@
             </span>
             <div class="form-floating">
             
-                    <input type="text" class="form-control" name="school" id="school" placeholder="School" required>
+                    <input type="text" class="form-control" name="school" id="school" placeholder="School" required value="">
                     <label for="school" class="form-label">School</label>
                 </div>
+               
             </div>
+            <span id="schoolError" class="error"></span>
         </div>
   
     <!-- Email -->

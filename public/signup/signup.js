@@ -12,49 +12,82 @@ const uname=document.getElementById("username");
 const nerror=document.getElementById("nameError");
 const Email=document.getElementById("email");
 const eerror=document.getElementById("emailError");
+const School=document.getElementById("school");
+const serror=document.getElementById("schoolError");
+const classerror = document.getElementById("classerror");
+
+const cerror=document.getElementById("catError");
+
 
 document.getElementById('registerbutton').addEventListener('click', (e) => {
-let messages=[];
-let verify=[];
-let nmessages=[];
-let emessages=[];
-e.preventDefault();
+  let messages = [];
+  let verify = [];
+  let nmessages = [];
+  let emessages = [];
+  let smessages = [];
+  let cmessages = [];
+  let classmessages = []
+  e.preventDefault();
+  var radioButtons = document.querySelectorAll('input[name="category"]');
+  var isChecked = Array.from(radioButtons).some(function (radioButton) {
+    return radioButton.checked;
+  });
+  // const teachercheckbox = document.querySelectorAll('#Teacher');
+  // const studentcheckbox = document.querySelectorAll('#Student');
+  const Class=document.getElementsByName('category');
+  console.log(Class)
+  const dropdown=document.getElementById('floatingSelect');
+  const sec=document.getElementById('Section');
 
-
-if(uname.value==='' || uname.value===null){
-
-  nmessages.push("username is required");
-}
-else if(!regexEmail.test(Email.value)){
-  emessages.push("email should be in correct format(@gmail.com)");
- }
-else if (!regexspecial.test(pass.value)) {
+  if (uname.value.trim() === '') {
+    nmessages.push("username is required");
+  } 
+  else if(!isChecked){
+    cmessages.push("category is required");
+  }else if (School.value.trim() === '') {
+    smessages.push("school name is required");}
+  // } else if (!teachercheckbox.ischecked && !studentcheckbox.ischecked) {
+  //   cmessages.push("category is required");
+  // }
+    
+    
+   else if (!regexEmail.test(Email.value)) {
+    emessages.push("email should be in the correct format (@gmail.com)");
+  } else if (!regexspecial.test(pass.value)) {
     messages.push("Password must contain at least one special character");
-    // return false;
-  }
-else if (!regexUpperCase.test(pass.value)) {
+  } else if (!regexUpperCase.test(pass.value)) {
     messages.push("Password must contain at least one uppercase letter");
-    // return false;
-  } 
-else if (!regexDigit.test(pass.value)) {
+  } else if (!regexDigit.test(pass.value)) {
     messages.push("Password must contain at least one digit");
-    // return false;
+  } else if (pass.value.length < 6) {
+    messages.push("password must be at least 6 characters");
+  } else if (pass.value !== verifypass.value) {
+    verify.push("password and confirm password must be the same!");
+  }
+
+  if(Class==='Student'){
+    if (dropdown.value==="Class"){
+     cmessages.push("class is required");
+    }
+
+    if (sec.value.trim()===''){
+     cmessages.push("section is required");
+    }
+   }
+
+  if (cmessages.length > 0 || smessages.length > 0 || verify.length > 0 || messages.length > 0 || emessages.length > 0 || nmessages.length > 0) {
+    console.log("Entering error block");
+    passerror.innerHTML = messages.join(',');
+    nerror.innerHTML = nmessages.join(', ');
+    confirmPassword.innerHTML = verify.join(', ');
+    eerror.innerHTML = emessages.join(', ');
+    serror.innerHTML = smessages.join(', ');
+    cerror.innerHTML = cmessages.join(', '); // Display the category error
+    classerror.innerHTML = classmessages.join(', ');
   } 
-else if(pass.value.length < 6){
-    messages.push("password atleast contain 6 characters");
-}
-else if (pass.value !=verifypass.value){
-  verify.push("password and confirm password must be same!");
-}
 
 
-    if(verify.length>0 || messages.length>0 || emessages.length>0 || nmessages.length>0){
-      console.log("ENtereing error block");
-    passerror.innerHTML=messages.join(',');
-    nerror.innerHTML=nmessages.join(', ');
-    confirmPassword.innerHTML=verify.join(', ');
-    eerror.innerHTML=emessages.join(', ');
-}
+
      else {
       console.log("entered else block");
 
@@ -81,14 +114,15 @@ else if (pass.value !=verifypass.value){
       if (response.status === 500) {
         alert("An error occured please try again");
       } else {
-        return response.text();
+        return response.json();
       }
     })
     .then(data => {
-      if (data === "Success") {
+      if (data.success) {
+        localStorage.setItem("userEmail", Email.value);
         window.location.replace('/verification');
       }
-         else if(data=== "Field(s) are empty"){
+         else if(data.message=== "Field(s) are empty"){
         alert("Please fill all the fields");
       }else{
         alert('Account with the email already exists.');
