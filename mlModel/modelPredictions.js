@@ -8,13 +8,13 @@ const router = express.Router();
 
 router.post('/',cors(), async (req,res)=>{
 
-    if(!req.session.isAuth){
-        console.log("unauthorized");
-        return res.send("please login to access");
-    }
-  const {userInputs} = req.body;
+    // if(!req.session.isAuth){
+    //     console.log("unauthorized");
+    //     return res.send("please login to access");
+    // }
+  const {category, userInputs} = req.body;
     try {
-        const response = await axios.post('http://127.0.0.1:5000/predict', userInputs);
+        const response = await axios.post('http://127.0.0.1:5000/predict', {category, userInputs});
         prediction = response.data.predictions;
         await mongoose.connect("mongodb://localhost:27017/manashealth");
         // email=req.session.useData.email;

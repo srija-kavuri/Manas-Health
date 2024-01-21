@@ -8,6 +8,7 @@ const resultsModel = new mongoose.Schema({
 
   results: {
     type: [{
+      category: String,
       userInputs: Array,
       result: String
     }],

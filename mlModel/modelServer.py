@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
-import model  # Import your machine learning model here
+import anxiety.anxietymodel as anxietyprediction# Import your machine learning model here
+import depression.predict as depressionprediction
 
 app = Flask(__name__)
 
@@ -7,9 +8,13 @@ app = Flask(__name__)
 def predict():
     try:
         # Get input data from the request
-        userInputs = request.get_json()
-    
-        predictions = model.predict_severity(userInputs)
+        inputs = request.get_json()
+        print(inputs)
+        category = inputs["category"]
+        if(category == "depression"):
+            predictions = depressionprediction.predict_severity(inputs['userInputs'])
+        else:
+            predictions = anxietyprediction.predict_severity(inputs['userInputs'])
         # print("this is the predictions", predictions)
         
         return jsonify({'predictions': predictions})
