@@ -15,17 +15,18 @@ router.post('/',cors(), async (req,res)=>{
   const {category, userInputs} = req.body;
     try {
         const response = await axios.post('http://127.0.0.1:5000/predict', {category, userInputs});
-        const prediction = response.data.predictions;
+        const {score, severity_level} = response.data;
         await mongoose.connect("mongodb://localhost:27017/manashealth");
-        // email=req.session.useData.email;
-        email = req.session.userData.email;
+        const email = "valli";
+        //const email = req.session.userData.email;
         const findUser = await resultsModel.findOne({email});
         if(findUser){
-            findUser.currentStatus = `${category} - ${prediction}`;
+            findUser.currentStatus[category] = `${severity_level}-${score}`
             findUser.results.push({
-                category: category,
-                userInputs: userInputs,
-                result: prediction,
+                category,
+                userInputs,
+                score,
+                severity_level
             })
             findUser.save()
             // .then(updatedResults=>{
@@ -40,15 +41,17 @@ router.post('/',cors(), async (req,res)=>{
                 results:[{
                     category: category,
                     userInputs: userInputs,
-                    result: prediction,
+                    score,
+                    severity_level
                 }],
-                currentStatus: `${category} - ${prediction}`
-            })
+                currentStatus : {
+                    [category]:severity_level
+                }})
             newResults.save()
             // .then(savedUser=>{console.log("user saved successfully", savedUser)})
             .catch(error=>{console.error( "error saving the user results", error)})
         }
-        return res.send(prediction);
+        return res.json({score,severity_level});
     } catch (error) {
         console.error('Error making prediction request:', error.message);
         throw error;

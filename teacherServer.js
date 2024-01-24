@@ -1,8 +1,10 @@
 const express = require('express');
-const router = express.Router();
 const mongoose = require('mongoose');
 const User = require('./userModel');
 const resultsModel = require('./mlModel/resultsModel');
+
+const router = express.Router();
+
 router.post('/', async (req, res) => {
   try {
     const className = req.body.className;

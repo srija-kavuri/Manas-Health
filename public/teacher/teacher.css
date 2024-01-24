@@ -1,0 +1,23 @@
+.custom-nav-text {
+  font-size: 30px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+#table-container{
+  padding: 0 20px 0 20px;
+}

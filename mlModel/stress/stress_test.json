@@ -1,0 +1,68 @@
+{
+  "category": "stress",
+  "questions": [
+    {
+      "question": "I found it hard to wind down",
+      "options": [
+        "Never",
+        "Sometimes",
+        "Often",
+        "Always"
+      ]
+    },
+    {
+      "question": "I tended to over-react to situations",
+      "options": [
+        "Never",
+        "Sometimes",
+        "Often",
+        "Always"
+      ]
+    },
+    {
+      "question": "I felt that I was using a lot of nervous energy",
+      "options": [
+        "Never",
+        "Sometimes",
+        "Often",
+        "Always"
+      ]
+    },
+    {
+      "question": "I found myself getting agitated",
+      "options": [
+        "Never",
+        "Sometimes",
+        "Often",
+        "Always"
+      ]
+    },
+    {
+      "question": "I found it difficult to relax",
+      "options": [
+        "Never",
+        "Sometimes",
+        "Often",
+        "Always"
+      ]
+    },
+    {
+      "question": "I was intolerant of anything that kept me from getting on with what I was doing",
+      "options": [
+        "Never",
+        "Sometimes",
+        "Often",
+        "Always"
+      ]
+    },
+    {
+      "question": "I felt that I was rather touchy",
+      "options": [
+        "Never",
+        "Sometimes",
+        "Often",
+        "Always"
+      ]
+    }
+  ]
+}

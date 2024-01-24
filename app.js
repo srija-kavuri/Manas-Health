@@ -8,6 +8,7 @@ const signup=require('./signupServer.js')
 const {verify, changeEmail, resendOTP}=require('./OTP/veifyOtp.js');
 const User = require('./userModel.js');
 const getStudents = require('./teacherServer.js');
+const  {progress, setProgressParam, getProgress} = require('./progressServer.js');
 const {sendForgotPasswordMail, verifyForgotPasswordOTP, changePassword} = require('./forgotPasswordServer.js');
 const modelPredictions = require('./mlModel/modelPredictions.js');
 
@@ -53,6 +54,9 @@ app.use('/api/verifyForgotPasswordOTP', verifyForgotPasswordOTP);
 app.use('/api/changePassword', changePassword);
 
 app.use('/api/getStudents', getStudents);
+app.use('/progress', progress);
+app.use('/api/progress', setProgressParam);
+app.use('/api/student/progress', getProgress);
 
 app.get('/login',(req,res)=>{
   res.sendFile(path.join(__dirname,'public', 'login/login.html'));
@@ -74,7 +78,6 @@ app.get('/home', (req,res)=>{
 
   if(req.session.isAuth){
     if(req.session.category === 'Teacher'){
-
       res.status(302).sendFile(path.join(__dirname,'public', 'teacher/teacher.html'), (err)=>{
         if(err){
           console.log(err);

@@ -1,0 +1,68 @@
+{
+  "category": "depression",
+  "questions": [
+    {
+      "question": "I couldn't seem to experience any positive feeling at all",
+      "options": [
+        "Never",
+        "Sometimes",
+        "Often",
+        "Always"
+      ]
+    },
+    {
+      "question": "I found it difficult to work up the initiative to do things",
+      "options": [
+        "Never",
+        "Sometimes",
+        "Often",
+        "Always"
+      ]
+    },
+    {
+      "question": "I felt that I had nothing to look forward to",
+      "options": [
+        "Never",
+        "Sometimes",
+        "Often",
+        "Always"
+      ]
+    },
+    {
+      "question": "I felt down-hearted and blue",
+      "options": [
+        "Never",
+        "Sometimes",
+        "Often",
+        "Always"
+      ]
+    },
+    {
+      "question": "I was unable to become enthusiastic about anything",
+      "options": [
+        "Never",
+        "Sometimes",
+        "Often",
+        "Always"
+      ]
+    },
+    {
+      "question": "I felt I wasn\u2019t worth much as a person",
+      "options": [
+        "Never",
+        "Sometimes",
+        "Often",
+        "Always"
+      ]
+    },
+    {
+      "question": "I felt that life was meaningless",
+      "options": [
+        "Never",
+        "Sometimes",
+        "Often",
+        "Always"
+      ]
+    }
+  ]
+}

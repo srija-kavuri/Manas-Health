@@ -13,7 +13,7 @@ def predict_severity(user_inputs):
     for i in range(1, 8):
         user_inputs_dict[f'q{i}'] = [user_inputs[i-1]]
 
-    user_inputs_dict['Anxiety'] = [sum(user_inputs)]
+    user_inputs_dict['Stress'] = [sum(user_inputs)]
     user_inputs_dict['Multiply by 2'] = [2 * sum(user_inputs)]
 
     user_inputs_df = pd.DataFrame(user_inputs_dict)
@@ -29,6 +29,6 @@ def predict_severity(user_inputs):
 
     # Convert numeric predictions to string labels using the loaded LabelEncoder
     predictions_string = le.inverse_transform(predictions_numeric)
-
+    result = {'score' : user_inputs_dict['Stress'][0],'severity_level' : predictions_string[0]}
     # Example: Return the predicted values in string format
-    return predictions_string[0]
+    return result

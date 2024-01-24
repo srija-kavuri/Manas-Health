@@ -3,23 +3,35 @@ const mongoose = require('mongoose');
 const resultsModel = new mongoose.Schema({
   email:{
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
 
   results: {
     type: [{
       category: String,
       userInputs: Array,
-      result: String
+      score: String,
+      severity_level: String
     }],
     default: [],
     required: true,
   },
 
   currentStatus:{
-    type: String,
+    type: {
+      depression:String,
+      anxiety:String,
+      autism:String,
+      stress:String,
+      dyslexia:String,
+    },
     required: true,
-    default: "-"
+    default: {depression:"",
+      anxiety:"",
+      autism:"",
+      stress:"",
+      dyslexia:""}
   }
 })
 

@@ -1,0 +1,405 @@
+{
+  "category": "autism",
+  "questions": [
+    {
+      "question": "Has poor eye contact",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Lacks social smile",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Remains aloof",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Does not reach out to others",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Unable to relate to people",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Unable to respond to social/environmental cues",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Engages in solitary and repetitive play activities",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Unable to take turns in social interaction",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Does not maintain peer relationships",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Shows inappropriate emotional response",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Shows exaggerated emotions",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Engages in self-stimulating emotions",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Lacks fear of danger",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Excited or agitated for no apparent reason",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Acquired speech and lost it",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Has difficulty in using non-verbal language or gestures to communicate",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Engages in stereotyped and repetitive use of language",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Engages in echolalic speech",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Produces infantile squeals/unusual noises",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Unable to initiate or sustain conversation with others",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Uses jargon or meaningless words",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Uses pronoun reversals",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Unable to grasp pragmatics of communication (real meaning)",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Engages in stereotyped and repetitive motor mannerisms",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Shows attachment to inanimate objects",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Shows hyperactivity/restlessness",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Exhibits aggressive behavior",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Throws temper tantrums",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Engages in self-injurious behavior",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Insists on sameness",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Unusually sensitive to sensory stimuli",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Stares into space for long periods of time",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Has difficulty in tracking objects",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Has unusual vision",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Insensitive to pain",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Responds to objects/people unusually by smelling, touching or tasting",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Inconsistent attention and concentration",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Shows delay in responding",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Has unusual memory of some kind",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    },
+    {
+      "question": "Has \u2018savant\u2019 ability",
+      "options": [
+        "Rarely",
+        "Sometimes",
+        "Frequently",
+        "Mostly",
+        "Always"
+      ]
+    }
+  ]
+}

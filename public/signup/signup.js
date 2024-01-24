@@ -17,7 +17,7 @@ const serror=document.getElementById("schoolError");
 const classerror = document.getElementById("classerror");
 
 const cerror=document.getElementById("catError");
-
+let category;
 
 document.getElementById('registerbutton').addEventListener('click', (e) => {
   let messages = [];
@@ -26,26 +26,40 @@ document.getElementById('registerbutton').addEventListener('click', (e) => {
   let emessages = [];
   let smessages = [];
   let cmessages = [];
-  let classmessages = []
   e.preventDefault();
   var radioButtons = document.querySelectorAll('input[name="category"]');
   var isChecked = Array.from(radioButtons).some(function (radioButton) {
+    if(radioButton.checked){
+      category = radioButton.value;
+      console.log(category);
+    }
     return radioButton.checked;
   });
   // const teachercheckbox = document.querySelectorAll('#Teacher');
   // const studentcheckbox = document.querySelectorAll('#Student');
-  const Class=document.getElementsByName('category');
-  console.log(Class)
+ 
   const dropdown=document.getElementById('floatingSelect');
   const sec=document.getElementById('Section');
 
   if (uname.value.trim() === '') {
-    nmessages.push("username is required");
+    nmessages.push("Please enter your name");
   } 
   else if(!isChecked){
-    cmessages.push("category is required");
-  }else if (School.value.trim() === '') {
-    smessages.push("school name is required");}
+    cmessages.push("category");
+  }else if(category==='Student' && (dropdown.value==="Class" || sec.value.trim()==='')){
+    if (dropdown.value==="Class"){
+      console.log("no class");
+     cmessages.push("class");
+    }
+
+    if (sec.value.trim()===''){
+      console.log("no section");
+
+     cmessages.push("section");
+    }
+   }
+  else if (School.value.trim() === '') {
+    smessages.push("Please enter your institute name");}
   // } else if (!teachercheckbox.ischecked && !studentcheckbox.ischecked) {
   //   cmessages.push("category is required");
   // }
@@ -65,25 +79,19 @@ document.getElementById('registerbutton').addEventListener('click', (e) => {
     verify.push("password and confirm password must be the same!");
   }
 
-  if(Class==='Student'){
-    if (dropdown.value==="Class"){
-     cmessages.push("class is required");
-    }
-
-    if (sec.value.trim()===''){
-     cmessages.push("section is required");
-    }
-   }
+  
 
   if (cmessages.length > 0 || smessages.length > 0 || verify.length > 0 || messages.length > 0 || emessages.length > 0 || nmessages.length > 0) {
-    console.log("Entering error block");
     passerror.innerHTML = messages.join(',');
     nerror.innerHTML = nmessages.join(', ');
     confirmPassword.innerHTML = verify.join(', ');
     eerror.innerHTML = emessages.join(', ');
     serror.innerHTML = smessages.join(', ');
-    cerror.innerHTML = cmessages.join(', '); // Display the category error
-    classerror.innerHTML = classmessages.join(', ');
+    if(cmessages.length > 0){
+      cerror.innerHTML = `Please select a ${cmessages.join(' and ')}`; // Display the category error
+    }else{
+      cerror.innerHTML = ``;
+    }
   } 
 
 

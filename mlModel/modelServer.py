@@ -16,8 +16,10 @@ def predict():
         else:
             predictions = anxietyprediction.predict_severity(inputs['userInputs'])
         # print("this is the predictions", predictions)
+        score = predictions["score"]
+        severity_level = predictions["severity_level"]
         
-        return jsonify({'predictions': predictions})
+        return jsonify({"score":score, "severity_level": severity_level})
 
     except Exception as e:
         return jsonify({'error': str(e)})

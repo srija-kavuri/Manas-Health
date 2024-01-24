@@ -29,6 +29,6 @@ def predict_severity(user_inputs):
 
     # Convert numeric predictions to string labels using the loaded LabelEncoder
     predictions_string = le.inverse_transform(predictions_numeric)
-
+    result = {'score' : user_inputs_dict['Anxiety'][0],'severity_level' : predictions_string[0]}
     # Example: Return the predicted values in string format
-    return predictions_string[0]
+    return result

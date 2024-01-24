@@ -41,8 +41,10 @@ router.post('/', async (req, res) => {
     }else{
       req.session.userData=userData;
       // const otp = sendMail.generateOTP(4);
-      otp = sendMail.sendOTP(email, username);
+      otp = await sendMail.sendOTP(email, username);
+      console.log(otp);
       req.session.otp=otp;
+      console.log(req.session.otp);
       res.status(200).json({success: true});
     }
   } catch (error) {

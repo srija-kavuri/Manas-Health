@@ -1,3 +1,4 @@
+console.log(window.location.pathname);
 fetch('/api/userDetails',{
   method: 'GET',
   headers:{
