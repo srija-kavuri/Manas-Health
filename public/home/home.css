@@ -1,77 +1,72 @@
-body{
-  /* background-color: #d0ecfe9b; */
-  background-color: rgba(255, 255, 255, 0.8);
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  /* background: linear-gradient(to top, #3be25c, #58e3d5, #dffaf1, #d875ff, #f7c738) */
+  /* green to blue */
+  background: linear-gradient(to top, #00a5cf,#7ae582,  #9fffcb, #66babc, #66babc);
+  /* pink to green */
+  /* background: linear-gradient(to top, #71CB90, #B5E8A4, #FFC8C4, #FFB0C4, #FF97C4);   */
+  /* green to green */
+  /* background: linear-gradient(to top, #43AC78, #64C695, #66D6A2, #93E9BE, #66babc); */
+ 
 }
-.custom-button {
-    height: auto;
-    font-weight: 200px;
-    /* background-color:rgb(21, 13, 129); */
-    color: white;
-    /* Add any custom styling for buttons */}
-    .btn-group {
-     margin-bottom: 20px;
-     height: 50px;
-     margin-top: 10px;
-     
-    }
-    .navbar-nav a {
-      font-weight: 100;
-      font-family: 'Lora', serif;
-  /* font-family: 'Roboto', sans-serif;
-  font-family: 'Satisfy';  */
-      font-size: 20px; /* Adjust the font size as needed */
-      /* Add other styles as needed (e.g., color, text-decoration, etc.) */
-  }
 
-  /* Example: Change the font style and size for the disabled link */
-  .navbar-nav a.disabled {
-      font-style: italic;
-      font-size: 20px;
-      color: gray; /* Adjust the color as needed */
-  }
-
-  /* Example: Change the font style and size for the button */
-  .navbar-nav .btn {
-      font-family: "Your Desired Font", sans-serif;
-      font-size: 18px;
-      /* Add other styles as needed for the button */
-  }
-    .container{
-      margin-top:20px;
-      padding: 20px;
-      border-radius: 20px;
-    }
-    .c2{
-      /* background-color: rgb(182,227,212); */
-      /* background-color: #2ac4f3d7; */
-      background-color: lightskyblue;
-    }
-    .gap{
-        height: 40px;
-    }
-    .gap-heading{
-        height: 20px;
-    }
-    .navbar-brand{
-      font-weight: 100;
-      font-family: 'Lora', serif;
-  /* font-family: 'Roboto', sans-serif;
-  font-family: 'Satisfy', cursive; */
-  font-size: larger;
-  margin-bottom: 1px;
-  padding-left: 20px;
-  padding-top: 7px;
-  font-size: 40px;
-height: 60px; }
+/* Navigation Bar */
+.navbar-titles{
+    font-weight: 500;
+    font-family: 'Lora', serif;
+    font-size: 20px; 
     
+}
+
 .profile-icon{
   padding-left: 23%;
 }
-.custom-table{
-  margin-top: 10%;
+
+
+/* page */
+/* landing image */
+.images{
+  height: 100vh;
+  /* background-image: url("https://media.licdn.com/dms/image/C5612AQH7k9yuvMDJ0g/article-cover_image-shrink_720_1280/0/1632916378382?e=1710979200&v=beta&t=v6zvFsukr8CPwdspfwr8iBYhZXOjTbmWdCgXdcqjqJo"); */
+  background-image: url("../Images/homepageimg1.jpeg.jpg");
+  background-size:cover ;
+  background-position: center;
+  color: white; 
 }
-.edit-profile{
-  border-radius: 25px;
-  padding-left: 10px;
-  padding-right: 10px;
+
+.imageTextContainer {
+  color:black;
+  text-align: center;
+  /* margin-top: 15%; */
+  /* justify-content: end; */
+}
+
+#greetingWish{
+  /* margin-top: 10%; */
+  font-weight: 400;
+}
+
+.custom-quote{
+  width: 500px;
+  /* margin-left: 700px; */
+  /* margin-top: 15%; */
+  /* display: flex;
+  justify-content:  end; */
+}
+
+
+
+/* articles */
+.articles-box{
+  
+  border: 2px black solid;
+  height: 400px;
+}
+
+/* resources  */
+.resources-box{
+  height: 400px;
+  border: 2px black solid;
 }

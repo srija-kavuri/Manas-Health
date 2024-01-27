@@ -31,8 +31,21 @@ function logout() {
 }
 
 document.getElementById('getStudents').addEventListener('click', ()=>{
-  className = document.getElementById('floatingSelect').value;
-  sectionName = document.getElementById('sectionForTeacher').value;
+  const className = document.getElementById('floatingSelect').value;
+  const sectionName = document.getElementById('sectionForTeacher').value;
+  let errormsg=[];
+  const serror=document.getElementById('studenterror');
+  serror.textContent='';
+ if(className==='Class'){
+  errormsg.push("please select a class");
+ }
+ else if(sectionName.trim() === ''){
+    errormsg.push("please select a section");
+ }
+ if (errormsg.length>0){
+ serror.innerHTML=errormsg.join(", ");
+
+ }else{
   fetch('/api/getStudents', {
     method: 'POST',
     headers: {
@@ -56,6 +69,8 @@ document.getElementById('getStudents').addEventListener('click', ()=>{
   .catch(err=>{
     console.log(`error getting the student details ${err}`);
 })
+ }
+  
 })
 
 // Function to create a table based on data
@@ -64,6 +79,7 @@ function createTable(data) {
   tableContainer.innerHTML = ``;
   // Create a table element
   const table = document.createElement('table');
+  table.id='myTable';
 
   // Create a header row
   const headerRow = document.createElement('tr');
@@ -83,7 +99,7 @@ function createTable(data) {
       const td = document.createElement('td');
       if(key==="progress"){
         var param = encodeURIComponent(item[key]);
-        td.innerHTML = `<a href="/api/progress/${param}" target="_blank">progress </a>`
+        td.innerHTML = `<a href="/progress/${param}" target="_blank">progress </a>`
       }else if(key==="currentStatus"){
         console.log(key);
         currentStatusText = ``;
@@ -91,7 +107,10 @@ function createTable(data) {
           if(testCategory!="_id"){
             console.log(testCategory);
             console.log(item[key][testCategory]);
-            currentStatusText+=`${testCategory.toUpperCase()}-${item[key][testCategory]}\n`;
+            if(currentStatusText){
+              currentStatusText+=', '
+            }
+            currentStatusText+=`${testCategory.toUpperCase()}-${item[key][testCategory]}`;
           }
         }
         td.textContent=currentStatusText;
@@ -109,4 +128,21 @@ function createTable(data) {
   tableContainer.appendChild(table);
 }
 
-  // Call the function with the backend data
+
+document.getElementById('searchButton').addEventListener('click', (e)=> {
+  const searchinput=document.getElementById('searchInput');
+const searchTerm = searchinput.value.toLowerCase();
+  const tables = document.getElementById('myTable');
+  const rows = tables.getElementsByTagName('tr');
+
+  for (let i = 1; i < rows.length; i++) { 
+    const name = rows[i].getElementsByTagName('td')[1].textContent.toLowerCase();
+    const currentStatus = rows[i].getElementsByTagName('td')[3].textContent.toLowerCase();
+
+    if (name.includes(searchTerm)|| currentStatus.includes(searchTerm)) {
+      rows[i].style.display = '';
+    } else {
+      rows[i].style.display = 'none';
+    }
+  }
+});

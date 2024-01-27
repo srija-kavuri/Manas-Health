@@ -3,21 +3,28 @@ import joblib
 
 def predict_severity(user_inputs):
     # Load the trained model from the joblib file
-    model = joblib.load('C:/Users/valli/Desktop/project school/manashealth/mlModel/dylexia/dyslexia_final_model.joblib')
+    model = joblib.load('C:/Users/valli/Desktop/project school/manashealth/mlModel/adhd/adhd_final_model.joblib')
 
     # Load the LabelEncoder used during training
-    le = joblib.load('C:/Users/valli/Desktop/project school/manashealth/mlModel/dylexia/label_encoder.joblib')
+    le = joblib.load('C:/Users/valli/Desktop/project school/manashealth/mlModel/adhd/label_encoder.joblib')
 
     # Example: Create a DataFrame with the input values using a for loop
     user_inputs_dict = {}
-    for i in range(1, 24):
+    for i in range(1, 7):
         user_inputs_dict[f'q{i}'] = [user_inputs[i-1]]
+    sum = 0
+    for i in range(1,4):
+        if (user_inputs_dict[f'q{i}'][0] >=2):
+            sum +=1
+    for i in range(4,7):
+        if (user_inputs_dict[f'q{i}'][0] >=3):
+            sum +=1
+    user_inputs_dict['Adhd'] = [sum ]
 
-    user_inputs_dict['Dyslexia'] = [sum(user_inputs)]
     user_inputs_df = pd.DataFrame(user_inputs_dict)
 
     # Ensure column order and names match the ones used during training
-    user_inputs_df = user_inputs_df[['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7','q8', 'q9', 'q10', 'q11', 'q12', 'q13', 'q14','q15', 'q16', 'q17', 'q18', 'q19', 'q20', 'q21','q22', 'q23','Dyslexia']]
+    user_inputs_df = user_inputs_df[['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'Adhd']]
 
     # Prepare features for prediction
     user_inputs_encoded = pd.get_dummies(user_inputs_df)  # Apply one-hot encoding if needed
@@ -27,6 +34,6 @@ def predict_severity(user_inputs):
 
     # Convert numeric predictions to string labels using the loaded LabelEncoder
     predictions_string = le.inverse_transform(predictions_numeric)
-    result = {'score' : user_inputs_dict['Dyslexia'][0],'severity_level' : predictions_string[0]}
+    result = {'score' : user_inputs_dict['Adhd'][0],'severity_level' : predictions_string[0]}
     # Example: Return the predicted values in string format
     return result

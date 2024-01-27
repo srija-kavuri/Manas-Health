@@ -17,11 +17,11 @@ router.post('/',cors(), async (req,res)=>{
         const response = await axios.post('http://127.0.0.1:5000/predict', {category, userInputs});
         const {score, severity_level} = response.data;
         await mongoose.connect("mongodb://localhost:27017/manashealth");
-        const email = "valli";
+        const email = "valli@gmail.com";
         //const email = req.session.userData.email;
         const findUser = await resultsModel.findOne({email});
         if(findUser){
-            findUser.currentStatus[category] = `${severity_level}-${score}`
+            findUser.currentStatus[category] = severity_level
             findUser.results.push({
                 category,
                 userInputs,

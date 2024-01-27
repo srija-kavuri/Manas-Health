@@ -18,7 +18,7 @@
 
 <!-- Navigation Bar -->
   <div class="images">
-    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent sticky-top" >
       <div class="container-fluid p-0">
         <p class="fs-1 navbar-brand fw-semibold ms-4 pt-2">Manas Health</p>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,21 +58,7 @@
         </div>
       </div>
     </nav>
-
-    <div class="container imageTextContainer">
-      <div class="row text-end">
-        <p class="display-5 mt-5" id="greetingWish"></p>
-      </div>
-      <div class="row mt-5">
-        <div class="col col-md-6 offset-md-6 text-end">
-        <!-- <div class="text-wrap custom-quote"> -->
-          <p class="lead text-wrap">"Just like flowers need sunshine to bloom, your mind needs love and care to grow. Take a moment each day to water your thoughts with positivity and watch your happiness blossom!"</p>
-        </div>
-      </div>
-    </div>
-    
   </div>
-
 
 <!-- Progress -->
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight1" aria-labelledby="offcanvasRightLabel">
@@ -102,13 +88,6 @@
     </div> 
     <table class="table mt-5">
       <thead>
-        <tr>
-          <th scope="col"><p>student details</p></th>
-        
-          <th scope="col"></th>
-        </tr>
-      </thead>
-      <tbody>
         <tr>
           <th scope="row">username</th>
           <td>
@@ -166,7 +145,7 @@
             <p>Are you want to sure logout.</p>
           </div>
           <div class="modal-footer">
-            <a href="../Login/login.html"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >YES</button></a>
+            <a><button type="button" onclick="logout()" class="btn btn-secondary" data-bs-dismiss="modal" >YES</button></a>
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">NO</button>
             
           </div>
@@ -175,6 +154,21 @@
     </div>
   </div>
 
+<!--Landing pic -->
+<!-- <div class="images">
+  <div class="imageTextContainer">
+    <dl class="row">
+      <dt class="col-12">Nested definition list</dt>
+      <dd class="col-sm-8">I heard you like definition lists. Let me put a definition list inside your definition list.</dd>
+    </dl> -->
+    <!-- <div class="h1 custom-ImageText" id="colors1">MANAS HEALTH</div>
+    <p class="fs-5" id="colors2">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptatum aliquam. Harum, iure repudiandae placeat tempore quod nobis voluptatibus optio nemo alias, ex fugiat accusantium officiis similique quaerat. Aperiam, explicabo.
+    </p> -->
+  <!-- </div>
+
+</div> --> 
+ 
  
 <!-- test cards -->
 
@@ -192,129 +186,128 @@
     <div class="container ">
     <!-- Display the initial 3 cards -->
       <div class="row g-5" >
-         <!-- Card 1 -->
-         <div class="col-md-4">
-          <div class="card " >
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">General Test</h5>
-              <p class="card-text">Assess your overall well-being and mental resilience with our General Mental Health Test. Explore various aspects of your mental state to gain insights into your emotional balance and coping mechanisms.</p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary">Take Test</a>
-            </div>
-          </div>
-        </div>
-        <!-- Card 2 -->
+        <!-- Card 1 -->
           <div class="col-md-4" >
             <!-- <div class="card h-10">Card 1</div> -->
             <div class="card h-100" >
-              <img src="https://static.vecteezy.com/system/resources/previews/014/497/287/non_2x/tired-business-woman-holding-her-hair-under-stress-during-work-headache-migraine-dizzy-tired-frustrated-deadline-tiredness-feeling-exhausted-because-of-overwork-concept-illustration-vector.jpg" class="card-img-top" alt="...">
+              <img src="https://img.freepik.com/premium-vector/tired-business-woman-holding-her-hair-stress-during-work-headache-migraine-dizzy-tired-frustrated-deadline-tiredness-feeling-exhausted-because-overwork-concept-illustration_270158-536.jpg?w=740" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title ">Stress</h5>
-                <p class="card-text">Stress is the body's natural response to challenges, triggering a 'fight or flight' reaction. Chronic stress can negatively impact mental and physical well-being.</p>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               </div>
               <div class="card-footer">
-                <a href="#" class="btn btn-primary">Take Test</a>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
               </div>
             </div>
           </div>
 
-        <!-- Card 3 -->
+        <!-- Card 2 -->
           <div class="col-md-4">
             <!-- <div class="card h-10">Card 2</div> -->
             <div class="card h-100">
               <img src="https://img.freepik.com/free-vector/family-stress-concept-illustration_114360-8875.jpg?w=740&t=st=1705398440~exp=1705399040~hmac=7dd7e754a0d2b7e6063294316dc8bff822ff5ea772354d0e5b2d56933e6d6b25" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">ADHD</h5>
-                <p class="card-text">ADHD is a neurodevelopmental disorder characterized by inattention, hyperactivity, and impulsivity, often affecting academic and social functioning.</p>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               </div>
               <div class="card-footer">
-                <a href="#" class="btn btn-primary">Take Test</a>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
               </div>
             </div>
           </div>
 
-        <!-- Card 4 -->
+        <!-- Card 3 -->
           <div class="col-md-4">
             <!-- <div class="card h-10">Card 3</div> -->
-            <div class="card d-none h-100">
+            <div class="card h-100">
               <img src="https://img.freepik.com/premium-photo/rain-desolation-depicting-teenage-grief-isolation-illustration_818261-18044.jpg?w=996" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Depression</h5>
-                <p class="card-text">"Depression involves persistent feelings of sadness and a lack of interest or pleasure in activities, impacting mood, energy levels, and overall quality of life.</p>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               </div>
               <div class="card-footer">
-                <a href="#" class="btn btn-primary">Take Test</a>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
               </div>
             </div>
           </div>
 
     <!-- Additional cards initially hidden -->
-        <!-- Card 5 -->
+        <!-- Card 4 -->
           <div class="col-md-4">
-            <!-- <div class="card d-none h-100">Card 6</div> -->
-            <div class="card d-none h-100">
-              <img src="https://thumbs.dreamstime.com/b/child-suffering-dyslexia-having-difficulty-reading-book-stressed-little-boy-doing-hard-homework-desk-disorder-223355452.jpg" class="card-img-top" alt="...">
+            <!-- <div class="card d-none h-100">Card 4</div> -->
+            <div class="card d-none h-100" >
+              <img src="..." class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title">Dyslexia</h5>
-                <p class="card-text">Dyslexia is a learning disorder that impairs reading, spelling, and writing, despite average or above-average intelligence and adequate instruction.</p>
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
               </div>
-                <div class="card-footer">
-                  <a href="#" class="btn btn-primary">Take Test</a>
-                </div>
-             
             </div>
           </div>
-          
 
-        <!-- Card 6 -->
+        <!-- Card 5 -->
           <div class="col-md-4">
             <!-- <div class="card d-none h-100">Card 5</div> -->
             <div class="card d-none h-100">
-              <img src="https://img.freepik.com/premium-photo/world-autism-awareness-day-little-boy-sitting-before-wall-made-from-jigsaw-puzzle-pieces-child-autism-concept-generative-ai_379824-263.jpg?w=900" class="card-img-top" alt="...">
+              <img src="..." class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title">Autism</h5>
-                <p class="card-text">Autism is a neurodevelopmental condition affecting social interaction and communication, often accompanied by repetitive behaviors and a preference for routine.</p>
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
               </div>
-              <div class="card-footer">
-                <a href="#" class="btn btn-primary">Take Test</a>
+            </div>
+          </div>
+
+        <!-- Card 6 -->
+          <div class="col-md-4">
+            <!-- <div class="card d-none h-100">Card 6</div> -->
+            <div class="card d-none" >
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
               </div>
             </div>
           </div>
 
         <!-- Card 7 -->
-        <div class="col-md-4">
-          <!-- <div class="card d-none h-100">Card 4</div> -->
-          <div class="card d-none h-100" >
-            <img src="https://img.freepik.com/premium-vector/post-traumatic-stress-disorder-concept-illustration_263070-162.jpg?w=740" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Anxiety</h5>
-              <p class="card-text">Anxiety is characterized by persistent worry and fear, often accompanied by physical symptoms like restlessness and rapid heartbeat, affecting daily functioning.</p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary">Take Test</a>
+          <div class="col-md-4">
+            <!-- <div class="card d-none h-100">Card 4</div> -->
+            <div class="card d-none" >
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
             </div>
           </div>
-        </div>
 
         <!-- Card 8 -->
           <div class="col-md-4">
-            <!-- <div class="card d-none h-100">Card 4</div> -->
-            <div class="card d-none h-100">
-              <img src="https://staticg.sportskeeda.com/editor/2022/10/5a123-16658401248020-1920.jpg?w=840" class="card-img-top" alt="...">
+            <!-- <div class="card d-none h-100">Card 5</div> -->
+            <div class="card d-none" >
+              <img src="..." class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title">PTSD</h5>
-                <p class="card-text">PTSD can develop after exposure to a traumatic event, leading to persistent distressing memories, nightmares, and heightened reactions to triggers.</p>
-              </div>
-              <div class="card-footer">
-                <a href="#" class="btn btn-primary">Take Test</a>
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
               </div>
             </div>
           </div>
-
-       
-       
+        <!-- Card 9 -->
+          <div class="col-md-4">
+            <!-- <div class="card d-none h-100">Card 6</div> -->
+            <div class="card d-none" >
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
 
       </div>
     </div>

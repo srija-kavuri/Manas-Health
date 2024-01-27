@@ -50,6 +50,7 @@ function sendEmail()
     console.log("sent");
   }})
 }
+
 document.querySelector('#sendOTP').addEventListener('click', sendEmail)
 document.querySelector('#resendOTP').addEventListener('click', sendEmail)
 
@@ -63,6 +64,7 @@ document.querySelector('#verifyOTP').addEventListener('click', ()=>{
     body: JSON.stringify({otp}),
   }).then(response=>response.text())
   .then(response=>{if(response=='verified'){
+    document.querySelector('#verifyOTP').disabled = false;
     console.log("verified");
   }})
 })

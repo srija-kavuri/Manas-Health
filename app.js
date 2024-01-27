@@ -6,9 +6,11 @@ const mongodbSession=require("connect-mongodb-session")(session);
 const login=require('./loginServer.js')
 const signup=require('./signupServer.js')
 const {verify, changeEmail, resendOTP}=require('./OTP/veifyOtp.js');
+const {test, getQuestions} = require('./mlModel/questionServer.js');
 const User = require('./userModel.js');
+const editProfile = require('./editprofile.js');
 const getStudents = require('./teacherServer.js');
-const  {progress, setProgressParam, getProgress} = require('./progressServer.js');
+const  {progress, getProgress} = require('./progressServer.js');
 const {sendForgotPasswordMail, verifyForgotPasswordOTP, changePassword} = require('./forgotPasswordServer.js');
 const modelPredictions = require('./mlModel/modelPredictions.js');
 
@@ -53,9 +55,11 @@ app.use('/api/sendForgotPasswordMail', sendForgotPasswordMail);
 app.use('/api/verifyForgotPasswordOTP', verifyForgotPasswordOTP);
 app.use('/api/changePassword', changePassword);
 
+app.use('/test', test);
+app.use('/api/getQuestions', getQuestions);
+
 app.use('/api/getStudents', getStudents);
 app.use('/progress', progress);
-app.use('/api/progress', setProgressParam);
 app.use('/api/student/progress', getProgress);
 
 app.get('/login',(req,res)=>{
@@ -97,7 +101,12 @@ app.get('/api/userDetails', async (req, res)=>{
     try{
       await mongoose.connect(mongoUri);
       const findUser = await User.findOne({email: req.session.userData.email});
-      userDetails = {username:findUser.username, email:findUser.email, institute:findUser.instituteName};
+      let userDetails;
+      if(req.session.category==="Teacher"){
+        userDetails = {username:findUser.username, email:findUser.email, institute:findUser.instituteName};
+      }else if(req.session.category==="Student"){
+        userDetails = {username:findUser.username, email:findUser.email, institute:findUser.instituteName, className: findUser.className, sectionName:findUser.sectionName};
+      }
       res.json(userDetails);
     }catch(error){
       console.error("error fetching user details", error);
@@ -107,6 +116,8 @@ app.get('/api/userDetails', async (req, res)=>{
     res.send("not authenticated");
   }
 })
+
+app.use('/api/editProfile', editProfile);
 
 app.get('/api/logout', (req,res)=>{
   if(req.session.isAuth){

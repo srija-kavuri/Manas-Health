@@ -1,4 +1,6 @@
-fetch('/api/student/progress',{
+const student = (window.location.pathname).split('/').pop()
+
+fetch(`/api/student/progress/${student}`,{
   method: 'GET',
   headers:{
     'Content-Type': 'application/json',
@@ -9,6 +11,4 @@ fetch('/api/student/progress',{
     const studentResults = data.progress;
     console.log(studentResults);
   }
-
- 
 })

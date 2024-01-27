@@ -1,0 +1,92 @@
+{
+  "normal":{
+    "value": 0,
+    "message":[
+      "Great news! Your test results are normal. ",
+      "This means that there are no significant abnormalities or concerns detected in your current assessment.",
+      "It's important to maintain a healthy lifestyle and keep up with regular check-ups to ensure your continued well-being.",
+      "If you have any questions or concerns, feel free to discuss them with your healthcare provider. "
+    ]
+  },
+
+  "mild":{
+    "value": 25,
+    "message":[
+      "Your test results indicate a mild deviation from the norm.",
+      "It's crucial to share any relevant symptoms or changes in your health with your healthcare team.",
+      "Lifestyle modifications, such as adjustments to diet, exercise, or stress management, may be suggested to support your overall well-being.",
+      "Keep a record of your symptoms, lifestyle habits, and any changes you observe."
+    ]
+  },
+  "moderate":{
+    "value": 50,
+    "message":[
+      "test results indicate a moderate outcome. While there is no immediate cause for alarm, it is important to address this result proactively.",
+      "Monitoring progress is essential to assess the effectiveness of interventions and make adjustments as needed.",
+      "Dietary adjustments, exercise plans, and stress management strategies may be recommended.",
+      " Keep your support system informed about your health journey.",
+      "Encourage open communication with loved ones to share both challenges and victories."
+    ]
+  },
+  "severe":{
+    "value": 75,
+    "message":[
+      "We regret to inform you that the recent test results indicate a severe outcome. It's important to address this situation promptly and proactively.",
+      "Schedule an appointment with your healthcare provider to discuss the results and gain a comprehensive understanding.",
+      "Timely action is crucial to address the severity of the situation.",
+      " Inform your close family members and friends about the situation.",
+      "eek emotional support from your loved ones during this challenging time.",
+      "Prioritize your mental health and consider seeking counseling or therapy."
+    ]
+  },
+
+  "extremely severe":{
+    "value":100,
+    "message":[
+      "The test results indicate an extremely severe outcome. We understand that this news is incredibly challenging, and we want to express our sincere support during this difficult time.",
+      "Immediate Medical Attention:- Contact your healthcare provider urgently to discuss the severity of the results.",
+      "Follow their recommendations for immediate medical attention and interventions.",
+      "Lean on your support system of family and friends during this challenging time.- Communicate openly with your loved ones about your needs and feelings."
+    ]
+  },
+
+  "NO ADHD":{
+    "value": 0,
+    "message":[
+      "You have ADHD. Here is your result information.",
+      "Great news! Based on the test, it appears you do not have ADHD.",
+      "If you have any concerns or questions, consult with a healthcare professional.",
+      "Remember, this test is not a definitive diagnosis."
+    ]
+  },
+
+  "ADHD":{
+    "value":0,
+    "message":[
+      "Based on the test, it appears you have ADHD.",
+      "Consult with a healthcare professional for further evaluation and guidance.",
+      "ADHD is a manageable condition with the right support and treatment.",
+      "Take the results as an indication, but seek professional advice for a definitive diagnosis."
+    ]
+  },
+
+  "Minimal risk":{
+    "value":0,
+    "message":[
+      "The test suggests minimal risk of dyslexia.",
+      "It's always beneficial to consult with an educational professional for a more accurate assessment.",
+      "Keep in mind that online tests provide indicative results and are not a substitute for professional evaluation."
+    ]
+  },
+
+  "Significant risk":{
+    "value":100,
+    "message":[
+      "The test indicates a significant risk of dyslexia.",
+      "The test indicates a significant risk of dyslexia.",
+      "Early intervention and tailored support can make a significant difference for individuals with dyslexia.",
+      "Reach out to educational experts for personalized guidance based on your unique needs."
+    ]
+  }
+
+}
