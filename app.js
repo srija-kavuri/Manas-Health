@@ -8,6 +8,7 @@ const signup=require('./signupServer.js')
 const {verify, changeEmail, resendOTP}=require('./OTP/veifyOtp.js');
 const {test, getQuestions} = require('./mlModel/questionServer.js');
 const User = require('./userModel.js');
+const resultData = require('./results/resultserver.js');
 const editProfile = require('./editprofile.js');
 const getStudents = require('./teacherServer.js');
 const  {progress, getProgress} = require('./progressServer.js');
@@ -78,6 +79,7 @@ app.get('/forgotPassword', (req, res)=>{
   res.sendFile(path.join(__dirname, 'public', 'login/forgotPassword.html'));
 })
 
+
 app.get('/home', (req,res)=>{
 
   if(req.session.isAuth){
@@ -116,6 +118,12 @@ app.get('/api/userDetails', async (req, res)=>{
     res.send("not authenticated");
   }
 })
+
+app.get('/result', (req, res)=>{
+  res.sendFile(path.join(__dirname, 'public', 'result/result.html'));
+})
+
+app.post('/api/result', resultData);
 
 app.use('/api/editProfile', editProfile);
 

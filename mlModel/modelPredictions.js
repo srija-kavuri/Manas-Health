@@ -8,17 +8,20 @@ const router = express.Router();
 
 router.post('/',cors(), async (req,res)=>{
 
-    // if(!req.session.isAuth){
-    //     console.log("unauthorized");
-    //     return res.send("please login to access");
-    // }
+    if(!req.session.isAuth){
+        console.log("unauthorized");
+        return res.send("please login to access");
+    }
   const {category, userInputs} = req.body;
     try {
         const response = await axios.post('http://127.0.0.1:5000/predict', {category, userInputs});
         const {score, severity_level} = response.data;
+
+        if(!score&&!severity_level){
+            return res.status(500).json({success:false, message:"internal server error"});
+        }
         await mongoose.connect("mongodb://localhost:27017/manashealth");
-        const email = "valli@gmail.com";
-        //const email = req.session.userData.email;
+        const email = req.session.userData.email;
         const findUser = await resultsModel.findOne({email});
         if(findUser){
             findUser.currentStatus[category] = severity_level
@@ -51,7 +54,7 @@ router.post('/',cors(), async (req,res)=>{
             // .then(savedUser=>{console.log("user saved successfully", savedUser)})
             .catch(error=>{console.error( "error saving the user results", error)})
         }
-        return res.json({score,severity_level});
+        return res.json({success:true, score,severity_level});
     } catch (error) {
         console.error('Error making prediction request:', error.message);
         throw error;

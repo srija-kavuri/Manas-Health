@@ -2,8 +2,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
   document.getElementById("emailInput").value = localStorage.getItem("userEmail");
 })
 
-
-
 function toggleInput(){
     var emailElement = document.getElementById("emailInput");
     var confirmBtn = document.getElementById("confirmEmailBtn");
@@ -75,7 +73,10 @@ document.querySelector('#verifyButton').addEventListener('click', (event)=>{
       if(response.success){
       window.location.replace("/home");
       }else{
-        alert("Wrong otp");
+        alert(response.message);
       }
+    })
+    .catch(error=>{
+      console.error("Error verifying mail", error);
     })
   })

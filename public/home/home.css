@@ -70,3 +70,7 @@ body {
   height: 400px;
   border: 2px black solid;
 }
+
+#viewMore{
+  cursor: pointer;
+}

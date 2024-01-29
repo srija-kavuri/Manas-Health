@@ -1,0 +1,53 @@
+.question-container {
+  height: 350px;
+  width: 75%; /* Adjust the width as needed */
+  margin: 1% auto; /* Center the question container */
+  border-color: aqua;
+  border-radius: 8px;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.1);
+  display: none; /* Initially hide all question containers */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.question-container input[type="radio"] {
+  margin-left: 10px; /* Adjust the margin as needed */
+}
+.btn-check {
+  margin-left: 20px;
+  padding-right: 10px;
+  padding-top: 20px; /* Adjust the value as needed */
+}
+.custom-options {
+  margin-top: 40px;
+  margin-right: 20px;
+  box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+}
+.custom-prevButton{
+    margin-top: 100px;
+    margin-left: 100px;
+    margin-bottom: 100px;
+    /* justify-content: flex-start; */
+    /* align-items: end; */
+    display: flex;
+
+
+  
+}
+.custom-nextbutton{
+    /* margin-top: 50%; */
+    margin-left: auto;
+    justify-content: flex-end;
+    
+}
+.testNameContainer{
+    background-color: rgb(143, 227, 217);
+max-width: 100%;
+justify-content: center;
+align-items: center;
+display: flex;
+height: 100px;
+/* padding: 18px; */
+/* position:fixed; */
+margin-top: 20px;
+}

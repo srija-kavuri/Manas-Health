@@ -49,10 +49,10 @@
     {
       "question": "I was aware of the action of my heart in the absence of physical exertion (e.g. sense of heart rate increase, heart missing a beat)",
       "options": [
-        "0",
-        "1",
-        "2",
-        "3"
+        "Never",
+        "Sometimes",
+        "Often",
+        "Always"
       ]
     },
     {

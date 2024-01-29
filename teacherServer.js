@@ -8,7 +8,8 @@ const router = express.Router();
 router.post('/', async (req, res) => {
   try {
     const className = req.body.className;
-    const sectionName = req.body.sectionName;
+    let sectionName = req.body.sectionName;
+    sectionName = sectionName.toUpperCase();
 
     await mongoose.connect("mongodb://localhost:27017/manashealth");
     const users = await User.find({
@@ -28,7 +29,7 @@ router.post('/', async (req, res) => {
       }
       res.status(200).json({ success: true, students: students });
     } else {
-      res.status(404).json({ success: false, message: 'No students found for the given class and section.' });
+      res.status(200).json({ success: false, message: 'No students found for the given class and section.' });
     }
   } catch (error) {
     console.error(error);

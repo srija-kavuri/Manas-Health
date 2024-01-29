@@ -89,30 +89,29 @@
           <tr>
             <th scope="row">username</th>
             <td>
-              <p id="username"></p>
+              <input type="text" id="username" disabled />
             </td>
-            <!-- <td>Otto</td> -->
-            <!-- <td>@mdo</td> -->
           </tr>
+          
           <tr>
             <th scope="row">email</th>
             <td>
-              <p id="email"></p>
+              <span id="email"><span/>
             </td>
-            <!-- <td>Thornton</td> -->
-            <!-- <td>@fat</td> -->
           </tr>
+          
           <tr>
             <th scope="row">institute name</th>
             <td colspan="2">
-              <p id="institute"></p>
+              <input type="text" id="institute" disabled />
             </td>
-            <!-- <td>@twitter</td> -->
           </tr>
         </tbody>
       </table>
       <div class="edit">
-        <button type="button" class="btn btn-outline-secondary edit-profile">edit your profile</button>
+        <button type="button" class="btn btn-outline-secondary edit-profile" id="editProfile">edit your profile</button>
+      <button type="button" id="saveProfile" style="display: none;">save</button>
+
       </div>
     </div>
   </div>

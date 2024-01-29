@@ -24,17 +24,20 @@ verify.post('/', async (req,res)=>{
 
     }finally{
       await mongoose.disconnect();
-      console.log('mongoose disconnected');
     }  
   }else{
-    res.send("Wrong otp");
+    res.json({success:false, message:"wrong otp"});
   }
 })
 
 changeEmail.post('/', async (req,res)=>{
   try{
     const newEmail = req.body.email;
-    console.log(newEmail);
+    await mongoose.connect("mongodb://localhost:27017/manashealth");
+    const findUser = await User.findOne({email});
+    if(findUser){
+      return res.status(400).json({success:false, message:'account with the email already exists'});
+    }
     req.session.userData.email = newEmail;
     console.log(req.session.userData);
     const otp = await sendMail.sendOTP(newEmail, req.session.userData.username);

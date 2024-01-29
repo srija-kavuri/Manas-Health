@@ -6,23 +6,24 @@ const resultsModel = require('./mlModel/resultsModel');
 const progress = express.Router();
 const getProgress = express.Router();
 
-progress.get('/:email', async (req, res) => {
+progress.get('/', async (req, res) => {
   const myParam = req.params.email;
-  if (myParam) {
-    res.status(302).sendFile(path.join(__dirname, 'public', 'home/progress.html'));
-  } else {
-    res.status(400).send('Bad Request: myParam is missing');
+  if(req.session.category==="Student"|| req.session.category==='Teacher'){
+    return res.status(302).sendFile(path.join(__dirname, 'public', 'home/progress.html'));
+  }
+  else {
+    res.status(400).send('Bad Request: please login to access');
   }
 });
 
 
-getProgress.get('/:email', async (req, res) => {
+getProgress.get('/', async (req, res) => {
   let progressEmail;
   if(req.session.category==='Student'){
     progressEmail = req.session.userData.email;
   }
   else{
-    progressEmail = req.params.email;
+    progressEmail = req.query.student;
   }
   try {
     await mongoose.connect("mongodb://localhost:27017/manashealth");

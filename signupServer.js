@@ -1,65 +1,64 @@
-const express=require('express')
+const express = require('express');
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const User = require('./userModel.js');
-const sendMail=require('./OTP/sendOtp.js');
+const sendMail = require('./OTP/sendOtp.js');
 
-const router=express.Router();
+const router = express.Router();
 
 router.post('/', async (req, res) => {
-  const username = req.body.username;
-  const category = req.body.category;
-  const instituteName = req.body.school;
-  const email = req.body.email;
-  const password = req.body.password;
-  let className;
-  let sectionName;
-  if(!username||!category||!email||!instituteName||!password){
-    console.log("Field(s) are empty")
-    return res.status(400).send("Field(s) are empty");
-  }
-  if(category === "Student"){
-    className = req.body.className;
-    sectionName = req.body.sectionName;
-  }
-  
-  console.log(req.body);
+    try {
+        const { username, category, school, email, password, className, sectionName } = req.body;
 
-  try {
-    let userData;
-    const hashedPassword = await bcrypt.hash(password, 12);
-    if(category === "Student"){
-      userData = { username, category, instituteName, email,hashedPassword, className, sectionName}
+        if (!username || !category || !email || !school || !password) {
+            console.log("Field(s) are empty");
+            return res.status(400).send("Field(s) are empty");
+        }
 
-    }else{
-      userData = { username, category, instituteName, email,hashedPassword}
+        if (category === "Student" && (!className || !sectionName)) {
+            console.log("Field(s) are empty for student");
+            return res.status(400).send("Field(s) are empty for student");
+        }
+
+        await mongoose.connect("mongodb://localhost:27017/manashealth");
+
+        const findUser = await User.findOne({ email });
+
+        if (findUser) {
+            return res.status(400).json({ success: false, message: `Account with the email already exists.` });
+        }
+
+        const hashedPassword = await bcrypt.hash(password, 12);
+
+        let userData;
+        if (category === "Student") {
+            userData = { username, category, instituteName: school, email, hashedPassword, className, sectionName: sectionName.toUpperCase() };
+        } else {
+            userData = { username, category, instituteName: school, email, hashedPassword };
+        }
+
+        req.session.userData = userData;
+
+        const otp = await sendMail.sendOTP(email, username);
+
+        console.log(otp);
+        req.session.otp = otp;
+        console.log(req.session.otp);
+
+        return res.status(200).json({ success: true });
+    } catch (error) {
+        if (error.code === 11000) {
+            console.error('Duplicate key error:', error.errmsg);
+            return res.status(400).json({ success: false, message: `Account with the email already exists.` });
+        } else {
+            // Handle other MongoDB errors
+            console.error('MongoDB error:', error);
+            return res.status(500).json({ success: false, message: 'Internal Server Error.' });
+        }
+    } finally {
+        await mongoose.disconnect();
+        console.log('mongoose disconnected');
     }
-    await mongoose.connect("mongodb://localhost:27017/manashealth");
-    const findUser = await User.findOne({email});
-    if(findUser){
-      res.status(400).send(`Account with the email already exists.`);
-    }else{
-      req.session.userData=userData;
-      // const otp = sendMail.generateOTP(4);
-      otp = await sendMail.sendOTP(email, username);
-      console.log(otp);
-      req.session.otp=otp;
-      console.log(req.session.otp);
-      res.status(200).json({success: true});
-    }
-  } catch (error) {
-    if (error.code === 11000) {
-      console.error('Duplicate key error:', error.errmsg);
-      res.status(400).json({success: false, message: `Account with the email already exists.`});
-    } else {
-      // Handle other MongoDB errors
-      console.error('MongoDB error:', error);
-      res.status(500).json({success:false, message:'Internal Server Error.'});
-    }
-  }finally{
-    await mongoose.disconnect();
-    console.log('mongoose disconnected');
-  }
 });
 
-module.exports=router;
+module.exports = router;

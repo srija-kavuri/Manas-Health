@@ -1,6 +1,10 @@
-const student = (window.location.pathname).split('/').pop()
+const urlParams = new URLSearchParams(window.location.search);
+let student;
+if(urlParams){
+  student = encodeURIComponent(urlParams.get('student'));
+}
 
-fetch(`/api/student/progress/${student}`,{
+fetch(`/api/student/progress/?student=${student}`,{
   method: 'GET',
   headers:{
     'Content-Type': 'application/json',

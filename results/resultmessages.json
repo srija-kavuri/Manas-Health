@@ -50,7 +50,7 @@
     ]
   },
 
-  "NO ADHD":{
+  "no adhd":{
     "value": 0,
     "message":[
       "You have ADHD. Here is your result information.",
@@ -60,7 +60,7 @@
     ]
   },
 
-  "ADHD":{
+  "adhd":{
     "value":0,
     "message":[
       "Based on the test, it appears you have ADHD.",
@@ -70,7 +70,7 @@
     ]
   },
 
-  "Minimal risk":{
+  "minimal risk":{
     "value":0,
     "message":[
       "The test suggests minimal risk of dyslexia.",
@@ -79,7 +79,7 @@
     ]
   },
 
-  "Significant risk":{
+  "significant risk":{
     "value":100,
     "message":[
       "The test indicates a significant risk of dyslexia.",

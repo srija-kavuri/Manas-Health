@@ -36,7 +36,7 @@
               <a class="nav-link navbar-titles ps-4" href="#">Articles</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link navbar-titles ps-4" href="#">Progress</a>
+              <a class="nav-link navbar-titles ps-4" href="http://localhost:5500/progress">Progress</a>
             </li>
             <li class="nav-item">
               <a class="nav-link navbar-titles ps-4" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Logout</a>
@@ -75,7 +75,7 @@
 
 
 <!-- Progress -->
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight1" aria-labelledby="offcanvasRightLabel">
+  <!-- <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight1" aria-labelledby="offcanvasRightLabel">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title" id="offcanvasRightLabel">progress</h5>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -83,7 +83,7 @@
     <div class="offcanvas-body">
       ...
     </div>
-  </div>
+  </div> -->
     
           
 
@@ -185,7 +185,7 @@
   <!-- View More Link -->
     <div class="text-center mt-3 mb-3 d-flex justify-content-end" id="scrollspyTest">
       <a class="link-dark" onclick="showHiddenCards()">
-        <p class="fs-5 me-4">View More</p>
+        <p class="fs-5 me-4" id="viewMore">View More</p>
       </a>
     </div>
   <!-- Cards test -->
@@ -201,7 +201,7 @@
               <p class="card-text">Assess your overall well-being and mental resilience with our General Mental Health Test. Explore various aspects of your mental state to gain insights into your emotional balance and coping mechanisms.</p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">Take Test</a>
+              <a id="generalTest" class="btn btn-primary">Take Test</a>
             </div>
           </div>
         </div>
@@ -215,7 +215,7 @@
                 <p class="card-text">Stress is the body's natural response to challenges, triggering a 'fight or flight' reaction. Chronic stress can negatively impact mental and physical well-being.</p>
               </div>
               <div class="card-footer">
-                <a href="#" class="btn btn-primary">Take Test</a>
+                <a id="stressTest" class="btn btn-primary">Take Test</a>
               </div>
             </div>
           </div>
@@ -230,7 +230,7 @@
                 <p class="card-text">ADHD is a neurodevelopmental disorder characterized by inattention, hyperactivity, and impulsivity, often affecting academic and social functioning.</p>
               </div>
               <div class="card-footer">
-                <a href="#" class="btn btn-primary">Take Test</a>
+                <a id="adhdTest" class="btn btn-primary">Take Test</a>
               </div>
             </div>
           </div>
@@ -245,7 +245,7 @@
                 <p class="card-text">"Depression involves persistent feelings of sadness and a lack of interest or pleasure in activities, impacting mood, energy levels, and overall quality of life.</p>
               </div>
               <div class="card-footer">
-                <a href="#" class="btn btn-primary">Take Test</a>
+                <a id="depressionTest" class="btn btn-primary">Take Test</a>
               </div>
             </div>
           </div>
@@ -261,7 +261,7 @@
                 <p class="card-text">Dyslexia is a learning disorder that impairs reading, spelling, and writing, despite average or above-average intelligence and adequate instruction.</p>
               </div>
                 <div class="card-footer">
-                  <a href="#" class="btn btn-primary">Take Test</a>
+                  <a id="dyslexiaTest" class="btn btn-primary">Take Test</a>
                 </div>
              
             </div>
@@ -278,7 +278,7 @@
                 <p class="card-text">Autism is a neurodevelopmental condition affecting social interaction and communication, often accompanied by repetitive behaviors and a preference for routine.</p>
               </div>
               <div class="card-footer">
-                <a href="#" class="btn btn-primary">Take Test</a>
+                <a id="autismTest" class="btn btn-primary">Take Test</a>
               </div>
             </div>
           </div>
@@ -293,7 +293,7 @@
               <p class="card-text">Anxiety is characterized by persistent worry and fear, often accompanied by physical symptoms like restlessness and rapid heartbeat, affecting daily functioning.</p>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">Take Test</a>
+              <a id="anxietyTest" class="btn btn-primary">Take Test</a>
             </div>
           </div>
         </div>
@@ -308,14 +308,10 @@
                 <p class="card-text">PTSD can develop after exposure to a traumatic event, leading to persistent distressing memories, nightmares, and heightened reactions to triggers.</p>
               </div>
               <div class="card-footer">
-                <a href="#" class="btn btn-primary">Take Test</a>
+                <a id="ptsdTest" class="btn btn-primary">Take Test</a>
               </div>
             </div>
           </div>
-
-       
-       
-
       </div>
     </div>
   </div>

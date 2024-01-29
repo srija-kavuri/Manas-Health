@@ -1,4 +1,4 @@
-console.log(window.location.pathname);
+
 fetch('/api/userDetails',{
   method: 'GET',
   headers:{
@@ -6,7 +6,6 @@ fetch('/api/userDetails',{
   },
 }).then(response=>response.json())
 .then(data=> {const userData = data;
-  console.log(userData);
   document.getElementById("username").value = userData.username; 
   document.getElementById("email").innerHTML = userData.email; 
   document.getElementById("institute").value = userData.institute;
@@ -14,7 +13,6 @@ fetch('/api/userDetails',{
     document.getElementById("sectionName").value = userData.sectionName;
     const currentDate = new Date();
     const hour = currentDate.getHours();
-    console.log(hour);
     
     let greeting;
     if (hour >= 5 && hour < 12) {
@@ -117,3 +115,74 @@ function showHiddenCards() {
       viewMoreButton.disabled = true;
   }
 }
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const endpoint = '/test';
+
+  // Function to handle the click event for the General Test button
+  document.getElementById("generalTest").addEventListener("click", function () {
+      const category = encodeURIComponent("general");
+      const url = `${endpoint}?category=${category}`;
+      console.log(url);
+      window.location.href = `${url}`;
+  });
+
+  // Function to handle the click event for the Stress Test button
+  document.getElementById("stressTest").addEventListener("click", function () {
+      const category = encodeURIComponent("stress");
+      const url = `${endpoint}?category=${category}`;
+      console.log(url);
+      window.location.href = `${url}`;
+  });
+
+  // Function to handle the click event for the ADHD Test button
+  document.getElementById("adhdTest").addEventListener("click", function () {
+      const category = encodeURIComponent("adhd");
+      const url = `${endpoint}?category=${category}`;
+      console.log(url);
+      window.location.href = `${url}`;
+  });
+
+  // Function to handle the click event for the Anxiety Test button
+  document.getElementById("anxietyTest").addEventListener("click", function () {
+      const category = encodeURIComponent("anxiety");
+      const url = `${endpoint}?category=${category}`;
+      console.log(url);
+      window.location.href = `${url}`;
+  });
+
+  // Function to handle the click event for the Autism Test button
+  document.getElementById("autismTest").addEventListener("click", function () {
+      const category = encodeURIComponent("autism");
+      const url = `${endpoint}?category=${category}`;
+      console.log(url);
+      window.location.href = `${url}`;
+  });
+
+  // Function to handle the click event for the Dyslexia Test button
+  document.getElementById("dyslexiaTest").addEventListener("click", function () {
+      const category = encodeURIComponent("dyslexia");
+      const url = `${endpoint}?category=${category}`;
+      console.log(url);
+      window.location.href = `${url}`;
+  });
+
+  // Function to handle the click event for the PTSD Test button
+  document.getElementById("ptsdTest").addEventListener("click", function () {
+      const category = encodeURIComponent("ptsd");
+      const url = `${endpoint}?category=${category}`;
+      console.log(url);
+      window.location.href = `${url}`;
+  });
+
+  document.getElementById("depressionTest").addEventListener("click", function () {
+    const category = encodeURIComponent("depression");
+    const url = `${endpoint}?category=${category}`;
+    console.log(url);
+    window.location.href = `${url}`;
+});
+});
+
+
+    // Add similar event listeners for the other buttons (Depression, Dyslexia, Autism, Anxiety, PTSD)

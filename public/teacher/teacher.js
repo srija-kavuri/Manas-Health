@@ -5,9 +5,9 @@ fetch('/api/userDetails',{
   },
 }).then(response=>response.json())
 .then(data=> {const userData = data;
-  document.getElementById("username").innerHTML = userData.username;
+  document.getElementById("username").value = userData.username;
   document.getElementById("email").innerHTML = userData.email;
-  document.getElementById("institute").innerHTML = userData.institute;
+  document.getElementById("institute").value = userData.institute;
 })
 
 function logout() {
@@ -98,8 +98,8 @@ function createTable(data) {
     for (const key in item) {
       const td = document.createElement('td');
       if(key==="progress"){
-        var param = encodeURIComponent(item[key]);
-        td.innerHTML = `<a href="/progress/${param}" target="_blank">progress </a>`
+        const studentEmail = encodeURIComponent(item[key]);
+        td.innerHTML = `<a href="/progress/?student=${studentEmail}" target="_blank">progress </a>`
       }else if(key==="currentStatus"){
         console.log(key);
         currentStatusText = ``;
@@ -145,4 +145,52 @@ const searchTerm = searchinput.value.toLowerCase();
       rows[i].style.display = 'none';
     }
   }
+});
+
+document.getElementById("editProfile").addEventListener('click', () => {
+  // Enable the input fields
+  document.getElementById("username").disabled = false;
+  document.getElementById("institute").disabled = false;
+  document.getElementById("username");
+  document.getElementById("saveProfile").style.display = "inline-block";
+});
+
+document.getElementById("saveProfile").addEventListener('click', () => {
+  const username = document.getElementById("username").value;
+  const institute = document.getElementById("institute").value;
+  document.getElementById("username").disabled = true;
+  document.getElementById("institute").disabled = true;
+
+  if (!username || !institute) {
+    alert("Please fill in all fields");
+    return;
+  }
+
+  const userData = {
+    username,
+    institute,
+  };
+
+  fetch('/api/editProfile', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(userData),
+  })
+    .then(response => {
+      if (response.ok) {
+       document.getElementById("saveProfile").style.display = "none";
+
+        console.log("Saved successfully");
+      } else {
+        console.log(response.status); // Log the status code
+    console.log(response.statusText);
+        alert("Response is not OK");
+      }
+    })
+    .catch(error => {
+      alert("Error editing your profile. Please try again");
+      console.log(error);
+    });
 });

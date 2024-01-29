@@ -5,10 +5,11 @@ const path = require('path');
 const test = express.Router();
 const getQuestions = express.Router();
 
-test.get('/:category', (req,res)=>{
-  const testCategory = req.params.category;
+test.get('/', (req,res)=>{
+  const testCategory = req.query.category;
+  // console.log(testCategory);
   if(testCategory){
-    res.status(302).sendFile(path.join(__dirname, 'public', 'test/test.html'));
+    res.status(302).sendFile(path.join(__dirname, '../public', 'test/test.html'));
   }else{
     res.status(400);
   }

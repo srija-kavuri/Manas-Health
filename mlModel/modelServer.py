@@ -14,28 +14,31 @@ def predict():
     try:
         # Get input data from the request
         inputs = request.get_json()
+
+        userInputs = [int(value) for value in inputs['userInputs']]
         print(inputs)
         category = inputs["category"]
         if(category == "depression"):
-            predictions = depressionprediction.predict_severity(inputs['userInputs'])
+            predictions = depressionprediction.predict_severity(userInputs)
         elif(category == "anxiety"):
-            predictions = anxietyprediction.predict_severity(inputs['userInputs'])
+            predictions = anxietyprediction.predict_severity(userInputs)
         elif(category == "stress"):
-            predictions = stressprediction.predict_severity(inputs['userInputs'])
+            predictions = stressprediction.predict_severity(userInputs)
         elif(category == "adhd"):
-            predictions = adhdprediction.predict_severity(inputs['userInputs'])
+            predictions = adhdprediction.predict_severity(userInputs)
         elif(category == "autism"):
-            predictions = autismprediction.predict_severity(inputs['userInputs'])
+            predictions = autismprediction.predict_severity(userInputs)
         elif(category == "dyslexia"):
-            predictions = dyslexiaprediction.predict_severity(inputs['userInputs'])
+            predictions = dyslexiaprediction.predict_severity(userInputs)
         elif(category == "ptsd"):
-            predictions = ptsdprediction.predict_severity(inputs['userInputs'])
+            predictions = ptsdprediction.predict_severity(userInputs)
         
-        # print("this is the predictions", predictions)
         score = predictions["score"]
         severity_level = predictions["severity_level"]
+        result = {"score":score, "severity_level": severity_level}
+        print(result)
         
-        return jsonify({"score":score, "severity_level": severity_level})
+        return jsonify(result)
 
     except Exception as e:
         return jsonify({'error': str(e)})
