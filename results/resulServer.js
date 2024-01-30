@@ -1,3 +1,4 @@
+const { json } = require('body-parser');
 const express=require('express');
 const path=require('path');
 const fs = require('fs').promises;
@@ -6,11 +7,12 @@ const fs = require('fs').promises;
 const resultData = express.Router();
 
 resultData.get("/", async (req,res)=>{
-  let result = req.query.result;
-  result = result.toLowerCase;
+  let result = (req.query.result).trim();
+  result = result.toLowerCase();
   try{
   const jsonData =await fs.readFile('./results/resultmessages.json', 'utf-8');
-  message = jsonData[result];
+  data = JSON.parse(jsonData);
+  message = data[result];
   if(message){
     res.json({success:true, data:message});
   }else{

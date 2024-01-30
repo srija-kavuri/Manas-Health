@@ -177,7 +177,7 @@ async function getresult(category, userInputs){
           if(prediction.success){
             let result = prediction.severity_level;
             result=encodeURIComponent(result);
-            const url = `/result/?result=${result}`
+            const url = `/result/?category=${category}&result=${result}`;
             window.location.replace(`${url}`);
           }else{
             console.error("Error submittin the inputs", error);

@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sidebar With Bootstrap</title>
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../articles/articles.css" />
+  </head>
+
+  <body>
+      <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+        <div class="container-fluid p-0">
+          <p class="fs-1 navbar-brand fw-semibold ms-4 pt-2">Manas Health</p>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link navbar-titles ps-4" >Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link navbar-titles ps-4" href="http://localhost:5500/resources">Resources</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link navbar-titles ps-4" href="http://localhost:5500/articles">Articles</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link navbar-titles ps-4" href="http://localhost:5500/progress">Progress</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link navbar-titles ps-4" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Logout</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled navbar-titles ps-4" aria-disabled="true">Help</a>
+              </li>
+              <div>
+                <li class="nav-item">
+                  <a href="#" class="btn ps-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-person-circle" viewBox="0 0 20 20">
+                      <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                      <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                    </svg>
+                  </a>
+                </li>
+              </div>
+            </ul> 
+          </div>
+        </div>
+      </nav>
+  
+    <div class="wrapper">
+      <aside id="sidebar">
+        <div class="d-flex">
+          <button class="toggle-btn" type="button">
+            <i class="lni lni-grid-alt"></i>
+          </button>
+          <div class="sidebar-logo">
+            <a id="mental-health-link" href="#">MentalHealth</a>
+          </div>
+        </div>
+        <ul class="sidebar-nav">
+          <li class="sidebar-item">
+            <a id="adhd-link" href="#" class="sidebar-link">
+              <i class="lni lni-quotation"></i>
+              <span>ADHD</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a id="anxiety-link" href="#" class="sidebar-link">
+              <i class="lni lni-xrp"></i>
+              <span>Anxiety</span>
+            </a>
+          </li>
+
+          <li class="sidebar-item">
+            <a id="autism-link" href="#" class="sidebar-link">
+              <i class="lni lni-sthethoscope"></i>
+              <span>Autism</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a id="depression-link" href="#" class="sidebar-link">
+              <i class="lni lni-spinner"></i>
+              <span>Depression</span>
+            </a>
+          </li>
+
+          <li class="sidebar-item">
+            <a id="dyslexia-link" href="#" class="sidebar-link">
+              <i class="lni lni-grow"></i>
+              <span>Dyslexia</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a id="ptsd-link" href="#" class="sidebar-link">
+              <i class="lni lni-sprout"></i>
+              <span>PTSD</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a id="stress-link" href="#" class="sidebar-link">
+              <!-- <i class="lni lni-flower"></i> -->
+              <i class="lni lni-coral"></i>
+              <span>Stress</span>
+            </a>
+          </li>
+        </ul>
+        <div class="sidebar-footer">
+          <a href="#" class="sidebar-link">
+            <i class="lni lni-exit"></i>
+            <span>Back</span>
+          </a>
+        </div>
+      </aside>
+      <div class="main p-3">
+          <div id="content-container">
+            <div id="mental-health-content" class="content-section">
+                    <h1>About Mental Health</h1>
+            <section>
+                    <h4>Understanding Mental Health:</h4>
+                    <p>Mental health is a holistic concept encompassing emotional, psychological, and social well-being. It's not just the absence of mental disorders but also the ability to handle stress, form positive relationships, and make choices. Good mental health enhances one's overall life experience, contributing to a sense of fulfillment and purpose. At its core, mental health reflects our resilience, coping mechanisms, and the quality of our relationships. It's a dynamic aspect of our well-being that evolves over time and can be influenced by both internal and external factors. Recognizing the interconnectedness of mental and physical health is essential for fostering a comprehensive approach to self-care. Our understanding of mental health acknowledges the fluidity of emotions, the importance of social support, and the need for coping strategies. Through our assessment test, we aim to assist individuals in gaining insights into their current mental health status, providing a starting point for further exploration and support.
+                    </p>
+                </section>
+            
+                <section>
+                    <h4>What is Mental Illness?</h4>
+                    <p>Mental illness encompasses a broad spectrum of conditions that affect how individuals think, feel, and behave. These conditions can vary in severity and duration, impacting daily life activities and overall functioning. Common mental illnesses include depression, anxiety disorders, bipolar disorder, schizophrenia, and more. Recognizing mental illness involves paying attention to persistent changes in mood, thoughts, or behaviors. Symptoms can range from subtle shifts to more noticeable disruptions in daily life. While mental health challenges are prevalent, they are treatable. Seeking professional help is crucial for accurate diagnosis and effective management. Our assessment test is designed to identify potential signs of mental health concerns, offering individuals an opportunity to reflect on their experiences. However, it's important to note that the test is not a substitute for professional evaluation. A mental health professional's expertise is essential for a comprehensive understanding of specific conditions and personalized treatment plans.
+                    </p>
+                </section>
+            
+                <section>
+                    <h4>How Do I Know If I Have a Mental Illness?</h4>
+                    <p>Recognizing the signs of a potential mental health issue can be challenging, as symptoms can vary widely among individuals. Common indicators may include persistent feelings of sadness, anxiety, changes in sleep or appetite, difficulty concentrating, and withdrawal from social activities. Our assessment test provides a series of evidence-based questions to help individuals self-reflect on their experiences and emotions. This preliminary exploration can be a valuable starting point for those who may be unsure about their mental health status. However, it's crucial to emphasize that the assessment is not a definitive diagnosis. Consulting with a mental health professional is the next crucial step. Professionals can conduct a thorough evaluation, taking into account personal history, symptoms, and any contributing factors. The goal is to provide individuals with accurate information about their mental health and guide them towards appropriate interventions.
+                    </p>
+                </section>
+            
+                <section>
+                    <h4>What Mental Illness Do I Have?</h4>
+                    <p>Diagnosing a mental illness involves a comprehensive assessment conducted by a qualified mental health professional, such as a psychiatrist or psychologist. Our assessment test provides general insights based on common symptoms, but it is not a substitute for a professional diagnosis. Mental health conditions are diverse and unique to each individual. The same diagnosis may manifest differently in different people. Therefore, a personalized approach to evaluation is essential for understanding the specific challenges an individual may be facing. The assessment test aims to prompt self-reflection and encourage individuals to seek professional help when needed. Professionals use evidence-based assessments, clinical interviews, and observation to arrive at a diagnosis. This process considers the duration, intensity, and impact of symptoms on daily functioning. Understanding the specific mental health condition is crucial for developing an effective treatment plan. Treatment options may include therapy, medication, lifestyle changes, or a combination of approaches. It's important to collaborate with a mental health professional to determine the most appropriate course of action based on an individual's unique needs.
+                    </p>
+                </section>
+            
+                <section>
+                    <h4>How Common is Mental Illness?</h4>
+                    <p>Mental health challenges are pervasive and affect people from all walks of life. The World Health Organization estimates that one in four people globally will be affected by mental or neurological disorders at some point in their lives. Mental illnesses do not discriminate based on age, gender, ethnicity, or socioeconomic status. Understanding the prevalence of mental health conditions is essential for reducing stigma and promoting open conversations. By recognizing the widespread nature of these challenges, we aim to create a supportive environment that encourages individuals to seek help without fear of judgment. Our assessment test contributes to mental health awareness by providing individuals with a tool to assess their mental well-being. It's important to emphasize that the test offers insights based on common symptoms and is not a diagnostic tool. Seeking professional help ensures a more accurate understanding of one's mental health status and appropriate interventions if needed.
+                    </p>
+                </section>
+            
+                <section>
+                    <h4>Why Do I Have a Mental Illness?</h4>
+                    <p>The development of mental health conditions is influenced by a combination of factors, including biological, psychological, and environmental elements.
+                    </p>
+                    <ul>
+                        <li>Genetics: Family history can play a role in susceptibility to certain mental health conditions.</li>
+                        <li>Biological Factors: Changes in brain chemistry or structure can contribute to the development of mental health conditions.</li>
+                        <li>Life Experiences: Trauma, abuse, loss, or significant life changes can contribute to the onset of mental health challenges.</li>
+                        <li>Environmental Stressors: High levels of stress, exposure to violence, or living in challenging socioeconomic conditions can contribute to mental health difficulties.</li>
+                        <li>Psychological Factors: Personality traits, coping mechanisms, and individual resilience can influence mental health.</li>
+                    </ul>
+                    <p>Our assessment test considers these factors to prompt individuals to reflect on their mental well-being in the context of potential mental health concerns.
+                    </p>
+                </section>
+            
+                <section>
+                    <h4>What Causes Mental Illness?</h4>
+                    <p>Mental illnesses are complex conditions influenced by a combination of biological, psychological, and environmental factors. Understanding the causes involves recognizing the intricate interplay of these elements, contributing to the diverse nature of mental health challenges.
+                    </p>
+                    <ul>
+                        <li>Biological Factors: Imbalances in neurotransmitters, changes in brain chemistry, and genetic predispositions can impact mental health.</li>
+                        <li>Psychological Factors: Personality traits, coping mechanisms, and individual resilience play a role in mental health.</li>
+                        <li>Environmental Factors: Life experiences, stressors, socioeconomic conditions, and exposure to trauma can contribute to mental health difficulties.</li>
+                    </ul>
+                    <p>Recognizing these multifaceted causes is crucial for developing a comprehensive understanding of mental health challenges.
+                    </p>
+                </section>
+
+          </div>
+          <div id="adhd-content" class="content-section content">
+            <h1>Attention-Deficit/Hyperactivity Disorder (ADHD)</h1>
+        
+            <section>
+                <h4>What is ADHD?</h4>
+                <p>
+                    Attention-deficit/hyperactivity disorder (ADHD) is characterized by an ongoing pattern of inattention
+                    and/or hyperactivity-impulsivity that interferes with functioning or development. Individuals with ADHD
+                    exhibit the following types of symptoms:
+                </p>
+                <ul>
+                    <li><strong>Inattention:</strong> Difficulty staying on task, sustaining focus, and staying organized.
+                        These problems are not due to defiance or lack of comprehension.</li>
+                    <li><strong>Hyperactivity:</strong> Constant movement, including in situations when it is not appropriate,
+                        excessive fidgeting, tapping, or talking. In adults, hyperactivity may manifest as extreme restlessness
+                        or excessive talking.</li>
+                    <li><strong>Impulsivity:</strong> Acting without thinking, difficulty with self-control, and a desire for
+                        immediate rewards. Impulsivity may also include interrupting others or making important decisions without
+                        considering long-term consequences.</li>
+                </ul>
+            </section>
+        
+            <section>
+                <h4>Signs and Symptoms of ADHD</h4>
+                <p>
+                    ADHD symptoms can be categorized into inattention and hyperactivity-impulsivity. For individuals with ADHD,
+                    these behaviors are more severe, occur more frequently, and interfere with social, school, or job functioning.
+                </p>
+        
+                <h5>Inattention</h5>
+                <ul>
+                    <li>Overlooking details and making seemingly careless mistakes in schoolwork, work, or other activities</li>
+                    <li>Difficulty sustaining attention during play, tasks, conversations, lectures, or lengthy reading</li>
+                    <li>Not seeming to listen when spoken to directly</li>
+                    <li>Finding it hard to follow through on instructions or finish schoolwork, chores, or duties in the
+                        workplace. May start tasks but lose focus and get easily sidetracked</li>
+                    <li>Difficulty organizing tasks and activities, doing tasks in sequence, keeping materials and belongings
+                        in order, managing time, and meeting deadlines</li>
+                    <li>Avoiding tasks that require sustained mental effort, such as homework, or, for teens and older adults,
+                        preparing reports, completing forms, or reviewing lengthy papers</li>
+                    <li>Losing things necessary for tasks or activities, such as school supplies, pencils, books, tools, wallets,
+                        keys, paperwork, eyeglasses, and cell phones</li>
+                    <li>Being easily distracted by unrelated thoughts or stimuli</li>
+                    <li>Being forgetful in daily activities, such as chores, errands, returning calls, and keeping
+                        appointments</li>
+                </ul>
+        
+                <h5>Hyperactivity-impulsivity</h5>
+                <ul>
+                    <li>Fidgeting and squirming while seated</li>
+                    <li>Leaving seats in situations when staying seated is expected, such as in the classroom or the office</li>
+                    <li>Difficulty waiting one’s turn</li>
+                    <li>Running, dashing around, or climbing at inappropriate times, or, in teens and adults, often feeling
+                        restless</li>
+                    <li>Being unable to play or engage in hobbies quietly</li>
+                    <li>Being constantly in motion or on the go, or acting as if driven by a motor</li>
+                    <li>Talking excessively</li>
+                    <li>Interrupting or intruding on others, for example, in conversations, games, or activities</li>
+                    <li>Answering questions before they are fully asked, finishing other people’s sentences, or speaking
+                        without waiting for a turn in a conversation</li>
+                </ul>
+            </section>
+        
+            <section>
+                <h4>Diagnosis and Developmental Aspects</h4>
+                <p>
+                    Primary care providers sometimes diagnose and treat ADHD, referring individuals to a mental health
+                    professional, such as a psychiatrist or clinical psychologist, for a thorough evaluation and ADHD diagnosis.
+                    To receive an ADHD diagnosis, symptoms of inattention and/or hyperactivity-impulsivity must be chronic,
+                    impair functioning, and cause a developmental delay. A thorough evaluation is necessary to determine the
+                    cause of the symptoms.
+                </p>
+                <p>
+                    Most children with ADHD receive a diagnosis during the elementary school years. For an adolescent or adult
+                    to receive a diagnosis of ADHD, the symptoms need to have been present before age 12. ADHD symptoms can appear
+                    as early as between the ages of 3 and 6 and can continue through adolescence and adulthood. Symptoms of ADHD
+                    can be mistaken for emotional or disciplinary problems or missed entirely in children who primarily have
+                    symptoms of inattention, leading to a delay in diagnosis. Adults with undiagnosed ADHD may have a history of
+                    poor academic performance, problems at work, or difficult or failed relationships. ADHD symptoms can change
+                    over time as a person ages. In young children with ADHD, hyperactivity-impulsivity is the most predominant
+                    symptom. As a child reaches elementary school, the symptom of inattention may become more prominent and cause
+                    the child to struggle academically. In adolescence, hyperactivity seems to lessen, and symptoms may more likely
+                    include feelings of restlessness or fidgeting, but inattention and impulsivity may remain. Many adolescents
+                    with ADHD also struggle with relationships and antisocial behaviors. Inattention, restlessness, and impulsivity
+                    tend to persist into adulthood.
+                </p>
+            </section>
+        
+            <section>
+                <h4>Risk Factors of ADHD</h4>
+                <p>
+                    Researchers are not sure what causes ADHD, although many studies suggest that genes play a large role. Like
+                    many other disorders, ADHD probably results from a combination of factors. In addition to genetics,
+                    researchers are looking at possible environmental factors that might raise the risk of developing ADHD and are
+                    studying how brain injuries, nutrition, and social environments might play a role in ADHD. ADHD is more
+                    common in males than females, and females with ADHD are more likely to primarily have inattention symptoms.
+                    People with ADHD often have other conditions, such as learning disabilities, anxiety disorder, conduct
+                    disorder, depression, and substance use disorder.
+                </p>
+            </section>
+        
+            <section>
+                <h4>How is ADHD Treated?</h4>
+                <p>
+                    While there is no cure for ADHD, currently available treatments may reduce symptoms and improve
+                    functioning. Treatments include medication, psychotherapy, education or training, or a combination of
+                    treatments.
+                </p>
+        
+                <h5>Medication</h5>
+                <p>
+                    For many people, ADHD medications reduce hyperactivity and impulsivity and improve their ability to focus,
+                    work, and learn. Sometimes, several different medications or dosages must be tried before finding the right
+                    one that works for a particular person. Anyone taking medications must be monitored closely by their
+                    prescribing doctor.
+                </p>
+        
+                <h5>Stimulants</h5>
+                <p>
+                    The most common type of medication used for treating ADHD is called a “stimulant.” Although it may seem
+                    unusual to treat ADHD with a medication that is considered a stimulant, it works by increasing the brain
+                    chemicals dopamine and norepinephrine, which play essential roles in thinking and attention. Under medical
+                    supervision, stimulant medications are considered safe. However, like all medications, they can have side
+                    effects, especially when misused or taken in excess of the prescribed dose and require an individual’s
+                    healthcare provider to monitor how they may be reacting to the medication.
+                </p>
+        
+                <h5>Non-Stimulants</h5>
+                <p>
+                    A few other ADHD medications are non-stimulants. These medications take longer to start working than
+                    stimulants but can also improve focus, attention, and impulsivity in a person with ADHD. Doctors may
+                    prescribe a non-stimulant when a person has bothersome side effects from stimulants, when a stimulant was not
+                    effective, or in combination with a stimulant to increase effectiveness.
+                </p>
+            </section>
+              <section>
+                  <h4>Psychotherapy and Psychosocial Interventions</h4>
+                  <p>
+                      Several specific psychosocial interventions have been shown to help individuals with ADHD and their families manage symptoms and improve everyday functioning. For school-age children, frustration, blame, and anger may have built up within a family before a child is diagnosed. Parents and children may need specialized help to overcome negative feelings. Mental health professionals can educate parents about ADHD and how it affects a family. They also will help the child and his or her parents develop new skills, attitudes, and ways of relating to each other. All types of therapy for children and teens with ADHD require parents to play an active role. Psychotherapy that includes only individual treatment sessions with the child (without parent involvement) is not effective for managing ADHD symptoms and behavior. This type of treatment is more likely to be effective for treating symptoms of anxiety or depression that may occur along with ADHD. 
+                  </p>
+                  <p>
+                      <strong>Behavioral Therapy</strong> is a type of psychotherapy that aims to help a person change their behavior. It might involve practical assistance, such as help organizing tasks or completing schoolwork, or working through emotionally difficult events. Behavioral therapy also teaches a person how to:
+                  </p>
+                  <ul>
+                      <li>Monitor their own behavior </li>
+                      <li>Give oneself praise or rewards for acting in a desired way, such as controlling anger or thinking before acting</li>
+                  </ul>
+          
+                  <p>
+                      Parents, teachers, and family members also can give feedback on certain behaviors and help establish clear rules, chore lists, and structured routines to help a person control their behavior. Therapists may also teach children social skills, such as how to wait their turn, share toys, ask for help, or respond to teasing. Learning to read facial expressions and the tone of voice in others, and how to respond appropriately can also be part of social skills training.</p>
+                      <p><strong>Cognitive Behavioral Therapy</strong> helps a person learn how to be aware and accepting of one’s own thoughts and feelings to improve focus and concentration. The therapist also encourages the person with ADHD to adjust to the life changes that come with treatment, such as thinking before acting, or resisting the urge to take unnecessary risks. </p>
+                      <p><strong>Family and Marital Therapy</strong> can help family members and spouses find productive ways to handle disruptive behaviors, encourage behavior changes, and improve interactions with the person with ADHD. </p>
+                      <p><strong>Parenting Skills Training (Behavioral Parent Management Training)</strong> teaches parents skills for encouraging and rewarding positive behaviors in their children. Parents are taught to use a system of rewards and consequences to change a child’s behavior, to give immediate and positive feedback for behaviors they want to encourage, and to ignore or redirect behaviors they want to discourage. </p>
+                      <p><strong>Specific Behavioral Classroom Management Interventions and/or Academic Accommodations</strong> for children and teens have been shown to be effective for managing symptoms and improving functioning at school and with peers. Interventions may include behavior management plans or teaching organizational or study skills. Accommodations may include preferential seating in the classroom, reduced classwork load, or extended time on tests and exams. The school may provide accommodations through what is called a 504 Plan or, for children who qualify for special education services, an Individualized Education Plan (IEP). To learn more about the Individuals with Disabilities Education Act (IDEA), visit the U.S. Department of Education’s IDEA website.</p>
+                      <p><strong>Stress Management Techniques</strong> can benefit parents of children with ADHD by increasing their ability to deal with frustration so that they can respond calmly to their child’s behavior.</p>
+                      <p><strong>Support Groups</strong> can help parents and families connect with others who have similar problems and concerns. Groups often meet regularly to share frustrations and successes, to exchange information about recommended specialists and strategies, and to talk with experts. The National Resource Center on ADHD, a program of Children and Adults with Attention-Deficit/Hyperactivity Disorder (CHADD®) supported by the Centers for Disease Control and Prevention (CDC), has information and many resources. You can reach this center online or by phone at 1-866-200-8098. Learn more about psychotherapy.</p>
+                  </p>
+              </section>
+          
+              <section>
+                  <h4>Tips to Help Kids and Adults with ADHD Stay Organized</h4>
+                  <section>
+                      <h5>For Kids:</h5>
+                      <p>
+                          Parents and teachers can help kids with ADHD stay organized and follow directions with tools such as:
+                      </p>
+                      <ul>
+                          <li>Keeping a routine and a schedule. Keep the same routine every day, from wake-up time to bedtime. Include times for homework, outdoor play, and indoor activities. Keep the schedule on the refrigerator or a bulletin board. Write changes on the schedule as far in advance as possible.</li>
+                          <li>Organizing everyday items. Have a place for everything, (such as clothing, backpacks, and toys), and keep everything in its place.</li>
+                          <li>Using homework and notebook organizers. Use organizers for school material and supplies. Stress to your child the importance of writing down assignments and bringing home necessary books. </li>
+                          <li>Being clear and consistent. Children with ADHD need consistent rules they can understand and follow.</li>
+                          <li>Giving praise or rewards when rules are followed. Children with ADHD often receive and expect criticism. Look for good behavior and praise it.</li>
+                      </ul>
+                  </section>
+          
+                  <section>
+                      <h5>For Adults:</h5>
+                      <p>
+                          A professional counselor or therapist can help an adult with ADHD learn how to organize their life with tools such as:
+                      </p>
+                      <ul>
+                          <li>Keeping routines.</li>
+                          <li>Making lists for different tasks and activities.</li>
+                          <li>Using a calendar for scheduling events. </li>
+                          <li>Assigning a special place for keys, bills, and paperwork</li>
+                          <li>Breaking down large tasks into more manageable, smaller steps so that completing each part of the task provides a sense of accomplishment.</li>
+                      </ul> 
+                  </p>
+                  </section>
+              </section>
+          
+          </div>
+          <div id="anxiety-content" class="content-section content">
+            <h1>Anxiety Disorders</h1>
+        
+            <section>
+                <h4>What is anxiety?</h4>
+                <p>
+                    Occasional anxiety is a normal part of life. Many people worry about things such as health, money, or family problems. But anxiety disorders involve more than temporary worry or fear. For people with an anxiety disorder, the anxiety does not go away and can get worse over time. The symptoms can interfere with daily activities such as job performance, schoolwork, and relationships.
+                </p>
+                <p>
+                    There are several types of anxiety disorders, including generalized anxiety disorder, panic disorder, social anxiety disorder, and various phobia-related disorders.
+                </p>
+            </section>
+        
+            <section>
+                <h4>What are the signs and symptoms of anxiety?</h4>
+        
+                <section>
+                    <h4>Generalized anxiety disorder</h4>
+                    <p>
+                        Generalized anxiety disorder (GAD) usually involves a persistent feeling of anxiety or dread, which can interfere with daily life. It is not the same as occasionally worrying about things or experiencing anxiety due to stressful life events. People living with GAD experience frequent anxiety for months, if not years.
+                    </p>
+                    <p>Symptoms of GAD include:</p>
+                    <ul>
+                        <li>Feeling restless, wound-up, or on-edge</li>
+                        <li>Being easily fatigued</li>
+                        <li>Having difficulty concentrating</li>
+                        <li>Being irritable</li>
+                        <li>Having headaches, muscle aches, stomachaches, or unexplained pains</li>
+                        <li>Difficulty controlling feelings of worry</li>
+                        <li>Having sleep problems, such as difficulty falling or staying asleep</li>
+                    </ul>
+                </section>
+        
+                <section>
+                    <h4>Panic disorder</h4>
+                    <p>
+                        People with panic disorder have frequent and unexpected panic attacks. Panic attacks are sudden periods of intense fear, discomfort, or a sense of losing control even when there is no clear danger or trigger. Not everyone who experiences a panic attack will develop panic disorder.
+                    </p>
+                    <p>During a panic attack, a person may experience:</p>
+                    <ul>
+                        <li>Pounding or racing heart</li>
+                        <li>Sweating</li>
+                        <li>Trembling or tingling</li>
+                        <li>Chest pain</li>
+                        <li>Feelings of impending doom</li>
+                        <li>Feelings of being out of control</li>
+                    </ul>
+                    <p>
+                        People with panic disorder often worry about when the next attack will happen and actively try to prevent future attacks by avoiding places, situations, or behaviors they associate with panic attacks. Panic attacks can occur as frequently as several times a day or as rarely as a few times a year.
+                    </p>
+                </section>
+        
+                <section>
+                    <h4>Social anxiety disorder</h4>
+                    <p>
+                        Social anxiety disorder is an intense, persistent fear of being watched and judged by others. For people with social anxiety disorder, the fear of social situations may feel so intense that it seems beyond their control. For some people, this fear may get in the way of going to work, attending school, or doing everyday things.
+                    </p>
+                    <p>People with social anxiety disorder may experience:</p>
+                    <ul>
+                        <li>Blushing, sweating, or trembling</li>
+                        <li>Pounding or racing heart</li>
+                        <li>Stomachaches</li>
+                        <li>Rigid body posture or speaking with an overly soft voice</li>
+                        <li>Difficulty making eye contact or being around people they don’t know</li>
+                        <li>Feelings of self-consciousness or fear that people will judge them negatively</li>
+                    </ul>
+                </section>
+        
+                <section>
+                    <h4>Phobia-related disorders</h4>
+                    <p>
+                        A phobia is an intense fear of—or aversion to—specific objects or situations. Although it can be realistic to be anxious in some circumstances, the fear people with phobias feel is out of proportion to the actual danger caused by the situation or object.
+                    </p>
+                    <p>People with a phobia:</p>
+                    <ul>
+                        <li>May have an irrational or excessive worry about encountering the feared object or situation</li>
+                        <li>Take active steps to avoid the feared object or situation</li>
+                        <li>Experience immediate intense anxiety upon encountering the feared object or situation</li>
+                        <li>Endure unavoidable objects and situations with intense anxiety</li>
+                    </ul>
+                    <p>There are several types of phobias and phobia-related disorders:</p>
+        
+                    <p><strong>Specific Phobias (sometimes called simple phobias):</strong>
+                        <br>As the name suggests, people who have a specific phobia have an intense fear of, or feel intense anxiety about, specific types of objects or situations. Some examples of specific phobias include the fear of:
+                    </p>
+                    <ul>
+                        <li>Flying</li>
+                        <li>Heights</li>
+                        <li>Specific animals, such as spiders, dogs, or snakes</li>
+                        <li>Receiving injections</li>
+                        <li>Blood</li>
+                    </ul>
+                    <p><strong>Social anxiety disorder (previously called social phobia):</strong> People with social anxiety disorder have a general intense fear of, or anxiety toward, social or performance situations. They worry that actions or behaviors associated with their anxiety will be negatively evaluated by others, leading them to feel embarrassed. This worry often causes people with social anxiety to avoid social situations. Social anxiety disorder can manifest in a range of situations, such as within the workplace or the school environment.</p>
+                    <p><strong>Agoraphobia:</strong> People with agoraphobia have an intense fear of two or more of the following situations:</p>
+                    <ul>
+                        <li>Using public transportation</li>
+                        <li>Being in open spaces</li>
+                        <li>Being in enclosed spaces</li>
+                        <li>Standing in line or being in a crowd</li>
+                        <li>Being outside of the home alone</li>
+                    </ul>
+                    <p>
+                        People with agoraphobia often avoid these situations, in part, because they think being able to leave might be difficult or impossible in the event they have panic-like reactions or other embarrassing symptoms. In the most severe form of agoraphobia, an individual can become housebound.
+                    </p>
+                    <p><strong>Separation anxiety disorder:</strong> Separation anxiety is often thought of as something that only children deal with. However, adults can also be diagnosed with separation anxiety disorder. People with separation anxiety disorder fear being away from the people they are close to. They often worry that something bad might happen to their loved ones while they are not together. This fear makes them avoid being alone or away from their loved ones. They may have bad dreams about being separated or feel unwell when separation is about to happen.
+                    </p>
+                </section>
+        
+            </section>
+        
+            <section>
+              <h4>What are the risk factors for anxiety?</h4>
+          
+              <p>Researchers are finding that both genetic and environmental factors contribute to the risk of developing an anxiety disorder.</p>
+          
+              <p>The risk factors for each type of anxiety disorder vary. However, some general risk factors include:</p>
+          
+              <ul>
+                  <li>Shyness or feeling distressed or nervous in new situations in childhood</li>
+                  <li>Exposure to stressful and negative life or environmental events</li>
+                  <li>A history of anxiety or other mental disorders in biological relatives</li>
+              </ul>
+          </section>
+          
+          <section>
+              <p>Anxiety symptoms can be produced or aggravated by:</p>
+          
+              <ul>
+                  <li>Some physical health conditions, such as thyroid problems or heart arrhythmia</li>
+                  <li>Caffeine or other substances/medications</li>
+              </ul>
+          
+              <p>If you think you may have an anxiety disorder, getting a physical examination from a health care provider may help them diagnose your symptoms and find the right treatment.</p>
+          </section>
+          
+          <section>
+              <h4>How is anxiety treated?</h4>
+          
+              <p>Anxiety disorders are generally treated with psychotherapy, medication, or both. There are many ways to treat anxiety, and you should work with a health care provider to choose the best treatment for you.</p>
+          </section>
+          
+          <section>
+              <h4>Psychotherapy</h4>
+          
+              <p>Psychotherapy or “talk therapy” can help people with anxiety disorders. To be effective, psychotherapy must be directed at your specific anxieties and tailored to your needs.</p>
+          </section>
+          
+          <section>
+              <h4>Cognitive behavioral therapy</h4>
+          
+              <p>Cognitive Behavioral Therapy (CBT) is an example of one type of psychotherapy that can help people with anxiety disorders. It teaches people different ways of thinking, behaving, and reacting to situations to help you feel less anxious and fearful. CBT has been well studied and is the gold standard for psychotherapy.</p>
+          
+              <p>Exposure therapy is a CBT method that is used to treat anxiety disorders. Exposure therapy focuses on confronting the fears underlying an anxiety disorder to help people engage in activities they have been avoiding. Exposure therapy is sometimes used along with relaxation exercises.</p>
+          </section>
+          
+          <section>
+              <h4>Acceptance and commitment therapy</h4>
+          
+              <p>Another treatment option for some anxiety disorders is acceptance and commitment therapy (ACT). ACT takes a different approach than CBT to negative thoughts. It uses strategies such as mindfulness and goal setting to reduce discomfort and anxiety. Compared to CBT, ACT is a newer form of psychotherapy treatment, so less data are available on its effectiveness.</p>
+          </section>
+          
+          <section>
+              <h4>Medication</h4>
+          
+              <p>Medication does not cure anxiety disorders but can help relieve symptoms. Health care providers, such as a psychiatrist or primary care provider, can prescribe medication for anxiety. Some states also allow psychologists who have received specialized training to prescribe psychiatric medications. The most common classes of medications used to combat anxiety disorders are antidepressants, anti-anxiety medications (such as benzodiazepines), and beta-blockers.</p>
+          </section>
+          
+          <section>
+              <h4>Antidepressants</h4>
+          
+              <p>Antidepressants are used to treat depression, but they can also be helpful for treating anxiety disorders. They may help improve the way your brain uses certain chemicals that control mood or stress. You may need to try several different antidepressant medicines before finding the one that improves your symptoms and has manageable side effects.</p>
+          
+              <p>Antidepressants can take several weeks to start working so it’s important to give the medication a chance before reaching a conclusion about its effectiveness. If you begin taking antidepressants, do not stop taking them without the help of a health care provider. Your provider can help you slowly and safely decrease your dose. Stopping them abruptly can cause withdrawal symptoms.</p>
+          
+              <p>In some cases, children, teenagers, and adults younger than 25 may experience increased suicidal thoughts or behavior when taking antidepressant medications, especially in the first few weeks after starting or when the dose is changed. Because of this, people of all ages taking antidepressants should be watched closely, especially during the first few weeks of treatment.</p>
+          </section>
+          
+          <section>
+              <h4>Anti-anxiety medications</h4>
+          
+              <p>Anti-anxiety medications can help reduce the symptoms of anxiety, panic attacks, or extreme fear and worry. The most common anti-anxiety medications are called benzodiazepines. Although benzodiazepines are sometimes used as first-line treatments for generalized anxiety disorder, they have both benefits and drawbacks.</p>
+          
+              <p>Benzodiazepines are effective in relieving anxiety and take effect more quickly than antidepressant medications. However, some people build up a tolerance to these medications and need higher and higher doses to get the same effect. Some people even become dependent on them.</p>
+          
+              <p>To avoid these problems, health care providers usually prescribe benzodiazepines for short periods of time.</p>
+          
+              <p>If people suddenly stop taking benzodiazepines, they may have withdrawal symptoms, or their anxiety may return. Therefore, benzodiazepines should be tapered off slowly. Your provider can help you slowly and safely decrease your dose.</p>
+          </section>
+          
+          <section>
+              <h4>Choosing the right medication</h4>
+          
+              <p>Some types of drugs may work better for specific types of anxiety disorders, so people should work closely with a health care provider to identify which medication is best for them. Certain substances such as caffeine, some over-the-counter cold medicines, illicit drugs, and herbal supplements may aggravate the symptoms of anxiety disorders or interact with prescribed medication. People should talk with a health care provider, so they can learn which substances are safe and which to avoid.</p>
+          
+              <p>Choosing the right medication, medication dose, and treatment plan should be done under an expert’s care and should be based on a person’s needs and their medical situation. You and your provider may try several medicines before finding the right one.</p>
+          </section>
+          
+        </div>
+        <div id="stress-content" class="content-section content">
+          <h1>STRESS</h1>
+          <p>Stress is a normal reaction the body has when changes occur, resulting in physical, emotional, and intellectual responses. Stress management training can help you deal with changes in a healthier way.</p>
+      
+          <section>
+              <h4>What is stress?</h4>
+              <p>Stress is a normal human reaction that happens to everyone.
+                  <br>In fact, the human body is designed to experience stress and react to it.
+                  <br>When you experience changes or challenges (stressors), your body produces physical and mental responses. That’s stress.
+                  <br><br>
+                  Stress responses help your body adjust to new situations. Stress can be positive, keeping us alert, motivated and ready to avoid danger. For example, if you have an important test coming up, a stress response might help your body work harder and stay awake longer. But stress becomes a problem when stressors continue without relief or periods of relaxation.
+                  <br></p>
+          </section>
+      
+          <section>
+              <h4>What happens to the body during stress?</h4>
+              <p>The body’s autonomic nervous system controls your heart rate, breathing, vision changes, and more.
+                  Its built-in stress response, the “fight-or-flight response,” helps the body face stressful situations.
+                  <br><br>
+                  When a person has long-term (chronic) stress, continued activation of the stress response causes wear and tear on the body. Physical, emotional, and behavioral symptoms develop.
+                  <br><br></p>
+              <h5>Physical symptoms of stress include:</h5>
+              <ul>
+                  <li>Aches and pains.</li>
+                  <li>Chest pain or a feeling like your heart is racing.</li>
+                  <li>Exhaustion or trouble sleeping.</li>
+                  <li>Headaches, dizziness, or shaking.</li>
+                  <li>High blood pressure.</li>
+                  <li>Muscle tension or jaw clenching.</li>
+                  <li>Stomach or digestive problems.</li>
+                  <li>Weak immune system.</li>
+              </ul>
+              <p>Stress can lead to emotional and mental symptoms like:</p>
+              <ul>
+                  <li>Anxiety or irritability.</li>
+                  <li>Depression.</li>
+                  <li>Panic attacks.</li>
+                  <li>Sadness.</li>
+              </ul>
+          </section>
+      
+          <section>
+              <h4>How is stress diagnosed?</h4>
+              <p>Stress is subjective — not measurable with tests. Only the person experiencing it can determine whether it's present and how severe it feels. A healthcare provider may use questionnaires to understand your stress and how it affects your life.
+                  <br><br>
+                  If you have chronic stress, your healthcare provider can evaluate symptoms that result from stress. For example, high blood pressure can be diagnosed and treated.
+              </p>
+          </section>
+      
+          <section>
+              <h4>What are some strategies for stress relief?</h4>
+              <p>You can’t avoid stress, but you can stop it from becoming overwhelming by practicing some daily strategies:</p>
+              <ul>
+                  <li>Exercise when you feel symptoms of stress coming on. Even a short walk can boost your mood.</li>
+                  <li>At the end of each day, take a moment to think about what you’ve accomplished — not what you didn’t get done.</li>
+                  <li>Set goals for your day, week, and month. Narrowing your view will help you feel more in control of the moment and long-term tasks.</li>
+                  <li>Consider talking to a therapist or your healthcare provider about your worries.</li>
+              </ul>
+          </section>
+      
+          <section>
+              <h4>What are some ways to prevent stress?</h4>
+              <p>Many daily strategies can help you keep stress at bay:</p>
+              <ul>
+                  <li>Try relaxation activities, such as meditation, yoga, tai chi, breathing exercises, and muscle relaxation. Programs are available online, in smartphone apps, and at many gyms and community centers.</li>
+                  <li>Take good care of your body each day. Eating right, exercising, and getting enough sleep help your body handle stress much better.</li>
+                  <li>Stay positive and practice gratitude, acknowledging the good parts of your day or life.</li>
+                  <li>Accept that you can’t control everything. Find ways to let go of worry about situations you cannot change.</li>
+                  <li>Learn to say “no” to additional responsibilities when you are too busy or stressed.</li>
+                  <li>Stay connected with people who keep you calm, make you happy, provide emotional support and help you with practical things. A friend, family member or neighbor can become a good listener or share responsibilities so that stress doesn’t become overwhelming.</li>
+              </ul>
+          </section>
+      
+          <section>
+              <h4>How long does stress last?</h4>
+              <p>Stress can be a short-term issue or a long-term problem, depending on what changes in your life. Regularly using stress management techniques can help you avoid most physical, emotional, and behavioral symptoms of stress.</p>
+          </section>
+      
+          <section>
+              <h4>When should I talk to a doctor about stress?</h4>
+              <p>You should seek medical attention if you feel overwhelmed, if you are using drugs or alcohol to cope, or if you have thoughts about hurting yourself. Your primary care provider can help by offering advice, prescribing medicine or referring you to a therapist.</p>
+          </section>
+        </div>
+      </div>
+  </div>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"
+  ></script>
+  <script src="../articles/articles.js"></script>
+</body>
+</html>

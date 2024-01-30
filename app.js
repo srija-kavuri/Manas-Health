@@ -8,7 +8,7 @@ const signup=require('./signupServer.js')
 const {verify, changeEmail, resendOTP}=require('./OTP/veifyOtp.js');
 const {test, getQuestions} = require('./mlModel/questionServer.js');
 const User = require('./userModel.js');
-const resultData = require('./results/resultserver.js');
+const resultData = require('./results/resulServer.js');
 const editProfile = require('./editprofile.js');
 const getStudents = require('./teacherServer.js');
 const  {progress, getProgress} = require('./progressServer.js');
@@ -97,6 +97,10 @@ app.get('/home', (req,res)=>{
   }
 })
 
+app.get('/articles', (req,res)=>{
+  res.sendFile(path.join(__dirname, 'public', 'articles/articles.html'))
+})
+
 
 app.get('/api/userDetails', async (req, res)=>{
   if(req.session.isAuth){
@@ -123,7 +127,7 @@ app.get('/result', (req, res)=>{
   res.sendFile(path.join(__dirname, 'public', 'result/result.html'));
 })
 
-app.post('/api/result', resultData);
+app.use('/api/result', resultData);
 
 app.use('/api/editProfile', editProfile);
 

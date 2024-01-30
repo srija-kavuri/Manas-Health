@@ -1,39 +1,21 @@
 /* Google Fonts - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+
 body{
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #7d2ae8;
+    font-family: 'Poppins', sans-serif;
+    background-image: url("https://i.pinimg.com/736x/64/df/8f/64df8f0fc779a58e9915ed5b5b210691.jpg");
+    background-size: cover;
+    background-position: center;
 }
-.container{
-    display: flex;
-    /* width: 420px; */
-    flex: content;
-    padding: 50px 0;
-    border-radius: 8px;
-    background: #fff;
-    row-gap: 30px;
-    flex-direction: column;
-    align-items: center;
-}
+
 .circular-progress{
-    position: relative;
     height: 250px;
     width: 250px;
     border-radius: 50%;
-    background: conic-gradient(#7d2ae8 3.6deg, #ededed 0deg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    /* background: conic-gradient(#7d2ae8 3.6deg, #fff 0deg); */
+    /* background-color: aliceblue; */
+    
 }
 .circular-progress::before{
     content: "";
@@ -48,9 +30,4 @@ body{
     font-size: 40px;
     font-weight: 600;
     color: #7d2ae8;
-}
-.text{
-    font-size: 30px;
-    font-weight: 500;
-    color: #606060;
 }
