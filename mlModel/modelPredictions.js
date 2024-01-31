@@ -9,10 +9,33 @@ const router = express.Router();
 router.post('/',cors(), async (req,res)=>{
 
     if(!req.session.isAuth){
-        console.log("unauthorized");
-        return res.send("please login to access");
+        return res.json({success:false, message:"please login to access"});
     }
-  const {category, userInputs} = req.body;
+  const category = req.body.category;
+  const date = req.body.date;
+
+  let userInputs;
+    if (category === "general_test") {
+        let generalTestInputs;
+        console.log('General test');
+        userInputs = [req.session.userData.age];
+        generalTestInputs = req.body.userInputs;
+        generalTestInputs.forEach((input,index) => {
+            if(input===0){
+                generalTestInputs[index]=1;
+            }else generalTestInputs[index]=0;      
+        });
+        console.log(userInputs);
+      if(userInputs.length===0){
+        console.error("Couldn't find the age of the user");
+        return res.json({success:false, message:"Couldn't find the age of the user"});
+      }
+      userInputs.push(...(generalTestInputs));
+    }else{
+        userInputs = req.body.userInputs;
+    }
+console.log(userInputs)
+
     try {
         const response = await axios.post('http://127.0.0.1:5000/predict', {category, userInputs});
         const {score, severity_level} = response.data;
@@ -22,6 +45,7 @@ router.post('/',cors(), async (req,res)=>{
         }
         await mongoose.connect("mongodb://localhost:27017/manashealth");
         const email = req.session.userData.email;
+        // const email="valli@gmail.com";
         const findUser = await resultsModel.findOne({email});
         if(findUser){
             findUser.currentStatus[category] = severity_level
@@ -29,12 +53,10 @@ router.post('/',cors(), async (req,res)=>{
                 category,
                 userInputs,
                 score,
-                severity_level
+                severity_level,
+                date
             })
             findUser.save()
-            // .then(updatedResults=>{
-            //     console.log("user results updated successfully", updatedResults);
-            // })
             .catch(error=>{
                 console.error("error updating the user", error);
             })
@@ -45,7 +67,8 @@ router.post('/',cors(), async (req,res)=>{
                     category: category,
                     userInputs: userInputs,
                     score,
-                    severity_level
+                    severity_level,
+                    date
                 }],
                 currentStatus : {
                     [category]:severity_level

@@ -28,6 +28,10 @@ const userSchema = new mongoose.Schema({
   },
   sectionName: {
     type: String,
+  },
+
+  age:{
+    type:Number
   }
 });
 

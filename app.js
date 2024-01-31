@@ -84,21 +84,25 @@ app.get('/home', (req,res)=>{
 
   if(req.session.isAuth){
     if(req.session.category === 'Teacher'){
-      res.status(302).sendFile(path.join(__dirname,'public', 'teacher/teacher.html'), (err)=>{
+      return res.status(302).sendFile(path.join(__dirname,'public', 'teacher/teacher.html'), (err)=>{
         if(err){
           console.log(err);
         }
     })
     }else if(req.session.category === 'Student'){
-      res.status(302).sendFile(path.join(__dirname,'public', 'home/home.html'));
+      return res.status(302).sendFile(path.join(__dirname,'public', 'home/home.html'));
     }
   }else{
-    res.redirect('/login');
+    return res.redirect('/login');
   }
 })
 
 app.get('/articles', (req,res)=>{
   res.sendFile(path.join(__dirname, 'public', 'articles/articles.html'))
+})
+
+app.get('/resources', (req,res)=>{
+  res.sendFile(path.join(__dirname, 'public', 'resources/resources.html'))
 })
 
 

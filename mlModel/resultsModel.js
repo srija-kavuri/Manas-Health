@@ -12,7 +12,8 @@ const resultsModel = new mongoose.Schema({
       category: String,
       userInputs: Array,
       score: String,
-      severity_level: String
+      severity_level: String,
+      date: String
     }],
     default: [],
     required: true,
@@ -25,13 +26,12 @@ const resultsModel = new mongoose.Schema({
       autism:String,
       stress:String,
       dyslexia:String,
+      ptsd:String,
+      adhd:String,
+      general_test:String,
     },
     required: true,
-    default: {depression:"",
-      anxiety:"",
-      autism:"",
-      stress:"",
-      dyslexia:""}
+    default: {}
   }
 })
 

@@ -8,14 +8,15 @@ const router = express.Router();
 
 router.post('/', async (req, res) => {
     try {
-        const { username, category, school, email, password, className, sectionName } = req.body;
+        console.log(req.body);
+        const { username, category, school, email, password, className, sectionName,birthday } = req.body;
 
         if (!username || !category || !email || !school || !password) {
             console.log("Field(s) are empty");
             return res.status(400).send("Field(s) are empty");
         }
 
-        if (category === "Student" && (!className || !sectionName)) {
+        if (category === "Student" && (!className || !sectionName || !birthday)) {
             console.log("Field(s) are empty for student");
             return res.status(400).send("Field(s) are empty for student");
         }
@@ -31,8 +32,27 @@ router.post('/', async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, 12);
 
         let userData;
+        let age;
         if (category === "Student") {
-            userData = { username, category, instituteName: school, email, hashedPassword, className, sectionName: sectionName.toUpperCase() };
+            const birthdateString = req.body.birthday;
+            const birthdate = new Date(birthdateString);
+
+        // Get the current date
+            const currentDate = new Date();
+
+        // Calculate the age
+            age = currentDate.getFullYear() - birthdate.getFullYear();
+
+        // Adjust the age if the birthday hasn't occurred yet this year
+            if (
+            currentDate.getMonth() < birthdate.getMonth() ||
+            (currentDate.getMonth() === birthdate.getMonth() &&
+                currentDate.getDate() < birthdate.getDate())
+            ) {
+            age--;
+            }
+
+            userData = { username, category, instituteName: school, email, hashedPassword, className, sectionName: sectionName.toUpperCase(), age };
         } else {
             userData = { username, category, instituteName: school, email, hashedPassword };
         }
@@ -41,9 +61,7 @@ router.post('/', async (req, res) => {
 
         const otp = await sendMail.sendOTP(email, username);
 
-        console.log(otp);
         req.session.otp = otp;
-        console.log(req.session.otp);
 
         return res.status(200).json({ success: true });
     } catch (error) {
@@ -57,7 +75,6 @@ router.post('/', async (req, res) => {
         }
     } finally {
         await mongoose.disconnect();
-        console.log('mongoose disconnected');
     }
 });
 

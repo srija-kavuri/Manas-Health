@@ -51,9 +51,19 @@ document.addEventListener('DOMContentLoaded', ()=>{
     // Hide "Prev" button for the first question
     var prevButton = document.getElementById('prevButton');
     prevButton.style.display = currentQuestionIndex === 0 ? 'none' : 'block';
-
+    updatequestion(currentQuestionIndex);
   }
   
+  var currentquestion=document.createElement("div");
+   currentquestion.id="questionProgress";
+   var questiodisplay=document.createElement('h4');
+   
+   function updatequestion(currentQuestionIndex){
+   questiodisplay.textContent="Question "+(currentQuestionIndex+1)+"   of "+questionsData.length;
+    currentquestion.appendChild(questiodisplay);
+    document.body.appendChild(currentquestion);
+  }
+
   var testheading = document.getElementsByClassName('testNameContainer')[0];
 var testnamediv = document.createElement("h1");
 testnamediv.textContent = testdata.category;
@@ -87,7 +97,12 @@ testheading.appendChild(testnamediv);
       var radioBtn = document.createElement("input");
       radioBtn.type = "radio";
       radioBtn.name = "question" + index;
-      radioBtn.value = optionIndex;
+      if(testdata.category==="dyslexia"){
+        radioBtn.value=optionIndex+1;
+      }
+      else{
+        radioBtn.value = optionIndex;
+      }
       radioBtn.id = "option" + index + "_" + (optionIndex + 1);
       radioBtn.classList.add("btn-check");
 
@@ -120,6 +135,8 @@ testheading.appendChild(testnamediv);
       
       currentQuestionIndex++;
       if (currentQuestionIndex < questionsData.length) {
+        console.log(selectedoptions);
+
          showQuestion();
         } else {
         //inputs submission 
@@ -166,18 +183,27 @@ testheading.appendChild(testnamediv);
 })
 
 async function getresult(category, userInputs){
+  const currentDate = new Date();
+const year = currentDate.getFullYear();
+const month = currentDate.getMonth()+1;
+const day = currentDate.getDate();
+const hours = currentDate.getHours();
+const minutes = currentDate.getMinutes();
+const seconds = currentDate.getSeconds();
+const date=`${day}-${month}-${year} ${day} ${hours}:${minutes}:${seconds}`
+
   await fetch('http://localhost:5500/api/getPredictions',{
           method:"POST",
           headers:{
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({category, userInputs })
+          body: JSON.stringify({category, userInputs, date })
         }).then(response=>response.json())
         .then(prediction=>{
           if(prediction.success){
             let result = prediction.severity_level;
             result=encodeURIComponent(result);
-            const url = `/result/?category=${category}&result=${result}`;
+            const url = `/result?category=${category}&result=${result}`;
             window.location.replace(`${url}`);
           }else{
             console.error("Error submittin the inputs", error);

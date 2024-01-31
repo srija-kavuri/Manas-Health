@@ -99,15 +99,14 @@ document.getElementById('registerbutton').addEventListener('click', (e) => {
      else {
       console.log("entered else block");
 
-      e.preventDefault();
       const formData = new FormData(document.querySelector('#myform'));
       console.log('Before fetch');
-      console.log(formData);
       
       const formDataObject = {};
       formData.forEach((value, key) => {
         formDataObject[key] = value;
       });
+      console.log(formDataObject);
       
       fetch('/api/signup', {
         method: 'POST',

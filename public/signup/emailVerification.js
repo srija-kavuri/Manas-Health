@@ -22,6 +22,7 @@ function sendMail(){
         confirmBtn.style.display = "none";
     }
     const email = document.getElementById('emailInput').value;
+    console.log(email);
 
     fetch('/api/changeemail', {
         method:'POST',

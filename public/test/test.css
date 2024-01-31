@@ -1,6 +1,6 @@
 .question-container {
   height: 350px;
-  width: 75%; /* Adjust the width as needed */
+  width: 75%; 
   margin: 1% auto; /* Center the question container */
   border-color: aqua;
   border-radius: 8px;
@@ -9,6 +9,8 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+ 
+ 
 }
 .question-container input[type="radio"] {
   margin-left: 10px; /* Adjust the margin as needed */
@@ -21,33 +23,51 @@
 .custom-options {
   margin-top: 40px;
   margin-right: 20px;
+  background-color: rgb(227, 226, 226);
   box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
 }
-.custom-prevButton{
-    margin-top: 100px;
-    margin-left: 100px;
-    margin-bottom: 100px;
-    /* justify-content: flex-start; */
-    /* align-items: end; */
-    display: flex;
-
-
-  
+.custom-options:focus{
+  background-color: black;
+  border-color: none;
 }
+.custom-prevButton{
+  margin-left: 130px;
+    margin-bottom: 500px;
+     justify-content: flex-start; 
+     align-items: end; 
+     display: flex;
+  
+ /* .custom-prevButton{
+  margin-top: 20px;
+  justify-content: flex-start;
+  /* margin-left: 100px; */
+  /* display: flex; */ 
+ 
+ }
+  
+
 .custom-nextbutton{
     /* margin-top: 50%; */
     margin-left: auto;
     justify-content: flex-end;
+    margin-left: 50px;
     
 }
+
 .testNameContainer{
-    background-color: rgb(143, 227, 217);
-max-width: 100%;
+
+background-color: rgb(159, 225, 224);
+
 justify-content: center;
 align-items: center;
 display: flex;
 height: 100px;
-/* padding: 18px; */
-/* position:fixed; */
+
 margin-top: 20px;
+
 }
+#questionProgress{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  }

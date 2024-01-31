@@ -40,7 +40,11 @@ getQuestions.get('/', async (req,res)=>{
     }else if(testCategory==="ptsd"){
       const jsonData =await fs.readFile('./mlmodel/ptsd/ptsd_test.json', 'utf-8');
       data = JSON.parse(jsonData);
-    }else{
+    }else if(testCategory==="general_test"){
+      const jsonData = await fs.readFile('./mlmodel/general_test/general_test.json', 'utf-8');
+      data = JSON.parse(jsonData);
+    }
+    else{
       return res.status(400).send({success:false, message:"Can't find test with the given category"})
     }
     return res.status(200).send({success:true, data:data});

@@ -6,6 +6,7 @@ import autism.predict as autismprediction
 import stress.predict as stressprediction
 import dyslexia.predict as dyslexiaprediction
 import ptsd.predict as ptsdprediction
+import general_test.predict as general_testprediction
 
 app = Flask(__name__)
 
@@ -32,7 +33,10 @@ def predict():
             predictions = dyslexiaprediction.predict_severity(userInputs)
         elif(category == "ptsd"):
             predictions = ptsdprediction.predict_severity(userInputs)
-        
+        elif(category=="general_test"):
+            predictions = general_testprediction.predict_severity(userInputs)
+        else:
+            return jsonify({"error": "couldn't find model predictions"})
         score = predictions["score"]
         severity_level = predictions["severity_level"]
         result = {"score":score, "severity_level": severity_level}
@@ -41,6 +45,7 @@ def predict():
         return jsonify(result)
 
     except Exception as e:
+        print(e)
         return jsonify({'error': str(e)})
 
 if __name__ == '__main__':

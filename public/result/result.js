@@ -20,9 +20,10 @@ fetch(url)
             let circularProgress = document.querySelector(".circular-progress"),
     progressValue = document.querySelector(".progress-value");
     progressValue.innerHTML = result;
+    document.getElementById('testCategory').innerHTML = category;
 
 let progressStartValue = 0,    
-    progressEndValue = response.data.value;   
+    progressEndValue = response.data.value+1;   
     speed = 10;
     
 let progress = setInterval(() => {
@@ -34,10 +35,34 @@ let progress = setInterval(() => {
     if(progressStartValue == progressEndValue){
         clearInterval(progress);
     }    
-}, speed);
+    }, speed);
         } else {
             console.log(response.message);
         }
+
+        const adviceArray = [
+            "We regret to inform you that the recent test results indicate a severe outcome. It's important to address this situation promptly and proactively.",
+            "Schedule an appointment with your healthcare provider to discuss the results and gain a comprehensive understanding.",
+            "Timely action is crucial to address the severity of the situation.",
+            "Inform your close family members and friends about the situation.",
+            "Seek emotional support from your loved ones during this challenging time.",
+            "Prioritize your mental health and consider seeking counseling or therapy."
+        ];
+        // const adviceArray = response.data.message;
+
+        // Create an unordered list element
+    const ulElement = document.createElement('ul');
+
+    // Iterate through the array and create list items with bullet points
+    adviceArray.forEach((advice, index) => {
+        const liElement = document.createElement('li');
+        liElement.textContent = advice;
+        liElement.style.fontSize = '18px';
+        ulElement.appendChild(liElement);
+    });
+
+    // Append the unordered list to the body
+    document.getElementById('message').appendChild(ulElement);
     })
     .catch(error => {
         console.error("error fetching the data", error);

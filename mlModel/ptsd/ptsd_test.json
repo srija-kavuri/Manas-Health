@@ -2,7 +2,7 @@
   "category": "ptsd",
   "questions": [
     {
-      "question": "Repeated, disturbing memories, thoughts, or images of a stressful experience from the past?",
+      "question": "To what extent do you experience repeated, disturbing memories, thoughts, or images of a stressful experience from the past?",
       "options": [
         "Not at all",
         "A little bit",
@@ -12,7 +12,7 @@
       ]
     },
     {
-      "question": "Repeated, disturbing dreams of a stressful experience from the past?",
+      "question": "How much do you experience repeated, disturbing dreams of a stressful experience from the past?",
       "options": [
         "Not at all",
         "A little bit",
@@ -22,7 +22,7 @@
       ]
     },
     {
-      "question": "Suddenly acting or feeling as if a stressful experience were happening again (as if you were reliving it)?",
+      "question": "To what degree do you suddenly act or feel as if a stressful experience were happening again (as if you were reliving it)?",
       "options": [
         "Not at all",
         "A little bit",
@@ -32,7 +32,7 @@
       ]
     },
     {
-      "question": "Feeling very upset when something reminded you of a stressful experience from the past?",
+      "question": "How strongly do you feel upset when something reminds you of a stressful experience from the past?",
       "options": [
         "Not at all",
         "A little bit",
@@ -42,7 +42,7 @@
       ]
     },
     {
-      "question": "Having physical reactions (e.g., heart pounding, trouble breathing, or sweating) when something reminded you of a stressful experience from the past?",
+      "question": "How much do you have physical reactions (e.g., heart pounding, trouble breathing, or sweating) when something reminds you of a stressful experience from the past?",
       "options": [
         "Not at all",
         "A little bit",
@@ -52,7 +52,7 @@
       ]
     },
     {
-      "question": "Avoid thinking about or talking about a stressful experience from the past or avoid having feelings related to it?",
+      "question": "To what extent do you avoid thinking about or talking about a stressful experience from the past or avoid having feelings related to it?",
       "options": [
         "Not at all",
         "A little bit",
@@ -62,7 +62,7 @@
       ]
     },
     {
-      "question": "Avoid activities or situations because they remind you of a stressful experience from the past?",
+      "question": "How often do you avoid activities or situations because they remind you of a stressful experience from the past?",
       "options": [
         "Not at all",
         "A little bit",
@@ -72,7 +72,7 @@
       ]
     },
     {
-      "question": "Trouble remembering important parts of a stressful experience from the past?",
+      "question": "How much trouble do you have remembering important parts of a stressful experience from the past?",
       "options": [
         "Not at all",
         "A little bit",
@@ -82,7 +82,7 @@
       ]
     },
     {
-      "question": "Loss of interest in things that you used to enjoy?",
+      "question": "To what extent have you experienced a loss of interest in things that you used to enjoy?",
       "options": [
         "Not at all",
         "A little bit",
@@ -92,7 +92,7 @@
       ]
     },
     {
-      "question": "Feeling distant or cut off from other people?",
+      "question": "How much do you feel distant or cut off from other people?",
       "options": [
         "Not at all",
         "A little bit",
@@ -102,7 +102,7 @@
       ]
     },
     {
-      "question": "Feeling emotionally numb or being unable to have loving feelings for those close to you?",
+      "question": "To what degree do you feel emotionally numb or unable to have loving feelings for those close to you?",
       "options": [
         "Not at all",
         "A little bit",
@@ -112,7 +112,7 @@
       ]
     },
     {
-      "question": "Feeling as if your future will somehow be cut short?",
+      "question": "How much do you feel as if your future will somehow be cut short?",
       "options": [
         "Not at all",
         "A little bit",
@@ -122,7 +122,7 @@
       ]
     },
     {
-      "question": "Trouble falling or staying asleep?",
+      "question": "How much trouble do you have falling or staying asleep?",
       "options": [
         "Not at all",
         "A little bit",
@@ -132,7 +132,7 @@
       ]
     },
     {
-      "question": "Feeling irritable or having angry outbursts?",
+      "question": "How often do you feel irritable or have angry outbursts?",
       "options": [
         "Not at all",
         "A little bit",
@@ -142,7 +142,7 @@
       ]
     },
     {
-      "question": "Having difficulty concentrating?",
+      "question": "How much difficulty do you have concentrating?",
       "options": [
         "Not at all",
         "A little bit",
@@ -152,7 +152,7 @@
       ]
     },
     {
-      "question": "Being \u201csuper alert\u201d or watchful on guard?",
+      "question": "To what extent do you find yourself being super alert or watchful on guard?",
       "options": [
         "Not at all",
         "A little bit",
@@ -162,7 +162,7 @@
       ]
     },
     {
-      "question": "Feeling jumpy or easily startled?",
+      "question": "How much do you feel jumpy or easily startled?",
       "options": [
         "Not at all",
         "A little bit",

@@ -18,7 +18,7 @@ router.post('/', async (req,res)=>{
         const isValid = await bcrypt.compare(reqPassword, findUser.hashedPassword);
         if(isValid){
           req.session.isAuth = true;
-          req.session.userData = {email:reqEmail};
+          req.session.userData = {email:reqEmail, age:findUser.age};
           if(remember){
             req.session.cookie.maxAge=1000*60*60*24;
           }

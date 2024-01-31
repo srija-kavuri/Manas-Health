@@ -2,7 +2,7 @@
   "category": "stress",
   "questions": [
     {
-      "question": "I found it hard to wind down",
+      "question": "How often do you find it challenging to wind down?",
       "options": [
         "Never",
         "Sometimes",
@@ -11,7 +11,7 @@
       ]
     },
     {
-      "question": "I tended to over-react to situations",
+      "question": "How frequently do you tend to over-react to situations?",
       "options": [
         "Never",
         "Sometimes",
@@ -20,7 +20,7 @@
       ]
     },
     {
-      "question": "I felt that I was using a lot of nervous energy",
+      "question": "How often do you feel that you are using a lot of nervous energy?",
       "options": [
         "Never",
         "Sometimes",
@@ -29,7 +29,7 @@
       ]
     },
     {
-      "question": "I found myself getting agitated",
+      "question": "How frequently do you find yourself getting agitated?",
       "options": [
         "Never",
         "Sometimes",
@@ -38,7 +38,7 @@
       ]
     },
     {
-      "question": "I found it difficult to relax",
+      "question": "How often do you find it difficult to relax?",
       "options": [
         "Never",
         "Sometimes",
@@ -47,7 +47,7 @@
       ]
     },
     {
-      "question": "I was intolerant of anything that kept me from getting on with what I was doing",
+      "question": "How frequently are you intolerant of anything that keeps you from getting on with what you are doing?",
       "options": [
         "Never",
         "Sometimes",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "question": "I felt that I was rather touchy",
+      "question": "How often do you feel rather touchy?",
       "options": [
         "Never",
         "Sometimes",

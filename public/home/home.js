@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Function to handle the click event for the General Test button
   document.getElementById("generalTest").addEventListener("click", function () {
-      const category = encodeURIComponent("general");
+      const category = encodeURIComponent("general_test");
       const url = `${endpoint}?category=${category}`;
       console.log(url);
       window.location.href = `${url}`;
