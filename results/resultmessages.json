@@ -60,16 +60,6 @@
     ]
   },
 
-  "adhd":{
-    "value":0,
-    "message":[
-      "Based on the test, it appears you have ADHD.",
-      "Consult with a healthcare professional for further evaluation and guidance.",
-      "ADHD is a manageable condition with the right support and treatment.",
-      "Take the results as an indication, but seek professional advice for a definitive diagnosis."
-    ]
-  },
-
   "minimal risk":{
     "value":0,
     "message":[
@@ -87,6 +77,126 @@
       "Early intervention and tailored support can make a significant difference for individuals with dyslexia.",
       "Reach out to educational experts for personalized guidance based on your unique needs."
     ]
-  }
+  },
+
+  "autism":{
+    "value":100,
+    "message":[
+      "Your recent test results suggest the possibility of Autism Spectrum Disorder (ASD).",
+      "Remember, this is not a definitive diagnosis, but an indication based on the test responses.",
+      "There is hope and support available. We encourage you to consult with a healthcare professional for a thorough evaluation.",
+      "Early intervention and understanding can make a significant difference."
+    ]
+  },
+  "loneliness": {
+    "value": 75,
+    "message": [
+        "Your recent test results indicate a possibility of experiencing loneliness.",
+        "It's important to remember that this is not a definitive diagnosis, but rather an indication based on the test responses.",
+        "There are various ways to address and overcome loneliness. Seeking support from friends, family, or professionals can make a positive impact on your well-being.",
+        "If you have concerns or need assistance, consider reaching out to those around you. You're not alone in facing loneliness."
+    ]
+},
+"bipolar": {
+  "value": 90,
+  "message": [
+      "Your recent test results suggest the possibility of Bipolar Disorder.",
+      "Please note that this is not a definitive diagnosis, but an indication based on the test responses.",
+      "Seeking professional help is crucial for a comprehensive evaluation. With the right support and treatment, individuals with Bipolar Disorder can manage and lead fulfilling lives.",
+      "Don't hesitate to consult with a healthcare professional to discuss your concerns and explore appropriate interventions."
+  ]
+},
+
+"anxiety": {
+  "value": 85,
+  "message": [
+      "Your recent test results indicate a possibility of experiencing anxiety.",
+      "It's important to clarify that this is not a definitive diagnosis, but an indication based on the test responses.",
+      "Many effective treatments and strategies are available to manage anxiety. Seeking support from mental health professionals or support groups can provide valuable assistance.",
+      "If you have concerns or need assistance in dealing with anxiety, consider reaching out to a healthcare professional for guidance on next steps."
+  ]
+},
+"ptsd": {
+  "value": 80,
+  "message": [
+      "Your recent test results suggest the possibility of Post-Traumatic Stress Disorder (PTSD).",
+      "It's essential to understand that this is not a definitive diagnosis, but an indication based on the test responses.",
+      "Seeking professional help is crucial for a comprehensive evaluation. Treatment and support are available to help individuals manage and overcome the challenges associated with PTSD.",
+      "Consider consulting with a mental health professional to discuss your concerns and explore appropriate interventions."
+  ]
+},
+
+"sleeping_disorder": {
+  "value": 70,
+  "message": [
+      "Your recent test results indicate a possibility of a sleeping disorder.",
+      "Please note that this is not a definitive diagnosis but rather an indication based on the test responses.",
+      "Improving sleep quality is important for overall well-being. Consulting with a healthcare professional can help identify the specific sleep issues and explore effective solutions.",
+      "If you have concerns about your sleep patterns, consider reaching out to a healthcare professional for guidance on improving your sleep hygiene."
+  ]
+},
+"psychotic_depression": {
+  "value": 85,
+  "message": [
+      "Your recent test results suggest the possibility of Psychotic Depression.",
+      "It's crucial to understand that this is not a definitive diagnosis, but an indication based on the test responses.",
+      "Seeking prompt professional help is essential. Psychotic Depression requires specialized treatment and support to address both depressive symptoms and psychotic features.",
+      "Consider consulting with a mental health professional to discuss your concerns and explore appropriate interventions tailored to your specific needs."
+  ]
+},
+"adhd": {
+  "value": 75,
+  "message": [
+      "Your recent test results suggest the possibility of Attention-Deficit/Hyperactivity Disorder (ADHD).",
+      "It's important to note that this is not a definitive diagnosis, but an indication based on the test responses.",
+      "Seeking professional help is crucial for a comprehensive evaluation. With the right support and strategies, individuals with ADHD can develop effective coping mechanisms and lead successful lives.",
+      "Consider consulting with a healthcare professional to discuss your concerns and explore appropriate interventions tailored to your specific needs."
+  ]
+},
+
+"ocd": {
+  "value": 85,
+  "message": [
+      "Your recent test results suggest the possibility of Obsessive-Compulsive Disorder (OCD).",
+      "Please understand that this is not a definitive diagnosis, but an indication based on the test responses.",
+      "Seeking professional help is important. Effective treatments, including therapy and medication, are available to help individuals manage and alleviate symptoms associated with OCD.",
+      "Consider consulting with a mental health professional to discuss your concerns and explore appropriate interventions tailored to your specific needs."
+  ]
+},
+"mdd": {
+  "value": 90,
+  "message": [
+      "Your recent test results suggest the possibility of Major Depressive Disorder (MDD).",
+      "It's crucial to understand that this is not a definitive diagnosis, but an indication based on the test responses.",
+      "Seeking professional help is essential for a comprehensive evaluation and tailored treatment plan. Effective interventions, including therapy and medication, can significantly improve symptoms of depression.",
+      "Consider consulting with a mental health professional to discuss your concerns and explore appropriate interventions tailored to your specific needs."
+  ]
+},
+"eating_disorder": {
+  "value": 80,
+  "message": [
+      "Your recent test results indicate a possibility of an Eating Disorder.",
+      "It's important to recognize that this is not a definitive diagnosis but an indication based on the test responses.",
+      "Seeking professional help is crucial for a comprehensive evaluation and developing a personalized treatment plan. Eating disorders can be effectively managed with the right support.",
+      "Consider consulting with a healthcare professional to discuss your concerns and explore appropriate interventions tailored to your specific needs."
+  ]
+},
+"healthy": {
+  "value": 0,
+  "message": [
+      "Congratulations! Your recent test results indicate a healthy state.",
+      "This is great news and reflects a positive outcome based on the test responses.",
+      "Maintaining a healthy lifestyle, both physically and mentally, is crucial. Continue practicing self-care and making choices that contribute to your overall well-being.",
+      "If you have any questions or concerns about maintaining a healthy lifestyle, feel free to explore resources or consult with healthcare professionals for personalized advice."
+  ]
+}
+
+
+
+
+
+
+
+
 
 }

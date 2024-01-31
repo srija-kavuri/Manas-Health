@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 body{
   /* background: linear-gradient(to top,#87dff1, #fff); */
-  background-image: url("https://img.freepik.com/free-vector/monochromatic-hand-painted-background-with-drawn-nature-elements_52683-63007.jpg?w=996&t=st=1706528329~exp=1706528929~hmac=770d0737fa27fa63bc385f12e567378ea45811a96ad8dff1a5125ad776a241ea");
+  /* background-image: url("https://img.freepik.com/free-vector/monochromatic-hand-painted-background-with-drawn-nature-elements_52683-63007.jpg?w=996&t=st=1706528329~exp=1706528929~hmac=770d0737fa27fa63bc385f12e567378ea45811a96ad8dff1a5125ad776a241ea"); */
     background-size: cover;
     background-position: center;
 }
@@ -8,8 +10,8 @@ body{
 /* Navigation Bar */
 .navbar-titles{
     font-weight: 500;
-    font-family: 'Lora', serif;
-    font-size: 20px; 
+    font-family: 'Poppins', sans-serif;
+    /* font-size: 20px;  */
     
 }
 
@@ -23,5 +25,5 @@ body{
 }
 
 .explain-text{
-  background: linear-gradient(to right, rgb(192, 238, 255), rgb(0, 119, 128));
+  background-color: skyblue;
 }

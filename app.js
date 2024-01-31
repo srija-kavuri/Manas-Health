@@ -98,13 +98,16 @@ app.get('/home', (req,res)=>{
 })
 
 app.get('/articles', (req,res)=>{
-  res.sendFile(path.join(__dirname, 'public', 'articles/articles.html'))
+  res.sendFile(path.join(__dirname, 'public', 'articles/articles.html'));
 })
 
 app.get('/resources', (req,res)=>{
-  res.sendFile(path.join(__dirname, 'public', 'resources/resources.html'))
+  res.sendFile(path.join(__dirname, 'public', 'resources/resources.html'));
 })
 
+app.get('/help', (req,res)=>{
+  res.sendFile(path.join(__dirname, 'public', 'resources/resources.html'));
+})
 
 app.get('/api/userDetails', async (req, res)=>{
   if(req.session.isAuth){

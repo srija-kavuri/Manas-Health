@@ -28,8 +28,9 @@ document.addEventListener('DOMContentLoaded', function() {
       datasets: [{
           label: 'Mental Health Issues',
           data: [1, 4, 3, 5, 2, 4, 3], // Numerical data (Mild: 1, Normal: 2, High: 3)
-          backgroundColor: 'rgba(75, 192, 192, 0.5)',
-          borderColor: 'rgba(75, 192, 192, 1)',
+          backgroundColor: 'skyblue',
+          // backgroundColor: '#449e48',
+          // borderColor: 'rgba(75, 192, 192, 1)',
           borderWidth: 1
       }]
   };
@@ -43,6 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
           maintainAspectRatio: false,
           scales: {
               x: {
+                  barThickness: 10,
                   beginAtZero: true,
                   ticks: {
                       stepSize: 1
@@ -57,6 +59,32 @@ document.addEventListener('DOMContentLoaded', function() {
                       }
                   }
               }
+          },
+          plugins: {
+            legend: {
+              display: true,
+              position: 'top'
+            }
+          },
+          layout: {
+            padding: {
+              left: 50,
+              right: 50,
+              top:0,
+              bottom:0
+            }
+          },
+          scales: {
+            x: {
+              grid: {
+                display: false
+              }
+            },
+            y: {
+              grid: {
+                display: false
+              }
+            }
           }
       }
   });

@@ -9,13 +9,21 @@ document.getElementById("username").innerHTML = username;
     document.getElementById("className").innerHTML = className;
     document.getElementById("sectionName").innerHTML = sectionName;
 
+
+
 const hamBurger = document.querySelector(".toggle-btn");
 
 hamBurger.addEventListener("click", function () {
   document.querySelector("#sidebar").classList.toggle("expand");
 });
 window.addEventListener("load", function () {
-  showContent("resources-content");
+  const path = window.location.pathname;
+if(path==='/help'){
+  showContent("emergency-contacts-content");
+}
+else{
+    showContent("resources-content");
+  }
 });
 document.getElementById("resources-link").addEventListener("click", function (event) {
   event.preventDefault(); 
