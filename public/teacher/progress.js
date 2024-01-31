@@ -17,6 +17,7 @@ function logout() {
     console.log(error);
   })
 }
+
 const urlParams = new URLSearchParams(window.location.search);
 let student;
 if(urlParams){
@@ -32,8 +33,14 @@ fetch(`/api/student/progress/?student=${student}`,{
 .then(data=> {
   if(data.success){
     const studentResults = data.progress;
-    console.log(studentResults);
+    const {username, email, instituteName, className, sectionName} = data.studentDetails;
+    document.getElementById("username").innerHTML = username; 
+    document.getElementById("email").innerHTML = email; 
+    document.getElementById("institute").innerHTML = instituteName;
+      document.getElementById("className").innerHTML = className;
+      document.getElementById("sectionName").innerHTML = sectionName;
   }
+  console.log(data);
 })
 
 // Graph
