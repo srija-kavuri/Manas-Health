@@ -15,23 +15,24 @@ router.post('/',cors(), async (req,res)=>{
   const date = req.body.date;
 
   let userInputs;
-    if (category === "general_test") {
-        let generalTestInputs;
-        console.log('General test');
-        userInputs = [req.session.userData.age];
-        generalTestInputs = req.body.userInputs;
-        generalTestInputs.forEach((input,index) => {
-            if(input===0){
-                generalTestInputs[index]=1;
-            }else generalTestInputs[index]=0;      
-        });
-        console.log(userInputs);
-      if(userInputs.length===0){
-        console.error("Couldn't find the age of the user");
-        return res.json({success:false, message:"Couldn't find the age of the user"});
-      }
-      userInputs.push(...(generalTestInputs));
-    }else{
+if (category === "general_test") {
+  console.log('General test');
+  userInputs = [req.session.userData.age];
+  
+  let generalTestInputs = req.body.userInputs.map(input => (input === 0 ? 1 : 0));
+
+  console.log(userInputs);
+
+  if (userInputs.length === 0) {
+    console.error("Couldn't find the age of the user");
+    return res.json({ success: false, message: "Couldn't find the age of the user" });
+  }
+
+  // Push reversed generalTestInputs into userInputs
+  userInputs.push(...generalTestInputs);
+}
+
+    else{
         userInputs = req.body.userInputs;
     }
 console.log(userInputs)

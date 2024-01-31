@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sidebar With Bootstrap</title>
+    <title>Articles</title>
     <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
@@ -12,52 +12,118 @@
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../articles/articles.css" />
+    <link rel="stylesheet" href="../Articles/articles.css" />
   </head>
 
   <body>
-      <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-        <div class="container-fluid p-0">
-          <p class="fs-1 navbar-brand fw-semibold ms-4 pt-2">Manas Health</p>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #0e2238;" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand fs-2 ms-3 navbar-titles" href="../Home/home.html">Manas Health</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link navbar-titles ps-4" >Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link navbar-titles ps-4" href="http://localhost:5500/resources">Resources</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link navbar-titles ps-4" href="http://localhost:5500/articles">Articles</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link navbar-titles ps-4" href="http://localhost:5500/progress">Progress</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link navbar-titles ps-4" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Logout</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled navbar-titles ps-4" aria-disabled="true">Help</a>
-              </li>
+            <div class="navbar-nav ms-auto">
+              <a class="nav-link coustom-nav fs-5 navbar-titles" aria-current="page" href="../Home/home.html">Home</a>
+              <a class="nav-link coustom-nav fs-5 navbar-titles" href="../resources/resources.html">Resources</a>
+              <a class="nav-link coustom-nav fs-5 navbar-titles active" href="../Articles/articles.html">Articles</a>
+              <a class="nav-link coustom-nav fs-5 navbar-titles" href="../Home/progress.html">Progress</a>
+              <a class="nav-link  coustom-nav fs-5 navbar-titles"  data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Logout</a>
+              
               <div>
-                <li class="nav-item">
-                  <a href="#" class="btn ps-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-person-circle" viewBox="0 0 20 20">
-                      <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                      <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-                    </svg>
-                  </a>
-                </li>
-              </div>
-            </ul> 
+                <a href="#" class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-person-circle" viewBox="0 0 20 20">
+                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+              
+              </svg>
+            
+                </a>
+                </div>
+              
+            </div>
           </div>
         </div>
-      </nav>
+    </nav>     
   
+    <!-- User details canvas -->
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasRightLabel">user details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="profile-icon"> 
+          <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="#b3b3b3" class="bi bi-person-square" viewBox="0 0 16 16">
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/>
+          </svg>
+        </div> 
+        <table class="table mt-5">
+          <thead>
+            <tr>
+              <th scope="col"><p>student details</p></th>
+            
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">username</th>
+              <td>
+                <p id="username"></p>
+              </td>
+            </tr>
+  
+            <tr>
+              <th scope="row">email</th>
+              <td>
+                <p id="email"></p>
+              </td>
+            </tr>
+  
+            <tr>
+              <th scope="row">institute name</th>
+              <td colspan="2">
+                <p id="institute"></p>
+              </td>
+            </tr>
+  
+          </tbody>
+        </table>
+        <div class="edit">
+          <button type="button" class="btn rounded-pill btn-outline-secondary px-3 ">edit your profile</button>
+        </div>
+        </div>
+      </div>
+                      
+      <!--Logout Modal -->
+      <div class="container">
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Logout</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p>Are you want to sure logout.</p>
+              </div>
+              <div class="modal-footer">
+                <a href="../Login/login.html"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >YES</button></a>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">NO</button>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+
     <div class="wrapper">
+    <!-- Side Bar -->
       <aside id="sidebar">
         <div class="d-flex">
           <button class="toggle-btn" type="button">
@@ -121,262 +187,269 @@
           </a>
         </div>
       </aside>
-      <div class="main p-3">
-          <div id="content-container">
-            <div id="mental-health-content" class="content-section">
-                    <h1>About Mental Health</h1>
-            <section>
-                    <h4>Understanding Mental Health:</h4>
-                    <p>Mental health is a holistic concept encompassing emotional, psychological, and social well-being. It's not just the absence of mental disorders but also the ability to handle stress, form positive relationships, and make choices. Good mental health enhances one's overall life experience, contributing to a sense of fulfillment and purpose. At its core, mental health reflects our resilience, coping mechanisms, and the quality of our relationships. It's a dynamic aspect of our well-being that evolves over time and can be influenced by both internal and external factors. Recognizing the interconnectedness of mental and physical health is essential for fostering a comprehensive approach to self-care. Our understanding of mental health acknowledges the fluidity of emotions, the importance of social support, and the need for coping strategies. Through our assessment test, we aim to assist individuals in gaining insights into their current mental health status, providing a starting point for further exploration and support.
-                    </p>
-                </section>
-            
-                <section>
-                    <h4>What is Mental Illness?</h4>
-                    <p>Mental illness encompasses a broad spectrum of conditions that affect how individuals think, feel, and behave. These conditions can vary in severity and duration, impacting daily life activities and overall functioning. Common mental illnesses include depression, anxiety disorders, bipolar disorder, schizophrenia, and more. Recognizing mental illness involves paying attention to persistent changes in mood, thoughts, or behaviors. Symptoms can range from subtle shifts to more noticeable disruptions in daily life. While mental health challenges are prevalent, they are treatable. Seeking professional help is crucial for accurate diagnosis and effective management. Our assessment test is designed to identify potential signs of mental health concerns, offering individuals an opportunity to reflect on their experiences. However, it's important to note that the test is not a substitute for professional evaluation. A mental health professional's expertise is essential for a comprehensive understanding of specific conditions and personalized treatment plans.
-                    </p>
-                </section>
-            
-                <section>
-                    <h4>How Do I Know If I Have a Mental Illness?</h4>
-                    <p>Recognizing the signs of a potential mental health issue can be challenging, as symptoms can vary widely among individuals. Common indicators may include persistent feelings of sadness, anxiety, changes in sleep or appetite, difficulty concentrating, and withdrawal from social activities. Our assessment test provides a series of evidence-based questions to help individuals self-reflect on their experiences and emotions. This preliminary exploration can be a valuable starting point for those who may be unsure about their mental health status. However, it's crucial to emphasize that the assessment is not a definitive diagnosis. Consulting with a mental health professional is the next crucial step. Professionals can conduct a thorough evaluation, taking into account personal history, symptoms, and any contributing factors. The goal is to provide individuals with accurate information about their mental health and guide them towards appropriate interventions.
-                    </p>
-                </section>
-            
-                <section>
-                    <h4>What Mental Illness Do I Have?</h4>
-                    <p>Diagnosing a mental illness involves a comprehensive assessment conducted by a qualified mental health professional, such as a psychiatrist or psychologist. Our assessment test provides general insights based on common symptoms, but it is not a substitute for a professional diagnosis. Mental health conditions are diverse and unique to each individual. The same diagnosis may manifest differently in different people. Therefore, a personalized approach to evaluation is essential for understanding the specific challenges an individual may be facing. The assessment test aims to prompt self-reflection and encourage individuals to seek professional help when needed. Professionals use evidence-based assessments, clinical interviews, and observation to arrive at a diagnosis. This process considers the duration, intensity, and impact of symptoms on daily functioning. Understanding the specific mental health condition is crucial for developing an effective treatment plan. Treatment options may include therapy, medication, lifestyle changes, or a combination of approaches. It's important to collaborate with a mental health professional to determine the most appropriate course of action based on an individual's unique needs.
-                    </p>
-                </section>
-            
-                <section>
-                    <h4>How Common is Mental Illness?</h4>
-                    <p>Mental health challenges are pervasive and affect people from all walks of life. The World Health Organization estimates that one in four people globally will be affected by mental or neurological disorders at some point in their lives. Mental illnesses do not discriminate based on age, gender, ethnicity, or socioeconomic status. Understanding the prevalence of mental health conditions is essential for reducing stigma and promoting open conversations. By recognizing the widespread nature of these challenges, we aim to create a supportive environment that encourages individuals to seek help without fear of judgment. Our assessment test contributes to mental health awareness by providing individuals with a tool to assess their mental well-being. It's important to emphasize that the test offers insights based on common symptoms and is not a diagnostic tool. Seeking professional help ensures a more accurate understanding of one's mental health status and appropriate interventions if needed.
-                    </p>
-                </section>
-            
-                <section>
-                    <h4>Why Do I Have a Mental Illness?</h4>
-                    <p>The development of mental health conditions is influenced by a combination of factors, including biological, psychological, and environmental elements.
-                    </p>
-                    <ul>
-                        <li>Genetics: Family history can play a role in susceptibility to certain mental health conditions.</li>
-                        <li>Biological Factors: Changes in brain chemistry or structure can contribute to the development of mental health conditions.</li>
-                        <li>Life Experiences: Trauma, abuse, loss, or significant life changes can contribute to the onset of mental health challenges.</li>
-                        <li>Environmental Stressors: High levels of stress, exposure to violence, or living in challenging socioeconomic conditions can contribute to mental health difficulties.</li>
-                        <li>Psychological Factors: Personality traits, coping mechanisms, and individual resilience can influence mental health.</li>
-                    </ul>
-                    <p>Our assessment test considers these factors to prompt individuals to reflect on their mental well-being in the context of potential mental health concerns.
-                    </p>
-                </section>
-            
-                <section>
-                    <h4>What Causes Mental Illness?</h4>
-                    <p>Mental illnesses are complex conditions influenced by a combination of biological, psychological, and environmental factors. Understanding the causes involves recognizing the intricate interplay of these elements, contributing to the diverse nature of mental health challenges.
-                    </p>
-                    <ul>
-                        <li>Biological Factors: Imbalances in neurotransmitters, changes in brain chemistry, and genetic predispositions can impact mental health.</li>
-                        <li>Psychological Factors: Personality traits, coping mechanisms, and individual resilience play a role in mental health.</li>
-                        <li>Environmental Factors: Life experiences, stressors, socioeconomic conditions, and exposure to trauma can contribute to mental health difficulties.</li>
-                    </ul>
-                    <p>Recognizing these multifaceted causes is crucial for developing a comprehensive understanding of mental health challenges.
-                    </p>
-                </section>
 
-          </div>
-          <div id="adhd-content" class="content-section content">
-            <h1>Attention-Deficit/Hyperactivity Disorder (ADHD)</h1>
+    <div class="main p-3">
+       <div id="content-container">
+
+    <!-- Mental Health -->
+        <div id="mental-health-content" class="content-section">
+                <h1>About Mental Health</h1>
+        <section>
+                <h4>Understanding Mental Health:</h4>
+                <p>Mental health is a holistic concept encompassing emotional, psychological, and social well-being. It's not just the absence of mental disorders but also the ability to handle stress, form positive relationships, and make choices. Good mental health enhances one's overall life experience, contributing to a sense of fulfillment and purpose. At its core, mental health reflects our resilience, coping mechanisms, and the quality of our relationships. It's a dynamic aspect of our well-being that evolves over time and can be influenced by both internal and external factors. Recognizing the interconnectedness of mental and physical health is essential for fostering a comprehensive approach to self-care. Our understanding of mental health acknowledges the fluidity of emotions, the importance of social support, and the need for coping strategies. Through our assessment test, we aim to assist individuals in gaining insights into their current mental health status, providing a starting point for further exploration and support.
+                </p>
+            </section>
         
             <section>
-                <h4>What is ADHD?</h4>
-                <p>
-                    Attention-deficit/hyperactivity disorder (ADHD) is characterized by an ongoing pattern of inattention
-                    and/or hyperactivity-impulsivity that interferes with functioning or development. Individuals with ADHD
-                    exhibit the following types of symptoms:
+                <h4>What is Mental Illness?</h4>
+                <p>Mental illness encompasses a broad spectrum of conditions that affect how individuals think, feel, and behave. These conditions can vary in severity and duration, impacting daily life activities and overall functioning. Common mental illnesses include depression, anxiety disorders, bipolar disorder, schizophrenia, and more. Recognizing mental illness involves paying attention to persistent changes in mood, thoughts, or behaviors. Symptoms can range from subtle shifts to more noticeable disruptions in daily life. While mental health challenges are prevalent, they are treatable. Seeking professional help is crucial for accurate diagnosis and effective management. Our assessment test is designed to identify potential signs of mental health concerns, offering individuals an opportunity to reflect on their experiences. However, it's important to note that the test is not a substitute for professional evaluation. A mental health professional's expertise is essential for a comprehensive understanding of specific conditions and personalized treatment plans.
+                </p>
+            </section>
+        
+            <section>
+                <h4>How Do I Know If I Have a Mental Illness?</h4>
+                <p>Recognizing the signs of a potential mental health issue can be challenging, as symptoms can vary widely among individuals. Common indicators may include persistent feelings of sadness, anxiety, changes in sleep or appetite, difficulty concentrating, and withdrawal from social activities. Our assessment test provides a series of evidence-based questions to help individuals self-reflect on their experiences and emotions. This preliminary exploration can be a valuable starting point for those who may be unsure about their mental health status. However, it's crucial to emphasize that the assessment is not a definitive diagnosis. Consulting with a mental health professional is the next crucial step. Professionals can conduct a thorough evaluation, taking into account personal history, symptoms, and any contributing factors. The goal is to provide individuals with accurate information about their mental health and guide them towards appropriate interventions.
+                </p>
+            </section>
+        
+            <section>
+                <h4>What Mental Illness Do I Have?</h4>
+                <p>Diagnosing a mental illness involves a comprehensive assessment conducted by a qualified mental health professional, such as a psychiatrist or psychologist. Our assessment test provides general insights based on common symptoms, but it is not a substitute for a professional diagnosis. Mental health conditions are diverse and unique to each individual. The same diagnosis may manifest differently in different people. Therefore, a personalized approach to evaluation is essential for understanding the specific challenges an individual may be facing. The assessment test aims to prompt self-reflection and encourage individuals to seek professional help when needed. Professionals use evidence-based assessments, clinical interviews, and observation to arrive at a diagnosis. This process considers the duration, intensity, and impact of symptoms on daily functioning. Understanding the specific mental health condition is crucial for developing an effective treatment plan. Treatment options may include therapy, medication, lifestyle changes, or a combination of approaches. It's important to collaborate with a mental health professional to determine the most appropriate course of action based on an individual's unique needs.
+                </p>
+            </section>
+        
+            <section>
+                <h4>How Common is Mental Illness?</h4>
+                <p>Mental health challenges are pervasive and affect people from all walks of life. The World Health Organization estimates that one in four people globally will be affected by mental or neurological disorders at some point in their lives. Mental illnesses do not discriminate based on age, gender, ethnicity, or socioeconomic status. Understanding the prevalence of mental health conditions is essential for reducing stigma and promoting open conversations. By recognizing the widespread nature of these challenges, we aim to create a supportive environment that encourages individuals to seek help without fear of judgment. Our assessment test contributes to mental health awareness by providing individuals with a tool to assess their mental well-being. It's important to emphasize that the test offers insights based on common symptoms and is not a diagnostic tool. Seeking professional help ensures a more accurate understanding of one's mental health status and appropriate interventions if needed.
+                </p>
+            </section>
+        
+            <section>
+                <h4>Why Do I Have a Mental Illness?</h4>
+                <p>The development of mental health conditions is influenced by a combination of factors, including biological, psychological, and environmental elements.
                 </p>
                 <ul>
-                    <li><strong>Inattention:</strong> Difficulty staying on task, sustaining focus, and staying organized.
-                        These problems are not due to defiance or lack of comprehension.</li>
-                    <li><strong>Hyperactivity:</strong> Constant movement, including in situations when it is not appropriate,
-                        excessive fidgeting, tapping, or talking. In adults, hyperactivity may manifest as extreme restlessness
-                        or excessive talking.</li>
-                    <li><strong>Impulsivity:</strong> Acting without thinking, difficulty with self-control, and a desire for
-                        immediate rewards. Impulsivity may also include interrupting others or making important decisions without
-                        considering long-term consequences.</li>
+                    <li>Genetics: Family history can play a role in susceptibility to certain mental health conditions.</li>
+                    <li>Biological Factors: Changes in brain chemistry or structure can contribute to the development of mental health conditions.</li>
+                    <li>Life Experiences: Trauma, abuse, loss, or significant life changes can contribute to the onset of mental health challenges.</li>
+                    <li>Environmental Stressors: High levels of stress, exposure to violence, or living in challenging socioeconomic conditions can contribute to mental health difficulties.</li>
+                    <li>Psychological Factors: Personality traits, coping mechanisms, and individual resilience can influence mental health.</li>
                 </ul>
+                <p>Our assessment test considers these factors to prompt individuals to reflect on their mental well-being in the context of potential mental health concerns.
+                </p>
             </section>
         
             <section>
-                <h4>Signs and Symptoms of ADHD</h4>
-                <p>
-                    ADHD symptoms can be categorized into inattention and hyperactivity-impulsivity. For individuals with ADHD,
-                    these behaviors are more severe, occur more frequently, and interfere with social, school, or job functioning.
+                <h4>What Causes Mental Illness?</h4>
+                <p>Mental illnesses are complex conditions influenced by a combination of biological, psychological, and environmental factors. Understanding the causes involves recognizing the intricate interplay of these elements, contributing to the diverse nature of mental health challenges.
                 </p>
-        
-                <h5>Inattention</h5>
                 <ul>
-                    <li>Overlooking details and making seemingly careless mistakes in schoolwork, work, or other activities</li>
-                    <li>Difficulty sustaining attention during play, tasks, conversations, lectures, or lengthy reading</li>
-                    <li>Not seeming to listen when spoken to directly</li>
-                    <li>Finding it hard to follow through on instructions or finish schoolwork, chores, or duties in the
-                        workplace. May start tasks but lose focus and get easily sidetracked</li>
-                    <li>Difficulty organizing tasks and activities, doing tasks in sequence, keeping materials and belongings
-                        in order, managing time, and meeting deadlines</li>
-                    <li>Avoiding tasks that require sustained mental effort, such as homework, or, for teens and older adults,
-                        preparing reports, completing forms, or reviewing lengthy papers</li>
-                    <li>Losing things necessary for tasks or activities, such as school supplies, pencils, books, tools, wallets,
-                        keys, paperwork, eyeglasses, and cell phones</li>
-                    <li>Being easily distracted by unrelated thoughts or stimuli</li>
-                    <li>Being forgetful in daily activities, such as chores, errands, returning calls, and keeping
-                        appointments</li>
+                    <li>Biological Factors: Imbalances in neurotransmitters, changes in brain chemistry, and genetic predispositions can impact mental health.</li>
+                    <li>Psychological Factors: Personality traits, coping mechanisms, and individual resilience play a role in mental health.</li>
+                    <li>Environmental Factors: Life experiences, stressors, socioeconomic conditions, and exposure to trauma can contribute to mental health difficulties.</li>
                 </ul>
-        
-                <h5>Hyperactivity-impulsivity</h5>
+                <p>Recognizing these multifaceted causes is crucial for developing a comprehensive understanding of mental health challenges.
+                </p>
+            </section>
+
+        </div>
+
+    <!-- ADHD -->
+        <div id="adhd-content" class="content-section content">
+        <h1>Attention-Deficit/Hyperactivity Disorder (ADHD)</h1>
+    
+        <section>
+            <h4>What is ADHD?</h4>
+            <p>
+                Attention-deficit/hyperactivity disorder (ADHD) is characterized by an ongoing pattern of inattention
+                and/or hyperactivity-impulsivity that interferes with functioning or development. Individuals with ADHD
+                exhibit the following types of symptoms:
+            </p>
+            <ul>
+                <li><strong>Inattention:</strong> Difficulty staying on task, sustaining focus, and staying organized.
+                    These problems are not due to defiance or lack of comprehension.</li>
+                <li><strong>Hyperactivity:</strong> Constant movement, including in situations when it is not appropriate,
+                    excessive fidgeting, tapping, or talking. In adults, hyperactivity may manifest as extreme restlessness
+                    or excessive talking.</li>
+                <li><strong>Impulsivity:</strong> Acting without thinking, difficulty with self-control, and a desire for
+                    immediate rewards. Impulsivity may also include interrupting others or making important decisions without
+                    considering long-term consequences.</li>
+            </ul>
+        </section>
+    
+        <section>
+            <h4>Signs and Symptoms of ADHD</h4>
+            <p>
+                ADHD symptoms can be categorized into inattention and hyperactivity-impulsivity. For individuals with ADHD,
+                these behaviors are more severe, occur more frequently, and interfere with social, school, or job functioning.
+            </p>
+    
+            <h5>Inattention</h5>
+            <ul>
+                <li>Overlooking details and making seemingly careless mistakes in schoolwork, work, or other activities</li>
+                <li>Difficulty sustaining attention during play, tasks, conversations, lectures, or lengthy reading</li>
+                <li>Not seeming to listen when spoken to directly</li>
+                <li>Finding it hard to follow through on instructions or finish schoolwork, chores, or duties in the
+                    workplace. May start tasks but lose focus and get easily sidetracked</li>
+                <li>Difficulty organizing tasks and activities, doing tasks in sequence, keeping materials and belongings
+                    in order, managing time, and meeting deadlines</li>
+                <li>Avoiding tasks that require sustained mental effort, such as homework, or, for teens and older adults,
+                    preparing reports, completing forms, or reviewing lengthy papers</li>
+                <li>Losing things necessary for tasks or activities, such as school supplies, pencils, books, tools, wallets,
+                    keys, paperwork, eyeglasses, and cell phones</li>
+                <li>Being easily distracted by unrelated thoughts or stimuli</li>
+                <li>Being forgetful in daily activities, such as chores, errands, returning calls, and keeping
+                    appointments</li>
+            </ul>
+    
+            <h5>Hyperactivity-impulsivity</h5>
+            <ul>
+                <li>Fidgeting and squirming while seated</li>
+                <li>Leaving seats in situations when staying seated is expected, such as in the classroom or the office</li>
+                <li>Difficulty waiting one’s turn</li>
+                <li>Running, dashing around, or climbing at inappropriate times, or, in teens and adults, often feeling
+                    restless</li>
+                <li>Being unable to play or engage in hobbies quietly</li>
+                <li>Being constantly in motion or on the go, or acting as if driven by a motor</li>
+                <li>Talking excessively</li>
+                <li>Interrupting or intruding on others, for example, in conversations, games, or activities</li>
+                <li>Answering questions before they are fully asked, finishing other people’s sentences, or speaking
+                    without waiting for a turn in a conversation</li>
+            </ul>
+        </section>
+    
+        <section>
+            <h4>Diagnosis and Developmental Aspects</h4>
+            <p>
+                Primary care providers sometimes diagnose and treat ADHD, referring individuals to a mental health
+                professional, such as a psychiatrist or clinical psychologist, for a thorough evaluation and ADHD diagnosis.
+                To receive an ADHD diagnosis, symptoms of inattention and/or hyperactivity-impulsivity must be chronic,
+                impair functioning, and cause a developmental delay. A thorough evaluation is necessary to determine the
+                cause of the symptoms.
+            </p>
+            <p>
+                Most children with ADHD receive a diagnosis during the elementary school years. For an adolescent or adult
+                to receive a diagnosis of ADHD, the symptoms need to have been present before age 12. ADHD symptoms can appear
+                as early as between the ages of 3 and 6 and can continue through adolescence and adulthood. Symptoms of ADHD
+                can be mistaken for emotional or disciplinary problems or missed entirely in children who primarily have
+                symptoms of inattention, leading to a delay in diagnosis. Adults with undiagnosed ADHD may have a history of
+                poor academic performance, problems at work, or difficult or failed relationships. ADHD symptoms can change
+                over time as a person ages. In young children with ADHD, hyperactivity-impulsivity is the most predominant
+                symptom. As a child reaches elementary school, the symptom of inattention may become more prominent and cause
+                the child to struggle academically. In adolescence, hyperactivity seems to lessen, and symptoms may more likely
+                include feelings of restlessness or fidgeting, but inattention and impulsivity may remain. Many adolescents
+                with ADHD also struggle with relationships and antisocial behaviors. Inattention, restlessness, and impulsivity
+                tend to persist into adulthood.
+            </p>
+        </section>
+    
+        <section>
+            <h4>Risk Factors of ADHD</h4>
+            <p>
+                Researchers are not sure what causes ADHD, although many studies suggest that genes play a large role. Like
+                many other disorders, ADHD probably results from a combination of factors. In addition to genetics,
+                researchers are looking at possible environmental factors that might raise the risk of developing ADHD and are
+                studying how brain injuries, nutrition, and social environments might play a role in ADHD. ADHD is more
+                common in males than females, and females with ADHD are more likely to primarily have inattention symptoms.
+                People with ADHD often have other conditions, such as learning disabilities, anxiety disorder, conduct
+                disorder, depression, and substance use disorder.
+            </p>
+        </section>
+    
+        <section>
+            <h4>How is ADHD Treated?</h4>
+            <p>
+                While there is no cure for ADHD, currently available treatments may reduce symptoms and improve
+                functioning. Treatments include medication, psychotherapy, education or training, or a combination of
+                treatments.
+            </p>
+    
+            <h5>Medication</h5>
+            <p>
+                For many people, ADHD medications reduce hyperactivity and impulsivity and improve their ability to focus,
+                work, and learn. Sometimes, several different medications or dosages must be tried before finding the right
+                one that works for a particular person. Anyone taking medications must be monitored closely by their
+                prescribing doctor.
+            </p>
+    
+            <h5>Stimulants</h5>
+            <p>
+                The most common type of medication used for treating ADHD is called a “stimulant.” Although it may seem
+                unusual to treat ADHD with a medication that is considered a stimulant, it works by increasing the brain
+                chemicals dopamine and norepinephrine, which play essential roles in thinking and attention. Under medical
+                supervision, stimulant medications are considered safe. However, like all medications, they can have side
+                effects, especially when misused or taken in excess of the prescribed dose and require an individual’s
+                healthcare provider to monitor how they may be reacting to the medication.
+            </p>
+    
+            <h5>Non-Stimulants</h5>
+            <p>
+                A few other ADHD medications are non-stimulants. These medications take longer to start working than
+                stimulants but can also improve focus, attention, and impulsivity in a person with ADHD. Doctors may
+                prescribe a non-stimulant when a person has bothersome side effects from stimulants, when a stimulant was not
+                effective, or in combination with a stimulant to increase effectiveness.
+            </p>
+        </section>
+            <section>
+                <h4>Psychotherapy and Psychosocial Interventions</h4>
+                <p>
+                    Several specific psychosocial interventions have been shown to help individuals with ADHD and their families manage symptoms and improve everyday functioning. For school-age children, frustration, blame, and anger may have built up within a family before a child is diagnosed. Parents and children may need specialized help to overcome negative feelings. Mental health professionals can educate parents about ADHD and how it affects a family. They also will help the child and his or her parents develop new skills, attitudes, and ways of relating to each other. All types of therapy for children and teens with ADHD require parents to play an active role. Psychotherapy that includes only individual treatment sessions with the child (without parent involvement) is not effective for managing ADHD symptoms and behavior. This type of treatment is more likely to be effective for treating symptoms of anxiety or depression that may occur along with ADHD. 
+                </p>
+                <p>
+                    <strong>Behavioral Therapy</strong> is a type of psychotherapy that aims to help a person change their behavior. It might involve practical assistance, such as help organizing tasks or completing schoolwork, or working through emotionally difficult events. Behavioral therapy also teaches a person how to:
+                </p>
                 <ul>
-                    <li>Fidgeting and squirming while seated</li>
-                    <li>Leaving seats in situations when staying seated is expected, such as in the classroom or the office</li>
-                    <li>Difficulty waiting one’s turn</li>
-                    <li>Running, dashing around, or climbing at inappropriate times, or, in teens and adults, often feeling
-                        restless</li>
-                    <li>Being unable to play or engage in hobbies quietly</li>
-                    <li>Being constantly in motion or on the go, or acting as if driven by a motor</li>
-                    <li>Talking excessively</li>
-                    <li>Interrupting or intruding on others, for example, in conversations, games, or activities</li>
-                    <li>Answering questions before they are fully asked, finishing other people’s sentences, or speaking
-                        without waiting for a turn in a conversation</li>
+                    <li>Monitor their own behavior </li>
+                    <li>Give oneself praise or rewards for acting in a desired way, such as controlling anger or thinking before acting</li>
                 </ul>
-            </section>
         
-            <section>
-                <h4>Diagnosis and Developmental Aspects</h4>
                 <p>
-                    Primary care providers sometimes diagnose and treat ADHD, referring individuals to a mental health
-                    professional, such as a psychiatrist or clinical psychologist, for a thorough evaluation and ADHD diagnosis.
-                    To receive an ADHD diagnosis, symptoms of inattention and/or hyperactivity-impulsivity must be chronic,
-                    impair functioning, and cause a developmental delay. A thorough evaluation is necessary to determine the
-                    cause of the symptoms.
-                </p>
-                <p>
-                    Most children with ADHD receive a diagnosis during the elementary school years. For an adolescent or adult
-                    to receive a diagnosis of ADHD, the symptoms need to have been present before age 12. ADHD symptoms can appear
-                    as early as between the ages of 3 and 6 and can continue through adolescence and adulthood. Symptoms of ADHD
-                    can be mistaken for emotional or disciplinary problems or missed entirely in children who primarily have
-                    symptoms of inattention, leading to a delay in diagnosis. Adults with undiagnosed ADHD may have a history of
-                    poor academic performance, problems at work, or difficult or failed relationships. ADHD symptoms can change
-                    over time as a person ages. In young children with ADHD, hyperactivity-impulsivity is the most predominant
-                    symptom. As a child reaches elementary school, the symptom of inattention may become more prominent and cause
-                    the child to struggle academically. In adolescence, hyperactivity seems to lessen, and symptoms may more likely
-                    include feelings of restlessness or fidgeting, but inattention and impulsivity may remain. Many adolescents
-                    with ADHD also struggle with relationships and antisocial behaviors. Inattention, restlessness, and impulsivity
-                    tend to persist into adulthood.
+                    Parents, teachers, and family members also can give feedback on certain behaviors and help establish clear rules, chore lists, and structured routines to help a person control their behavior. Therapists may also teach children social skills, such as how to wait their turn, share toys, ask for help, or respond to teasing. Learning to read facial expressions and the tone of voice in others, and how to respond appropriately can also be part of social skills training.</p>
+                    <p><strong>Cognitive Behavioral Therapy</strong> helps a person learn how to be aware and accepting of one’s own thoughts and feelings to improve focus and concentration. The therapist also encourages the person with ADHD to adjust to the life changes that come with treatment, such as thinking before acting, or resisting the urge to take unnecessary risks. </p>
+                    <p><strong>Family and Marital Therapy</strong> can help family members and spouses find productive ways to handle disruptive behaviors, encourage behavior changes, and improve interactions with the person with ADHD. </p>
+                    <p><strong>Parenting Skills Training (Behavioral Parent Management Training)</strong> teaches parents skills for encouraging and rewarding positive behaviors in their children. Parents are taught to use a system of rewards and consequences to change a child’s behavior, to give immediate and positive feedback for behaviors they want to encourage, and to ignore or redirect behaviors they want to discourage. </p>
+                    <p><strong>Specific Behavioral Classroom Management Interventions and/or Academic Accommodations</strong> for children and teens have been shown to be effective for managing symptoms and improving functioning at school and with peers. Interventions may include behavior management plans or teaching organizational or study skills. Accommodations may include preferential seating in the classroom, reduced classwork load, or extended time on tests and exams. The school may provide accommodations through what is called a 504 Plan or, for children who qualify for special education services, an Individualized Education Plan (IEP). To learn more about the Individuals with Disabilities Education Act (IDEA), visit the U.S. Department of Education’s IDEA website.</p>
+                    <p><strong>Stress Management Techniques</strong> can benefit parents of children with ADHD by increasing their ability to deal with frustration so that they can respond calmly to their child’s behavior.</p>
+                    <p><strong>Support Groups</strong> can help parents and families connect with others who have similar problems and concerns. Groups often meet regularly to share frustrations and successes, to exchange information about recommended specialists and strategies, and to talk with experts. The National Resource Center on ADHD, a program of Children and Adults with Attention-Deficit/Hyperactivity Disorder (CHADD®) supported by the Centers for Disease Control and Prevention (CDC), has information and many resources. You can reach this center online or by phone at 1-866-200-8098. Learn more about psychotherapy.</p>
                 </p>
             </section>
         
             <section>
-                <h4>Risk Factors of ADHD</h4>
-                <p>
-                    Researchers are not sure what causes ADHD, although many studies suggest that genes play a large role. Like
-                    many other disorders, ADHD probably results from a combination of factors. In addition to genetics,
-                    researchers are looking at possible environmental factors that might raise the risk of developing ADHD and are
-                    studying how brain injuries, nutrition, and social environments might play a role in ADHD. ADHD is more
-                    common in males than females, and females with ADHD are more likely to primarily have inattention symptoms.
-                    People with ADHD often have other conditions, such as learning disabilities, anxiety disorder, conduct
-                    disorder, depression, and substance use disorder.
+                <h4>Tips to Help Kids and Adults with ADHD Stay Organized</h4>
+                <section>
+                    <h5>For Kids:</h5>
+                    <p>
+                        Parents and teachers can help kids with ADHD stay organized and follow directions with tools such as:
+                    </p>
+                    <ul>
+                        <li>Keeping a routine and a schedule. Keep the same routine every day, from wake-up time to bedtime. Include times for homework, outdoor play, and indoor activities. Keep the schedule on the refrigerator or a bulletin board. Write changes on the schedule as far in advance as possible.</li>
+                        <li>Organizing everyday items. Have a place for everything, (such as clothing, backpacks, and toys), and keep everything in its place.</li>
+                        <li>Using homework and notebook organizers. Use organizers for school material and supplies. Stress to your child the importance of writing down assignments and bringing home necessary books. </li>
+                        <li>Being clear and consistent. Children with ADHD need consistent rules they can understand and follow.</li>
+                        <li>Giving praise or rewards when rules are followed. Children with ADHD often receive and expect criticism. Look for good behavior and praise it.</li>
+                    </ul>
+                </section>
+        
+                <section>
+                    <h5>For Adults:</h5>
+                    <p>
+                        A professional counselor or therapist can help an adult with ADHD learn how to organize their life with tools such as:
+                    </p>
+                    <ul>
+                        <li>Keeping routines.</li>
+                        <li>Making lists for different tasks and activities.</li>
+                        <li>Using a calendar for scheduling events. </li>
+                        <li>Assigning a special place for keys, bills, and paperwork</li>
+                        <li>Breaking down large tasks into more manageable, smaller steps so that completing each part of the task provides a sense of accomplishment.</li>
+                    </ul> 
                 </p>
+                </section>
             </section>
         
-            <section>
-                <h4>How is ADHD Treated?</h4>
-                <p>
-                    While there is no cure for ADHD, currently available treatments may reduce symptoms and improve
-                    functioning. Treatments include medication, psychotherapy, education or training, or a combination of
-                    treatments.
-                </p>
-        
-                <h5>Medication</h5>
-                <p>
-                    For many people, ADHD medications reduce hyperactivity and impulsivity and improve their ability to focus,
-                    work, and learn. Sometimes, several different medications or dosages must be tried before finding the right
-                    one that works for a particular person. Anyone taking medications must be monitored closely by their
-                    prescribing doctor.
-                </p>
-        
-                <h5>Stimulants</h5>
-                <p>
-                    The most common type of medication used for treating ADHD is called a “stimulant.” Although it may seem
-                    unusual to treat ADHD with a medication that is considered a stimulant, it works by increasing the brain
-                    chemicals dopamine and norepinephrine, which play essential roles in thinking and attention. Under medical
-                    supervision, stimulant medications are considered safe. However, like all medications, they can have side
-                    effects, especially when misused or taken in excess of the prescribed dose and require an individual’s
-                    healthcare provider to monitor how they may be reacting to the medication.
-                </p>
-        
-                <h5>Non-Stimulants</h5>
-                <p>
-                    A few other ADHD medications are non-stimulants. These medications take longer to start working than
-                    stimulants but can also improve focus, attention, and impulsivity in a person with ADHD. Doctors may
-                    prescribe a non-stimulant when a person has bothersome side effects from stimulants, when a stimulant was not
-                    effective, or in combination with a stimulant to increase effectiveness.
-                </p>
-            </section>
-              <section>
-                  <h4>Psychotherapy and Psychosocial Interventions</h4>
-                  <p>
-                      Several specific psychosocial interventions have been shown to help individuals with ADHD and their families manage symptoms and improve everyday functioning. For school-age children, frustration, blame, and anger may have built up within a family before a child is diagnosed. Parents and children may need specialized help to overcome negative feelings. Mental health professionals can educate parents about ADHD and how it affects a family. They also will help the child and his or her parents develop new skills, attitudes, and ways of relating to each other. All types of therapy for children and teens with ADHD require parents to play an active role. Psychotherapy that includes only individual treatment sessions with the child (without parent involvement) is not effective for managing ADHD symptoms and behavior. This type of treatment is more likely to be effective for treating symptoms of anxiety or depression that may occur along with ADHD. 
-                  </p>
-                  <p>
-                      <strong>Behavioral Therapy</strong> is a type of psychotherapy that aims to help a person change their behavior. It might involve practical assistance, such as help organizing tasks or completing schoolwork, or working through emotionally difficult events. Behavioral therapy also teaches a person how to:
-                  </p>
-                  <ul>
-                      <li>Monitor their own behavior </li>
-                      <li>Give oneself praise or rewards for acting in a desired way, such as controlling anger or thinking before acting</li>
-                  </ul>
-          
-                  <p>
-                      Parents, teachers, and family members also can give feedback on certain behaviors and help establish clear rules, chore lists, and structured routines to help a person control their behavior. Therapists may also teach children social skills, such as how to wait their turn, share toys, ask for help, or respond to teasing. Learning to read facial expressions and the tone of voice in others, and how to respond appropriately can also be part of social skills training.</p>
-                      <p><strong>Cognitive Behavioral Therapy</strong> helps a person learn how to be aware and accepting of one’s own thoughts and feelings to improve focus and concentration. The therapist also encourages the person with ADHD to adjust to the life changes that come with treatment, such as thinking before acting, or resisting the urge to take unnecessary risks. </p>
-                      <p><strong>Family and Marital Therapy</strong> can help family members and spouses find productive ways to handle disruptive behaviors, encourage behavior changes, and improve interactions with the person with ADHD. </p>
-                      <p><strong>Parenting Skills Training (Behavioral Parent Management Training)</strong> teaches parents skills for encouraging and rewarding positive behaviors in their children. Parents are taught to use a system of rewards and consequences to change a child’s behavior, to give immediate and positive feedback for behaviors they want to encourage, and to ignore or redirect behaviors they want to discourage. </p>
-                      <p><strong>Specific Behavioral Classroom Management Interventions and/or Academic Accommodations</strong> for children and teens have been shown to be effective for managing symptoms and improving functioning at school and with peers. Interventions may include behavior management plans or teaching organizational or study skills. Accommodations may include preferential seating in the classroom, reduced classwork load, or extended time on tests and exams. The school may provide accommodations through what is called a 504 Plan or, for children who qualify for special education services, an Individualized Education Plan (IEP). To learn more about the Individuals with Disabilities Education Act (IDEA), visit the U.S. Department of Education’s IDEA website.</p>
-                      <p><strong>Stress Management Techniques</strong> can benefit parents of children with ADHD by increasing their ability to deal with frustration so that they can respond calmly to their child’s behavior.</p>
-                      <p><strong>Support Groups</strong> can help parents and families connect with others who have similar problems and concerns. Groups often meet regularly to share frustrations and successes, to exchange information about recommended specialists and strategies, and to talk with experts. The National Resource Center on ADHD, a program of Children and Adults with Attention-Deficit/Hyperactivity Disorder (CHADD®) supported by the Centers for Disease Control and Prevention (CDC), has information and many resources. You can reach this center online or by phone at 1-866-200-8098. Learn more about psychotherapy.</p>
-                  </p>
-              </section>
-          
-              <section>
-                  <h4>Tips to Help Kids and Adults with ADHD Stay Organized</h4>
-                  <section>
-                      <h5>For Kids:</h5>
-                      <p>
-                          Parents and teachers can help kids with ADHD stay organized and follow directions with tools such as:
-                      </p>
-                      <ul>
-                          <li>Keeping a routine and a schedule. Keep the same routine every day, from wake-up time to bedtime. Include times for homework, outdoor play, and indoor activities. Keep the schedule on the refrigerator or a bulletin board. Write changes on the schedule as far in advance as possible.</li>
-                          <li>Organizing everyday items. Have a place for everything, (such as clothing, backpacks, and toys), and keep everything in its place.</li>
-                          <li>Using homework and notebook organizers. Use organizers for school material and supplies. Stress to your child the importance of writing down assignments and bringing home necessary books. </li>
-                          <li>Being clear and consistent. Children with ADHD need consistent rules they can understand and follow.</li>
-                          <li>Giving praise or rewards when rules are followed. Children with ADHD often receive and expect criticism. Look for good behavior and praise it.</li>
-                      </ul>
-                  </section>
-          
-                  <section>
-                      <h5>For Adults:</h5>
-                      <p>
-                          A professional counselor or therapist can help an adult with ADHD learn how to organize their life with tools such as:
-                      </p>
-                      <ul>
-                          <li>Keeping routines.</li>
-                          <li>Making lists for different tasks and activities.</li>
-                          <li>Using a calendar for scheduling events. </li>
-                          <li>Assigning a special place for keys, bills, and paperwork</li>
-                          <li>Breaking down large tasks into more manageable, smaller steps so that completing each part of the task provides a sense of accomplishment.</li>
-                      </ul> 
-                  </p>
-                  </section>
-              </section>
-          
-          </div>
-          <div id="anxiety-content" class="content-section content">
+        </div>
+
+    <!-- Anxiety -->
+        <div id="anxiety-content" class="content-section content">
             <h1>Anxiety Disorders</h1>
         
             <section>
@@ -574,96 +647,666 @@
           </section>
           
         </div>
-        <div id="stress-content" class="content-section content">
-          <h1>STRESS</h1>
-          <p>Stress is a normal reaction the body has when changes occur, resulting in physical, emotional, and intellectual responses. Stress management training can help you deal with changes in a healthier way.</p>
-      
+
+    <!-- Autism -->
+        <div id="autism-content" class="content-section content">
+          <h1>Autism</h1>
+          
           <section>
-              <h4>What is stress?</h4>
-              <p>Stress is a normal human reaction that happens to everyone.
-                  <br>In fact, the human body is designed to experience stress and react to it.
-                  <br>When you experience changes or challenges (stressors), your body produces physical and mental responses. That’s stress.
-                  <br><br>
-                  Stress responses help your body adjust to new situations. Stress can be positive, keeping us alert, motivated and ready to avoid danger. For example, if you have an important test coming up, a stress response might help your body work harder and stay awake longer. But stress becomes a problem when stressors continue without relief or periods of relaxation.
-                  <br></p>
-          </section>
-      
-          <section>
-              <h4>What happens to the body during stress?</h4>
-              <p>The body’s autonomic nervous system controls your heart rate, breathing, vision changes, and more.
-                  Its built-in stress response, the “fight-or-flight response,” helps the body face stressful situations.
-                  <br><br>
-                  When a person has long-term (chronic) stress, continued activation of the stress response causes wear and tear on the body. Physical, emotional, and behavioral symptoms develop.
-                  <br><br></p>
-              <h5>Physical symptoms of stress include:</h5>
+              <h4>Overview</h4>
+              <p>Autism spectrum disorder (ASD) is a neurological and developmental disorder that affects how people interact with others, communicate, learn, and behave. Although autism can be diagnosed at any age, it is described as a “developmental disorder” because symptoms generally appear in the first 2 years of life.</p>
+              <p>According to the Diagnostic and Statistical Manual of Mental Disorders (DSM-5), a guide created by the American Psychiatric Association that health care providers use to diagnose mental disorders, people with ASD often have:</p>
               <ul>
-                  <li>Aches and pains.</li>
-                  <li>Chest pain or a feeling like your heart is racing.</li>
-                  <li>Exhaustion or trouble sleeping.</li>
-                  <li>Headaches, dizziness, or shaking.</li>
-                  <li>High blood pressure.</li>
-                  <li>Muscle tension or jaw clenching.</li>
-                  <li>Stomach or digestive problems.</li>
-                  <li>Weak immune system.</li>
+                  <li>Difficulty with communication and interaction with other people</li>
+                  <li>Restricted interests and repetitive behaviors</li>
+                  <li>Symptoms that affect their ability to function in school, work, and other areas of life</li>
               </ul>
-              <p>Stress can lead to emotional and mental symptoms like:</p>
+              <p>Autism is known as a “spectrum” disorder because there is wide variation in the type and severity of symptoms people experience. People of all genders, races, ethnicities, and economic backgrounds can be diagnosed with ASD. Although ASD can be a lifelong disorder, treatments and services can improve a person’s symptoms and daily functioning. The American Academy of Pediatrics recommends that all children receive screening for autism. Caregivers should talk to their child’s health care provider about ASD screening or evaluation.</p>
+          </section>
+          
+          <section>
+              <h4>Signs and symptoms of ASD</h4>
+              <p>The list below gives some examples of common types of behaviors in people diagnosed with ASD. Not all people with ASD will have all behaviors, but most will have several of the behaviors listed below.</p>
+              
+              <h5>Social communication / interaction behaviors may include:</h5>
               <ul>
-                  <li>Anxiety or irritability.</li>
-                  <li>Depression.</li>
-                  <li>Panic attacks.</li>
-                  <li>Sadness.</li>
+                  <li>Making little or inconsistent eye contact</li>
+                  <li>Appearing not to look at or listen to people who are talking</li>
+                  <li>Infrequently sharing interest, emotion, or enjoyment of objects or activities (including infrequent pointing at or showing things to others)</li>
+                  <li>Not responding or being slow to respond to one’s name or to other verbal bids for attention</li>
+                  <li>Having difficulties with the back and forth of conversation</li>
+                  <li>Often talking at length about a favorite subject without noticing that others are not interested or without giving others a chance to respond</li>
+                  <li>Displaying facial expressions, movements, and gestures that do not match what is being said</li>
+                  <li>Having an unusual tone of voice that may sound sing-song or flat and robot-like</li>
+                  <li>Having trouble understanding another person’s point of view or being unable to predict or understand other people’s actions</li>
+                  <li>Difficulties adjusting behaviors to social situations</li>
+                  <li>Difficulties sharing in imaginative play or in making friends</li>
               </ul>
-          </section>
-      
-          <section>
-              <h4>How is stress diagnosed?</h4>
-              <p>Stress is subjective — not measurable with tests. Only the person experiencing it can determine whether it's present and how severe it feels. A healthcare provider may use questionnaires to understand your stress and how it affects your life.
-                  <br><br>
-                  If you have chronic stress, your healthcare provider can evaluate symptoms that result from stress. For example, high blood pressure can be diagnosed and treated.
-              </p>
-          </section>
-      
-          <section>
-              <h4>What are some strategies for stress relief?</h4>
-              <p>You can’t avoid stress, but you can stop it from becoming overwhelming by practicing some daily strategies:</p>
+              
+              <h5>Restrictive / repetitive behaviors may include:</h5>
               <ul>
-                  <li>Exercise when you feel symptoms of stress coming on. Even a short walk can boost your mood.</li>
-                  <li>At the end of each day, take a moment to think about what you’ve accomplished — not what you didn’t get done.</li>
-                  <li>Set goals for your day, week, and month. Narrowing your view will help you feel more in control of the moment and long-term tasks.</li>
-                  <li>Consider talking to a therapist or your healthcare provider about your worries.</li>
+                  <li>Repeating certain behaviors or having unusual behaviors, such as repeating words or phrases (a behavior called echolalia)</li>
+                  <li>Having a lasting intense interest in specific topics, such as numbers, details, or facts</li>
+                  <li>Showing overly focused interests, such as with moving objects or parts of objects</li>
+                  <li>Becoming upset by slight changes in a routine and having difficulty with transitions</li>
+                  <li>Being more sensitive or less sensitive than other people to sensory input, such as light, sound, clothing, or temperature</li>
+              </ul>
+              
+              <p>People with ASD may also experience sleep problems and irritability. People on the autism spectrum also may have many strengths, including:</p>
+              <ul>
+                  <li>Being able to learn things in detail and remember information for long periods of time</li>
+                  <li>Being strong visual and auditory learners</li>
+                  <li>Excelling in math, science, music, or art</li>
               </ul>
           </section>
-      
+          
           <section>
-              <h4>What are some ways to prevent stress?</h4>
-              <p>Many daily strategies can help you keep stress at bay:</p>
+              <h4>Causes and related factors</h4>
+              <p>Researchers don’t know the primary causes of ASD, but studies suggest that a person’s genes can act together with aspects of their environment to affect development in ways that lead to ASD. Some factors that are associated with an increased likelihood of developing ASD include:</p>
               <ul>
-                  <li>Try relaxation activities, such as meditation, yoga, tai chi, breathing exercises, and muscle relaxation. Programs are available online, in smartphone apps, and at many gyms and community centers.</li>
-                  <li>Take good care of your body each day. Eating right, exercising, and getting enough sleep help your body handle stress much better.</li>
-                  <li>Stay positive and practice gratitude, acknowledging the good parts of your day or life.</li>
-                  <li>Accept that you can’t control everything. Find ways to let go of worry about situations you cannot change.</li>
-                  <li>Learn to say “no” to additional responsibilities when you are too busy or stressed.</li>
-                  <li>Stay connected with people who keep you calm, make you happy, provide emotional support and help you with practical things. A friend, family member or neighbor can become a good listener or share responsibilities so that stress doesn’t become overwhelming.</li>
+                  <li>Having a sibling with ASD</li>
+                  <li>Having older parents</li>
+                  <li>Having certain genetic conditions (such as Down syndrome or Fragile X syndrome)</li>
+                  <li>Having a very low birth weight</li>
               </ul>
           </section>
-      
+          
           <section>
-              <h4>How long does stress last?</h4>
-              <p>Stress can be a short-term issue or a long-term problem, depending on what changes in your life. Regularly using stress management techniques can help you avoid most physical, emotional, and behavioral symptoms of stress.</p>
+              <h4>Diagnosing ASD</h4>
+              <p>Health care providers diagnose ASD by evaluating a person’s behavior and development. ASD can usually be reliably diagnosed by age 2. It is important to seek an evaluation as soon as possible. The earlier ASD is diagnosed, the sooner treatments and services can begin.</p>
+              
+              <h5>Diagnosis in young children</h5>
+              <p>Diagnosis in young children is often a two-stage process.</p>
+              
+              <h5>Stage 1: General developmental screening during well-child checkups</h5>
+              <p>Every child should receive well-child check-ups with a pediatrician or an early childhood health care provider. The American Academy of Pediatrics recommends that all children receive screening for developmental delays at their 9-, 18-, and 24- or 30-month well-child visits, with specific autism screenings at their 18- and 24-month well-child visits. A child may receive additional screening if they have a higher likelihood of ASD or developmental problems. Children with a higher likelihood of ASD include those who have a family member with ASD, show some behaviors that are typical of ASD, have older parents, have certain genetic conditions, or who had a very low birth weight.</p>
+              
+              <p>Considering caregivers’ experiences and concerns is an important part of the screening process for young children. The health care provider may ask questions about the child’s behaviors and evaluate those answers in combination with information from ASD screening tools and clinical observations of the child. Read more about screening instruments on the Centers for Disease Control and Prevention (CDC) website.</p>
+              
+              <p>If a child shows developmental differences in behavior or functioning during this screening process, the health care provider may refer the child for additional evaluation.</p>
+              
+              <h5>Stage 2: Additional diagnostic evaluation</h5>
+              <p>It is important to accurately detect and diagnose children with ASD as early as possible, as this will shed light on their unique strengths and challenges. Early detection also can help caregivers determine which services, educational programs, and behavioral therapies are most likely to be helpful for their child.</p>
+              
+              <p>A team of health care providers who have experience diagnosing ASD will conduct the diagnostic evaluation. This team may include child neurologists, developmental pediatricians, speech-language pathologists, child psychologists and psychiatrists, educational specialists, and occupational therapists.</p>
+              
+              <p>The diagnostic evaluation is likely to include:</p>
+              <ul>
+                  <li>Medical and neurological examinations</li>
+                  <li>Assessment of the child’s cognitive abilities</li>
+                  <li>Assessment of the child’s language abilities</li>
+                  <li>Observation of the child’s behavior</li>
+                  <li>An in-depth conversation with the child’s caregivers about the child’s behavior and development</li>
+                  <li>Assessment of age-appropriate skills needed to complete daily activities independently, such as eating, dressing, and toileting</li>
+              </ul>
+              
+              <p>Because ASD is a complex disorder that sometimes occurs with other illnesses or learning disorders, the comprehensive evaluation may include:</p>
+              <ul>
+                  <li>Blood tests</li>
+                  <li>Hearing test</li>
+              </ul>
+              
+              <p>The evaluation may lead to a formal diagnosis and recommendations for treatment.</p>
+              
+              <h5>Diagnosis in older children and adolescents</h5>
+              <p>Caregivers and teachers are often the first to recognize ASD symptoms in older children and adolescents who attend school. The school’s special education team may perform an initial evaluation and then recommend that a child undergo additional evaluation with their primary health care provider or a health care provider who specializes in ASD.</p>
+              
+              <p>A child’s caregivers may talk with these health care providers about their child’s social difficulties, including problems with subtle communication. For example, some children may have problems understanding tone of voice, facial expressions, or body language. Older children and adolescents may have trouble understanding figures of speech, humor, or sarcasm. They also may have trouble forming friendships with peers.</p>
+              
+              <h5>Diagnosis in adults</h5>
+              <p>Diagnosing ASD in adults is often more difficult than diagnosing ASD in children. In adults, some ASD symptoms can overlap with symptoms of other mental health disorders, such as anxiety disorder or attention-deficit/hyperactivity disorder (ADHD).</p>
+              
+              <p>Adults who notice signs of ASD should talk with a health care provider and ask for a referral for an ASD evaluation. Although evaluation for ASD in adults is still being refined, adults may be referred to a neuropsychologist, psychologist, or psychiatrist who has experience with ASD. The expert will ask about:</p>
+              <ul>
+                  <li>Social interaction and communication challenges</li>
+                  <li>Sensory issues</li>
+                  <li>Repetitive behaviors</li>
+                  <li>Restricted interests</li>
+              </ul>
+              
+              <p>The evaluation also may include a conversation with caregivers or other family members to learn about the person’s early developmental history, which can help ensure an accurate diagnosis.</p>
+              
+              <p>Receiving a correct diagnosis of ASD as an adult can help a person understand past challenges, identify personal strengths, and find the right kind of help. Studies are underway to determine the types of services and supports that are most helpful for improving the functioning and community integration of autistic transition-age youth and adults.</p>
           </section>
-      
+          
           <section>
-              <h4>When should I talk to a doctor about stress?</h4>
-              <p>You should seek medical attention if you feel overwhelmed, if you are using drugs or alcohol to cope, or if you have thoughts about hurting yourself. Your primary care provider can help by offering advice, prescribing medicine or referring you to a therapist.</p>
-          </section>
+            <h4>Treatments and Therapies</h4>
+            <p>Treatment for ASD should begin as soon as possible after diagnosis. Early treatment for ASD is important as proper care and services can reduce individuals’ difficulties while helping them build on their strengths and learn new skills.</p>
+            <p>People with ASD may face a wide range of issues, which means that there is no single best treatment for ASD. Working closely with a health care provider is an important part of finding the right combination of treatment and services.</p>
+        
+            <h5>Medication</h5>
+            <p>A health care provider may prescribe medication to treat specific symptoms. With medication, a person with ASD may have fewer problems with:</p>
+            <ul>
+                <li>Irritability</li>
+                <li>Aggression</li>
+                <li>Repetitive behavior</li>
+                <li>Hyperactivity</li>
+                <li>Attention problems</li>
+                <li>Anxiety and depression</li>
+            </ul>
+        </section>
+        </div>    
+
+    <!--Depression  -->
+        <div id="depression-content" class="content-section content" >
+        <h1>Depression</h1>
+        <section>
+            <h4>What is depression?</h4>
+            <p>Depression (also known as major depression, major depressive disorder, or clinical depression) is a common but serious mood disorder. It causes severe symptoms that affect how a person feels, thinks, and handles daily activities, such as sleeping, eating, or working.</p>
+            <p>To be diagnosed with depression, the symptoms must be present for at least 2 weeks. There are different types of depression, some of which develop due to specific circumstances.</p>
+        </section>
+        
+        <section>
+            <ul>
+                <li><strong>Major depression</strong> includes symptoms of depressed mood or loss of interest, most of the time for at least 2 weeks, that interfere with daily activities.</li>
+                <li><strong>Persistent depressive disorder</strong> (also called dysthymia or dysthymic disorder) consists of less severe symptoms of depression that last much longer, usually for at least 2 years.</li>
+                <li><strong>Perinatal depression</strong> is depression that occurs during or after pregnancy. Depression that begins during pregnancy is prenatal depression and depression that begins after the baby is born is postpartum depression.</li>
+                <li><strong>Seasonal affective disorder</strong> is depression that comes and goes with the seasons, with symptoms typically starting in the late fall and early winter and going away during the spring and summer.</li>
+                <li><strong>Depression with symptoms of psychosis</strong> is a severe form of depression in which a person experiences psychosis symptoms, such as delusions (disturbing, false fixed beliefs) or hallucinations (hearing or seeing things others do not hear or see).</li>
+            </ul>
+            <p>People with <strong>bipolar disorder</strong> (formerly called manic depression or manic-depressive illness) also experience depressive episodes, during which they feel sad, indifferent, or hopeless, combined with a very low activity level. But a person with bipolar disorder also experiences manic (or less severe hypomanic) episodes, or unusually elevated moods, in which they might feel very happy, irritable, or “up,” with a marked increase in activity level.</p>
+            <p>Other types of depressive disorders found in the Diagnostic and Statistical Manual of Mental Disorders, Fifth Edition (DSM-5) include disruptive mood dysregulation disorder (diagnosed in children and adolescents) and premenstrual dysphoric disorder (that affects women around the time of their period).</p>
+        </section>
+        
+        <section>
+            <h4>Who gets depression?</h4>
+            <p>Depression can affect people of all ages, races, ethnicities, and genders. Women are diagnosed with depression more often than men, but men can also be depressed. Because men may be less likely to recognize, talk about, and seek help for their feelings or emotional problems, they are at greater risk of depression symptoms being undiagnosed or undertreated. Studies also show higher rates of depression and an increased risk for the disorder among members of the LGBTQI+ community.</p>
+        </section>
+        
+        <section>
+            <h4>What are the signs and symptoms of depression?</h4>
+            <p>If you have been experiencing some of the following signs and symptoms, most of the day, nearly every day, for at least 2 weeks, you may be experiencing depression:</p>
+            <ul>
+                <li>Persistent sad, anxious, or “empty” mood</li>
+                <li>Feelings of hopelessness or pessimism</li>
+                <li>Feelings of irritability, frustration, or restlessness</li>
+                <li>Feelings of guilt, worthlessness, or helplessness</li>
+                <li>Loss of interest or pleasure in hobbies and activities</li>
+                <li>Decreased energy, fatigue, or feeling slowed down</li>
+                <li>Difficulty concentrating, remembering, or making decisions</li>
+                <li>Difficulty sleeping, waking early in the morning, or oversleeping</li>
+                <li>Changes in appetite or unplanned weight changes</li>
+                <li>Physical aches or pains, headaches, cramps, or digestive problems that do not have a clear physical cause and do not go away with treatment</li>
+                <li>Thoughts of death or suicide or suicide attempts</li>
+            </ul>
+            <p>Not everyone who is depressed experiences every one of these symptoms. Some people experience only a few symptoms, while others experience many symptoms. Symptoms associated with depression interfere with day-to-day functioning and cause significant distress for the person experiencing them. Depression can also involve other changes in mood or behavior that include:</p>
+            <ul>
+                <li>Increased anger or irritability</li>
+                <li>Feeling restless or on edge</li>
+                <li>Becoming withdrawn, negative, or detached</li>
+                <li>Increased engagement in high-risk activities</li>
+                <li>Greater impulsivity</li>
+                <li>Increased use of alcohol or drugs</li>
+                <li>Isolating from family and friends</li>
+                <li>Inability to meet the responsibilities of work and family or ignoring other important roles</li>
+                <li>Problems with sexual desire and performance</li>
+            </ul>
+            <p>Depression can look different in men and women. Although men, women, and people of all genders can feel depressed, how they express those symptoms and the behaviors they use to cope with them may differ. For example, some men (as well as women) may show symptoms other than sadness, instead seeming angry or irritable. And although increased use of alcohol or drugs can be a coping strategy for any person with depression, men may be more likely to use alcohol or drugs to help them cope. In some cases, mental health symptoms appear as physical problems. For example, a racing heart, tightened chest, ongoing headaches, or digestive issues. Men are often more likely to see a health care provider about these physical symptoms than their emotional ones.</p>
+            <p>Because depression tends to make people think more negatively about themselves and the world, some people may also have thoughts of suicide or self-harm. Several persistent symptoms, in addition to low mood, are required for a diagnosis of depression, but people with only a few symptoms may also benefit from treatment. The severity and frequency of symptoms and how long they last will vary depending on the person, the illness, and the stage of the illness. If you experience signs or symptoms of depression and they persist or do not go away, talk to a health care provider. If you see signs or symptoms of depression in someone you know, encourage them to seek help from a mental health professional. If you or someone you know is struggling or having thoughts of suicide, call or text the 988 Suicide and Crisis Lifeline at 988 or chat at 988lifeline.org. In life-threatening situations, call 911.</p>
+        </section>
+        
+        <section>
+            <h4>What are the risk factors for depression?</h4>
+            <p>Depression is one of the most common mental disorders in the United States. Research suggests that genetic, biological, environmental, and psychological factors play a role in depression. Depression can happen at any age, but it often begins in adulthood. Depression is now recognized as occurring in children and adolescents, although children may express more irritability than sadness. Many chronic mood and anxiety disorders in adults begin as high levels of anxiety in childhood.</p>
+            <p>Depression, especially in midlife or older age, can co-occur with other serious medical illnesses, such as diabetes, cancer, heart disease, and Parkinson’s disease. These conditions are often worse when depression is present, and research suggests that people with depression and other medical illnesses tend to have more severe symptoms of both illnesses. The Centers for Disease Control and Prevention (CDC) has also recognized that having certain mental disorders, including depression and schizophrenia, can make people more likely to get severely ill from COVID-19.</p>
+            <p>Sometimes a physical health problem, such as thyroid disease, or medications taken for a physical illness cause side effects that contribute to depression. A health care provider experienced in treating these complicated illnesses can help work out the best treatment strategy. Learn more about getting help and finding a health care provider. Other risk factors for depression include:</p>
+            <ul>
+                <li>Personal or family history of depression</li>
+            </ul>
+        </section>
+
+
+
+        <section>
+        <h4>How is depression treated?</h4>
+        <p>Depression, even the most severe cases, can be treated. The earlier treatment begins, the more effective it is. Depression is usually treated with medication, psychotherapy, or a combination of the two.</p>
+        <p>Some people may experience treatment-resistant depression, which occurs when a person does not get better after trying at least two antidepressant medications. If treatments like medication and psychotherapy do not reduce depressive symptoms or the need for rapid relief from symptoms is urgent, brain stimulation therapy may be an option to explore.</p>
+        <p>No two people are affected the same way by depression, and there is no "one-size-fits-all" treatment. Finding the treatment that works best for you may take trial and error.</p>
+        </section>
+
+        <section>
+        <h5>Medications</h5>
+        <p>Antidepressants are medications commonly used to treat depression. They work by changing how the brain produces or uses certain chemicals involved in mood or stress. You may need to try several different antidepressants before finding the one that improves your symptoms and has manageable side effects. A medication that has helped you or a close family member in the past will often be considered first.</p>
+        <p>Antidepressants take time—usually 4–8 weeks—to work, and problems with sleep, appetite, and concentration often improve before mood lifts. It is important to give a medication a chance to work before deciding whether it’s the right one for you.</p>
+        <p>New medications, such as intranasal esketamine, can have rapidly acting antidepressant effects, especially for people with treatment-resistant depression. Esketamine is a medication approved by the U.S. Food and Drug Administration (FDA) for treatment-resistant depression. Delivered as a nasal spray in a doctor’s office, clinic, or hospital, it acts rapidly, typically within a couple of hours, to relieve depression symptoms. People who use esketamine will usually continue taking an oral antidepressant to maintain the improvement in their symptoms.</p>
+        <p>Another option for treatment-resistant depression is to take an antidepressant alongside a different type of medication that may make the antidepressant more effective, such as an antipsychotic or anticonvulsant medication. Further research is needed to identify the best role of these newer medications in routine practice.</p>
+        <p>If you begin taking an antidepressant, <strong>do not stop taking it without talking to a health care provider.</strong> Sometimes people taking antidepressants feel better and stop taking the medications on their own, and their depression symptoms return. When you and your health care provider have decided it is time to stop a medication, usually after a course of 9–12 months, the provider will help you slowly and safely decrease your dose. Abruptly stopping a medication can cause withdrawal symptoms.</p>
+        <p><strong>Note:</strong> In some cases, children, teenagers, and young adults under 25 years may experience an increase in suicidal thoughts or behavior when taking antidepressants, especially in the first few weeks after starting or when the dose is changed. The FDA advises that patients of all ages taking antidepressants be watched closely, especially during the first few weeks of treatment.</p>
+        <p>If you are considering taking an antidepressant and are pregnant, planning to become pregnant, or breastfeeding, talk to a health care provider about any health risks to you or your unborn or nursing child and how to weigh those risks against the benefits of available treatment options.</p>
+        <p>To find the latest information about antidepressants, talk to a health care provider and visit the FDA website.</p>
+        </section>
+
+
         </div>
-      </div>
+
+    <!-- Dyslexia -->
+        <div id="dyslexia-content" class="content-section content">
+        <h1>Dyslexia</h1>
+
+        <section>
+            <h4>Overview</h4>
+            <p>Dyslexia is a learning disorder that involves difficulty reading due to problems identifying speech
+                sounds and learning how they relate to letters and words (decoding). Also called a reading
+                disability, dyslexia is a result of individual differences in areas of the brain that process
+                language.</p>
+            <p>Dyslexia is not due to problems with intelligence, hearing or vision. Most children with dyslexia can
+                succeed in school with tutoring or a specialized education program. Emotional support also plays an
+                important role.</p>
+            <p>Though there's no cure for dyslexia, early assessment and intervention result in the best outcome.
+                Sometimes dyslexia goes undiagnosed for years and isn't recognized until adulthood, but it's never
+                too late to seek help.</p>
+        </section>
+
+        <section>
+            <h4>Symptoms</h4>
+            <p>Signs of dyslexia can be difficult to recognize before your child enters school, but some early clues
+                may indicate a problem. Once your child reaches school age, your child's teacher may be the first to
+                notice a problem. Severity varies, but the condition often becomes apparent as a child starts
+                learning to read.</p>
+
+            <section>
+                <h5>Before school</h5>
+                <p>Signs that a young child may be at risk of dyslexia include:</p>
+                <ul>
+                    <li>Late talking</li>
+                    <li>Learning new words slowly</li>
+                    <li>Problems forming words correctly, such as reversing sounds in words or confusing words that
+                        sound alike</li>
+                    <li>Problems remembering or naming letters, numbers and colors</li>
+                    <li>Difficulty learning nursery rhymes or playing rhyming games</li>
+                </ul>
+            </section>
+
+            <section>
+                <h5>School age</h5>
+                <p>Once your child is in school, dyslexia symptoms may become more apparent, including:</p>
+                <ul>
+                    <li>Reading well below the expected level for age</li>
+                    <li>Problems processing and understanding what is heard</li>
+                    <li>Difficulty finding the right word or forming answers to questions</li>
+                    <li>Problems remembering the sequence of things</li>
+                    <li>Difficulty seeing (and occasionally hearing) similarities and differences in letters and words
+                    </li>
+                    <li>Inability to sound out the pronunciation of an unfamiliar word</li>
+                    <li>Difficulty spelling</li>
+                    <li>Spending an unusually long time completing tasks that involve reading or writing</li>
+                    <li>Avoiding activities that involve reading</li>
+                </ul>
+            </section>
+
+            <section>
+                <h5>Teens and adults</h5>
+                <p>Dyslexia signs in teens and adults are a lot like those in children. Some common dyslexia symptoms in
+                    teens and adults include:</p>
+                <ul>
+                    <li>Difficulty reading, including reading aloud</li>
+                    <li>Slow and labor-intensive reading and writing</li>
+                    <li>Problems spelling</li>
+                    <li>Avoiding activities that involve reading</li>
+                    <li>Mispronouncing names or words, or problems retrieving words</li>
+                    <li>Spending an unusually long time completing tasks that involve reading or writing</li>
+                    <li>Difficulty summarizing a story</li>
+                    <li>Trouble learning a foreign language</li>
+                    <li>Difficulty doing math word problems</li>
+                </ul>
+            </section>
+        </section>
+
+        <section>
+            <h4>When to see a doctor</h4>
+            <p>Though most children are ready to learn reading by kindergarten or first grade, children with
+                dyslexia often have trouble learning to read by that time. Talk with your health care provider if
+                your child's reading level is below what's expected for your child's age or if you notice other
+                signs of dyslexia.</p>
+            <p>When dyslexia goes undiagnosed and untreated, childhood reading difficulties continue into adulthood.
+            </p>
+        </section>
+
+        <section>
+            <h4>Causes</h4>
+            <p>Dyslexia results from individual differences in the parts of the brain that enable reading. It tends
+                to run in families. Dyslexia appears to be linked to certain genes that affect how the brain
+                processes reading and language.</p>
+        </section>
+
+        <section>
+            <h4>Risk factors</h4>
+            <p>A family history of dyslexia or other reading or learning disabilities increases the risk of having
+                dyslexia.</p>
+        </section>
+
+                        <section>
+            <h4>Complications</h4>
+            <p>Dyslexia can lead to several problems, including:</p>
+            <ul>
+                <li><strong>Trouble learning.</strong> Because reading is a skill basic to most other school subjects, a child
+                    with dyslexia is at a disadvantage in most classes and may have trouble keeping up with peers.</li>
+                <li><strong>Social problems.</strong> Left untreated, dyslexia may lead to low self-esteem, behavior problems,
+                    anxiety, aggression, and withdrawal from friends, parents and teachers.</li>
+                <li><strong>Problems as adults.</strong> The inability to read and comprehend can prevent children from
+                    reaching their potential as they grow up. This can have negative long-term educational, social, and
+                    economic impacts.</li>
+            </ul>
+            <p>Children who have dyslexia are at increased risk of having attention-deficit/hyperactivity disorder
+                (ADHD), and vice versa. ADHD can cause difficulty keeping attention. It can also cause hyperactivity
+                and impulsive behavior, which can make dyslexia harder to treat.</p>
+        </section>
+
+        <section>
+            <h4>Diagnosis</h4>
+            <p>There's no single test that can diagnose dyslexia. A number of factors are considered, such as:</p>
+            <ul>
+                <li><strong>Your child's development, educational issues, and medical history.</strong> The health care
+                    provider will likely ask you questions about these areas. Also, the provider will want to know
+                    about any conditions that run in the family, including dyslexia or any other type of learning
+                    disability.</li>
+                <li><strong>Questionnaires.</strong> The provider may have your child, caregivers, or teachers complete
+                    questionnaires. Your child may be asked to take tests to identify reading and language
+                    abilities.</li>
+                <li><strong>Vision, hearing and brain (neurological) tests.</strong> These can help determine whether another
+                    disorder may be causing or adding to your child's difficulty reading.</li>
+                <li><strong>Psychological evaluation.</strong> The provider may ask you and your child questions to better
+                    understand your child's mental health. This can help determine whether social problems, anxiety
+                    or depression may be limiting your child's abilities.</li>
+                <li><strong>Tests for reading and other academic skills.</strong> Your child may take a set of educational
+                    tests and have the process and quality of reading skills analyzed by a reading expert.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h4>Treatment</h4>
+            <p>There's no known way to correct the underlying brain differences that cause dyslexia. However, early
+                detection and evaluation to determine specific needs and appropriate treatment can improve success.
+                In many cases, treatment can help children become competent readers.</p>
+            <h4>Educational techniques</h4>
+            <p>Dyslexia is treated using specific educational approaches and techniques, and the sooner the
+                intervention begins, the better. Evaluations of your child's reading skills, other academic skills
+                and mental health will help your child's teachers develop an individual teaching program.</p>
+            <p>Teachers may use techniques involving hearing, vision and touch to improve reading skills. Helping a
+                child use several senses to learn — for example, listening to a taped lesson and tracing with a
+                finger the shape of the letters used and the words spoken — can help in processing the information.
+            </p>
+            <p>Treatment focuses on helping your child:</p>
+            <ul>
+                <li>Learn to recognize and use the smallest sounds that make up words (phonemes)</li>
+                <li>Understand that letters and strings of letters represent these sounds and words (phonics)</li>
+                <li>Understand what is read (comprehension)</li>
+                <li>Read aloud to build reading accuracy, speed and expression (fluency)</li>
+                <li>Build a vocabulary of recognized and understood words</li>
+            </ul>
+        </section>
+        </div>
+
+    <!-- PTSD -->
+        <div id="ptsd-content" class="content-section content" >
+
+                
+                    <h1>Post-Traumatic Stress Disorder</h1>
+                <section>
+                    <h4>What is post-traumatic stress disorder (PTSD)?</h4>
+                    <p>Post-traumatic stress disorder (PTSD) is a disorder that develops in some people who have experienced a shocking, scary, or dangerous event.</p>
+                    <p>It is natural to feel afraid during and after a traumatic situation. Fear is a part of the body’s “fight-or-flight” response, which helps us avoid or respond to potential danger. People may experience a range of reactions after trauma, and most people recover from initial symptoms over time. Those who continue to experience problems may be diagnosed with PTSD.</p>
+                </section>
+            
+                <section>
+                    <h4>Who gets PTSD?</h4>
+                    <p>Anyone can develop PTSD at any age. This includes combat veterans and people who have experienced or witnessed a physical or sexual assault, abuse, an accident, a disaster, or other serious events. People who have PTSD may feel stressed or frightened, even when they are not in danger.</p>
+                    <p>Not everyone with PTSD has been through a dangerous event. Sometimes, learning that a friend or family member experienced trauma can cause PTSD.</p>
+                    <p>According to the National Center for PTSD, a program of the U.S. Department of Veterans Affairs, about six out of every 100 people will experience PTSD at some point in their lives. Women are more likely to develop PTSD than men. Certain aspects of the traumatic event and some biological factors (such as genes) may make some people more likely to develop PTSD.</p>
+                </section>
+            
+                <section>
+                    <h4>What are the signs and symptoms of PTSD?</h4>
+                    <p>Symptoms of PTSD usually begin within 3 months of the traumatic event, but they sometimes emerge later. To meet the criteria for PTSD, a person must have symptoms for longer than 1 month, and the symptoms must be severe enough to interfere with aspects of daily life, such as relationships or work. The symptoms also must be unrelated to medication, substance use, or other illness.</p>
+                    <p>The course of the disorder varies. Some people recover within 6 months, while others have symptoms that last for 1 year or longer. People with PTSD often have co-occurring conditions, such as depression, substance use, or one or more anxiety disorders.</p>
+                    <p>After a dangerous event, it is natural to have some symptoms. For example, some people may feel detached from the experience, as though they are observing things rather than experiencing them. A mental health professional who has experience helping people with PTSD, such as a psychiatrist, psychologist, or clinical social worker, can determine whether symptoms meet the criteria for PTSD.</p>
+                    <p>To be diagnosed with PTSD, an adult must have all of the following for at least 1 month:
+                        <ul>
+                            <li>At least one re-experiencing symptom </li>
+                            <li>At least one avoidance symptom</li>
+                            <li>At least two arousal and reactivity symptoms </li>
+                            <li>At least two cognition and mood symptoms </li>
+                        </ul>
+                    </p>
+                </section>
+            
+                <section>
+                    <h4>Re-experiencing symptoms include: </h4>
+                    <ul>
+                        <li>Experiencing flashbacks—reliving the traumatic event, including physical symptoms such as a racing heart or sweating</li>
+                        <li>Having recurring memories or dreams related to the event </li>
+                        <li>Having distressing thoughts </li>
+                        <li>Experiencing physical signs of stress</li>
+                    </ul>
+                    <p>Thoughts and feelings can trigger these symptoms, as can words, objects, or situations that are reminders of the event.</p>
+                </section>
+            
+                <section>
+                    <h4>Avoidance symptoms include:</h4>
+                    <ul>
+                        <li>Staying away from places, events, or objects that are reminders of the traumatic experience</li>
+                        <li>Avoiding thoughts or feelings related to the traumatic event</li>
+                    </ul>
+                    <p>Avoidance symptoms may cause people to change their routines. For example, some people may avoid driving or riding in a car after a serious car accident. </p>
+                </section>
+            
+                <section>
+                    <h4>Arousal and reactivity symptoms include:</h4>
+                    <ul>
+                        <li>Being easily startled</li>
+                        <li>Feeling tense, on guard, or on edge</li>
+                        <li>Having difficulty concentrating </li>
+                        <li>Having difficulty falling asleep or staying asleep </li>
+                        <li>Feeling irritable and having angry or aggressive outbursts</li>
+                        <li>Engaging in risky, reckless, or destructive behavior</li>
+                    </ul>
+                    <p>Arousal symptoms are often constant. They can lead to feelings of stress and anger and may interfere with parts of daily life, such as sleeping, eating, or concentrating.</p>
+                </section>
+            
+            
+            
+            <h4>Cognition and mood symptoms include:</h4>
+
+            <ul>
+                <li>Having trouble remembering key features of the traumatic event</li>
+                <li>Having negative thoughts about oneself or the world</li>
+                <li>Having exaggerated feelings of blame directed toward oneself or others</li>
+                <li>Having ongoing negative emotions, such as fear, anger, guilt, or shame</li>
+                <li>Losing interest in enjoyable activities</li>
+                <li>Having feelings of social isolation</li>
+                <li>Having difficulty feeling positive emotions, such as happiness or satisfaction</li>
+            </ul>
+            
+            <section>
+            <p>Cognition and mood symptoms can begin or worsen after the traumatic event. They can lead a person to feel detached from friends or family members. If you or someone you know is struggling or having thoughts of suicide, call or text the 988 Suicide and Crisis Lifeline at <b>988</b> or chat at 988lifeline.org. In life-threatening situations, call <b>911</b>.</p>
+        </section>
+        
+        <section>
+            <h4>How do children and teens react to trauma?</h4>
+        
+            <p>Children and teens can have extreme reactions to trauma, but some of their symptoms may not be the same as those seen in adults. In children younger than age 6, these symptoms can include:</p>
+        
+            <ul>
+                <li>Wetting the bed after having learned to use the toilet</li>
+                <li>Forgetting how to talk or being unable to talk</li>
+                <li>Acting out the scary event during playtime</li>
+                <li>Being unusually clingy with a parent or other adult</li>
+            </ul>
+        
+            <p>Older children and teens usually show symptoms more like those seen in adults. They also may develop disruptive, disrespectful, or destructive behaviors. Older children and teens may feel guilty for not preventing injury or deaths. They may also have thoughts of revenge. Learn more about how to help children and adolescents cope with disasters and other traumatic events.</p>
+        </section>
+        
+        <section>
+            <h4>What are the risk factors for PTSD?</h4>
+        
+            <p>Not everyone who lives through a dangerous event develops PTSD—many factors play a part. Some of these factors are present before the trauma; others become important during and after a traumatic event.</p>
+        
+            <p>Risk factors that may increase the likelihood of developing PTSD include:</p>
+        
+            <ul>
+                <li>Being exposed to previous traumatic experiences, particularly during childhood</li>
+                <li>Getting hurt or seeing people hurt or killed</li>
+                <li>Feeling horror, helplessness, or extreme fear</li>
+                <li>Having little or no social support after the event</li>
+                <li>Dealing with extra stress after the event, such as loss of a loved one, pain and injury, or loss of a job or home</li>
+                <li>Having a personal or family history of mental illness or substance use</li>
+            </ul>
+        
+            <p>Resilience factors that may reduce the likelihood of developing PTSD include: </p>
+        
+            <ul>
+                <li>Seeking out support from friends, family, or support groups</li>
+                <li>Learning to feel okay with one’s actions in response to a traumatic event</li>
+                <li>Having a coping strategy for getting through and learning from the traumatic event</li>
+                <li>Being prepared and able to respond to upsetting events as they occur, despite feeling fear</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h4>How is PTSD treated?</h4>
+        
+            <p>It is important for anyone with PTSD symptoms to work with a mental health professional who has experience treating PTSD. The main treatments are psychotherapy, medications, or a combination of psychotherapy and medications. A mental health professional can help people find the best treatment plan for their symptoms and needs.</p>
+        
+            <p>Some people with PTSD, such as those in abusive relationships, may be living through ongoing trauma. In these cases, treatment is usually most effective when it addresses both the traumatic situation and the symptoms of PTSD. People who experience traumatic events or who have PTSD also may experience panic disorder, depression, substance use, or suicidal thoughts. Treatment for these conditions can help with recovery after trauma. Research shows that support from family and friends also can be an important part of recovery.</p>
+        </section>
+        
+        <section>
+            <h4>Psychotherapy</h4>
+        
+            <p>Psychotherapy (sometimes called talk therapy) includes a variety of treatment techniques that mental health professionals use to help people identify and change troubling emotions, thoughts, and behaviors. Psychotherapy can provide support, education, and guidance to people with PTSD and their families. Treatment can take place one on one or in a group and usually lasts 6 to 12 weeks but can last longer.</p>
+        
+            <p>Some types of psychotherapy target PTSD symptoms, while others focus on social, family, or job-related problems. Effective psychotherapies often emphasize a few key components, including learning skills to help identify triggers and manage symptoms.</p>
+        
+            <p>One common type of psychotherapy, called cognitive-behavioral therapy, can include exposure therapy and cognitive restructuring:</p>
+        
+            <ul>
+                <li><strong>Exposure therapy</strong> helps people learn to manage their fear by gradually exposing them, in a safe way, to the trauma they experienced. As part of exposure therapy, people may think or write about the trauma or visit the place where it happened. This therapy can help people with PTSD reduce symptoms that cause them distress.</li>
+                <li><strong>Cognitive restructuring</strong> helps people make sense of the traumatic event. Sometimes people remember the event differently from how it happened. They may feel guilt or shame about something that is not their fault. Cognitive restructuring can help people with PTSD think about what happened in a realistic way.</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h4>Medications</h4>
+        
+            <p>The U.S. Food and Drug Administration (FDA) has approved two selective serotonin reuptake inhibitors (SSRIs), a type of antidepressant medication, for the treatment of PTSD. SSRIs may help manage PTSD symptoms such as sadness, worry, anger, and feeling emotionally numb. Health care providers may prescribe SSRIs and other medications along with psychotherapy. Some medications may help treat specific PTSD symptoms, such as sleep problems and nightmares.</p>
+        
+            <p>People should work with their health care providers to find the best medication or combination of medications and the right dose. To find the latest information about medications, talk to a health care provider and visit the FDA website.</p>
+        </section>
+        
+        <section>
+            <h4>How can I find help for PTSD?</h4>
+        
+            <p>If you’re not sure where to get help, a health care provider can refer you to a licensed mental health professional, such as a psychiatrist or psychologist with experience treating PTSD. Find tips to help prepare for and get the most out of your visit and information about getting help.</p>
+        
+            <p>The Substance Abuse and Mental Health Services Administration has an online treatment locator to help you find mental health services in your area.</p>
+        
+            <p>Here are some things you can do to help yourself while in treatment:</p>
+        
+            <ul>
+                <li>Talk with your health care provider about treatment options and follow your treatment plan.</li>
+                <li>Engage in exercise, mindfulness, or other activities that help reduce stress.</li>
+                <li>Try to maintain routines for meals, exercise, and sleep.</li>
+                <li>Set realistic goals and focus on what you can manage.</li>
+                <li>Spend time with trusted friends or relatives and tell them about things that may trigger symptoms.</li>
+                <li>Expect your symptoms to improve gradually, not immediately.</li>
+                <li>Avoid the use of alcohol or drugs.</li>
+            </ul>
+        </section>
+        <!--Stress  -->
+        </div>
+
+    <!-- Stress -->
+        <div id="stress-content" class="content-section content">
+        <h1>STRESS</h1>
+        <p>Stress is a normal reaction the body has when changes occur, resulting in physical, emotional, and intellectual responses. Stress management training can help you deal with changes in a healthier way.</p>
+
+        <section>
+            <h4>What is stress?</h4>
+            <p>Stress is a normal human reaction that happens to everyone.
+                <br>In fact, the human body is designed to experience stress and react to it.
+                <br>When you experience changes or challenges (stressors), your body produces physical and mental responses. That’s stress.
+                <br><br>
+                Stress responses help your body adjust to new situations. Stress can be positive, keeping us alert, motivated and ready to avoid danger. For example, if you have an important test coming up, a stress response might help your body work harder and stay awake longer. But stress becomes a problem when stressors continue without relief or periods of relaxation.
+                <br></p>
+        </section>
+
+        <section>
+            <h4>What happens to the body during stress?</h4>
+            <p>The body’s autonomic nervous system controls your heart rate, breathing, vision changes, and more.
+                Its built-in stress response, the “fight-or-flight response,” helps the body face stressful situations.
+                <br><br>
+                When a person has long-term (chronic) stress, continued activation of the stress response causes wear and tear on the body. Physical, emotional, and behavioral symptoms develop.
+                <br><br></p>
+            <h5>Physical symptoms of stress include:</h5>
+            <ul>
+                <li>Aches and pains.</li>
+                <li>Chest pain or a feeling like your heart is racing.</li>
+                <li>Exhaustion or trouble sleeping.</li>
+                <li>Headaches, dizziness, or shaking.</li>
+                <li>High blood pressure.</li>
+                <li>Muscle tension or jaw clenching.</li>
+                <li>Stomach or digestive problems.</li>
+                <li>Weak immune system.</li>
+            </ul>
+            <p>Stress can lead to emotional and mental symptoms like:</p>
+            <ul>
+                <li>Anxiety or irritability.</li>
+                <li>Depression.</li>
+                <li>Panic attacks.</li>
+                <li>Sadness.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h4>How is stress diagnosed?</h4>
+            <p>Stress is subjective — not measurable with tests. Only the person experiencing it can determine whether it's present and how severe it feels. A healthcare provider may use questionnaires to understand your stress and how it affects your life.
+                <br><br>
+                If you have chronic stress, your healthcare provider can evaluate symptoms that result from stress. For example, high blood pressure can be diagnosed and treated.
+            </p>
+        </section>
+
+        <section>
+            <h4>What are some strategies for stress relief?</h4>
+            <p>You can’t avoid stress, but you can stop it from becoming overwhelming by practicing some daily strategies:</p>
+            <ul>
+                <li>Exercise when you feel symptoms of stress coming on. Even a short walk can boost your mood.</li>
+                <li>At the end of each day, take a moment to think about what you’ve accomplished — not what you didn’t get done.</li>
+                <li>Set goals for your day, week, and month. Narrowing your view will help you feel more in control of the moment and long-term tasks.</li>
+                <li>Consider talking to a therapist or your healthcare provider about your worries.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h4>What are some ways to prevent stress?</h4>
+            <p>Many daily strategies can help you keep stress at bay:</p>
+            <ul>
+                <li>Try relaxation activities, such as meditation, yoga, tai chi, breathing exercises, and muscle relaxation. Programs are available online, in smartphone apps, and at many gyms and community centers.</li>
+                <li>Take good care of your body each day. Eating right, exercising, and getting enough sleep help your body handle stress much better.</li>
+                <li>Stay positive and practice gratitude, acknowledging the good parts of your day or life.</li>
+                <li>Accept that you can’t control everything. Find ways to let go of worry about situations you cannot change.</li>
+                <li>Learn to say “no” to additional responsibilities when you are too busy or stressed.</li>
+                <li>Stay connected with people who keep you calm, make you happy, provide emotional support and help you with practical things. A friend, family member or neighbor can become a good listener or share responsibilities so that stress doesn’t become overwhelming.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h4>How long does stress last?</h4>
+            <p>Stress can be a short-term issue or a long-term problem, depending on what changes in your life. Regularly using stress management techniques can help you avoid most physical, emotional, and behavioral symptoms of stress.</p>
+        </section>
+
+        <section>
+            <h4>When should I talk to a doctor about stress?</h4>
+            <p>You should seek medical attention if you feel overwhelmed, if you are using drugs or alcohol to cope, or if you have thoughts about hurting yourself. Your primary care provider can help by offering advice, prescribing medicine or referring you to a therapist.</p>
+        </section>
+        </div> 
+
+    </div>
   </div>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-    crossorigin="anonymous"
-  ></script>
-  <script src="../articles/articles.js"></script>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../Articles/articles.js"></script>
+  </body>
 </html>
