@@ -12,17 +12,17 @@ router.post('/',cors(), async (req,res)=>{
         return res.json({success:false, message:"please login to access"});
     }
   const category = req.body.category;
+  let inputs = req.body.userInputs
   const date = req.body.date;
+//   const date = 'datae';
 
   let userInputs;
 if (category === "general_test") {
   console.log('General test');
   userInputs = [req.session.userData.age];
-  
-  let generalTestInputs = req.body.userInputs.map(input => (input === 0 ? 1 : 0));
-
-  console.log(userInputs);
-
+  //reversing 0 and 1
+  let generalTestInputs = inputs.map(input => (input === '0'||input===0 ? '1' : '0'));
+    //checking if age of the user in present
   if (userInputs.length === 0) {
     console.error("Couldn't find the age of the user");
     return res.json({ success: false, message: "Couldn't find the age of the user" });
@@ -30,10 +30,11 @@ if (category === "general_test") {
 
   // Push reversed generalTestInputs into userInputs
   userInputs.push(...generalTestInputs);
+  console.log(userInputs);
 }
 
     else{
-        userInputs = req.body.userInputs;
+        userInputs = inputs;
     }
 console.log(userInputs)
 

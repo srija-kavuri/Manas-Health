@@ -1,3 +1,15 @@
+const username=sessionStorage.getItem("username");
+const email = sessionStorage.getItem("emial");
+const institute= sessionStorage.getItem("institute");
+const className= sessionStorage.getItem("className");
+const sectionName= sessionStorage.getItem("sectionName");
+document.getElementById("username").innerHTML = username; 
+  document.getElementById("email").innerHTML = email; 
+  document.getElementById("institute").innerHTML = institute;
+    document.getElementById("className").innerHTML = className;
+    document.getElementById("sectionName").innerHTML = sectionName;
+
+
 const hamBurger = document.querySelector(".toggle-btn");
 
 hamBurger.addEventListener("click", function () {

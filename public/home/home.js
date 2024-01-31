@@ -1,26 +1,32 @@
-
 fetch('/api/userDetails',{
   method: 'GET',
   headers:{
     'Content-Type': 'application/json',
   },
 }).then(response=>response.json())
-.then(data=> {const userData = data;
-  document.getElementById("username").value = userData.username; 
-  document.getElementById("email").innerHTML = userData.email; 
-  document.getElementById("institute").value = userData.institute;
-    document.getElementById("className").value = userData.className;
-    document.getElementById("sectionName").value = userData.sectionName;
+.then(data=> {
+  const {username, email, institute, className, sectionName} = data;
+  document.getElementById("username").value = username; 
+  document.getElementById("email").innerHTML = email; 
+  document.getElementById("institute").value = institute;
+    document.getElementById("className").value = className;
+    document.getElementById("sectionName").value = sectionName;
+    sessionStorage.setItem("username", username);
+    sessionStorage.setItem("emial", email);
+    sessionStorage.setItem("institute", institute);
+    sessionStorage.setItem("className", className);
+    sessionStorage.setItem("sectionName", sectionName);
+
     const currentDate = new Date();
     const hour = currentDate.getHours();
     
     let greeting;
     if (hour >= 5 && hour < 12) {
-      greeting = `Good morning, ${userData.username}`;
+      greeting = `Good morning, ${username}`;
     } else if (hour >= 12 && hour < 17) {
-      greeting = `Good afternoon, ${userData.username}`;
+      greeting = `Good afternoon, ${username}`;
     } else {
-      greeting = `Good evening, ${userData.username}`;
+      greeting = `Good evening, ${username}`;
     }
     document.getElementById('greetingWish').innerHTML = greeting;  
 })

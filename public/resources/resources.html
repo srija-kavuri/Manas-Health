@@ -16,16 +16,16 @@
      <!-- Navigation Bar -->
      <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #0e2238;" data-bs-theme="dark">
         <div class="container-fluid">
-          <a class="navbar-brand fs-2 ms-3 navbar-titles" href="../Home/home.html">Manas Health</a>
+          <a class="navbar-brand fs-2 ms-3 navbar-titles" href="http://localhost:5500/home">Manas Health</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ms-auto">
-              <a class="nav-link coustom-nav fs-5 navbar-titles" aria-current="page" href="../Home/home.html">Home</a>
-              <a class="nav-link coustom-nav fs-5 navbar-titles active" href="../resources/resources.html">Resources</a>
-              <a class="nav-link coustom-nav fs-5 navbar-titles" href="../Articles/articles.html">Articles</a>
-              <a class="nav-link coustom-nav fs-5 navbar-titles" href="../Home/progress.html">Progress</a>
+              <a class="nav-link coustom-nav fs-5 navbar-titles" aria-current="page" href="http://localhost:5500/home">Home</a>
+              <a class="nav-link coustom-nav fs-5 navbar-titles active">Resources</a>
+              <a class="nav-link coustom-nav fs-5 navbar-titles" href="http://localhost:5500/articles">Articles</a>
+              <a class="nav-link coustom-nav fs-5 navbar-titles" href="http://localhost:5500/progress">Progress</a>
               <a class="nav-link  coustom-nav fs-5 navbar-titles"  data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Logout</a>
               
               <div>
@@ -58,40 +58,51 @@
           </svg>
         </div> 
         <table class="table mt-5">
-          <thead>
-            <tr>
-              <th scope="col"><p>student details</p></th>
-            
-              <th scope="col"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">username</th>
-              <td>
-                <p id="username"></p>
-              </td>
-            </tr>
+            <thead>
+              <tr>
+                <th scope="col"><p>student details</p></th>
+              
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">username</th>
+                <td>
+                  <p id="username"></p>
+                </td>
+              </tr>
+    
+              <tr>
+                <th scope="row">email</th>
+                <td>
+                  <p id="email"></p>
+                </td>
+              </tr>
+    
+              <tr>
+                <th scope="row">institute name</th>
+                <td colspan="2">
+                  <p id="institute"></p>
+                </td>
+              </tr>
   
-            <tr>
-              <th scope="row">email</th>
-              <td>
-                <p id="email"></p>
-              </td>
-            </tr>
-  
-            <tr>
-              <th scope="row">institute name</th>
-              <td colspan="2">
-                <p id="institute"></p>
-              </td>
-            </tr>
-  
-          </tbody>
-        </table>
-        <div class="edit">
-          <button type="button" class="btn rounded-pill btn-outline-secondary px-3 ">edit your profile</button>
-        </div>
+              <tr>
+                  <th scope="row">Class name</th>
+                  <td>
+                      <p id="className"></p>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <th scope="row">Section name</th>
+                  <td>
+                      <p id="sectionName"></p>
+                  </td>
+                </tr>
+    
+            </tbody>
+          </table>
         </div>
       </div>
                       

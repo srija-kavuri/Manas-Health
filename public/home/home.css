@@ -30,7 +30,7 @@ body {
 .images{
   height: 100vh;
   /* background-image: url("https://media.licdn.com/dms/image/C5612AQH7k9yuvMDJ0g/article-cover_image-shrink_720_1280/0/1632916378382?e=1710979200&v=beta&t=v6zvFsukr8CPwdspfwr8iBYhZXOjTbmWdCgXdcqjqJo"); */
-  background-image: url("..\images\homepageimg1.jpeg.jpg");
+  background-image: url("http://localhost:5500/images/homepageimg1.jpeg");
   background-size:cover ;
   background-position: center;
   color: white; 
