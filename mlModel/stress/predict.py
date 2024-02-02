@@ -21,6 +21,8 @@ def predict_severity(user_inputs):
     # Ensure column order and names match the ones used during training
     user_inputs_df = user_inputs_df[['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'Stress', 'Multiply by 2']]
 
+    percentage = (user_inputs_dict['Stress'][0]/21)*100
+
     # Prepare features for prediction
     user_inputs_encoded = pd.get_dummies(user_inputs_df)  # Apply one-hot encoding if needed
 
@@ -29,6 +31,6 @@ def predict_severity(user_inputs):
 
     # Convert numeric predictions to string labels using the loaded LabelEncoder
     predictions_string = le.inverse_transform(predictions_numeric)
-    result = {'score' : user_inputs_dict['Stress'][0],'severity_level' : predictions_string[0]}
+    result = {'percentage' : percentage,'severity_level' : predictions_string[0]}
     # Example: Return the predicted values in string format
     return result

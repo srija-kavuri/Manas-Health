@@ -43,12 +43,12 @@ await fetch(`/api/student/progress/?student=${student}`,{
     console.log(studentResults);
   }
 })
-  studentResults = [
-      { category: 'stress', score: 2, date: '22-03-2005' },
-      { category: 'depression', score: 1, date: '23-04-2004' },
-      { category: 'adhd', score: 1, date: '26-05-2003' },
-      { category: 'general_test', score: 1, date: '20-05-1999' }
-  ];
+//   studentResults = [
+//       { category: 'stress', score: 2, date: '22-03-2005' },
+//       { category: 'depression', score: 1, date: '23-04-2004' },
+//       { category: 'adhd', score: 1, date: '26-05-2003' },
+//       { category: 'general_test', score: 1, date: '20-05-1999' }
+//   ];
 
   // Filter the data to exclude 'general_test'
   const filteredList = studentResults.filter(obj => obj.category !== 'general_test');

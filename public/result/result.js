@@ -2,6 +2,11 @@ const urlParams = new URLSearchParams(window.location.search);
 
 const category = encodeURIComponent(urlParams.get('category'));
 const result = encodeURIComponent(urlParams.get('result'));
+let percentage = Math.round(urlParams.get('percentage'));
+if(percentage===0){
+    percentage = 1;
+}
+
 const url = `/api/result?category=${category}&result=${result}`;
 
 fetch(url)
@@ -23,7 +28,7 @@ fetch(url)
     document.getElementById('testCategory').innerHTML = category;
 
 let progressStartValue = 0,    
-    progressEndValue = response.data.value+1;   
+    progressEndValue = percentage;   
     speed = 10;
     
 let progress = setInterval(() => {

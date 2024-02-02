@@ -1,19 +1,18 @@
-body {
-    /* background-image: url("https://images.wallpaperscraft.com/image/single/tree_horizon_sunset_128367_1920x1080.jpg"); */
+body {  
+    overflow-x: hidden;
+}
+
+.landingImage {
+    height: 100vh;
     background-image: url("https://images.wallpaperscraft.com/image/single/tree_horizon_sunset_128367_3840x2400.jpg");
     background-size: cover;
     background-position: center;
-    color: white;
 }
-
 .container {
     text-align: center;
-    margin-top: 15%;
+    padding-top: 15%;
 }
 
-/* .social-icons {
-    margin-top: 20px;
-} */
 
 .custom-bi{
     margin: 10px;

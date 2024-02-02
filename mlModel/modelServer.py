@@ -37,9 +37,9 @@ def predict():
             predictions = general_testprediction.predict_severity(userInputs)
         else:
             return jsonify({"error": "couldn't find model predictions"})
-        score = predictions["score"]
+        percentage = predictions["percentage"]
         severity_level = predictions["severity_level"]
-        result = {"score":score, "severity_level": severity_level}
+        result = {"percentage":percentage, "severity_level": severity_level}
         print(result)
         
         return jsonify(result)

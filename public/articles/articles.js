@@ -9,7 +9,25 @@ document.getElementById("username").innerHTML = username;
     document.getElementById("className").innerHTML = className;
     document.getElementById("sectionName").innerHTML = sectionName;
 
-
+    function logout() {
+      fetch('/api/logout', {
+        method:'GET',
+        headers:{
+          'Content-Type': 'application/json',
+        },
+      })
+      .then(response=>{
+        if(response.ok){
+        window.location.replace('/login');
+        }else{
+         alert("Response is not ok");
+        }
+      })
+      .catch(error=>{
+        alert("Error logging out. Please try again.");
+        console.log(error);
+      })
+    }
 const hamBurger = document.querySelector(".toggle-btn");
 
 hamBurger.addEventListener("click", function () {

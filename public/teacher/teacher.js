@@ -101,17 +101,15 @@ function createTable(data) {
         const studentEmail = encodeURIComponent(item[key]);
         td.innerHTML = `<a href="/progress/?student=${studentEmail}" target="_blank">progress </a>`
       }else if(key==="currentStatus"){
-        console.log(key);
         currentStatusText = ``;
         for(const testCategory in item[key]){
-          if(testCategory!="_id"){
-            console.log(testCategory);
-            console.log(item[key][testCategory]);
+          console.log(item[key]);
+          item[key].forEach(Element=>{
             if(currentStatusText){
               currentStatusText+=', '
             }
-            currentStatusText+=`${testCategory.toUpperCase()}-${item[key][testCategory]["severity_level"]}`;
-          }
+            currentStatusText +=`${Element.category.toUpperCase()}-${Element.severity_level}`;
+          })
         }
         td.textContent=currentStatusText;
       }

@@ -53,7 +53,7 @@
   "no adhd":{
     "value": 0,
     "message":[
-      "You have ADHD. Here is your result information.",
+      "You have no ADHD. Here is your result information.",
       "Great news! Based on the test, it appears you do not have ADHD.",
       "If you have any concerns or questions, consult with a healthcare professional.",
       "Remember, this test is not a definitive diagnosis."

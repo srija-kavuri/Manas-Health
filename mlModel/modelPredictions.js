@@ -40,9 +40,10 @@ console.log(userInputs)
 
     try {
         const response = await axios.post('http://127.0.0.1:5000/predict', {category, userInputs});
-        const {score, severity_level} = response.data;
+        const {percentage, severity_level} = response.data;
+        console.log(response.data);
 
-        if(!score&&!severity_level){
+        if(!percentage&&!severity_level){
             return res.status(500).json({success:false, message:"internal server error"});
         }
         await mongoose.connect("mongodb://localhost:27017/manashealth");
@@ -50,11 +51,27 @@ console.log(userInputs)
         // const email="valli@gmail.com";
         const findUser = await resultsModel.findOne({email});
         if(findUser){
-            findUser.currentStatus[category] = {severity_level, score,date};
+            let categoryPresent = findUser.currentStatus.find(element => element.category === category);
+
+            if (categoryPresent) {
+                // Update existing category
+                categoryPresent.percentage = percentage;
+                categoryPresent.severity_level = severity_level;
+                categoryPresent.date = date;
+            } else {
+                // Add new category
+                findUser.currentStatus.push({
+                    category,
+                    percentage,
+                    severity_level,
+                    date
+                });
+            }
+
             findUser.results.push({
                 category,
                 userInputs,
-                score,
+                percentage,
                 severity_level,
                 date
             })
@@ -68,18 +85,22 @@ console.log(userInputs)
                 results:[{
                     category: category,
                     userInputs: userInputs,
-                    score,
+                    percentage,
                     severity_level,
                     date
                 }],
-                currentStatus : {
-                    [category]:{severity_level, score,date}
-                }})
+                currentStatus : [{
+                    category: category,
+                    percentage,
+                    severity_level,
+                    date
+                }]
+            })
             newResults.save()
             // .then(savedUser=>{console.log("user saved successfully", savedUser)})
             .catch(error=>{console.error( "error saving the user results", error)})
         }
-        return res.json({success:true, score,severity_level});
+        return res.json({success:true, percentage,severity_level});
     } catch (error) {
         console.error('Error making prediction request:', error.message);
         throw error;

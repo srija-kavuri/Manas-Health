@@ -2,7 +2,7 @@
   "category": "anxiety",
   "questions": [
     {
-      "question": "How often were you aware of dryness in your mouth?",
+      "question": "I was aware of dryness of my mouth",
       "options": [
         "Never",
         "Sometimes",
@@ -11,7 +11,7 @@
       ]
     },
     {
-      "question": "How frequently did you experience breathing difficulty (e.g., excessively rapid breathing, breathlessness in the absence of physical exertion)?",
+      "question": "I experienced breathing difficulty (e.g. excessively rapid breathing, breathlessness in the absence of physical exertion)",
       "options": [
         "Never",
         "Sometimes",
@@ -20,7 +20,7 @@
       ]
     },
     {
-      "question": "How often did you experience trembling (e.g., in the hands)?",
+      "question": "I experienced trembling (e.g. in the hands)",
       "options": [
         "Never",
         "Sometimes",
@@ -29,7 +29,7 @@
       ]
     },
     {
-      "question": "How frequently were you worried about situations in which you might panic and make a fool of yourself?",
+      "question": "I was worried about situations in which I might panic and make a fool of myself",
       "options": [
         "Never",
         "Sometimes",
@@ -38,7 +38,7 @@
       ]
     },
     {
-      "question": "How often did you feel you were close to panic?",
+      "question": "I felt I was close to panic",
       "options": [
         "Never",
         "Sometimes",
@@ -47,7 +47,7 @@
       ]
     },
     {
-      "question": "How frequently were you aware of the action of your heart in the absence of physical exertion (e.g., a sense of heart rate increase, heart missing a beat)?",
+      "question": "I was aware of the action of my heart in the absence of physical exertion (e.g. sense of heart rate increase, heart missing a beat)",
       "options": [
         "Never",
         "Sometimes",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "question": "How often did you feel scared without any good reason?",
+      "question": "I felt scared without any good reason",
       "options": [
         "Never",
         "Sometimes",

@@ -208,8 +208,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
           if (currentQuestionIndex < questionsData.length) {
              showQuestion();
             } else {
+              getresult(category,selectedoptions);
             // Handle form submission logic here (replace the alert)
-            alert('Form submitted!');
           }
           
         });
@@ -284,9 +284,10 @@ const date=`${day}-${month}-${year} ${day} ${hours}:${minutes}:${seconds}`
         }).then(response=>response.json())
         .then(prediction=>{
           if(prediction.success){
-            let result = prediction.severity_level;
+            let result = prediction.severity_level
+            let percentage = prediction.percentage;
             result=encodeURIComponent(result);
-            const url = `/result?category=${category}&result=${result}`;
+            const url = `/result?category=${category}&result=${result}&percentage=${percentage}`;
             window.location.replace(`${url}`);
           }else{
             console.error("Error submittin the inputs", error);

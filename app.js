@@ -104,6 +104,9 @@ app.get('/articles', (req,res)=>{
 app.get('/resources', (req,res)=>{
   res.sendFile(path.join(__dirname, 'public', 'resources/resources.html'));
 })
+app.get('/AboutUs', (req,res)=>{
+  res.sendFile(path.join(__dirname, 'public', 'aboutUs/aboutUs.html'));
+})
 
 app.get('/help', (req,res)=>{
   res.sendFile(path.join(__dirname, 'public', 'resources/resources.html'));
