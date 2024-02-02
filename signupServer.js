@@ -8,7 +8,6 @@ const router = express.Router();
 
 router.post('/', async (req, res) => {
     try {
-        console.log(req.body);
         const { username, category, school, email, password, className, sectionName,birthday } = req.body;
 
         if (!username || !category || !email || !school || !password) {

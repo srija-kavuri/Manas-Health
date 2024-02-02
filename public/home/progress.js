@@ -62,13 +62,13 @@ await fetch(`/api/student/progress/?student=${student}`,{
       const capitalizedCategory = obj.category.charAt(0).toUpperCase() + obj.category.slice(1);
       // Store the capitalized category and score in their respective arrays
       categorylist.push(capitalizedCategory);
-      scorelist.push(obj.score);
+      scorelist.push(obj.percentage);
   });
 
   var data = {
       labels: categorylist,
       datasets: [{
-          label: 'Mental Health Issues',
+          label: 'Percentage',
           data: scorelist,
           backgroundColor: 'skyblue',
           borderWidth: 1,

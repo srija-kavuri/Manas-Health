@@ -102,7 +102,6 @@ function createTable(data) {
         td.innerHTML = `<a href="/progress/?student=${studentEmail}" target="_blank">progress </a>`
       }else if(key==="currentStatus"){
         currentStatusText = ``;
-        for(const testCategory in item[key]){
           console.log(item[key]);
           item[key].forEach(Element=>{
             if(currentStatusText){
@@ -110,7 +109,7 @@ function createTable(data) {
             }
             currentStatusText +=`${Element.category.toUpperCase()}-${Element.severity_level}`;
           })
-        }
+
         td.textContent=currentStatusText;
       }
       

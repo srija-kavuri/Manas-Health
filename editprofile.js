@@ -12,8 +12,7 @@ router.post('/', async (req, res) => {
   }
   try {
     const { username, institute, className} = req.body;
-    let sectionName = (req.body.sectionName).toUpperCase();
-
+    let sectionName;
     const category = req.session.category;
     await mongoose.connect("mongodb://localhost:27017/manashealth");
     const userEmail = req.session.userData.email;
@@ -21,7 +20,10 @@ router.post('/', async (req, res) => {
     if (category==="Student") {
       if(!username || !institute || !className || !sectionName){
       return res.status(400).json({ success: false, message: 'Please fill in all fields' });
+
     }
+    sectionName = (req.body.sectionName).toUpperCase();
+
     await User.findOneAndUpdate(
       {email:userEmail},
       { username, instituteName:institute, className, sectionName },
