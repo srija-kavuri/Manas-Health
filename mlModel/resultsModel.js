@@ -78,9 +78,11 @@ const resultsModel = new mongoose.Schema({
         }
       },
     },
+    
     required: true,
-    default: {}
-  }
+    default: {},
+    _id:false
+  },
 })
 
 const userResults = mongoose.model('results', resultsModel);

@@ -23,7 +23,15 @@ if(urlParams){
   student = encodeURIComponent(urlParams.get('student'));
 }
 
-fetch(`/api/student/progress/?student=${student}`,{
+
+
+// Graph
+document.addEventListener('DOMContentLoaded',async function() {
+  let studentResults;
+
+  // Get the canvas element
+  var ctx = document.getElementById('myChart').getContext('2d');
+await fetch(`/api/student/progress/?student=${student}`,{
   method: 'GET',
   headers:{
     'Content-Type': 'application/json',
@@ -31,26 +39,40 @@ fetch(`/api/student/progress/?student=${student}`,{
 }).then(response=>response.json())
 .then(data=> {
   if(data.success){
-    const studentResults = data.progress;
+    studentResults = data.progress;
     console.log(studentResults);
   }
 })
+  studentResults = [
+      { category: 'stress', score: 2, date: '22-03-2005' },
+      { category: 'depression', score: 1, date: '23-04-2004' },
+      { category: 'adhd', score: 1, date: '26-05-2003' },
+      { category: 'general_test', score: 1, date: '20-05-1999' }
+  ];
 
-// Graph
-document.addEventListener('DOMContentLoaded', function() {
-  // Get the canvas element
-  var ctx = document.getElementById('myChart').getContext('2d');
+  // Filter the data to exclude 'general_test'
+  const filteredList = studentResults.filter(obj => obj.category !== 'general_test');
 
   // Define data for the chart
+  var categorylist = [];
+  var scorelist = [];
+  var datelist = filteredList.map(item => item.date);
+
+  filteredList.forEach(obj => {
+      const capitalizedCategory = obj.category.charAt(0).toUpperCase() + obj.category.slice(1);
+      // Store the capitalized category and score in their respective arrays
+      categorylist.push(capitalizedCategory);
+      scorelist.push(obj.score);
+  });
+
   var data = {
-      labels: ['Stress', 'ADHD', 'Depression', 'Dyslexia', 'Autism', 'Anxiety', 'PTSD'],
+      labels: categorylist,
       datasets: [{
           label: 'Mental Health Issues',
-          data: [1, 4, 3, 5, 2, 4, 3], // Numerical data (Mild: 1, Normal: 2, High: 3)
+          data: scorelist,
           backgroundColor: 'skyblue',
-          // backgroundColor: '#449e48',
-          // borderColor: 'rgba(75, 192, 192, 1)',
-          borderWidth: 1
+          borderWidth: 1,
+          date: datelist
       }]
   };
 
@@ -73,37 +95,38 @@ document.addEventListener('DOMContentLoaded', function() {
                   ticks: {
                       callback: function(value, index, values) {
                           // Map numerical values to custom labels
-                          const labels = [ 'Normal', 'Mild', 'Moderate', 'Severe', 'Extremely Severe'];
+                          const labels = ['Normal', 'Mild', 'Moderate', 'Severe', 'Extremely Severe'];
                           return labels[value - 1]; // Subtract 1 because arrays are zero-indexed
                       }
                   }
               }
           },
           plugins: {
-            legend: {
-              display: true,
-              position: 'top'
-            }
+              legend: {
+                  display: true,
+                  position: 'top',
+                 
+              }
           },
           layout: {
-            padding: {
-              left: 50,
-              right: 50,
-              top:0,
-              bottom:0
-            }
+              padding: {
+                  left: 50,
+                  right: 50,
+                  top: 0,
+                  bottom: 0
+              }
           },
           scales: {
-            x: {
-              grid: {
-                display: false
+              x: {
+                  grid: {
+                      display: false
+                  }
+              },
+              y: {
+                  grid: {
+                      display: false
+                  }
               }
-            },
-            y: {
-              grid: {
-                display: false
-              }
-            }
           }
       }
   });

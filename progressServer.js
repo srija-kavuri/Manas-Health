@@ -44,7 +44,14 @@ getProgress.get('/', async (req, res) => {
       email: progressEmail,
     });
     if (studentProgress) {
-      res.status(200).json({ success: true, progress: studentProgress.results, studentDetails});
+      console.log(studentProgress.currentStatus);
+      var resultArray = Object.entries(studentProgress.currentStatus).map(([category, data]) => ({
+        category: category,
+        score: data.score,
+        date: data.date
+    }));
+    console.log(resultArray);
+      res.status(200).json({ success: true, progress: resultArray, studentDetails});
     }else{
       res.status(404).json({success:false, message: "cannot find progress of the given student"});
     }
