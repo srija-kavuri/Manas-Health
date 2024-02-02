@@ -21,19 +21,67 @@ const resultsModel = new mongoose.Schema({
 
   currentStatus:{
     type: {
-      depression:String,
-      anxiety:String,
-      autism:String,
-      stress:String,
-      dyslexia:String,
-      ptsd:String,
-      adhd:String,
-      general_test:String,
+      depression:{
+        type:{
+          severity_level:String,
+          score:String,
+          date:String,
+        }
+      },
+      anxiety:{
+        type:{
+          severity_level:String,
+          score:String,
+          date:String,
+        }
+      },
+      autism:{
+        type:{
+          severity_level:String,
+          score:String,
+          date:String,
+        }
+      },
+      stress:{
+        type:{
+          severity_level:String,
+          score:String,
+          date:String,
+        }
+      },
+      dyslexia:{
+        type:{
+          severity_level:String,
+          score:String,
+          date:String,
+        }
+      },
+      ptsd:{
+        type:{
+          severity_level:String,
+          score:String,
+          date:String,
+        }
+      },
+      adhd:{
+        type:{
+          severity_level:String,
+          score:String,
+          date:String,
+        }
+      },
+      general_test:{
+        type:{
+          severity_level:String,
+          score:String,
+          date:String,
+        }
+      },
     },
     required: true,
     default: {}
   }
 })
 
-const userResults = mongoose.model('reults', resultsModel);
+const userResults = mongoose.model('results', resultsModel);
 module.exports = userResults;

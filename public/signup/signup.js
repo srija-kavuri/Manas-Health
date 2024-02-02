@@ -79,7 +79,6 @@ document.getElementById('registerbutton').addEventListener('click', (e) => {
     verify.push("password and confirm password must be the same!");
   }
 
-  
 
   if (cmessages.length > 0 || smessages.length > 0 || verify.length > 0 || messages.length > 0 || emessages.length > 0 || nmessages.length > 0) {
     passerror.innerHTML = messages.join(',');
@@ -97,7 +96,7 @@ document.getElementById('registerbutton').addEventListener('click', (e) => {
 
 
      else {
-      console.log("entered else block");
+      document.getElementById('registerbutton').disabled = true;
 
       const formData = new FormData(document.querySelector('#myform'));
       console.log('Before fetch');
@@ -120,6 +119,8 @@ document.getElementById('registerbutton').addEventListener('click', (e) => {
       console.log(response.status);
       if (response.status === 500) {
         alert("An error occured please try again");
+      document.getElementById('registerbutton').disabled = false;
+
       } else {
         return response.json();
       }
@@ -136,6 +137,8 @@ document.getElementById('registerbutton').addEventListener('click', (e) => {
       }
      })
     .catch(error => {
+      document.getElementById('registerbutton').disabled = false;
+
       // Handle error
       console.error('Error:', error);
       alert('An error occurred. Please try again.');

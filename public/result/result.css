@@ -1,33 +1,29 @@
-/* Google Fonts - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 
 body{
     font-family: 'Poppins', sans-serif;
-    background-image: url("https://i.pinimg.com/736x/64/df/8f/64df8f0fc779a58e9915ed5b5b210691.jpg");
+    background-image: url("https://i.pinimg.com/564x/35/de/29/35de296285e0e03921badf4bf543a569.jpg");
     background-size: cover;
     background-position: center;
 }
 
 .circular-progress{
-    height: 250px;
-    width: 250px;
+    height: 290px;
+    width: 290px;
     border-radius: 50%;
-    /* background: conic-gradient(#7d2ae8 3.6deg, #fff 0deg); */
-    /* background-color: aliceblue; */
     
 }
 .circular-progress::before{
-    content: "";
+    content: " ";
     position: absolute;
-    height: 210px;
-    width: 210px;
+    height: 250px;
+    width: 250px;
     border-radius: 50%;
     background-color: #fff;
 }
 .progress-value{
     position: relative;
-    font-size: 40px;
-    font-weight: 600;
-    color: #7d2ae8;
+    /* color: #7d2ae8; */
+    color: green;
 }

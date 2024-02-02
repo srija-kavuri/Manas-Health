@@ -1,5 +1,5 @@
 const username=sessionStorage.getItem("username");
-const email = sessionStorage.getItem("emial");
+const email = sessionStorage.getItem("email");
 const institute= sessionStorage.getItem("institute");
 const className= sessionStorage.getItem("className");
 const sectionName= sessionStorage.getItem("sectionName");
@@ -132,3 +132,22 @@ function showContent(contentId) {
   }
 }
 
+function logout() {
+  fetch('/api/logout', {
+    method:'GET',
+    headers:{
+      'Content-Type': 'application/json',
+    },
+  })
+  .then(response=>{
+    if(response.ok){
+    window.location.replace('/login');
+    }else{
+     alert("Response is not ok");
+    }
+  })
+  .catch(error=>{
+    alert("Error logging out. Please try again.");
+    console.log(error);
+  })
+}

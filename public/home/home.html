@@ -20,7 +20,7 @@
   <div class="images">
     <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
       <div class="container-fluid p-0">
-        <p class="fs-1 navbar-brand fw-semibold ms-4 pt-2">Manas Health</p>
+        <p class="fs-1 navbar-brand navbar-titles fw-semibold ms-4 pt-2">Manas Health</p>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -39,6 +39,9 @@
               <a class="nav-link navbar-titles ps-4" href="http://localhost:5500/progress">Progress</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link navbar-titles ps-4" href="http://localhost:5500/AboutUs">AboutUs</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link navbar-titles ps-4" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Logout</a>
             </li>
             <li class="nav-item">
@@ -46,8 +49,8 @@
             </li>
             <div>
               <li class="nav-item">
-                <a href="#" class="btn ps-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-person-circle" viewBox="0 0 20 20">
+                <a href="#" class="btn px-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                     <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
                     <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
                   </svg>
@@ -59,101 +62,95 @@
       </div>
     </nav>
 
+  <!-- Quote -->
     <div class="container imageTextContainer">
       <div class="row text-end">
         <p class="display-5 mt-5" id="greetingWish"></p>
       </div>
       <div class="row mt-5">
         <div class="col col-md-6 offset-md-6 text-end">
-        <!-- <div class="text-wrap custom-quote"> -->
           <p class="lead text-wrap">"Just like flowers need sunshine to bloom, your mind needs love and care to grow. Take a moment each day to water your thoughts with positivity and watch your happiness blossom!"</p>
         </div>
       </div>
     </div>
     
   </div>
-
-
-<!-- Progress -->
-  <!-- <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight1" aria-labelledby="offcanvasRightLabel">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasRightLabel">progress</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-      ...
-    </div>
-  </div> -->
-    
-          
-
-<!-- User deatails canvas -->
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasRightLabel">user details</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-      <div class="profile-icon"> 
-      <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="#b3b3b3" class="bi bi-person-square" viewBox="0 0 16 16">
-        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-        <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/>
-      </svg>
-    </div> 
-    <table class="table mt-5">
-      <thead>
-        <tr>
-          <th scope="col"><p>student details</p></th>
-        
-          <th scope="col"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">username</th>
-          <td>
-            <input type="text" id="username" disabled />
-          </td>
-        </tr>
-        
-        <tr>
-          <th scope="row">email</th>
-          <td>
-            <span id="email"><span/>
-          </td>
-        </tr>
-        
-        <tr>
-          <th scope="row">institute name</th>
-          <td colspan="2">
-            <input type="text" id="institute" disabled />
-          </td>
-        </tr>
-        
-        <tr>
-          <th scope="row">Class name</th>
-          <td>
-            <input type="text" id="className" disabled />
-          </td>
-        </tr>
-        
-        <tr>
-          <th scope="row">Section name</th>
-          <td>
-            <input type="text" id="sectionName" disabled />
-          </td>
-        </tr>
-        
-      </tbody>
-    </table>
-    <div class="edit">
-      <button type="button" class="btn rounded-pill btn-outline-secondary px-3 " id="editProfile">edit your profile</button>
-      <button type="button" id="saveProfile" style="display: none;">save</button>
-    </div>
-    </div>
+      
+<!-- User details canvas -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasRightLabel">User Details</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
+  <div class="offcanvas-body">
+    <div class="profile-icon"> 
+    <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="#b3b3b3" class="bi bi-person-square" viewBox="0 0 16 16">
+      <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+      <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/>
+    </svg>
+  </div> 
+  <table class="table mt-5">
+    <thead>
+      <tr>
+        <div>
+          <th scope="col"><p>Student Details</p></th>
+        </div>
+      
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Username</th>
+        <td>
+          <input type="text"  class="form-control" id="username" disabled />
+        </td>
+      </tr>
+      
+      <tr>
+        <th scope="row">Email</th>
+        <td>
+          <span id="email"><span/>
+        </td>
+      </tr>
+      
+      <tr>
+        <th scope="row">Institute Name</th>
+        <td colspan="2">
+          <input type="text"  class="form-control" id="institute" disabled />
+        </td>
+      </tr>
+      
+      <tr>
+        <th scope="row">Class</th>
+        <td>
+          <input type="text"  class="form-control" id="className" disabled />
+        </td>
+      </tr>
+      
+      <tr>
+        <th scope="row">Section</th>
+        <td>
+          <input type="text"  class="form-control" id="sectionName" disabled />
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
+  <div class="conatiner edit">
+    <div class="row">
+      <div class="col">
+        <button type="button" class="btn rounded-pill btn-outline-secondary px-3 " id="editProfile">edit your profile</button>
+      </div>
+      <div class="col d-flex justify-content-end">
+        <button type="button" class="btn rounded-pill btn-outline-success " id="saveProfile" style="display: none;">save</button>
+      </div>
+  </div>
+</div>
+</div>
+</div>
                   
-  <!-- Modal -->
+  <!--Logout Modal -->
   <div class="container">
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
@@ -177,15 +174,14 @@
 
  
 <!-- test cards -->
-
-  <div class="p-5">
-    <p class="h1 d-flex justify-content-center mb-3">Discover Your Path to Emotional Well-being!</p>
+  <div class="p-5 custom-testcards">
+    <p class="h1 d-flex justify-content-center mb-3" style="color: #a6de9b;">Discover Y<span class="custom-testcards">our Path to Emotional Well-being!</span></p>
     <p class="lead d-flex justify-content-center mb-4">Welcome to Manas Health, where we believe in the power of understanding and nurturing your mental health. Our Mental Health Test is a personalized journey designed to illuminate your unique emotional landscape, providing valuable insights that can guide you toward a happier, healthier life.</p>
  
   <!-- View More Link -->
     <div class="text-center mt-3 mb-3 d-flex justify-content-end" id="scrollspyTest">
-      <a class="link-dark" onclick="showHiddenCards()">
-        <p class="fs-5 me-4" id="viewMore">View More</p>
+      <a class="link-light" onclick="showHiddenCards()">
+        <p class="fs-5 me-4" style="color: #fff;" id="viewMore">View More</p>
       </a>
     </div>
   <!-- Cards test -->
@@ -316,115 +312,181 @@
     </div>
   </div>
 
+
+  
+<!-- ONE WAVE HERE WITH GREEN AT TOP -->
+
+
+  
 <!-- Question and Answers 1-->
-  <div class="container pt-5" data-bs-spy="scroll" data-bs-target="example1" data-bs-smooth-scroll="true">
-    <div class="row">
+  <div class="custom-q1">
+    <div class="container pt-5" data-bs-spy="scroll" data-bs-target="example1" data-bs-smooth-scroll="true">
+      <div class="row">
 
-        <div class="col-md-6 my-5">
-            <div class="image-container">
-                <img src="https://i.pinimg.com/564x/ee/d3/f6/eed3f6be4e48597033e879f237662542.jpg" alt="Your Image">
-            </div>
-        </div>
+          <div class="col-md-6 my-5">
+              <div class="image-container">
+                  <img src="https://i.pinimg.com/564x/ee/d3/f6/eed3f6be4e48597033e879f237662542.jpg" alt="Your Image">
+              </div>
+          </div>
 
-        <div class="col-md-6">
-            <h2>Why Take Our Mental Health Test?</h2>
-            <p>
-              <h5>Personalized Insights:</h5> <p> Discover personalized insights into your mental health profile. Uncover strengths, identify areas for growth, and gain a deeper understanding of your unique emotional landscape.</p>
-              
-              <h5>Empower Your Choices:</h5><p> Knowledge is the catalyst for change. By taking our test, you empower yourself to make informed choices, whether it's managing stress, improving relationships, or enhancing your overall quality of life.</p>
-              
-              <h5>Confidential & Secure:</h5><p> Your privacy is our priority. Rest assured, our Mental Health Test is conducted in a secure and confidential environment, allowing you to express your thoughts openly without any concerns.</p>
-              
-              <h5>Proactive Mental Health:</h5><p> Proactivity is key to maintaining good mental health. Use our test as a proactive tool to check in on your well-being, catch potential concerns early, and take steps toward prevention.</p>
+          <div class="col-md-6">
+              <h1 style="color: #397a4a;">Why Take Our Mental Health Test?</h1>
+              <p>
+                <h5 class="q1-headings">Personalized Insights:</h5> <p> Discover personalized insights into your mental health profile. Uncover strengths, identify areas for growth, and gain a deeper understanding of your unique emotional landscape.</p>
+                
+                <h5 class="q1-headings">Empower Your Choices:</h5><p> Knowledge is the catalyst for change. By taking our test, you empower yourself to make informed choices, whether it's managing stress, improving relationships, or enhancing your overall quality of life.</p>
+                
+                <h5 class="q1-headings">Confidential & Secure:</h5><p> Your privacy is our priority. Rest assured, our Mental Health Test is conducted in a secure and confidential environment, allowing you to express your thoughts openly without any concerns.</p>
+                
+                <h5 class="q1-headings">Proactive Mental Health:</h5><p> Proactivity is key to maintaining good mental health. Use our test as a proactive tool to check in on your well-being, catch potential concerns early, and take steps toward prevention.</p>
 
-              <h5> Resource Hub:</h5><p>Beyond the test, explore our resource hub filled with articles, tips, and tools to support your mental health journey. We're here to provide ongoing assistance and guidance.</p>
+                <h5 class="q1-headings"> Resource Hub:</h5><p>Beyond the test, explore our resource hub filled with articles, tips, and tools to support your mental health journey. We're here to provide ongoing assistance and guidance.</p>
 
-        </div>
-    </div>
-  </div>
-
-
-  <!--  Question and Answers 2 -->
-  <div class="container pt-5">
-    <div class="row">
-
-        <div class="col-md-6">
-            <h2>How It Works: </h2>
-            <p>
-              <h5>1. Access the Test:</h5> <p> Easily access our Mental Health Test from the comfort of your home. It's user-friendly, and you can take it at your own pace.</p>
-              
-              <h5>2. Thoughtful Questions:</h5><p> Our thoughtfully crafted questions cover various aspects of mental health, ensuring a comprehensive understanding of your well-being.</p>
-              
-              <h5>3. Instant Results:</h5><p> Receive instant, easy-to-understand results upon completion. Your personalized report includes insights, recommendations, and resources tailored to your needs.</p>
-              
-              <h5>4. Take Control:</h5><p> Armed with your results, you're in control of your mental health journey. Use the information to implement positive changes and seek further support if needed.</p>
-              
-              
-
-        </div>
-
-        <div class="col-md-6 mt-5 mb-4">
-          <div class="image-container">
-              <img src="https://i.pinimg.com/564x/31/ca/bf/31cabf65a050042744105954d33ffa96.jpg" alt="Your Image">
           </div>
       </div>
     </div>
   </div>
-<!-- text  -->
-  <div class="container pt-4 pb-3" id="example1">
-    <h2>Your Well-being Matters:</h2>
-    <p class="fs-5">At Manas Health, we're dedicated to supporting you on your path to emotional well-being. Take the first step today — your mental health journey starts here!
-    Ready to explore?<a href="#scrollspyTest" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"> Take the Mental Health Test Now</a> and embark on a transformative journey towards a healthier, happier you</p>
+
+
+
+  <!--ONE WAVE HERE WITH GREEN AT BOTTOM -->
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#006a6e" fill-opacity="1" d="M0,192L48,186.7C96,181,192,171,288,160C384,149,480,139,576,144C672,149,768,171,864,181.3C960,192,1056,192,1152,186.7C1248,181,1344,171,1392,165.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+ 
+
+  <!--  Question and Answers 2 -->
+  <div class="custom-q2">
+    <div class="container pt-5">
+      <div class="row">
+
+          <div class="col-md-6">
+              <h2>How It Works: </h2>
+              <p>
+                <h5 class="q2-headings">1. Access the Test:</h5> <p> Easily access our Mental Health Test from the comfort of your home. It's user-friendly, and you can take it at your own pace.</p>
+                
+                <h5 class="q2-headings">2. Thoughtful Questions:</h5><p> Our thoughtfully crafted questions cover various aspects of mental health, ensuring a comprehensive understanding of your well-being.</p>
+                
+                <h5 class="q2-headings">3. Instant Results:</h5><p> Receive instant, easy-to-understand results upon completion. Your personalized report includes insights, recommendations, and resources tailored to your needs.</p>
+                
+                <h5 class="q2-headings">4. Take Control:</h5><p> Armed with your results, you're in control of your mental health journey. Use the information to implement positive changes and seek further support if needed.</p>
+                
+                
+
+          </div>
+
+          <div class="col-md-6 mt-5 mb-4">
+            <div class="image-container">
+                <img src="https://i.pinimg.com/564x/31/ca/bf/31cabf65a050042744105954d33ffa96.jpg" alt="Your Image">
+            </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-<!-- Articles & Resources -->
-  <div class="container my-5 ">
-    <div class="row justify-content-evenly g-5">
-  <!-- Articles -->
-        <div class="col-md-5 articles-box rounded-5">
-            <h2 class="text-center">Articles</h2>
-            <ul>
-              <li>
-                <a href="#">What is ADHD?</a>
-              </li>
-              <li>
-                <a href="#">What is ADHD?</a>
-              </li>
-              <li>
-                <a href="#">What is ADHD?</a>
-              </li>
-              <li>
-                <a href="#">What is ADHD?</a>
-              </li>
-              <li>
-                <a href="#">What is ADHD?</a>
-              </li>
-            </ul>
-        </div>
-
-  <!-- Resources -->
-        <div class="col-md-5 resources-box rounded-5">
-            <h2 class="text-center">Resources</h2>
-            <ul>
-              <li>
-                <a href="#">What is ADHD?</a>
-              </li>
-              <li>
-                <a href="#">What is ADHD?</a>
-              </li>
-              <li>
-                <a href="#">What is ADHD?</a>
-              </li>
-              <li>
-                <a href="#">What is ADHD?</a>
-              </li>
-              <li>
-                <a href="#">What is ADHD?</a>
-              </li>
-            </ul>
-        </div>
+<!-- text  -->
+  <div class="custom-q2">
+    <div class="container pt-5 pb-4" id="example1">
+      <span class="h2" style="color: #a6de9b;">Your Well-being</span><span class="h2"> Matters:</span>
+      <p class="mt-3">At Manas Health, we're dedicated to supporting you on your path to emotional well-being. Take the first step today — your mental health journey starts here!
+      Ready to explore?<a href="#scrollspyTest" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"> Take the Mental Health Test Now</a> and embark on a transformative journey towards a healthier, happier you</p>
     </div>
-</div>
+  </div>
+
+
+  
+<!-- KEEP ONE WAVE HERE WITH GREEN AT TOP -->
+
+
+
+<!-- Footer -->
+  <footer class="footer py-4  bg-light">
+    <div class="container custom-footer">
+        <div class="row g-4">
+          <!-- social media icons -->
+            <div class="col-md-4">
+              <h5>Connect With Us</h5>
+              <p>Follow us on social media:</p>
+          
+                <div class="social-icons ">
+                  <!-- instagram icon -->
+                  <a href="#" class="mx-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-instagram custom-bi" viewBox="0 0 16 16">
+                      <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                    </svg>
+                  </a>
+                  
+                  <a href="#" class="mx-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-twitter custom-bi" viewBox="0 0 16 16">
+                          <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15"/>
+                      </svg>
+                  </a>
+      
+                  <a href="#" class="mx-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-meta custom-bi" viewBox="0 0 16 16">
+                          <path fill-rule="evenodd" d="M8.217 5.243C9.145 3.988 10.171 3 11.483 3 13.96 3 16 6.153 16.001 9.907c0 2.29-.986 3.725-2.757 3.725-1.543 0-2.395-.866-3.924-3.424l-.667-1.123-.118-.197a54.944 54.944 0 0 0-.53-.877l-1.178 2.08c-1.673 2.925-2.615 3.541-3.923 3.541C1.086 13.632 0 12.217 0 9.973 0 6.388 1.995 3 4.598 3c.319 0 .625.039.924.122.31.086.611.22.913.407.577.359 1.154.915 1.782 1.714m1.516 2.224c-.252-.41-.494-.787-.727-1.133L9 6.326c.845-1.305 1.543-1.954 2.372-1.954 1.723 0 3.102 2.537 3.102 5.653 0 1.188-.39 1.877-1.195 1.877-.773 0-1.142-.51-2.61-2.87l-.937-1.565ZM4.846 4.756c.725.1 1.385.634 2.34 2.001A212.13 212.13 0 0 0 5.551 9.3c-1.357 2.126-1.826 2.603-2.581 2.603-.777 0-1.24-.682-1.24-1.9 0-2.602 1.298-5.264 2.846-5.264.091 0 .181.006.27.018Z"/>
+                      </svg>
+                  </a>
+          
+                  <a href="#" class="mx-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-envelope-fill custom-bi" viewBox="0 0 16 16">
+                          <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+                      </svg>
+                  </a>
+              </div>
+            </div>
+
+          <!-- other pages -->
+            <div class="col-md-4">
+              <h5>Other Pages</h5>
+                <ul>
+                  <li>
+                    <a href="../Home/home.html" class="link-body-emphasis link-underline-opacity-0 link-underline-opacity-100-hover">Home</a>
+                  </li>
+                  <li>
+                    <a href="../resources/resources.html" class="link-body-emphasis link-underline-opacity-0 link-underline-opacity-100-hover">Resources</a>
+                  </li>
+                  <li>
+                    <a href="../Articles/articles.html" class="link-body-emphasis link-underline-opacity-0 link-underline-opacity-100-hover">Articles</a>
+                  </li>
+                  <li>
+                    <a href="../AboutUs/AboutUs.html" class="link-body-emphasis link-underline-opacity-0 link-underline-opacity-100-hover">About Us</a>
+                  </li>
+                </ul>
+            </div>
+
+          <!-- feedback -->
+            <div class="col-md-4">
+              <h5>Feedback</h5>
+              <p>Your feedback is invaluable! Share your thoughts to help us improve and create a better mental health experience for all.</p>
+              <p class="mb-0">Have feedback? Let us know! <a href="#" data-bs-toggle="modal" data-bs-target="#feedbackModal">Submit Feedback</a></p>
+            </div>
+
+        </div>
+        <hr>
+        <p class="text-center">&copy; 2024 Your Website Name. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Feedback Modal -->
+    <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="feedbackModalLabel">Submit Feedback</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <!-- Your feedback form goes here -->
+                  <form>
+                      <div class="mb-3">
+                          <label for="feedbackText" class="form-label">Your Feedback</label>
+                          <textarea class="form-control" id="feedbackText" rows="3"></textarea>
+                      </div>
+                      <button type="submit" class="btn btn-success">Submit</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+    </div>
 
 
 

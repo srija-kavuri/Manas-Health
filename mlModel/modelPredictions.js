@@ -50,7 +50,7 @@ console.log(userInputs)
         // const email="valli@gmail.com";
         const findUser = await resultsModel.findOne({email});
         if(findUser){
-            findUser.currentStatus[category] = severity_level
+            findUser.currentStatus[category] = {severity_level, score,date};
             findUser.results.push({
                 category,
                 userInputs,
@@ -73,7 +73,7 @@ console.log(userInputs)
                     date
                 }],
                 currentStatus : {
-                    [category]:severity_level
+                    [category]:{severity_level, score,date}
                 }})
             newResults.save()
             // .then(savedUser=>{console.log("user saved successfully", savedUser)})

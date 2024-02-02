@@ -110,7 +110,7 @@ function createTable(data) {
             if(currentStatusText){
               currentStatusText+=', '
             }
-            currentStatusText+=`${testCategory.toUpperCase()}-${item[key][testCategory]}`;
+            currentStatusText+=`${testCategory.toUpperCase()}-${item[key][testCategory]["severity_level"]}`;
           }
         }
         td.textContent=currentStatusText;

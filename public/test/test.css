@@ -1,63 +1,72 @@
+#alertmessage{
+  padding-top: 0px;
+padding-left: 40%;
+  color: red;
+}
 .question-container {
-  height: 350px;
-  width: 75%; 
-  margin: 1% auto; /* Center the question container */
-  border-color: aqua;
-  border-radius: 8px;
-  box-shadow: 0 0 60px rgba(0, 0, 0, 0.1);
-  display: none; /* Initially hide all question containers */
-  align-items: center;
-  justify-content: center;
-  text-align: center;
- 
- 
+height: 350px;
+width: 75%; 
+margin: 1% auto; /* Center the question container */
+border-color: aqua;
+border-radius: 8px;
+box-shadow: 0 0 60px rgba(0, 0, 0, 0.1);
+display: none; /* Initially hide all question containers */
+align-items: center;
+justify-content: center;
+text-align: center;
+
+
 }
 .question-container input[type="radio"] {
-  margin-left: 10px; /* Adjust the margin as needed */
+margin-left: 10px; /* Adjust the margin as needed */
 }
 .btn-check {
-  margin-left: 20px;
-  padding-right: 10px;
-  padding-top: 20px; /* Adjust the value as needed */
+margin-left: 20px;
+padding-right: 10px;
+padding-top: 20px; /* Adjust the value as needed */
 }
 .custom-options {
-  margin-top: 40px;
-  margin-right: 20px;
-  background-color: rgb(227, 226, 226);
-  box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+margin-top: 40px;
+margin-right: 20px;
+background-color: rgb(227, 226, 226);
+box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
 }
 .custom-options:focus{
-  background-color: black;
-  border-color: none;
+background-color: black;
+border-color: none;
 }
 .custom-prevButton{
-  margin-left: 130px;
-    margin-bottom: 500px;
-     justify-content: flex-start; 
-     align-items: end; 
-     display: flex;
-  
- /* .custom-prevButton{
-  margin-top: 20px;
-  justify-content: flex-start;
-  /* margin-left: 100px; */
-  /* display: flex; */ 
- 
- }
-  
 
-.custom-nextbutton{
-    /* margin-top: 50%; */
-    margin-left: auto;
-    justify-content: flex-end;
-    margin-left: 50px;
-    
+
+   background-color: rgb(32, 193, 139);
+color: white;
+
+
+}
+.custom-prevButton:hover{
+background-color:rgb(32, 193, 139);
+color: white;
 }
 
+
+.custom-nextbutton{
+  
+  background-color: rgb(32, 193, 139);
+  color:white;
+  
+}
+.custom-nextbutton:hover{
+background-color: rgb(32, 193, 139); 
+}
+.custom-nextbutton[disabled]{
+background-color: rgb(32, 193, 139); 
+opacity: 0.5;
+color: white;
+}
 .testNameContainer{
 
-background-color: rgb(159, 225, 224);
-
+background-color: rgb(140, 192, 151);
+color: white;
 justify-content: center;
 align-items: center;
 display: flex;
@@ -67,7 +76,42 @@ margin-top: 20px;
 
 }
 #questionProgress{
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  }
+margin-top: 20px;
+display: flex;
+justify-content: center;
+
+
+}
+
+.progress-bar {
+
+/* margin: 10px 20px 50px 130px; */
+position:relative;
+width: 500px;
+height: 2em;
+/* height: 50px; */
+background-color:rgb(173, 230, 185);
+/* opacity: 0.5; */
+border-radius: 1.8em;
+
+
+}
+
+.progress-bar::before {
+
+content: attr(data-label);
+
+/* align-items: center; */
+position: absolute;
+left: 0em;
+top: 0em;
+bottom: 0em;
+width: calc(var(--width, 0) * 1%);
+min-width: 2rem;
+max-width: calc(100% - 0em);
+background-color: rgb(20, 163, 75);
+border-radius: 1.8em;
+/* padding: 1em; */
+
+
+}

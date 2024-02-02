@@ -22,11 +22,11 @@ fetch('/api/userDetails',{
     
     let greeting;
     if (hour >= 5 && hour < 12) {
-      greeting = `Good morning, ${username}`;
+      greeting = `Good morning, ${username};`
     } else if (hour >= 12 && hour < 17) {
       greeting = `Good afternoon, ${username}`;
     } else {
-      greeting = `Good evening, ${username}`;
+      greeting =` Good evening, ${username}`;
     }
     document.getElementById('greetingWish').innerHTML = greeting;  
 })
@@ -190,5 +190,3 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 });
 
-
-    // Add similar event listeners for the other buttons (Depression, Dyslexia, Autism, Anxiety, PTSD)

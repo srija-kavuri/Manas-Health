@@ -29,8 +29,8 @@ let progressStartValue = 0,
 let progress = setInterval(() => {
     progressStartValue++;
 
-    // progressValue.textContent = `${progressStartValue}%`
-    circularProgress.style.background = `conic-gradient(#7d2ae8 ${progressStartValue * 3.6}deg, #ededed 0deg)`
+    progressValue.textContent = `${progressStartValue}%`
+    circularProgress.style.background = `conic-gradient(#006a6e ${progressStartValue * 3.6}deg, #ededed 0deg)`
 
     if(progressStartValue == progressEndValue){
         clearInterval(progress);
@@ -40,15 +40,15 @@ let progress = setInterval(() => {
             console.log(response.message);
         }
 
-        const adviceArray = [
-            "We regret to inform you that the recent test results indicate a severe outcome. It's important to address this situation promptly and proactively.",
-            "Schedule an appointment with your healthcare provider to discuss the results and gain a comprehensive understanding.",
-            "Timely action is crucial to address the severity of the situation.",
-            "Inform your close family members and friends about the situation.",
-            "Seek emotional support from your loved ones during this challenging time.",
-            "Prioritize your mental health and consider seeking counseling or therapy."
-        ];
-        // const adviceArray = response.data.message;
+        // const adviceArray = [
+        //     "We regret to inform you that the recent test results indicate a severe outcome. It's important to address this situation promptly and proactively.",
+        //     "Schedule an appointment with your healthcare provider to discuss the results and gain a comprehensive understanding.",
+        //     "Timely action is crucial to address the severity of the situation.",
+        //     "Inform your close family members and friends about the situation.",
+        //     "Seek emotional support from your loved ones during this challenging time.",
+        //     "Prioritize your mental health and consider seeking counseling or therapy."
+        // ];
+        const adviceArray = response.data.message;
 
         // Create an unordered list element
     const ulElement = document.createElement('ul');
