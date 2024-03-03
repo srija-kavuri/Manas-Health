@@ -73,7 +73,17 @@
         </div>
       </div>
     </div>
-    
+
+      <!-- Arrow down -->
+      <div class="d-flex mt-auto justify-content-center align-items-end custom-down-arrow">
+        <a href="#scrollspyTest">
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" fill="currentColor" class="bi bi-chevron-double-down custom-bi-chevron" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+            <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+          </svg>  
+        </a> 
+      </div> 
+     
   </div>
       
 <!-- User details canvas -->
@@ -175,14 +185,14 @@
  
 <!-- test cards -->
   <div class="p-5 custom-testcards">
-    <p class="h1 d-flex justify-content-center mb-3" style="color: #a6de9b;">Discover Your&nbsp;<span class="custom-testcards"> Path to Emotional Well-being!</span></p>
+    <p id="scrollspyTest" class="h1 d-flex justify-content-center mb-3" style="color: #a6de9b;">Discover Your&nbsp;<span class="custom-testcards"> Path to Emotional Well-being!</span></p>
     <p class="lead d-flex justify-content-center mb-4">Welcome to Manas Health, where we believe in the power of understanding and nurturing your mental health. Our Mental Health Test is a personalized journey designed to illuminate your unique emotional landscape, providing valuable insights that can guide you toward a happier, healthier life.</p>
  
   
   <!-- Cards test -->
     <div class="container ">
     <!-- Display the initial 3 cards -->
-      <div class="row g-5" >
+      <div class="row g-5">
          <!-- Card 1 -->
          <div class="col-md-4">
           <div class="card h-100" >
@@ -227,7 +237,7 @@
           </div>
 
           <!-- View More Link -->
-    <div class="text-center mt-3 mb-3 d-flex justify-content-end" id="scrollspyTest">
+    <div class="text-center mt-3 mb-3 d-flex justify-content-end">
       <a class="link-light" onclick="showHiddenCards()" id="viewMore"> 
         <p class="fs-5 me-4" style="color: #fff;" >View More</p>
       </a>
@@ -325,13 +335,13 @@
     <div class="container pt-5" data-bs-spy="scroll" data-bs-target="example1" data-bs-smooth-scroll="true">
       <div class="row">
 
-          <div class="col-md-6 my-5">
+          <div class="col-lg-6 my-5">
               <div class="image-container">
                   <img src="../images/girlreading.png" style="height: 500px" alt="Your Image">
               </div>
           </div>
 
-          <div class="col-md-6">
+          <div class="col-lg-6">
               <h1 style="color: #397a4a;">Why Take Our Mental Health Test?</h1>
               <p>
                 <h5 class="q1-headings">Personalized Insights:</h5> <p> Discover personalized insights into your mental health profile. Uncover strengths, identify areas for growth, and gain a deeper understanding of your unique emotional landscape.</p>
@@ -360,7 +370,7 @@
     <div class="container pt-5">
       <div class="row">
 
-          <div class="col-md-6">
+          <div class="col-lg-6">
               <h2>How It Works: </h2>
               <p>
                 <h5 class="q2-headings">1. Access the Test:</h5> <p> Easily access our Mental Health Test from the comfort of your home. It's user-friendly, and you can take it at your own pace.</p>
@@ -375,7 +385,7 @@
 
           </div>
 
-          <div class="col-md-6 mt-5 mb-4">
+          <div class="col-lg-6 mt-5 mb-4">
             <div class="image-container d-flex justify-content-center">
                 <img src="../images/girlthinking.png" style="height: 420px;" alt="Your Image">
             </div>

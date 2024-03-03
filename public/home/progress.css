@@ -20,10 +20,11 @@ body{
 }
 
 #myChart{
-  height: 250px;
+  height: 400px;
   width: auto;
 }
 
 .explain-text{
-  background-color: skyblue;
+  background-color: rgb(29, 157, 186);
+  margin-right: 10px;
 }
