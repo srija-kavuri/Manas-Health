@@ -56,6 +56,7 @@ router.post('/', async (req, res) => {
             userData = { username, category, instituteName: school, email, hashedPassword };
         }
 
+        
         req.session.userData = userData;
 
         const otp = await sendMail.sendOTP(email, username);
@@ -64,14 +65,19 @@ router.post('/', async (req, res) => {
 
         return res.status(200).json({ success: true });
     } catch (error) {
-        if (error.code === 11000) {
-            console.error('Duplicate key error:', error.errmsg);
-            return res.status(400).json({ success: false, message: `Account with the email already exists.` });
-        } else {
+        // if (error.code === 11000) {
+        //     console.error('Duplicate key error:', error.errmsg);
+        //     return res.status(400).json({ success: false, message: `Account with the email already exists.` });
+        // }
             // Handle other MongoDB errors
-            console.error('MongoDB error:', error);
-            return res.status(500).json({ success: false, message: 'Internal Server Error.' });
-        }
+            if (err.code === 'EMAIL_SEND_ERROR') {
+                // Handle the specific error code
+                console.error('Email sending failed with error code:', err.code);
+                return res.status(500).json({ success: false, message: 'Error sending email' });
+              }else{
+                console.error('MongoDB error:', error);
+                return res.status(500).json({ success: false, message: 'Internal Server Error.' });
+              }
     } finally {
         await mongoose.disconnect();
     }

@@ -29,8 +29,9 @@ fetch('/api/userDetails',{
       greeting =` Good evening, ${username}`;
     }
     document.getElementById('greetingWish').innerHTML = greeting;  
+}).catch(error=>{
+  console.error(error);
 })
-
 
 
 document.getElementById("editProfile").addEventListener('click', () => {
@@ -39,7 +40,7 @@ document.getElementById("editProfile").addEventListener('click', () => {
   document.getElementById("institute").disabled = false;
   document.getElementById("className").disabled = false;
   document.getElementById("sectionName").disabled = false;
-  document.getElementById("username").focus();
+  // document.getElementById("username").focus();
   document.getElementById("saveProfile").style.display = "inline-block";
 });
 
@@ -116,7 +117,9 @@ function showHiddenCards() {
   hiddenCards.forEach(card => card.classList.toggle('d-none'));
 
   // Disable the "View More" button after revealing all cards
-  const viewMoreButton = document.querySelector('.link-secondary');
+
+  const viewMoreButton = document.querySelector('#viewMore');
+  viewMoreButton.style.display= "none";
   if (hiddenCards.length === 0) {
       viewMoreButton.disabled = true;
   }
@@ -190,3 +193,20 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 });
 
+document.getElementById('submitfeedback').addEventListener('click', (event)=>{
+  // event.preventDefault();
+  const feedback = document.getElementById('feedbackText').value;
+  console.log(feedback)
+  fetch('/api/feedback',{
+    method: 'POST',
+    headers:{
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({message:feedback})
+  }).then(()=>{
+    console.log("sent feedback");
+  })
+  .catch((error)=>{
+    console.error("error submitting the feedback", error);
+  })
+})

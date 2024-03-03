@@ -1,15 +1,11 @@
 const express = require('express');
 const User = require('./userModel');
 const mongoose = require('mongoose');
-
+const auth = require('./checkauth');
+                                                      
 const router = express.Router();
 
-router.post('/', async (req, res) => {
-  if(!req.session.isAuth){
-    console.log("not auth");
-    return res.status(400);
-
-  }
+router.post('/', auth, async (req, res) => {
   try {
     const { username, institute, className} = req.body;
     let sectionName;
@@ -18,7 +14,9 @@ router.post('/', async (req, res) => {
     const userEmail = req.session.userData.email;
 
     if (category==="Student") {
+      sectionName = req.body.sectionName;
       if(!username || !institute || !className || !sectionName){
+        console.log("no section name", sectionName);
       return res.status(400).json({ success: false, message: 'Please fill in all fields' });
 
     }

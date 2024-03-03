@@ -31,5 +31,5 @@ const resultsModel = new mongoose.Schema({
   }
 })
 
-const userResults = mongoose.model('reults', resultsModel);
+const userResults = mongoose.model('results', resultsModel);
 module.exports = userResults;

@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
           if (currentQuestionIndex < questionsData.length) {
              showQuestion();
             } else {
-              getresult(category,selectedoptions);
+              getresult(category,selectedoptions, nextButton.id);
             // Handle form submission logic here (replace the alert)
           }
           
@@ -265,7 +265,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
   });
 })
 
-async function getresult(category, userInputs){
+async function getresult(category, userInputs, submitButtonId){
+  const submitButton = document.getElementById(submitButtonId);
+  submitButton.disabled = true;
+
   const currentDate = new Date();
 const year = currentDate.getFullYear();
 const month = currentDate.getMonth()+1;
@@ -291,9 +294,13 @@ const date=`${day}-${month}-${year} ${day} ${hours}:${minutes}:${seconds}`
             window.location.replace(`${url}`);
           }else{
             console.error("Error submittin the inputs", error);
+            submitButton.disabled = false;
+
           }
         })
         .catch(error=>{
           console.log("Error sending inputs to the server", error);
+          submitButton.disabled = false;
+
         });
 }

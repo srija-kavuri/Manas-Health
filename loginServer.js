@@ -1,4 +1,4 @@
-const express=require('express')
+const express=require('express');
 const mongoose = require('mongoose');
 const bcrypt=require('bcrypt');
 const User = require('./userModel.js');
@@ -18,14 +18,16 @@ router.post('/', async (req,res)=>{
         const isValid = await bcrypt.compare(reqPassword, findUser.hashedPassword);
         if(isValid){
           req.session.isAuth = true;
-          req.session.userData = {email:reqEmail, age:findUser.age};
           if(remember){
-            req.session.cookie.maxAge=1000*60*60*24;
+            req.session.cookie.maxAge=1000*60*60*24; //30 days
           }
           if(findUser.category == 'Teacher'){
             req.session.category = 'Teacher';
+            req.session.userData = {email:reqEmail};
+
           }else{
             req.session.category = 'Student';
+            req.session.userData = {email:reqEmail, age:findUser.age};
           }
           return res.redirect('/home');
 

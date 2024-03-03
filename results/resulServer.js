@@ -2,11 +2,13 @@ const { json } = require('body-parser');
 const express=require('express');
 const path=require('path');
 const fs = require('fs').promises;
+const auth = require('./checkauth.js');
+
 
 
 const resultData = express.Router();
 
-resultData.get("/", async (req,res)=>{
+resultData.get("/", auth, async (req,res)=>{
   let result = (req.query.result).trim();
   result = result.toLowerCase();
   try{

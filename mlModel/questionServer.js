@@ -1,11 +1,13 @@
 const express = require('express');
 const fs = require('fs').promises;
 const path = require('path');
+const auth = require('./checkauth.js');
+
 
 const test = express.Router();
 const getQuestions = express.Router();
 
-test.get('/', (req,res)=>{
+test.get('/', auth, (req,res)=>{
   const testCategory = req.query.category;
   // console.log(testCategory);
   if(testCategory){
@@ -15,7 +17,7 @@ test.get('/', (req,res)=>{
   }
 })
 
-getQuestions.get('/', async (req,res)=>{
+getQuestions.get('/',auth, async (req,res)=>{
   const testCategory = req.query.category;
   try{
     let data;

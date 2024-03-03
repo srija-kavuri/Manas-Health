@@ -178,12 +178,7 @@
     <p class="h1 d-flex justify-content-center mb-3" style="color: #a6de9b;">Discover Your&nbsp;<span class="custom-testcards"> Path to Emotional Well-being!</span></p>
     <p class="lead d-flex justify-content-center mb-4">Welcome to Manas Health, where we believe in the power of understanding and nurturing your mental health. Our Mental Health Test is a personalized journey designed to illuminate your unique emotional landscape, providing valuable insights that can guide you toward a happier, healthier life.</p>
  
-  <!-- View More Link -->
-    <div class="text-center mt-3 mb-3 d-flex justify-content-end" id="scrollspyTest">
-      <a class="link-light" onclick="showHiddenCards()">
-        <p class="fs-5 me-4" style="color: #fff;" id="viewMore">View More</p>
-      </a>
-    </div>
+  
   <!-- Cards test -->
     <div class="container ">
     <!-- Display the initial 3 cards -->
@@ -230,6 +225,13 @@
               </div>
             </div>
           </div>
+
+          <!-- View More Link -->
+    <div class="text-center mt-3 mb-3 d-flex justify-content-end" id="scrollspyTest">
+      <a class="link-light" onclick="showHiddenCards()" id="viewMore"> 
+        <p class="fs-5 me-4" style="color: #fff;" >View More</p>
+      </a>
+    </div>
 
         <!-- Card 4 -->
           <div class="col-md-4">
@@ -474,14 +476,14 @@
                   <h5 class="modal-title" id="feedbackModalLabel">Submit Feedback</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              <div class="modal-body">
+              <div class="modal-body", id="modalfeedback">
                   <!-- Your feedback form goes here -->
                   <form>
                       <div class="mb-3">
                           <label for="feedbackText" class="form-label">Your Feedback</label>
                           <textarea class="form-control" id="feedbackText" rows="3"></textarea>
                       </div>
-                      <button type="submit" class="btn btn-success">Submit</button>
+                      <button type="submit" class="btn btn-success" id="submitfeedback">Submit</button>
                   </form>
               </div>
           </div>

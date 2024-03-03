@@ -4,13 +4,15 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const resultsModel = require('./resultsModel');
 const router = express.Router();
+const auth = require('./checkauth.js');
 
 
-router.post('/',cors(), async (req,res)=>{
 
-    if(!req.session.isAuth){
-        return res.json({success:false, message:"please login to access"});
-    }
+router.post('/', auth,cors(), async (req,res)=>{
+
+    // if(!req.session.isAuth){
+    //     return res.json({success:false, message:"please login to access"});
+    // }
   const category = req.body.category;
   let inputs = req.body.userInputs
   const date = req.body.date;

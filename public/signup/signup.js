@@ -93,19 +93,16 @@ document.getElementById('registerbutton').addEventListener('click', (e) => {
     }
   } 
 
-
-
      else {
       document.getElementById('registerbutton').disabled = true;
-
       const formData = new FormData(document.querySelector('#myform'));
-      console.log('Before fetch');
+      // console.log('Before fetch');
       
       const formDataObject = {};
       formData.forEach((value, key) => {
         formDataObject[key] = value;
       });
-      console.log(formDataObject);
+      // console.log(formDataObject);
       
       fetch('/api/signup', {
         method: 'POST',
@@ -114,9 +111,8 @@ document.getElementById('registerbutton').addEventListener('click', (e) => {
         },
         body: JSON.stringify(formDataObject),
       })
-      
     .then(response => {
-      console.log(response.status);
+      // console.log(response.status);
       if (response.status === 500) {
         alert("An error occured please try again");
       document.getElementById('registerbutton').disabled = false;
@@ -134,6 +130,8 @@ document.getElementById('registerbutton').addEventListener('click', (e) => {
         alert("Please fill all the fields");
       }else{
         alert('Account with the email already exists.');
+      document.getElementById('registerbutton').disabled = false;
+
       }
      })
     .catch(error => {

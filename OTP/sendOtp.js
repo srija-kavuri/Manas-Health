@@ -44,7 +44,7 @@ async function sendOTP(email, name) {
     return otp;
   } catch (err) {
     console.error('Error sending OTP email:', err);
-    throw new Error('Failed to send OTP via email');
+    throw new Error('Failed to send OTP via email Error code: EMAIL_SEND_ERROR}');
   }
 }
 

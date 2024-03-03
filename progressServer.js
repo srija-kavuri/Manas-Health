@@ -3,12 +3,13 @@ const mongoose = require('mongoose');
 const path = require('path'); 
 const resultsModel = require('./mlModel/resultsModel');
 const User = require('./userModel');
+const auth = require('./checkauth.js');
+
 
 const progress = express.Router();
 const getProgress = express.Router();
 
-progress.get('/', async (req, res) => {
-  const myParam = req.params.email;
+progress.get('/', auth, async (req, res) => {
   if(req.session.category==="Student" ){
     return res.status(302).sendFile(path.join(__dirname, 'public', 'home/progress.html'));
   }else if(req.session.category==='Teacher'){
@@ -21,7 +22,7 @@ progress.get('/', async (req, res) => {
 });
 
 
-getProgress.get('/', async (req, res) => {
+getProgress.get('/', auth, async (req, res) => {
   let progressEmail;
   let studentDetails;
   if(req.session.category==='Student'){

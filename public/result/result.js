@@ -3,9 +3,21 @@ const urlParams = new URLSearchParams(window.location.search);
 const category = encodeURIComponent(urlParams.get('category'));
 const result = encodeURIComponent(urlParams.get('result'));
 let percentage = Math.round(urlParams.get('percentage'));
+
+let progressStartValue = 0,    
+    progressEndValue;   
+    speed = 10;
+if(category==='general_test'){
+    console.log("yes");
+    percentage=25;
+    speed=10;
+}
 if(percentage===0){
     percentage = 1;
 }
+
+progressEndValue=percentage;
+
 
 const url = `/api/result?category=${category}&result=${result}`;
 
@@ -27,14 +39,15 @@ fetch(url)
     progressValue.innerHTML = result;
     document.getElementById('testCategory').innerHTML = category;
 
-let progressStartValue = 0,    
-    progressEndValue = percentage;   
-    speed = 10;
+
     
 let progress = setInterval(() => {
     progressStartValue++;
-
-    progressValue.textContent = `${progressStartValue}%`
+    if(category==='general_test'){
+    progressValue.textContent = `${result}`;
+    }else{
+        progressValue.textContent = `${progressStartValue}%`;
+    }
     circularProgress.style.background = `conic-gradient(#006a6e ${progressStartValue * 3.6}deg, #ededed 0deg)`
 
     if(progressStartValue == progressEndValue){

@@ -8,9 +8,9 @@ const resendOTP=express.Router();
 const changeEmail=express.Router();
 
 verify.post('/', async (req,res)=>{
-  userEnteredOTP=req.body.otp;
+  const userEnteredOTP=req.body.otp;
   if(userEnteredOTP===req.session.otp){
-    console.log("verified");
+    // console.log("verified");
     try{
       await mongoose.connect("mongodb://localhost:27017/manashealth");
       await User.create(req.session.userData);
@@ -19,7 +19,11 @@ verify.post('/', async (req,res)=>{
       console.log('User inserted successfully!');
     res.status(200).json({success: true});
 
-    }finally{
+    }catch(err){
+      console.error(err);
+      return res.status(500).json({success:false, message:"Internal server error"});
+    }
+      finally{
       await mongoose.disconnect();
     }  
   }else{
@@ -36,7 +40,7 @@ changeEmail.post('/', async (req,res)=>{
       return res.status(400).json({success:false, message:'account with the email already exists'});
     }
     req.session.userData.email = newEmail;
-    console.log(req.session.userData);
+    // console.log(req.session.userData);
     const otp = await sendMail.sendOTP(newEmail, req.session.userData.username);
     req.session.otp=otp;
     res.status(200).json({success: true});

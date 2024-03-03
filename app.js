@@ -3,8 +3,8 @@ const path=require('path');
 const mongoose = require('mongoose');
 const session = require("express-session");
 const mongodbSession=require("connect-mongodb-session")(session);
-const login=require('./loginServer.js')
-const signup=require('./signupServer.js')
+const login=require('./loginServer.js');
+const signup=require('./signupServer.js');
 const {verify, changeEmail, resendOTP}=require('./OTP/veifyOtp.js');
 const {test, getQuestions} = require('./mlModel/questionServer.js');
 const User = require('./userModel.js');
@@ -14,14 +14,16 @@ const getStudents = require('./teacherServer.js');
 const  {progress, getProgress} = require('./progressServer.js');
 const {sendForgotPasswordMail, verifyForgotPasswordOTP, changePassword} = require('./forgotPasswordServer.js');
 const modelPredictions = require('./mlModel/modelPredictions.js');
+const feedback=require('./feedbackserver.js');
+const auth = require('./checkauth.js');
+
 
 const app=express();
 const port=5500;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-
-mongoUri = 'mongodb://localhost:27017/manashealth';
+const mongoUri = 'mongodb://localhost:27017/manashealth';
 
 const store = new mongodbSession({
   uri:mongoUri,
@@ -36,6 +38,8 @@ app.use(
     store: store,
   })
 )
+
+
 
 app.use(express.static(path.join(__dirname,'public')));
 app.get('/', (req,res)=>{
@@ -80,7 +84,7 @@ app.get('/forgotPassword', (req, res)=>{
 })
 
 
-app.get('/home', (req,res)=>{
+app.get('/home', auth, (req,res)=>{
 
   if(req.session.isAuth){
     if(req.session.category === 'Teacher'){
@@ -92,9 +96,10 @@ app.get('/home', (req,res)=>{
     }else if(req.session.category === 'Student'){
       return res.status(302).sendFile(path.join(__dirname,'public', 'home/home.html'));
     }
-  }else{
-    return res.redirect('/login');
   }
+  // else{
+  //   return res.redirect('/login');
+  // }
 })
 
 app.get('/articles', (req,res)=>{
@@ -153,6 +158,9 @@ app.get('/api/logout', (req,res)=>{
     })
   }
 })
+
+app.use('/api', feedback);
+
 app.listen(port,'::',async ()=>{
   await mongoose.connect(mongoUri)
     .catch(err=>{

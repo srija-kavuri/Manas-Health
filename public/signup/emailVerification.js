@@ -70,11 +70,11 @@ document.querySelector('#verifyButton').addEventListener('click', (event)=>{
       body: JSON.stringify({otp: otpValue}),
     })
     .then(response=>response.json())
-    .then(response=>{
-      if(response.success){
+    .then(data=>{
+      if(data.success){
       window.location.replace("/home");
       }else{
-        alert(response.message);
+        alert(data.message);
       }
     })
     .catch(error=>{
