@@ -19,7 +19,9 @@ blur {
     justify-content: center;
     align-items: center;
     /* height: 10vh; */
-    background-color: #006a6e;
+    /* background-color: #006a6e; */
+   background-color: #c5e2d3;
+
     
 }
 .custom-form {
