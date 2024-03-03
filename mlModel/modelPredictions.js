@@ -4,7 +4,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const resultsModel = require('./resultsModel');
 const router = express.Router();
-const auth = require('./checkauth.js');
+const auth = require('../checkauth.js');
 
 
 
@@ -16,7 +16,6 @@ router.post('/', auth,cors(), async (req,res)=>{
   const category = req.body.category;
   let inputs = req.body.userInputs
   const date = req.body.date;
-//   const date = 'datae';
 
   let userInputs;
 if (category === "general_test") {

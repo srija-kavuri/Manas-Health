@@ -2,7 +2,7 @@ const { json } = require('body-parser');
 const express=require('express');
 const path=require('path');
 const fs = require('fs').promises;
-const auth = require('./checkauth.js');
+const auth = require('../checkauth.js');
 
 
 

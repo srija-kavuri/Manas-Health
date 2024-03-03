@@ -1,7 +1,7 @@
 const express = require('express');
 const fs = require('fs').promises;
 const path = require('path');
-const auth = require('./checkauth.js');
+const auth = require('../checkauth.js');
 
 
 const test = express.Router();
