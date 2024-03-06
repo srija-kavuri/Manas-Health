@@ -2,10 +2,11 @@ const express = require('express');
 const mongoose = require('mongoose');
 const User = require('./userModel');
 const resultsModel = require('./mlModel/resultsModel');
+const auth = require('./checkauth');
 
 const router = express.Router();
 
-router.post('/', async (req, res) => {
+router.post('/',auth, async (req, res) => {
   try {
     const className = req.body.className;
     let sectionName = req.body.sectionName;

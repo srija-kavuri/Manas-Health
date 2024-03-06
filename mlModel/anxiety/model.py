@@ -51,7 +51,7 @@ print("Accuracy:", accuracy_score(y_test, y_pred))
 print("Classification Report:\n", classification_report(y_test, y_pred, zero_division=1))
 # Define the RandomForestClassifier with the specified hyperparameters
 anxiety_final_model = RandomForestClassifier(
-    n_estimators=100,  # You can adjust the number of trees in the forest
+    n_estimators=100, 
     criterion='gini',
     max_depth=None,
     min_samples_leaf=1,

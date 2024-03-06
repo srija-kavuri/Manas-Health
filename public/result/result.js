@@ -85,3 +85,7 @@ let progress = setInterval(() => {
     .catch(error => {
         console.error("error fetching the data", error);
     });
+
+    document.getElementById('progress').addEventListener('click', ()=>{
+        window.location.replace('http://localhost:5500/progress');
+    })

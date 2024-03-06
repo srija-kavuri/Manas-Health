@@ -276,7 +276,7 @@ const day = currentDate.getDate();
 const hours = currentDate.getHours();
 const minutes = currentDate.getMinutes();
 const seconds = currentDate.getSeconds();
-const date=`${day}-${month}-${year} ${day} ${hours}:${minutes}:${seconds}`
+const date=`${day}-${month}-${year} ${hours}:${minutes}:${seconds}`
 
   await fetch('http://localhost:5500/api/getPredictions',{
           method:"POST",

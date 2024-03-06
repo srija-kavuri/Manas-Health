@@ -102,23 +102,23 @@ app.get('/home', auth, (req,res)=>{
   // }
 })
 
-app.get('/articles', (req,res)=>{
+app.get('/articles', auth,(req,res)=>{
   res.sendFile(path.join(__dirname, 'public', 'articles/articles.html'));
 })
 
-app.get('/resources', (req,res)=>{
+app.get('/resources', auth,(req,res)=>{
   res.sendFile(path.join(__dirname, 'public', 'resources/resources.html'));
 })
-app.get('/AboutUs', (req,res)=>{
+app.get('/AboutUs', auth,(req,res)=>{
   res.sendFile(path.join(__dirname, 'public', 'aboutUs/aboutUs.html'));
 })
 
-app.get('/help', (req,res)=>{
+app.get('/help', auth,(req,res)=>{
   res.sendFile(path.join(__dirname, 'public', 'resources/resources.html'));
 })
 
-app.get('/api/userDetails', async (req, res)=>{
-  if(req.session.isAuth){
+app.get('/api/userDetails',auth, async (req, res)=>{
+  
     try{
       await mongoose.connect(mongoUri);
       const findUser = await User.findOne({email: req.session.userData.email});
@@ -132,13 +132,9 @@ app.get('/api/userDetails', async (req, res)=>{
     }catch(error){
       console.error("error fetching user details", error);
   }
-  }else{
-    console.log("not authenticated");
-    res.send("not authenticated");
-  }
 })
 
-app.get('/result', (req, res)=>{
+app.get('/result', auth,(req, res)=>{
   res.sendFile(path.join(__dirname, 'public', 'result/result.html'));
 })
 
@@ -146,7 +142,7 @@ app.use('/api/result', resultData);
 
 app.use('/api/editProfile', editProfile);
 
-app.get('/api/logout', (req,res)=>{
+app.get('/api/logout',auth, (req,res)=>{
   if(req.session.isAuth){
     req.session.destroy((error)=>{
       if(error){

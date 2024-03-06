@@ -10,52 +10,53 @@
 </head>
 <body>
   <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg " style="background-color: #0e2238;" data-bs-theme="dark">
-      <div class="container-fluid">
-        <a class="navbar-brand fs-2 ms-3  navbar-titles" href="http://localhost:5500/home">Manas Health</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav ms-auto">
-            <a class="nav-link coustom-nav fs-5 navbar-titles" aria-current="page" href="http://localhost:5500/home">Home</a>
-            <a class="nav-link coustom-nav fs-5 navbar-titles" href="http://localhost:5500/resources">Resources</a>
-            <a class="nav-link coustom-nav fs-5 navbar-titles" href="http://localhost:5500/articles">Articles</a>
-            <a class="nav-link active coustom-nav fs-5 navbar-titles">Progress</a>
-            <a class="nav-link coustom-nav fs-5 navbar-titles" href="http://localhost:5500/AboutUs">AboutUs</a>
-              <a class="nav-link  coustom-nav fs-5 navbar-titles"  data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Logout</a>
-              <a class="nav-link coustom-nav fs-5 navbar-titles" href="http://localhost:5500/help">Help</a>
-            
-            <div>
-              <a href="#" class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-person-circle" viewBox="0 0 20 20">
-                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-            
-            </svg>
+  <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #0e2238;" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand fs-2 ms-3 navbar-titles" href="http://localhost:5500/home">Manas Health</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link coustom-nav fs-5 navbar-titles" aria-current="page" href="http://localhost:5500/home">Home</a>
+          <a class="nav-link coustom-nav fs-5 navbar-titles" href="http://localhost:5500/resources">Resources</a>
+          <a class="nav-link coustom-nav fs-5 navbar-titles" href="http://localhost:5500/articles">Articles</a>
+          <a class="nav-link coustom-nav fs-5 navbar-titles active" href="http://localhost:5500/progress">Progress</a>
+          <a class="nav-link coustom-nav fs-5 navbar-titles" href="http://localhost:5500/AboutUs">AboutUs</a>
+          <a class="nav-link  coustom-nav fs-5 navbar-titles"  data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Logout</a>
+          <a class="nav-link coustom-nav fs-5 navbar-titles" href="http://localhost:5500/help">Help</a>
+
           
-              </a>
-              </div>
-            
-          </div>
+          <div>
+            <a href="#" class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-person-circle" viewBox="0 0 20 20">
+              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+              <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+          
+          </svg>
+        
+            </a>
+            </div>
+          
         </div>
       </div>
-    </nav>       
+    </div>
+  </nav>         
 
   <!-- User details canvas -->
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasRightLabel">user details</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        <div class="profile-icon"> 
-        <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="#b3b3b3" class="bi bi-person-square" viewBox="0 0 16 16">
-          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-          <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/>
-        </svg>
-      </div> 
-      <table class="table mt-5">
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasRightLabel">user details</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="profile-icon"> 
+      <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="#b3b3b3" class="bi bi-person-square" viewBox="0 0 16 16">
+        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+        <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/>
+      </svg>
+    </div> 
+    <table class="table mt-5">
         <thead>
           <tr>
             <th scope="col"><p>student details</p></th>
@@ -85,10 +86,24 @@
             </td>
           </tr>
 
+          <tr>
+              <th scope="row">Class name</th>
+              <td>
+                  <p id="className"></p>
+              </td>
+            </tr>
+            
+            <tr>
+              <th scope="row">Section name</th>
+              <td>
+                  <p id="sectionName"></p>
+              </td>
+            </tr>
+
         </tbody>
       </table>
-      </div>
     </div>
+  </div>
                     
     <!--Logout Modal -->
     <div class="container">
@@ -117,23 +132,26 @@
     <div class="container">
       <h2 class="fw-bold mb-4 mt-3">Your Mental Health Progress</h2>
       
-      <p>
+      <!-- <p>
         Welcome to your progress page! Here, you can track your journey towards better mental well-being. Your commitment to self-improvement is commendable, and we're here to support you every step of the way.
       </p>
     
       <p>
         Keep in mind that progress is not always linear. Celebrate your victories, no matter how small, and be patient with yourself during challenging times. Your efforts matter, and each positive step contributes to your overall well-being.
-      </p>
+      </p> -->
     
       <p>
         Use the visualizations and insights provided to gain a deeper understanding of your mental health. Remember, you're not alone on this path. If you ever need guidance or support, reach out to your healthcare professionals or trusted individuals in your life.
       </p>
     
-      <p>
+      <!-- <p>
         Take a moment to reflect on your achievements, and consider setting new goals to continue your journey towards a healthier and happier you. Your mental health matters, and we're here to empower you on your path to well-being.
-      </p>
+      </p> -->
     </div>
     
+    <div id="noProgress">
+      <p class="d-flex justify-content-center">Take a test to see your progress</p>
+    </div>
     <!-- Graph -->
     <div class="container mt-5">
       <canvas id="myChart"></canvas>
@@ -193,6 +211,12 @@
           Remember, these categories provide a general framework, and individual experiences may vary. Use this information to guide your self-reflection and consider consulting with mental health experts for personalized insights and assistance.
         </p>
       </div>
+    </div>
+
+    <div class="conatiner m-3">
+      <h3 class="ms-5 mb-4">History</h3>
+  <div id="table-container"></div>
+
     </div>
 
      

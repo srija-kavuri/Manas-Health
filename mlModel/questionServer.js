@@ -19,6 +19,7 @@ test.get('/', auth, (req,res)=>{
 
 getQuestions.get('/',auth, async (req,res)=>{
   const testCategory = req.query.category;
+  console.log(testCategory);
   try{
     let data;
     if(testCategory==="depression"){

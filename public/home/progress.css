@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap%27');
 
 body{
   /* background: linear-gradient(to top,#87dff1, #fff); */
@@ -20,11 +21,34 @@ body{
 }
 
 #myChart{
-  height: 400px;
+  height: 450px;
   width: auto;
 }
 
 .explain-text{
   background-color: rgb(29, 157, 186);
   margin-right: 10px;
+}
+
+/* #noProgress{
+  display: block;
+} */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+#table-container{
+  padding: 0 20px 0 20px;
 }

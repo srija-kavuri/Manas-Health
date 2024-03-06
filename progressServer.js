@@ -40,13 +40,11 @@ getProgress.get('/', auth, async (req, res) => {
     }
   }
   try {
-    await mongoose.connect("mongodb://localhost:27017/manashealth");
     const studentProgress = await resultsModel.findOne({
       email: progressEmail,
     });
     if (studentProgress) {
-      
-      res.status(200).json({ success: true, progress: studentProgress.currentStatus, studentDetails});
+      res.status(200).json({ success: true, progress: studentProgress.currentStatus, studentDetails, history:studentProgress.results});
     }else{
       res.status(404).json({success:false, message: "cannot find progress of the given student"});
     }

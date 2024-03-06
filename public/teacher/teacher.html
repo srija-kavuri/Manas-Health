@@ -62,11 +62,11 @@
   <!-- User details canvas -->
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasRightLabel">user details</h5>
+      <h5 class="offcanvas-title" id="offcanvasRightLabel">User Details</h5>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-      <div class="profile-icon">
+      <div class="profile-icon pb-4">
         <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="#b3b3b3" class="bi bi-person-square"
           viewBox="0 0 16 16">
           <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
@@ -87,32 +87,39 @@
         </thead>
         <tbody>
           <tr>
-            <th scope="row">username</th>
+            <th scope="row">Username</th>
             <td>
               <input type="text" id="username" disabled />
             </td>
           </tr>
           
           <tr>
-            <th scope="row">email</th>
+            <th scope="row">Email</th>
             <td>
               <span id="email"><span/>
             </td>
           </tr>
           
           <tr>
-            <th scope="row">institute name</th>
+            <th scope="row">Institute name</th>
             <td colspan="2">
               <input type="text" id="institute" disabled />
             </td>
           </tr>
         </tbody>
       </table>
-      <div class="edit">
-        <button type="button" class="btn btn-outline-secondary edit-profile" id="editProfile">edit your profile</button>
-      <button type="button" id="saveProfile" style="display: none;">save</button>
 
+      <div class="conatiner edit mt-3">
+        <div class="row">
+          <div class="col">
+            <button type="button" class="btn rounded-pill btn-outline-secondary px-3 edit-profile" id="editProfile">edit your profile</button>
+          </div>
+          <div class="col d-flex justify-content-end">
+            <button type="button" class="btn rounded-pill btn-outline-success " id="saveProfile" style="display: none;">save</button>
+          </div>
       </div>
+    </div>
+      
     </div>
   </div>
 
@@ -127,9 +134,16 @@
           <div class="form-floating">
             <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
               <option selected>Class</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+                <option value="4">Four</option>
+                <option value="5">Five</option>
+                <option value="6">Six</option>
+                <option value="7">Seven</option>
+                <option value="8">Eight</option>
+                <option value="9">Nine</option>
+                <option value="10">Ten</option>
             </select>
             <label for="floatingSelect">Select Class</label>
           </div>

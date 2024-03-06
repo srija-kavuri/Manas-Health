@@ -24,31 +24,11 @@ if(urlParams){
   student = encodeURIComponent(urlParams.get('student'));
 }
 
-fetch(`/api/student/progress/?student=${student}`,{
-  method: 'GET',
-  headers:{
-    'Content-Type': 'application/json',
-  },
-}).then(response=>response.json())
-.then(data=> {
-  if(data.success){
-    const studentResults = data.progress;
-    const {username, email, instituteName, className, sectionName} = data.studentDetails;
-    document.getElementById("username").innerHTML = username; 
-    document.getElementById("email").innerHTML = email; 
-    document.getElementById("institute").innerHTML = instituteName;
-      document.getElementById("className").innerHTML = className;
-      document.getElementById("sectionName").innerHTML = sectionName;
-  }
-  console.log(data);
-})
-
 // Graph
 document.addEventListener('DOMContentLoaded',async function() {
   let studentResults;
-
+  let history;
   // Get the canvas element
-  var ctx = document.getElementById('myChart').getContext('2d');
 await fetch(`/api/student/progress/?student=${student}`,{
   method: 'GET',
   headers:{
@@ -56,42 +36,59 @@ await fetch(`/api/student/progress/?student=${student}`,{
   },
 }).then(response=>response.json())
 .then(data=> {
+  const {username, email, instituteName, className, sectionName} = data.studentDetails;
+    document.getElementById("username").innerHTML = username; 
+    document.getElementById("email").innerHTML = email; 
+    document.getElementById("institute").innerHTML = instituteName;
+    document.getElementById("className").innerHTML = className;
+    document.getElementById("sectionName").innerHTML = sectionName;
   if(data.success){
     studentResults = data.progress;
+    
+    history = data.history;
     console.log(studentResults);
+    document.getElementById('noProgress').style.display='none';
   }
+}).catch(error=>{
+  console.error(error);
 })
+var ctx = document.getElementById('myChart').getContext('2d');
+
 //   studentResults = [
-//       { category: 'stress', score: 2, date: '22-03-2005' },
-//       { category: 'depression', score: 1, date: '23-04-2004' },
-//       { category: 'adhd', score: 1, date: '26-05-2003' },
-//       { category: 'general_test', score: 1, date: '20-05-1999' }
+//       { category: 'stress', percentage: 2, date: '22-03-2005' },
+//       { category: 'depression', percentage: 1, date: '23-04-2004' },
+//       { category: 'adhd', percentage: 1, date: '26-05-2003' },
+//       { category: 'general_test', percentage: 1, date: '20-05-1999' }
 //   ];
+
+if(studentResults &&studentResults.length>0){
 
   // Filter the data to exclude 'general_test'
   const filteredList = studentResults.filter(obj => obj.category !== 'general_test');
 
   // Define data for the chart
   var categorylist = [];
-  var scorelist = [];
+  var percentagelist = [];
   var datelist = filteredList.map(item => item.date);
 
   filteredList.forEach(obj => {
       const capitalizedCategory = obj.category.charAt(0).toUpperCase() + obj.category.slice(1);
       // Store the capitalized category and score in their respective arrays
       categorylist.push(capitalizedCategory);
-      scorelist.push(obj.percentage);
+      percentagelist.push(obj.percentage);
   });
 
+  var labelWithDate = categorylist.map((category, index) => `${category} : ${datelist[index]}`);
   var data = {
-      labels: categorylist,
+      labels: labelWithDate,
       datasets: [{
           label: 'Percentage',
-          data: scorelist,
+          data: percentagelist,
           backgroundColor: 'skyblue',
           borderWidth: 1,
           date: datelist
-      }]
+      },
+    ]
   };
 
   // Create the chart
@@ -110,12 +107,12 @@ await fetch(`/api/student/progress/?student=${student}`,{
                   }
               },
               y: {
+                  max:100,
+                  grid:{
+                    display:false,
+                  },
                   ticks: {
-                      callback: function(value, index, values) {
-                          // Map numerical values to custom labels
-                          const labels = ['Normal', 'Mild', 'Moderate', 'Severe', 'Extremely Severe'];
-                          return labels[value - 1]; // Subtract 1 because arrays are zero-indexed
-                      }
+                      stepSize:10
                   }
               }
           },
@@ -123,8 +120,8 @@ await fetch(`/api/student/progress/?student=${student}`,{
               legend: {
                   display: true,
                   position: 'top',
-                 
-              }
+              },
+              
           },
           layout: {
               padding: {
@@ -134,18 +131,66 @@ await fetch(`/api/student/progress/?student=${student}`,{
                   bottom: 0
               }
           },
-          scales: {
-              x: {
-                  grid: {
-                      display: false
-                  }
-              },
-              y: {
-                  grid: {
-                      display: false
-                  }
-              }
-          }
       }
   });
-});
+//   to render history
+  createTable(history)
+
+}});
+
+function createTable(data) {
+  console.log(data)
+data.forEach((item)=>Reflect.deleteProperty(item, '_id'));
+data.forEach((item)=>Reflect.deleteProperty(item, 'userInputs'));
+data.forEach((item)=>Reflect.deleteProperty(item, 'percentage'));
+console.log(data);
+
+  const tableContainer = document.getElementById('table-container');
+  tableContainer.innerHTML = ``;
+  // Create a table element
+  const table = document.createElement('table');
+  table.id='myTable';
+
+  // Create a header row
+  const headerRow = document.createElement('tr');
+  headerRow.innerHTML = '<th>S.NO </th><th>Test category</th><th>status</th><th>date</th>';
+
+  table.appendChild(headerRow);
+
+    // Create rows with data
+  data.forEach((item, index) => {
+    const row = document.createElement('tr');
+    const serialNumberCell = document.createElement('td');
+    serialNumberCell.textContent = index + 1;
+    row.appendChild(serialNumberCell);
+
+
+    for (const key in item) {
+      const td = document.createElement('td');
+      // if(key==="progress"){
+      //   const studentEmail = encodeURIComponent(item[key]);
+      //   td.innerHTML = `<a href="/progress/?student=${studentEmail}" target="_blank">progress </a>`
+      // }else if(key==="currentStatus"){
+      //   currentStatusText = ``;
+      //     console.log(item[key]);
+      //     item[key].forEach(Element=>{
+      //       if(currentStatusText){
+      //         currentStatusText+=', '
+      //       }
+      //       currentStatusText +=`${Element.category.toUpperCase()}-${Element.severity_level}`;
+      //     })
+
+      //   td.textContent=currentStatusText;
+      // }
+      
+      if(key!="percentage"&& key!="userInputs"&& key!='_id'){
+        td.textContent = item[key];
+      }
+      row.appendChild(td);
+    }
+    table.appendChild(row);
+  });
+
+  // Append the table to the container
+  tableContainer.appendChild(table);
+}

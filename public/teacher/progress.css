@@ -20,10 +20,34 @@ body{
 }
 
 #myChart{
-  height: 250px;
+  height: 450px;
   width: auto;
 }
 
 .explain-text{
-  background-color: skyblue;
+  background-color: rgb(29, 157, 186);
+  margin-right: 10px;
+}
+
+/* #noProgress{
+  display: block;
+} */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+#table-container{
+  padding: 0 20px 0 20px;
 }
