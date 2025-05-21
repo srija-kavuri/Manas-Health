@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express=require('express');
 const path=require('path');
 const mongoose = require('mongoose');
@@ -16,7 +17,6 @@ const {sendForgotPasswordMail, verifyForgotPasswordOTP, changePassword} = requir
 const modelPredictions = require('./mlModel/modelPredictions.js');
 const feedback=require('./feedbackserver.js');
 const auth = require('./checkauth.js');
-
 
 const app=express();
 const port=5500;

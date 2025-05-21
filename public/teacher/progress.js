@@ -79,17 +79,29 @@ if(studentResults &&studentResults.length>0){
   });
 
   var labelWithDate = categorylist.map((category, index) => `${category} : ${datelist[index]}`);
+  // var data = {
+  //     labels: labelWithDate,
+  //     datasets: [{
+  //         label: 'Percentage',
+  //         data: percentagelist,
+  //         backgroundColor: 'skyblue',
+  //         borderWidth: 1,
+  //         date: datelist
+  //     },
+  //   ]
+  // };
   var data = {
-      labels: labelWithDate,
-      datasets: [{
-          label: 'Percentage',
-          data: percentagelist,
-          backgroundColor: 'skyblue',
-          borderWidth: 1,
-          date: datelist
-      },
-    ]
-  };
+    labels: labelWithDate,
+    datasets: [{
+        label: 'Percentage',
+        data: percentagelist,
+        backgroundColor: 'skyblue',
+        borderWidth: 1,
+        date: datelist,
+        maxBarThickness: 60 // <-- max width of each bar in pixels
+    }]
+};
+
 
   // Create the chart
   var myChart = new Chart(ctx, {

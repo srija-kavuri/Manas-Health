@@ -6,7 +6,7 @@ from sklearn.preprocessing import LabelEncoder
 import joblib
 
 # Load the dataset
-data = pd.read_csv(r'manashealth/mlModel/general_test/general_mental_health_test.csv')
+data = pd.read_csv(r'mlModel/general_test/general_mental_health_test.csv')
 
 # Convert the target variable to numerical using LabelEncoder
 le = LabelEncoder()

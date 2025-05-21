@@ -3,10 +3,10 @@ import joblib
 
 def predict_severity(user_inputs):
     # Load the trained model from the joblib file
-    model = joblib.load('C:/Users/valli/Desktop/project school/manashealth/mlModel/autism/autism_final_model.joblib')
+    model = joblib.load(r'mlModel/autism/autism_final_model.joblib')
 
     # Load the LabelEncoder used during training
-    le = joblib.load('C:/Users/valli/Desktop/project school/manashealth/mlModel/autism/label_encoder.joblib')
+    le = joblib.load(r'mlModel/autism/label_encoder.joblib')
 
     # Example: Create a DataFrame with the input values using a for loop
     user_inputs_dict = {}

@@ -3,10 +3,10 @@ import joblib
 
 def predict_severity(user_inputs):
     # Load the trained model from the joblib file
-    model = joblib.load('C:/Users/valli/Desktop/project school/manashealth/mlModel/general_test/general_final_model.joblib')
+    model = joblib.load('mlModel\general_test\general_final_model.joblib')
 
     # Load the LabelEncoder used during training
-    le = joblib.load('C:/Users/valli/Desktop/project school/manashealth/mlModel/general_test/label_encoder.joblib')
+    le = joblib.load('mlModel\general_test\label_encoder.joblib')
 
 
     user_inputs_dict = {}

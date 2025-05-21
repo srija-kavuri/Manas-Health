@@ -1,12 +1,15 @@
 import pandas as pd
 import joblib
+import os
 def predict_severity(user_inputs):
     # Load the trained model from the joblib file
-    model = joblib.load('C:/Users/valli/Desktop/project school/manashealth/mlModel/dyslexia/dyslexia_final_model.joblib')
+    model_path = os.path.abspath("mlModel/dyslexia/dyslexia_final_model.joblib")
+    
+    model = joblib.load(model_path)
 
+    label_encoder_path = os.path.abspath("mlModel/dyslexia/label_encoder.joblib")
     # Load the LabelEncoder used during training
-    le = joblib.load('C:/Users/valli/Desktop/project school/manashealth/mlModel/dyslexia/label_encoder.joblib')
-
+    le = joblib.load(label_encoder_path)
     # Example: Create a DataFrame with the input values using a for loop
     user_inputs_dict = {}
     for i in range(1, 24):

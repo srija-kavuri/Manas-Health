@@ -3,10 +3,11 @@ import joblib
 
 def predict_severity(user_inputs):
     # Load the trained model from the joblib file
-    model = joblib.load('C:/Users/valli/Desktop/project school/manashealth/mlModel/adhd/adhd_final_model.joblib')
+    print(user_inputs)
+    model = joblib.load('mlModel/adhd/adhd_final_model.joblib')
 
     # Load the LabelEncoder used during training
-    le = joblib.load('C:/Users/valli/Desktop/project school/manashealth/mlModel/adhd/label_encoder.joblib')
+    le = joblib.load('mlModel/adhd/label_encoder.joblib')
 
     # Example: Create a DataFrame with the input values using a for loop
     user_inputs_dict = {}
@@ -20,7 +21,7 @@ def predict_severity(user_inputs):
         if (user_inputs_dict[f'q{i}'][0] >=3):
             sum +=1
     user_inputs_dict['Adhd'] = [sum ]
-
+    print("This is sum" ,sum)
     user_inputs_df = pd.DataFrame(user_inputs_dict)
 
     # Ensure column order and names match the ones used during training
@@ -33,6 +34,7 @@ def predict_severity(user_inputs):
 
     # Make predictions
     predictions_numeric = model.predict(user_inputs_encoded)
+    print("This is encoded", user_inputs_encoded)
 
     # Convert numeric predictions to string labels using the loaded LabelEncoder
     predictions_string = le.inverse_transform(predictions_numeric)
